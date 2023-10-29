@@ -27,13 +27,13 @@
             .ex-chart {
                 display: flex;
                 opacity: 0.9;
-                width: 1000px;
+                width: 900px;
                 height: 400px;
                 opacity: 0.6;
                 border: none;
             }
             .ex-login {
-                width: 550px;
+                width: 450px;
                 height: 400px;
                 opacity: 0.7;
                
@@ -42,26 +42,23 @@
                
             }
             .ex-checkFrendsEx {
-                width: 550px;
+                width: 450px;
                 height: 400px;
                 opacity: 0.7;
                 border: none;
             }
             .ex-board {
-                width: 550px;
+                width: 450px;
                 height: 400px;
                 opacity: 0.7;
                 border: none;
             }
             .gym-map {
-                width: 550px;
+                width: 450px;
                 height: 400px;
                 opacity: 0.7;
                 border: none;
             }
-
-          
-
             .none{
                 display: none;
             }
@@ -102,51 +99,8 @@
                     <div class="middle-area-top">
                         <!--차트 정보를 보여주는 부분-->
                         <div class="ex-chart" align="letf">
-                            <div style="width: 75%; height: 100%;">
+                            <div style="width: 100%; height: 100%;">
                                 <canvas id="myChart"></canvas>
-                            </div>
-                            <div align="center" style="margin-top:50px ;" class="chartInfo">
-                                <h2>오늘의 운동</h2>
-                                <br>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="shoulder">
-                                    <label class="form-check-label" for="shoulder">
-                                        어께
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="chest">
-                                    <label class="form-check-label" for="chest">
-                                        가슴
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="back">
-                                    <label class="form-check-label" for="back">
-                                        등
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="arm">
-                                    <label class="form-check-label" for="arm">
-                                        팔
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="leg">
-                                    <label class="form-check-label" for="leg">
-                                        다리
-                                    </label>
-                                </div>
-                                <br>
-                                <h5>운동시간</h5>
-                                <input type="range" min="0" max="600" class="form-range" id="customRange1">
-                                <button
-                                    type="button"
-                                    id="ex-info"
-                                    class="btn btn-outline-primary"
-                                    onclick="changeInfo()">오운완 제출</button>
-    
                             </div>
                             <script>
                                 const ctx = document.getElementById('myChart');
