@@ -9,8 +9,8 @@
 <style>
     .outer{
         color: black;
-        width: 100%;
-        height: 2000px;
+        width: 75%;
+        height: 800px;
         margin: auto;
     }
     .list-area{
@@ -50,6 +50,20 @@
         border: none;
         cursor: pointer;
     }
+    select {
+        width: 150px;
+        height: 35px;
+        background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat;
+        background-size: 20px;
+        padding: 5px 30px 5px 10px;
+        border-radius: 20px;
+        outline: 0 none;
+    }
+    select option {
+        background: black;
+        color: #fff;
+        padding: 3px 0;
+    }
 </style>
 </head>
 <body>
@@ -58,7 +72,7 @@
 
      <div class="outer">
         
-        <h3 style="color: #0d62fd; text-align: center;">나의게시판</h3>
+        <h3 style="color: #0d62fd; text-align: center; padding-bottom: 40px;">나의게시판</h3>
 
         <div style="text-align: left;">
             <select name="" id="">
@@ -139,25 +153,25 @@
         </table>
 
         <div style="text-align: center; padding-top: 10px;">
-            <input style="width: 300px;" type="text" placeholder="검색어를 입력하세요">
+            <input style="width: 300px; margin-right: 50px; border-radius: 20px; border: none;" type="text" placeholder="검색어를 입력하세요">
         </div>
 
         <div class="bottom-btn">
-            <a href="../board/boardEnrollForm.jsp" class="btn btn=sm btn-secondary">게시글 등록</a>
-            <a href="../board/boardListView.jsp" class="btn btn=sm btn-secondary">전체 게시글 보기</a>
+            <a href="../board/boardEnrollForm.jsp" class="btn btn-primary">게시글 등록</a>
+            <a href="../board/boardListView.jsp" class="btn btn-primary">전체 게시글 보기</a>
         </div>
 
         <br><br>
 
         <div class="paging-area" align="center">
 	        
-	        	<button class="page-btn" onclick="location.href=''">&lt;</button>
-	            <button class="page-btn" onclick="location.href=''">1</button>
-                <button class="page-btn" onclick="location.href=''">2</button>
-                <button class="page-btn" onclick="location.href=''">3</button>
-                <button class="page-btn" onclick="location.href=''">4</button>
-                <button class="page-btn" onclick="location.href=''">5</button>
-            	<button class="page-btn" onclick="location.href=''">&gt;</button>
+	        	<button class="btn btn-light" onclick="location.href=''">&lt;</button>
+	            <button class="btn btn-light" onclick="location.href=''">1</button>
+                <button class="btn btn-light" onclick="location.href=''">2</button>
+                <button class="btn btn-light" onclick="location.href=''">3</button>
+                <button class="btn btn-light" onclick="location.href=''">4</button>
+                <button class="btn btn-light" onclick="location.href=''">5</button>
+            	<button class="btn btn-light" onclick="location.href=''">&gt;</button>
         </div>
     </div>
 </body>
