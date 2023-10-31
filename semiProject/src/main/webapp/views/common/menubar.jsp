@@ -25,13 +25,15 @@
                         <style>
                             body {
                                 height: 100vh;
-                                background-color: #d6d7dc;
+                                background-color: #FCFCFC;
+                                font-size: 24;
                             }
                             .top-var {
                                 width: auto;
                                 height: auto;
                                 margin-top: 50px;
                                 padding: 100px;
+                                border-radius : 1px solid black;
                             }
                             a {
                                 text-decoration: none;
