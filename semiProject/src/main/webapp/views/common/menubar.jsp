@@ -18,6 +18,7 @@
                         type="text/javascript"
                         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df6089610150bf39081f4bdb1c7356a&libraries=services"></script>
                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <script src="https://kit.fontawesome.com/5b03f739e9.js" crossorigin="anonymous"></script>
                     <title>Insert title here</title>
                     
 
@@ -45,11 +46,11 @@
                     </head>
                     <body>
                         <!--상단바를 보여주는 부분-->
-                        <div class="top-var" style=" border-radius: 15px 15px 15px 15px;">
+                        <div class="top-var" style=" border-radius: 15px 15px 15px 15px; ">
                             <ul
                                 class="nav nav-pills nav-fill "
-                                style="background-color: white; color: white;  border-radius: 20px 20px 20px 20px;">
-                                <li class="nav-item">
+                                style="background-color: white; color: white;  border-radius: 20px 20px 20px 20px; height: auto;">
+                                <li class="nav-item" style="height:auto">
                                     <a class="nav-link" aria-current="page" href="#">운동통계표</a>
                                 </li>
                                 <li class="nav-item">
