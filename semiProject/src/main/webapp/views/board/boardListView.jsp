@@ -30,7 +30,9 @@
         width: 100%;
         border-collapse: collapse;
         text-align: center;
-        
+        background: white;
+        opacity: 0.7;
+        font-weight: bold;
     }
     th, td {
         padding: 10px;
@@ -134,8 +136,7 @@
                     <option value="">최신순</option>
                     <option value="">조회순</option>
                 </select>
-            </div>
-            
+            </div>   
         </form>
             
     
