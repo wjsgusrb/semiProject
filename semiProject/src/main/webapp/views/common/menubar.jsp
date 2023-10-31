@@ -24,7 +24,7 @@
                         <style>
                             body {
                                 height: 100vh;
-                                background-color: #d6d7dc;
+                                background-color: white;
                             }
                             .top-var {
                                 width: auto;

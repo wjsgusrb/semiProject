@@ -54,9 +54,35 @@
         margin: 0 auto;
         text-align: right;
     }
-    .page-btn{
-        
+    #select-btn{
+        border: none;
+        margin-bottom: 10px;
+        background-color: #0d6efd;
+        color:white;
+        border-radius: 20px;
     }
+    .search{
+        position: relative;
+        width: 300px;
+        display: flex;
+        align-items: center;
+    }
+
+    .search input{
+        width: 100%;
+        border: 1px solid #bbb;
+        border-radius: 3px;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    .search img{
+        position : absolute;
+        width: 17px;
+        top: 10px;
+        right: 12px;
+        margin: 0;
+    }
+
     #serch-btn{
         width: 40px;
         height: 40px;
@@ -80,11 +106,11 @@
 </style>
 </head>
 <body>
-    <body>
+    <div class="outer">
         <!-- 상단바 include 해야함-->
         <%@ include file="../common/menubar.jsp" %>
         <!-- 자유게시판으로 들어가면 메뉴바 자유게시판 버튼 계속 눌리게 유지해야함-->
-        <div class="outer">
+        <form action="">
             <div style="text-align: left;">
                 <select name="" id="">
                     <option value="">전체기간</option>
@@ -101,6 +127,7 @@
                     <option value="">글제목</option>
                     <option value="">작성자</option>
                 </select>
+                <button id="select-btn">조회</button>
             </div>
             <div class="slect-view">
                 <select name="" id="">
@@ -108,6 +135,8 @@
                     <option value="">조회순</option>
                 </select>
             </div>
+            
+        </form>
             
     
             <table align="center" class="list-area">
@@ -181,8 +210,9 @@
                 </tbody>
             </table>
     
-            <div style="text-align: center; padding-top: 10px;">
-                <input style="width: 300px; margin-right: 50px; border-radius: 20px; border: none" type="text" placeholder="검색어를 입력하세요">
+            <div class="search">
+                <input type="text" placeholder="검색어 입력">
+                <a href=""><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"></a>
             </div>
     
             <div class="bottom-btn">
@@ -203,5 +233,6 @@
                     <button class="btn btn-light" onclick="location.href=''">&gt;</button>
             </div>
         </div>
+    </div>
 </body>
 </html>

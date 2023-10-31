@@ -10,7 +10,7 @@
                     <%@ include file="views/common/menubar.jsp" %>
                         <style>
                             .middle-area > div > div {
-                                background-color: rgb(148, 148, 148);
+                               
                                 border-radius: 15px 15px 15px 15px;
 
                             }
