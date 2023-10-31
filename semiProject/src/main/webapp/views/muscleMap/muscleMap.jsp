@@ -97,7 +97,7 @@
     
 
     <div id="bodyImg" align="center">
-        <img width="300px" src="/jsp/resources/board_upfile/humanbody.png" alt="humanbody">
+        <img width="300px" src="/ex/resources/board_upfile/humanbody.png" alt="humanbody">
     </div>
     
     <div class="list-group">
