@@ -15,7 +15,7 @@
         }
 
         #bodyImg{
-            postiion : relative;
+            position : relative;
             margin: auto;
             /* position: fixed; */
         }
@@ -79,7 +79,7 @@
     
 
     <div id="bodyImg" align="center">
-        <img width="300px" src="../../resources/board_upfile/humanbody.png" alt="humanbody">
+        <img width="300px" src="../" alt="humanbody">
 
         <button class="btnShoulder" type="button" onclick="javascript:sensorBtnClick('btnShoulder');">어깨</button>
         <button class="btnShoulder2" type="button" onclick="javascript:sensorBtnClick('btnShoulder2');">어깨</button>
