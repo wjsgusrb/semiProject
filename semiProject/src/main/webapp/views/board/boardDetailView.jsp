@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Insert title here</title>
 <link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
 		rel="stylesheet"
@@ -17,9 +18,16 @@
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df6089610150bf39081f4bdb1c7356a&libraries=services"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<title>Insert title here</title>
+	
 	
 	<style>
+		.outer{
+        color: black;
+		background-color: rgb(208, 222, 230);
+        width: 75%;
+        height: 1000px;
+        margin: auto;
+    	}
 		body {
 			height: 100vh;
 			background-color: #d6d7dc;
@@ -42,20 +50,13 @@
 			color: white;
 		}
 		
-		.outer {
-			background: rgb(165, 173, 179);
-			color: rgb(32, 28, 28);
-			width: 1000px;
-			height: auto;
-			margin: auto;
-			margin-top: 50px;
-		}
+		
 		.outer table{
-        border: 1px solid white;
+        border: none;
         border-collapse: collapse;
 	    }
 	    .outer table tr, .outer table td{
-	        border: 1px solid white;
+	        border: none;
 	    }
 	
 	</style>
@@ -84,61 +85,57 @@
 	
 	
 	 <div class="outer">
-        <br>
-        <h2 align="center">일반게시판 상세보기</h2>
+        <br><br>
+        <h5>자유게시판 - 운동정보</h5>
+        <h2>벌크업 질문 있어요</h2>
         <br>
 
-        <table id="detail-area" border="1" align="center">
+        <table id="detail-area">
+            
             <tr>
-                <th width="70">카테고리</th>
-                <td width="70"> 운동정보</td>
-                <th width="70">제목</th>
-                <td colspan="3" width="350"> 벌크업 질문 있습니다.(20)   </td>
+                <td colspan="4">김개똥 조회 10 2023.10.31 22:06 댓글 20</td>
             </tr>
+			<tr>
+				<td>  </td>
+			</tr>
             <tr>
-                <th>작성자</th>
-                <td> 잠죽자~    </td>
-                <th>작성일</th>
-                <td>  2023.10.31 22:06 </td>
-                <th width="60">댓글수</th>
-                <td> 20 </td>
-            </tr>
-            <tr>
-                <th>내용</th>
-                <td colspan="5">
-                    <p style="height: 200px;">     </p>
+                <td colspan="3">
+                    <div style="height: 200px;">
+						시험용 테스트입니다.  시험용 테스트입니다.시험용 테스트입니다.  
+						시험용 테스트입니다.  시험용 테스트입니다.시험용 테스트입니다. 
+						시험용 테스트입니다.  시험용 테스트입니다.시험용 테스트입니다. 
+						시험용 테스트입니다.  시험용 테스트입니다.시험용 테스트입니다. 
+					</div>
                 </td>
             </tr>
             <tr>
-                <th>첨부파일</th>
-                <td colspan="5">
-               	 
-                </td>
+                <td colspan="4">~첨부파일 넣는 칸~ </td>
             </tr>
         </table>
         <br> 
-	
-	
-	
-		<div align="center">
-            <a class="btn btn-sm btn-secondary">목록가기</a>
-        </div>
+		<hr>
+        <!--
+			<div>
+				<ul class="list-group list-group-flush">
+				  <li class="list-group-item">벌크업은 말이죠~ </li> 
+				  <li class="list-group-item">쉽지 않음   </li>
+				  <li class="list-group-item">저도 알고 싶어요  </li>
+				  <li class="list-group-item">발닦아라   </li>
+				</ul>
+			</div>
+		-->
         
-        <div>
-	        <ul class="list-group list-group-flush">
-			  <li class="list-group-item">벌크업은 말이죠~ </li> 
-			  <li class="list-group-item">쉽지 않음   </li>
-			  <li class="list-group-item">저도 알고 싶어요  </li>
-			  <li class="list-group-item">발닦아라   </li>
-			</ul>
-        </div>
-        
+		<div>김개똥   벌크업은 말이죠~                 <button style="float:right">답글</button>  </div><hr>
+		
+		<div>김개똥   벌크업은 말이죠~                 <button style="float:right">답글</button>  </div><hr>
+		<div>김개똥   벌크업은 말이죠~                 <button style="float:right">답글</button>  </div><hr>
+		<div>김개똥   벌크업은 말이죠~                 <button style="float:right">답글</button>  </div><hr>
 
         <br>
 
         <div id="reply-area">
             <table align="center">
-                <thead>
+                
                     <tr>
                         <th>댓글작성</th>
                         
@@ -150,12 +147,14 @@
 	                        </td>
                    
                     </tr>
-                </thead>
-                <tbody>
-                    
-                </tbody>
+               
             </table>
             
+			<div align="right">
+				<a class="btn btn-sm btn-secondary">목록가기</a>
+				<a class="btn btn-sm btn-secondary">글쓰기</a>
+
+			</div>
     
 	
 	</body>
