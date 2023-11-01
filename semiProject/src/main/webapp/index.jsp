@@ -8,7 +8,7 @@
           </head>
         <style>
             .middle-area > div > div {
-                background-color: rgb(148, 148, 148);
+                background-color:white;
                 border-radius: 15px 15px 15px 15px;
     
             }

@@ -25,8 +25,8 @@
                         <style>
                             body {
                                 height: 100vh;
-                                background-color: #FCFCFC;
-                                font-size: 24;
+                                background-color: rgb(216, 239, 243);
+                                font-size: 18px;
                             }
                             .top-var {
                                 width: auto;
@@ -34,6 +34,7 @@
                                 margin-top: 50px;
                                 padding: 100px;
                                 border-radius : 1px solid black;
+                                opacity : 0.7;
                             }
                             a {
                                 text-decoration: none;

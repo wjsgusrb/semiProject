@@ -25,12 +25,14 @@
         height: 500px;
         background-color: white;
         border-radius: 15px 15px 15px 15px;
+        opacity: 0.7;
     }
     .exchart-inputInfo{
         width: 500px;
         height: 500px;
         background-color: white;
         border-radius: 15px 15px 15px 15px;
+        opacity: 0.7;
      
     }
     .exchart-bottom{
@@ -43,12 +45,14 @@
         height: 500px;
         background-color: white;
         border-radius: 15px 15px 15px 15px;
+        opacity: 0.7;
     }
     .exchart-targetInfo{
         width: 700px;
         height: 500px;
         background-color:white;
         border-radius: 15px 15px 15px 15px;
+        opacity: 0.7;
        
     }
     .chart-title{
