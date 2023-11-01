@@ -90,6 +90,13 @@
                 margin-top: 5%;
 
            }
+           .checkFrends{
+                display: none;
+           }
+           .active{
+                display: block;
+           }
+      
        
         </style>
         <body>
@@ -174,9 +181,8 @@
                             <div class="ex-checkFrendsEx-middle">
                                 <i class="fa-regular fa-circle-left fa-2xl click" onclick="PreviousFrendsCheck()"></i>
                                 <div>
-                                    <div class="checkFrends">
-                                        <i class="fa-regular fa-user fa-10x"></i> <!--만약 사용자 프로필이 있다면 해당 프로필 처리-->
-                                       
+                                    <div class="checkFrends active">
+                                        <i class="fa-regular fa-user fa-10x"></i> <!--만약 사용자 프로필이 있다면 해당 프로필 처리-->  
                                         <br>
                                         <p>차정석</p>            
                                     </div>
@@ -209,33 +215,20 @@
                             </div>
                         </div>
                         <script>
-                            const changeCheckFrends =  document.getElementsByClassName("checkFrends");
-                            window.onload = () =>{
-                            for(let frends of changeCheckFrends){
-                                frends === changeCheckFrends[0] ? "":   frends.classList.add("none");
-                            }
-                           }
                            function PreviousFrendsCheck(){
-                            for(const frends of changeCheckFrends){
-                                if(frends.classList.length === 1){
-                                    frends.classList.add("none");
-                                    frends.previousElementSibling.classList.remove("none");
-                                    break;
-                                }
+                            const active = document.querySelector(".active");
+                            if(active.previousElementSibling!==null){
+                                active.previousElementSibling.classList.add("active");
+                                active.classList.remove("active");
                             }
-                          
                            } 
+
                            function nextFrendsCheck(){
-                            for(const frends of changeCheckFrends){
-                                if(frends.classList.length === 1){
-                                    frends.classList.add("none");
-                                    frends.nextElementSibling.classList.remove("none");
-                                   
-                                    break;
-                                }
-                              
+                            const active = document.querySelector(".active");
+                            if(active.nextElementSibling!==null){
+                                active.nextElementSibling.classList.add("active");
+                                active.classList.remove("active");
                             }
-                          
                            } 
                          
                         </script>

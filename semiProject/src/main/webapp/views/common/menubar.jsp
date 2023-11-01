@@ -19,13 +19,18 @@
                         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df6089610150bf39081f4bdb1c7356a&libraries=services"></script>
                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                     <script src="https://kit.fontawesome.com/5b03f739e9.js" crossorigin="anonymous"></script>
-                    <title>Insert title here</title>
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+                    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Gasoek+One&family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
                     
-
+                    
+                    <title>Insert title here</title>
                         <style>
                             body {
                                 height: 100vh;
-                                background-color: rgb(216, 239, 243);
+                                background-color: rgb(232, 247, 254);
+                                font-family: 'Roboto', sans-serif;
                                 font-size: 18px;
                             }
                             .top-var {
