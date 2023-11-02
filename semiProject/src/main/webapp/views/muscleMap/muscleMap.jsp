@@ -43,7 +43,7 @@
 	}
 	
 	.outer {
-		background: rgb(165, 173, 179);
+		background: #cde0f3;
 		color: rgb(32, 28, 28);
 		width: 1000px;
 		height: auto;
@@ -58,49 +58,36 @@
 	}
 
 
+	.container{
+	        	display:flex;
+	        	justify-content: space-around;
+	            text-align: center;
+	            margin-top: 40px;
+	            margin-bottom: 50px;
+	        }
 </style>
 
 </head>
 
 
 <body>
-       <!--상단바를 보여주는 부분-->
-       <div class="top-var" style=" border-radius: 15px 15px 15px 15px;">
-        <ul
-            class="nav nav-pills nav-fill "
-            style="background-color: white; color: white;  border-radius: 20px 20px 20px 20px;">
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">운동통계표</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="#">자유게시판</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">오운완</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " aria-disabled="true">근육지도</a>
-            </li>
-        </ul>
-
-
+    <%@ include file="../common/menubar.jsp" %>
 
 
     <div class="outer" >
         <br>
-        <h2 style="margin-left: 30px;">머슬지도</h2>
+        <h2 style="margin-left: 30px; align="center">머슬지도</h2>
         <br>
 
-    <div style="margin-left: 30px;">부위별운동</div>
-    <div style="margin-left: 30px;"> - 부위 클릭시 부위별 운동방법 영상 시청 가능</div>
+    <div style="margin-right: 100px; float:right"> 부위 클릭시 부위별 운동방법 영상 시청 가능</div>
         
-    
-
-    <div id="bodyImg" align="center">
+	<div class="container">
+	
+    <div id="bodyImg" style="flex: 1;">
         <img width="300px" src="/ex/resources/board_upfile/humanbody.png" alt="humanbody">
     </div>
     
-    <div class="list-group">
+    <div class="list-group" style="flex: 1; margin-top: 120px;">
         <a class="list-group-item list-group-item-action active" aria-current="true">
           운동부위
         </a>
@@ -112,6 +99,9 @@
         <a href="#" class="list-group-item list-group-item-action">코어</a>
         <a href="#" class="list-group-item list-group-item-action">등</a>
       </div>
+      
+    </div>
+
 
 
 

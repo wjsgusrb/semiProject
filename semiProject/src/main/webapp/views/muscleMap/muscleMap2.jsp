@@ -58,7 +58,7 @@
 		}
 	
 		.outer{
-	            background: rgb(165 173 179);
+	            background: #cde0f3;
 	            color: rgb(32, 28, 28);
 	            width: 1000px;
 	            height: auto;
@@ -79,30 +79,15 @@
 	</head>
 	
 	<body>
+	
 		 <!--상단바를 보여주는 부분-->
-	       <div class="top-var" style=" border-radius: 15px 15px 15px 15px;">
-	        <ul
-	            class="nav nav-pills nav-fill "
-	            style="background-color: white; color: white;  border-radius: 20px 20px 20px 20px;">
-	            <li class="nav-item">
-	                <a class="nav-link" aria-current="page" href="#">운동통계표</a>
-	            </li>
-	            <li class="nav-item">
-	                <a class="nav-link " href="#">자유게시판</a>
-	            </li>
-	            <li class="nav-item">
-	                <a class="nav-link" href="#">오운완</a>
-	            </li>
-	            <li class="nav-item">
-	                <a class="nav-link " aria-disabled="true">근육지도</a>
-	            </li>
-	        </ul>
+	      <%@ include file="../common/menubar.jsp" %>
 		
 		
 		<div class="outer" >
         <br>
         <h2 style="text-align: center;">머슬지도</h2>
-
+		<br>
         <div style="text-align: center;">
             <h3>어깨운동</h3> 
         </div>
@@ -110,7 +95,7 @@
     
         <div class="container" >
         
-			<div style="flex: 1; ">
+			<div style="flex: 1;">
 				<iframe width="450" height="450" src="https://youtube.com/embed/3hYOPTgd_WQ?si=2s5IbljLMx8Vfgwn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 			
