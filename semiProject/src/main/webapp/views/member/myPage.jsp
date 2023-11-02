@@ -34,6 +34,9 @@
             max-width: 93.5rem;
             margin: 0 auto;
             padding: 0 2rem;
+            background: white;
+            background-color: rgba( 255, 255, 255, 0.5 );
+            border-radius: 25px 25px 0px 0px;
         }
 
         .btn {
@@ -408,9 +411,10 @@
         .profile-user-settings{
             position: relative;
         }
-        .profile-settings-btn{
-             
-           
+        .follow-btn{
+            background: white;
+            background-color: rgba( 255, 255, 255, 0.5 );
+            border: none;
         }
     </style>
     <!-- Latest compiled and minified CSS -->
@@ -462,7 +466,7 @@
                 </div>
     
                 <div class="profile-stats">
-                    <button style="background: white; border: 0px;" data-bs-toggle="modal" data-bs-target="#myModal-follow">
+                    <button class="follow-btn" data-bs-toggle="modal" data-bs-target="#myModal-follow">
                         <ul>
                             <li><span class="profile-stat-count">188</span> 팔로워</li>
                             <li><span class="profile-stat-count">206</span> 팔로잉</li>
