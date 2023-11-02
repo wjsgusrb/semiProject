@@ -17,6 +17,9 @@
         width: 100%;
         border-collapse: collapse;
         text-align: center;
+        background: white;
+        opacity: 0.7;
+        font-weight: bold;
         
     }
     th, td {
@@ -30,6 +33,7 @@
     #table-head{
         background-color: #0d6efd;
         color: white;
+        font-size: 16px;
     }
     .bottom-btn{
         margin: 0 auto;
@@ -41,10 +45,33 @@
         margin: 0 auto;
         text-align: right;
     }
-    .page-btn{
-        
+    #select-btn{
+        color: #0d6efd;
+        padding: 4px 3px;
+        border-radius: 10px;
     }
-    #serch-btn{
+    .search{
+        position: relative;
+        width: 300px;
+        display: flex;
+        align-items: center;
+    }
+
+    .search input{
+        width: 100%;
+        border: 1px solid #bbb;
+        border-radius: 3px;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    .search img{
+        position : absolute;
+        width: 17px;
+        top: 10px;
+        right: 12px;
+        margin: 0;
+    }
+    #search-btn{
         width: 40px;
         height: 40px;
         border: none;
@@ -72,31 +99,34 @@
 
      <div class="outer">
         
-        <h3 style="color: #0d62fd; text-align: center; padding-bottom: 40px;">나의게시판</h3>
+        <h3 style="color: #0d62fd; text-align: center; padding-bottom: 40px; font-weight: 900; opacity: 0.7;">나의게시판</h3>
 
-        <div style="text-align: left;">
-            <select name="" id="">
-                <option value="">전체기간</option>
-                <option value="">최근 1주</option>
-                <option value="">최근 1달</option>
-            </select>
-            <select name="" id="">
-                <option value="">운동정보</option>
-                <option value="">운동 피드백</option>
-                <option value="">식단 정보</option>
-            </select>
-            <select name="" id="">
-                <option value="">제목 + 내용</option>
-                <option value="">글제목</option>
-                <option value="">작성자</option>
-            </select>
-        </div>
-        <div class="slect-view">
-            <select name="" id="">
-                <option value="">최신순</option>
-                <option value="">조회순</option>
-            </select>
-        </div>
+        <form action="">
+            <div style="text-align: left;">
+                <select name="" id="">
+                    <option value="">전체기간</option>
+                    <option value="">최근 1주</option>
+                    <option value="">최근 1달</option>
+                </select>
+                <select name="" id="">
+                    <option value="">운동정보</option>
+                    <option value="">운동피드백</option>
+                    <option value="">식단정보</option>
+                </select>
+                <select name="" id="">
+                    <option value="">제목 + 내용</option>
+                    <option value="">글제목</option>
+                    <option value="">작성자</option>
+                </select>
+                <button type="submit" id="select-btn" class="btn btn-light">조회</button>
+            </div>
+            <div class="slect-view">
+                <select name="" id="">
+                    <option value="">최신순</option>
+                    <option value="">조회순</option>
+                </select>
+            </div>   
+        </form>
         
 
         <table align="center" class="list-area">
@@ -152,8 +182,11 @@
             </tbody>
         </table>
 
-        <div style="text-align: center; padding-top: 10px;">
-            <input style="width: 300px; margin-right: 50px; border-radius: 20px; border: none;" type="text" placeholder="검색어를 입력하세요">
+        <br>
+
+        <div class="search">
+            <input type="text" placeholder="검색어 입력">
+            <a href=""><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"></a>
         </div>
 
         <div class="bottom-btn">

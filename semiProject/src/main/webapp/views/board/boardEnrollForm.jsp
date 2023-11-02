@@ -46,7 +46,7 @@
 
     <div class="outer" align="center">
         <br>
-        <h2 align center style="background-color: #0d6efd; color: white; width: 55%; border-radius: 30px;">게시글 작성하기</h2>
+        <h2 align center style="background-color: #0d6efd; color: white; width: 55%;">게시글 작성하기</h2>
         <br>
 
         <form id="enroll-form" action="" method="" enctype="">
