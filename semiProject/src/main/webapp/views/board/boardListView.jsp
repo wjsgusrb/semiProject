@@ -19,7 +19,7 @@
        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df6089610150bf39081f4bdb1c7356a&libraries=services"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<style>
+<style>  
     .outer{
         color: black;
         width: 75%;
