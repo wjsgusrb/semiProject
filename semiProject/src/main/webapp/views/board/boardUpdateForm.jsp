@@ -13,8 +13,7 @@
         margin: auto;
     }
     #enroll-form table{
-        border: 1px solid white;
-        width: 50%;
+        width: 55%;
         
     }
     #enroll-form input, #enroll-form textarea{
@@ -26,6 +25,20 @@
         margin: 0 auto;
         text-align: center;
     }
+    select {
+        width: 150px;
+        height: 35px;
+        background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat;
+        background-size: 20px;
+        padding: 5px 30px 5px 10px;
+        border-radius: 2px;
+        outline: 0 none;
+    }
+    select option {
+        background: black;
+        color: #fff;
+        padding: 3px 0;
+    }
     </style>
 </head>
 <body>
@@ -33,7 +46,7 @@
 
     <div class="outer" align="center">
         <br>
-        <h2 align center style="background-color: #0d6efd; color: white;">게시글 작성하기</h2>
+        <h2 align center style="background-color: #0d6efd; color: white; width: 55%; border-radius: 30px;">게시글 작성하기</h2>
         <br>
 
         <form id="enroll-form" action="" method="" enctype="">
@@ -60,16 +73,17 @@
                     <td><textarea name="content"rows="10" style="resize: none;" placeholder="내용을 입력하세요" required></textarea></td>
                 </tr>
                 <tr>
-                    
-                    <td><input type="file" name="upfile"></td>
+                    <td>
+                        <input class="form-control" type="file" id="formFileDisabled">
+                    </td>
                 </tr>
             </table>
 
             <br>
 
             <div class="bottom-btn">
-                <a href="" class="btn btn=sm btn-secondary">수정</a>
-                <a href="" class="btn btn=sm btn-secondary">취소</a>
+                <a href="" class="btn btn-primary">수정</a>
+                <a href="" class="btn btn-primary">취소</a>
             </div>
         </form>
     </div>

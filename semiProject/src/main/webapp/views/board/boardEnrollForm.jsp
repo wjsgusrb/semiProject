@@ -46,7 +46,7 @@
 
     <div class="outer" align="center">
         <br>
-        <h2 align center style="background-color: #0d6efd; color: white; width: 55%; border-radius: 30px;">게시글 작성하기</h2>
+        <h2 align center style="background-color: #0d6efd; color: white; width: 55%;">게시글 작성하기</h2>
         <br>
 
         <form id="enroll-form" action="" method="" enctype="">
@@ -82,8 +82,8 @@
             <br>
 
             <div class="bottom-btn">
-                <a href="" class="btn btn-primary">등록</a>
-                <a href="" class="btn btn-primary">취소</a>
+                <a href="boardListView.jsp" class="btn btn-primary">등록</a>
+                <a type="reset" class="btn btn-primary">취소</a>
             </div>
         </form>
     </div>
