@@ -11,7 +11,7 @@
         background: rgb(190, 190, 190);
       
         height: 100%;
-        width: 100%;
+        width: 80%;
         margin: auto;
         margin-top: 50px;
     }
@@ -97,7 +97,7 @@ li {
 </head>
 
 <body>
-    <%@ include file="../common/menubar.jsp" %>
+  <!--  <%@ include file="../common/menubar.jsp" %>-->
 
     <div class="outer">
        
