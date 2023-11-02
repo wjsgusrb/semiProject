@@ -11,7 +11,7 @@
         background: rgb(190, 190, 190);
       
         height: 100%;
-        width: 100%;
+        width: 80%;
         margin: auto;
         margin-top: 50px;
     }
@@ -28,7 +28,7 @@
     
    .right-area{
         width: 40%;
-        float: right;
+        float: left;
         box-sizing: border-box;
         height: 800px;
         
@@ -48,7 +48,8 @@
         align : center;
         max-width: 850px;
         height: 500px;
-        margin-left: 5%;
+        margin-left: 15%;
+        margin-right: 15%;
         background-color: white;
         border-radius: 40px 40px 40px 40px
 
@@ -80,6 +81,9 @@ li {
     border : 0;
     float: left;
 }
+.left-area >p:hover{
+    background-color: aqua;
+}
    
 </style>
 <!-- bootstrap CSS -->
@@ -97,7 +101,7 @@ li {
 </head>
 
 <body>
-    <%@ include file="../common/menubar.jsp" %>
+  <!--  <%@ include file="../common/menubar.jsp" %>-->
 
     <div class="outer">
        
@@ -110,7 +114,7 @@ li {
 
 
         <div class="left-area">
-	            <div class="thumbnail" align="center">   
+	            <div class="thumbnail" align="center" style="width: 70%;">   
                     <div class="userId">
                        <div style=" float: left;  height: 50px; margin-top: 15px; margin-right: 10px; width: 70px;">
                         <i class="bi bi-person-circle fs-2"></i>
@@ -128,7 +132,7 @@ li {
                         
                         ;
                         ">
-                          <button class="bi bi-arrow-right-circle" style="margin-top: 110px;"></button>
+                          <p class="bi bi-arrow-right-circle fs-2" style="margin-top: 110px; " ></p>
                         </div>
                         <div style=" width: 70%;
                         height: 100%;
@@ -144,18 +148,20 @@ li {
                         box-sizing: border-box;
                         
                        ">
-                          <button class="bi bi-arrow-left-circle" style="margin-top: 110px;"></button>
+                          <p class="bi bi-arrow-left-circle fs-2" style="margin-top: 110px;"></p>
                         </div>
 
                     </div>
 
                     <div class="peedside">
-                        <input type="text" style="width:600px;height:60px;font-size:30px; margin-top: 10px;" value="피드내용작성">
+                        <input type="text" style=" width:70%;height:60px;font-size:30px; margin-top: 15px;margin-left: 5%; " 
+                        value="피드내용작성">
+                        <button type="submit" style="  margin-right: 5%;  margin-left: 5px;    height: 60px;">등록</button>
 
                     </div> 
-                    <div style="width: 450px;">
-                        <i class="bi bi-chat-heart fs-2" style="margin-left: 380px;" ></i>
-                        <i class="bi bi-chat-left fs-2"style="float: right;" ></i>
+                    <div style="float: right; margin-right: 20%;" >
+                        <i class="bi bi-chat-heart fs-2"  ></i>
+                        <i class="bi bi-chat-left fs-2"></i>
                     </div>        	
 	                         
 	            </div>
@@ -164,7 +170,7 @@ li {
 
         
         <div class="right-area">
-            <div class="comment">
+            <div class="comment" style="width: 80%; ">
                 <div style="height: 80%;"></div>
                 <div style="height: 20%;">
                     <input type="text" style="width: 70%; margin-left: 5%;" > <button >등록</button>
