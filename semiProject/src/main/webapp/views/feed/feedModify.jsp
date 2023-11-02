@@ -11,7 +11,7 @@
         background: rgb(190, 190, 190);
       
         height: 100%;
-        width: 100%;
+        width: 80%;
         margin: auto;
         margin-top: 50px;
     }
@@ -47,9 +47,10 @@
     .thumbnail{
         border: 1px solid white;
         align : center;
-        max-width: 850px;
+       
         height: 500px;
-        margin-left: 5%;
+        margin-left: 15%;
+        margin-right: 15%;
         background-color: white;
         
 
@@ -113,7 +114,7 @@ li {
 
         <div class="right-area">
             <div class="userProfile">
-                <i style="float: left;" class="bi bi-emoji-sunglasses fs-1"></i>
+                <i style="float: left; margin-top: 5px;" class="fa-regular fa-user fs-1"></i>
                 <p style="float: left; margin-left: 40px; margin-top: 15px;" >user01</p>
                 <i style="float: right; margin-right: 20%;"  class="bi bi-backspace fs-1"></i>
                 
