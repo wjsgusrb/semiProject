@@ -23,14 +23,17 @@
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
                     <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Gasoek+One&family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
-                    
-                    
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Bagel+Fat+One&family=Gasoek+One&family=Noto+Sans+KR:wght@600&family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+                                                
                     <title>Insert title here</title>
                         <style>
                             body {
                                 height: 100vh;
                                 background-color: rgb(232, 247, 254);
                                 font-family: 'Roboto', sans-serif;
+                          
                                 font-size: 18px;
                             }
                             .top-var {

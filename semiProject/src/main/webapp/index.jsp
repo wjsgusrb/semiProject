@@ -159,8 +159,8 @@
                             <div>이름!</div>
                             <br>
                             <div class="login-user-button-area">
-                                <div><button type="button" class="btn btn-outline-primary" style="margin-right: 20px;">logout</button></div>
-                                <div><button type="button" class="btn btn-outline-primary">myPage</button></div>
+                                <div><button type="button" class="btn btn-outline-primary"  style="margin-right: 20px;">myPage</button></div>
+                                <div><button type="button" class="btn btn-outline-primary">logout</button></div>
                             </div>
                             
                         </div>
