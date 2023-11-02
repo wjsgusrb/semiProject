@@ -83,7 +83,7 @@
 
             <div class="bottom-btn">
                 <a href="" class="btn btn-primary">수정</a>
-                <a href="" class="btn btn-primary">취소</a>
+                <a href="" class="btn btn-danger">취소</a>
             </div>
         </form>
     </div>
