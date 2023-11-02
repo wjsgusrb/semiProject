@@ -31,7 +31,7 @@
         border-collapse: collapse;
         text-align: center;
         background: white;
-        opacity: 0.7;
+        opacity: 0.9;
         font-weight: bold;
     }
     th, td {
