@@ -31,7 +31,7 @@
         border-collapse: collapse;
         text-align: center;
         background: white;
-        opacity: 0.9;
+        opacity: 0.7;
         font-weight: bold;
     }
     th, td {
@@ -45,6 +45,7 @@
     #table-head{
         background-color: #0d6efd;
         color: white;
+        font-size: 16px;
     }
     .bottom-btn{
         margin: 0 auto;
@@ -57,11 +58,9 @@
         text-align: right;
     }
     #select-btn{
-        border: none;
-        margin-bottom: 10px;
-        background-color: #0d6efd;
-        color:white;
-        border-radius: 20px;
+        color: #0d6efd;
+        padding: 4px 3px;
+        border-radius: 10px;
     }
     .search{
         position: relative;
@@ -90,6 +89,7 @@
         height: 40px;
         border: none;
         cursor: pointer;
+        
     }
     select {
         width: 150px;
@@ -121,15 +121,15 @@
                 </select>
                 <select name="" id="">
                     <option value="">운동정보</option>
-                    <option value="">운동 피드백</option>
-                    <option value="">식단 정보</option>
+                    <option value="">운동피드백</option>
+                    <option value="">식단정보</option>
                 </select>
                 <select name="" id="">
                     <option value="">제목 + 내용</option>
                     <option value="">글제목</option>
                     <option value="">작성자</option>
                 </select>
-                <button id="select-btn">조회</button>
+                <button type="submit" id="select-btn" class="btn btn-light">조회</button>
             </div>
             <div class="slect-view">
                 <select name="" id="">
@@ -211,6 +211,8 @@
                 </tbody>
             </table>
     
+            <br><br>
+
             <div class="search">
                 <input type="text" placeholder="검색어 입력">
                 <a href=""><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"></a>
@@ -221,7 +223,7 @@
                 <a href="../board/myArticleView.jsp" class="btn btn-primary">나의게시판</a>
             </div>
     
-            <br><br>
+            <br>
     
             <div class="paging-area" align="center">
                 

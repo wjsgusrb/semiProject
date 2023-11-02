@@ -17,6 +17,9 @@
         width: 100%;
         border-collapse: collapse;
         text-align: center;
+        background: white;
+        opacity: 0.7;
+        font-weight: bold;
         
     }
     th, td {
@@ -30,6 +33,7 @@
     #table-head{
         background-color: #0d6efd;
         color: white;
+        font-size: 16px;
     }
     .bottom-btn{
         margin: 0 auto;
@@ -42,11 +46,9 @@
         text-align: right;
     }
     #select-btn{
-        border: none;
-        margin-bottom: 10px;
-        background-color: #0d6efd;
-        color:white;
-        border-radius: 20px;
+        color: #0d6efd;
+        padding: 4px 3px;
+        border-radius: 10px;
     }
     .search{
         position: relative;
@@ -69,7 +71,7 @@
         right: 12px;
         margin: 0;
     }
-    #serch-btn{
+    #search-btn{
         width: 40px;
         height: 40px;
         border: none;
@@ -97,7 +99,7 @@
 
      <div class="outer">
         
-        <h3 style="color: #0d62fd; text-align: center; padding-bottom: 40px;">나의게시판</h3>
+        <h3 style="color: #0d62fd; text-align: center; padding-bottom: 40px; font-weight: 900; opacity: 0.7;">나의게시판</h3>
 
         <form action="">
             <div style="text-align: left;">
@@ -108,15 +110,15 @@
                 </select>
                 <select name="" id="">
                     <option value="">운동정보</option>
-                    <option value="">운동 피드백</option>
-                    <option value="">식단 정보</option>
+                    <option value="">운동피드백</option>
+                    <option value="">식단정보</option>
                 </select>
                 <select name="" id="">
                     <option value="">제목 + 내용</option>
                     <option value="">글제목</option>
                     <option value="">작성자</option>
                 </select>
-                <button id="select-btn">조회</button>
+                <button type="submit" id="select-btn" class="btn btn-light">조회</button>
             </div>
             <div class="slect-view">
                 <select name="" id="">
@@ -179,6 +181,8 @@
                </tr>
             </tbody>
         </table>
+
+        <br>
 
         <div class="search">
             <input type="text" placeholder="검색어 입력">
