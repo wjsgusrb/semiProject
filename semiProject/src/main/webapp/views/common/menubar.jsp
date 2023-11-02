@@ -29,13 +29,9 @@
                         <style>
                             body {
                                 height: 100vh;
-<<<<<<< HEAD
-                                background-color: white;
-=======
                                 background-color: rgb(232, 247, 254);
                                 font-family: 'Roboto', sans-serif;
                                 font-size: 18px;
->>>>>>> ff4b42a5cf36b665fe74babe1268a73c093124e6
                             }
                             .top-var {
                                 width: auto;
