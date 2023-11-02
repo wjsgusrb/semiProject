@@ -8,7 +8,7 @@
           </head>
         <style>
             .middle-area > div > div {
-                background-color: rgb(148, 148, 148);
+                background-color:white;
                 border-radius: 15px 15px 15px 15px;
     
             }
@@ -90,11 +90,22 @@
                 margin-top: 5%;
 
            }
+           .checkFrends{
+                display: none;
+           }
+           .active{
+                display: block;
+           }
+           .login-user-button-area{
+            display: flex;
+            justify-content: center;
+           }
+      
        
         </style>
         <body>
             <%@ include file="/views/common/menubar.jsp" %>
-    
+
                 <div class="middle-area">
                     <div class="middle-area-top">
                         <!--차트 정보를 보여주는 부분-->
@@ -141,7 +152,20 @@
                             </script>
                         </div>
                         <!--로그인을 화면을 보여주는 부분-->
+                        <!--로그인 했을 때의 화면-->
+                        <!--로그인 하기 전 화면-->
                         <div class="ex-login" align="center">
+                            <div style="margin-bottom: 10px;" class="login-user-img"><i class="fa-solid fa-user fa-10x"></i></div>
+                            <div>이름!</div>
+                            <br>
+                            <div class="login-user-button-area">
+                                <div><button type="button" class="btn btn-outline-primary"  style="margin-right: 20px;">myPage</button></div>
+                                <div><button type="button" class="btn btn-outline-primary">logout</button></div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="ex-login" style="display: none;" align="center">
                             <div class="form-floating mb-3" style="width: 70%;">
                                 <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
                                 <label for="floatingInput">Id</label>
@@ -174,9 +198,8 @@
                             <div class="ex-checkFrendsEx-middle">
                                 <i class="fa-regular fa-circle-left fa-2xl click" onclick="PreviousFrendsCheck()"></i>
                                 <div>
-                                    <div class="checkFrends">
-                                        <i class="fa-regular fa-user fa-10x"></i> <!--만약 사용자 프로필이 있다면 해당 프로필 처리-->
-                                       
+                                    <div class="checkFrends active">
+                                        <i class="fa-regular fa-user fa-10x"></i> <!--만약 사용자 프로필이 있다면 해당 프로필 처리-->  
                                         <br>
                                         <p>차정석</p>            
                                     </div>
@@ -209,33 +232,20 @@
                             </div>
                         </div>
                         <script>
-                            const changeCheckFrends =  document.getElementsByClassName("checkFrends");
-                            window.onload = () =>{
-                            for(let frends of changeCheckFrends){
-                                frends === changeCheckFrends[0] ? "":   frends.classList.add("none");
-                            }
-                           }
                            function PreviousFrendsCheck(){
-                            for(const frends of changeCheckFrends){
-                                if(frends.classList.length === 1){
-                                    frends.classList.add("none");
-                                    frends.previousElementSibling.classList.remove("none");
-                                    break;
-                                }
+                            const active = document.querySelector(".active");
+                            if(active.previousElementSibling!==null){
+                                active.previousElementSibling.classList.add("active");
+                                active.classList.remove("active");
                             }
-                          
                            } 
+
                            function nextFrendsCheck(){
-                            for(const frends of changeCheckFrends){
-                                if(frends.classList.length === 1){
-                                    frends.classList.add("none");
-                                    frends.nextElementSibling.classList.remove("none");
-                                   
-                                    break;
-                                }
-                              
+                            const active = document.querySelector(".active");
+                            if(active.nextElementSibling!==null){
+                                active.nextElementSibling.classList.add("active");
+                                active.classList.remove("active");
                             }
-                          
                            } 
                          
                         </script>

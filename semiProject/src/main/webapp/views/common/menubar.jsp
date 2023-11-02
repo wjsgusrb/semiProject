@@ -19,19 +19,30 @@
                         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df6089610150bf39081f4bdb1c7356a&libraries=services"></script>
                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                     <script src="https://kit.fontawesome.com/5b03f739e9.js" crossorigin="anonymous"></script>
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+                    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Gasoek+One&family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Bagel+Fat+One&family=Gasoek+One&family=Noto+Sans+KR:wght@600&family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+                                                
                     <title>Insert title here</title>
-                    
-
                         <style>
                             body {
                                 height: 100vh;
-                                background-color: #d6d7dc;
+                                background-color: rgb(232, 247, 254);
+                                font-family: 'Roboto', sans-serif;
+                          
+                                font-size: 18px;
                             }
                             .top-var {
                                 width: auto;
                                 height: auto;
-                                margin-top: 50px;
-                                padding: 100px;
+                                margin-top: 30px;
+                                padding: 50px;
+                                border-radius : 1px solid black;
+                                opacity : 0.7;
                             }
                             a {
                                 text-decoration: none;
@@ -41,11 +52,44 @@
                                 background-color: #0d62fd;
                                 color: white;
                             }
+                            .main-img{
+                                width: 500px;
+                                height: 50px;
+                                background-color: white;
+                            }
+                            .var-top{
+                                padding-top: 20px;
+                                display: flex;
+                                justify-content: center;
+                                position: relative;
+                                width: 100%;
+                            }
+                            .var-top > div:hover{
+                                cursor: pointer;
+                               
+                            }
+                            .aaaaa{
+                                position: absolute;
+                                right: 10%;
+                            }
+                            .mainTitle{
+                                font-size: 35px;
+                                opacity: 0.5;
+                            }
+                        
                         </style>
 
                     </head>
                     <body>
                         <!--상단바를 보여주는 부분-->
+                        <div class="var-top">
+                            <div class="mainTitle">health community</div>
+                            <div class="aaaaa" style="display: flex;">
+                                <div><i class="fa-solid fa-house fa-l" style="opacity: 0.7; "></i></div>
+                                <div style="margin-left: 30px; margin-right: 30px;">마이페이지</div>
+                                <div><i class="fa-solid fa-magnifying-glass fa-l "style="opacity: 0.7;"></i></div>
+                            </div>
+                        </div>
                         <div class="top-var" style=" border-radius: 15px 15px 15px 15px; ">
                             <ul
                                 class="nav nav-pills nav-fill "

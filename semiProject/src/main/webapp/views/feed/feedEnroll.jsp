@@ -11,7 +11,7 @@
         background: rgb(190, 190, 190);
       
         height: 100%;
-        width: 100%;
+        width: 80%;
         margin: auto;
         margin-top: 50px;
     }
@@ -47,9 +47,10 @@
     .thumbnail{
         border: 1px solid white;
         align : center;
-        max-width: 850px;
+       
         height: 500px;
-        margin-left: 5%;
+        margin-left: 15%;
+        margin-right: 15%;
         background-color: white;
         
 
@@ -84,6 +85,8 @@ li {
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/fd91061247.js" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
     <%@ include file="../common/menubar.jsp" %>
@@ -95,33 +98,31 @@ li {
         <br>
 
 
-	
 
 
-        <div class="left-area">
-	            <div class="thumbnail" align="center">   
-                    <div class="bi bi-plus-circle fs-1" style="margin-top: 200px;">
-                       
-                     
-                        
-                    </div>
-                    <div>
-                        <thead style=" margin-top: 200px;">
-                            <li style=" margin-top: 200px; margin-left: 130px;"></li>
-                            <li style=" margin-top: 200px;"></li>
-                            <li style=" margin-top: 200px;"></li>
-                            <li style=" margin-top: 200px;"></li>
-                        </thead>
-                    </div>
-        
-	            </div>
-                
-        </div>
+
+		<div class="left-area">
+			<div class="thumbnail" align="center" style="height: 500px;  max-width: 500px;">
+				<div class="bi bi-plus-circle fs-1" style="margin-top: 200px;">
 
 
-        <div class="right-area">
-            <div class="userProfile">
-                <i style="float: left;" class="bi bi-emoji-sunglasses fs-1"></i>
+
+				</div>
+				<div class="btn-group" role="group"
+					aria-label="Basic outlined example" style="margin-top: 190px;">
+					<button type="button" class="btn btn-outline-primary"> 이전</button>
+					
+					<button type="button" class="btn btn-outline-primary">다음</button>
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="right-area">
+            <div class="userProfile" style="height: 60px;" >
+                <i style="float: left; margin-top: 5px;" class="fa-regular fa-user fs-1"></i>
                 <p style="float: left; margin-left: 40px; margin-top: 15px;" >user01</p>
                 <i style="float: right; margin-right: 20%;"  class="bi bi-backspace fs-1"></i>
                 
@@ -129,11 +130,11 @@ li {
 
             
             <div>
-                <textarea name="" id="" cols="55" rows="15" style="margin-left: 50px; width: 80%; margin-right: 5%; " align="center"></textarea>
+                <textarea name="" id="" cols="55" rows="15" style="margin-left: 13%; width: 73%; margin-right: 40px; " align="center"></textarea>
                 
             </div>
             <div>
-                <button class="btn btn-primary" style="margin-left: 40%; margin-top: 20px;">업로드</button>
+                <button class="btn btn-primary" style="margin-left: 45%; margin-top: 20px;">업로드</button>
                
             </div>
 
