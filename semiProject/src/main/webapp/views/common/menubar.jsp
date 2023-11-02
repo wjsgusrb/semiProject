@@ -82,9 +82,9 @@
                         <div class="var-top">
                             <div class="mainTitle">health community</div>
                             <div class="aaaaa" style="display: flex;">
-                                <div><i class="fa-solid fa-house fa-xl" style="opacity: 0.7; "></i></div>
+                                <div><i class="fa-solid fa-house fa-l" style="opacity: 0.7; "></i></div>
                                 <div style="margin-left: 30px; margin-right: 30px;">마이페이지</div>
-                                <div><i class="fa-solid fa-magnifying-glass fa-xl "style="opacity: 0.7;"></i></div>
+                                <div><i class="fa-solid fa-magnifying-glass fa-l "style="opacity: 0.7;"></i></div>
                             </div>
                         </div>
                         <div class="top-var" style=" border-radius: 15px 15px 15px 15px; ">

@@ -96,12 +96,16 @@
            .active{
                 display: block;
            }
+           .login-user-button-area{
+            display: flex;
+            justify-content: center;
+           }
       
        
         </style>
         <body>
             <%@ include file="/views/common/menubar.jsp" %>
-    
+
                 <div class="middle-area">
                     <div class="middle-area-top">
                         <!--차트 정보를 보여주는 부분-->
@@ -148,7 +152,20 @@
                             </script>
                         </div>
                         <!--로그인을 화면을 보여주는 부분-->
+                        <!--로그인 했을 때의 화면-->
+                        <!--로그인 하기 전 화면-->
                         <div class="ex-login" align="center">
+                            <div style="margin-bottom: 10px;" class="login-user-img"><i class="fa-solid fa-user fa-10x"></i></div>
+                            <div>이름!</div>
+                            <br>
+                            <div class="login-user-button-area">
+                                <div><button type="button" class="btn btn-outline-primary" style="margin-right: 20px;">logout</button></div>
+                                <div><button type="button" class="btn btn-outline-primary">myPage</button></div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="ex-login" style="display: none;" align="center">
                             <div class="form-floating mb-3" style="width: 70%;">
                                 <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
                                 <label for="floatingInput">Id</label>
