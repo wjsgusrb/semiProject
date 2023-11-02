@@ -49,8 +49,8 @@
         align : center;
        
         height: 500px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 15%;
+        margin-right: 15%;
         background-color: white;
         
 
