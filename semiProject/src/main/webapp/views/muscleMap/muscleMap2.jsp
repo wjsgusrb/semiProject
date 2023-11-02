@@ -66,7 +66,9 @@
 	            margin-top: 50px;
 	            margin-bottom: 50px;
 	        }
-	        .center{
+	        .container{
+	        	display:flex;
+	        	justify-content: space-around;
 	            text-align: center;
 	            margin-top: 40px;
 	            margin-bottom: 50px;
@@ -99,19 +101,27 @@
 		
 		<div class="outer" >
         <br>
-        <h2 style="margin-left: 30px;">머슬지도</h2>
-        <br>
+        <h2 style="text-align: center;">머슬지도</h2>
 
         <div style="text-align: center;">
             <h3>어깨운동</h3> 
         </div>
     
     
-        <div class="center" >
-            <iframe width="500" height="500" src="https://youtube.com/embed/3hYOPTgd_WQ?si=2s5IbljLMx8Vfgwn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+        <div class="container" >
+        
+			<div style="flex: 1; ">
+				<iframe width="450" height="450" src="https://youtube.com/embed/3hYOPTgd_WQ?si=2s5IbljLMx8Vfgwn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			</div>
+			
+			<div style="flex: 1;">
+				<iframe width="450" height="450" src="https://www.youtube.com/embed/twXs4ujJuGI?si=3Lm5XDTtGp_RkHcX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			</div>
 
-        <div style="margin-bottom: 50px; margin-left: 50px; ">
+		</div>
+        
+		
+		<div style="margin-bottom: 50px; margin-left: 50px; ">
             <p>  어깨는 상체에서 가장 중요한 관절 중 하나입니다. </p>
             <p> 어깨를 움직이면 팔을 위로 들어 올리고, 옆으로 벌리고, 뒤로 젖힐 수 있습니다. </p>
             <p> 어깨가 튼튼하면 팔을 자유롭게 움직일 수 있고, 일상생활에서 많은 동작을 쉽게 할 수 있습니다. </p>
