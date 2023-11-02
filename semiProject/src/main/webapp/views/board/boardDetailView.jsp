@@ -21,25 +21,15 @@
 	
 	
 	<style>
-		.outer{
-        color: black;
-		background-color: rgb(208, 222, 230);
-        width: 75%;
-        height: 1000px;
-        margin: auto;
-    	}
-		body {
-			height: 100vh;
-			background-color: #d6d7dc;
-		}
-		
-		.top-var {
-			width: auto;
+		.board-Detail{
+			color: black;
+			background-color: white;
+			width: 75%;
 			height: auto;
-			margin-top: 50px;
-			padding: 100px;
-		}
-		
+			margin: auto;
+			opacity: 0.7;
+    	}
+
 		a {
 			text-decoration: none;
 			color: white;
@@ -51,111 +41,111 @@
 		}
 		
 		
-		.outer table{
-        border: none;
-        border-collapse: collapse;
-	    }
-	    .outer table tr, .outer table td{
-	        border: none;
-	    }
+		.detail-area{
+			padding: 0 20%;
+		}
 	
+		.detail-img-area{
+			display: flex;
+			width:auto;
+
+		}
+		.detail-img{
+			margin-top: 10%;
+			width: 300px;
+			height: 300px;
+			background-color: gray;
+			border-radius: 15px;
+			opacity: 0.7;
+			margin-left: 30px;
+		}
+		.board-comment{
+			display: flex;
+			justify-content: space-around;
+		
+		}
+
 	</style>
 </head>
 
 
 	<body>
 		 <!--상단바를 보여주는 부분-->
-		       <div class="top-var" style=" border-radius: 15px 15px 15px 15px;">
-		        <ul
-		            class="nav nav-pills nav-fill "
-		            style="background-color: white; color: white;  border-radius: 20px 20px 20px 20px;">
-		            <li class="nav-item">
-		                <a class="nav-link" aria-current="page" href="#">운동통계표</a>
-		            </li>
-		            <li class="nav-item">
-		                <a class="nav-link " href="#">자유게시판</a>
-		            </li>
-		            <li class="nav-item">
-		                <a class="nav-link" href="#">오운완</a>
-		            </li>
-		            <li class="nav-item">
-		                <a class="nav-link " aria-disabled="true">근육지도</a>
-		            </li>
-		        </ul>
-	
-	
-	 <div class="outer">
-        <br><br>
-        <h5>자유게시판 - 운동정보</h5>
-        <h2>벌크업 질문 있어요</h2>
-        <br>
-
-        <table id="detail-area">
-            
-            <tr>
-                <td colspan="4">김개똥 조회 10 2023.10.31 22:06 댓글 20</td>
-            </tr>
-			<tr>
-				<td>  </td>
-			</tr>
-            <tr>
-                <td colspan="3">
-                    <div style="height: 200px;">
-						시험용 테스트입니다.  시험용 테스트입니다.시험용 테스트입니다.  
-						시험용 테스트입니다.  시험용 테스트입니다.시험용 테스트입니다. 
-						시험용 테스트입니다.  시험용 테스트입니다.시험용 테스트입니다. 
-						시험용 테스트입니다.  시험용 테스트입니다.시험용 테스트입니다. 
-					</div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="4">~첨부파일 넣는 칸~ </td>
-            </tr>
-        </table>
-        <br> 
-		<hr>
-        <!--
-			<div>
-				<ul class="list-group list-group-flush">
-				  <li class="list-group-item">벌크업은 말이죠~ </li> 
-				  <li class="list-group-item">쉽지 않음   </li>
-				  <li class="list-group-item">저도 알고 싶어요  </li>
-				  <li class="list-group-item">발닦아라   </li>
-				</ul>
-			</div>
-		-->
-        
-		<div>김개똥   벌크업은 말이죠~                 <button style="float:right">답글</button>  </div><hr>
+		<%@ include file="../common/menubar.jsp" %>
 		
-		<div>김개똥   벌크업은 말이죠~                 <button style="float:right">답글</button>  </div><hr>
-		<div>김개똥   벌크업은 말이죠~                 <button style="float:right">답글</button>  </div><hr>
-		<div>김개똥   벌크업은 말이죠~                 <button style="float:right">답글</button>  </div><hr>
-
+	 <div class="board-Detail">
+        <br><br>
+		<div class="board-title" align="center">
+			<h5 style="margin-bottom: 15px;">자유게시판 - 운동정보</h5>
+			<h2>벌크업 질문 있어요</h2>
+			<br>
+			<div align="right"><p style="margin-right: 5%;">김개똥 조회 10 2023.10.31 22:06 댓글 20</p></div>
+		</div>
         <br>
-
-        <div id="reply-area">
-            <table align="center">
-                
-                    <tr>
-                        <th>댓글작성</th>
-                        
-	                        <td>
-	                            <textarea id="reply-content" cols="50" rows="3"></textarea>
-	                        </td>
-	                        <td>
-	                            <button onclick="insertReply()">댓글등록</button>
-	                        </td>
-                   
-                    </tr>
-               
-            </table>
-            
-			<div align="right">
-				<a class="btn btn-sm btn-secondary">목록가기</a>
-				<a class="btn btn-sm btn-secondary">글쓰기</a>
-
+		<div class="detail-area" align="center">
+			<div class="detail-area-content">
+				ㄴㅇㄹ히ㅜㅁ니ㅏㅇ러ㅣㅏㄴ멀히ㅏㅓㄴㅁ이;허미;낭휘ㅏㅁ눙라ㅣㅜㅁ니ㅏㅇ루히;ㅏㅁㄴ울히ㅜㅁㄴㅇ이ㅏ훔나ㅣㅇ휘'ㅏㅁㄴㅇㅎ'
+				ㄴㅁㅇ힘ㄴ아잏ㅁ니ㅏㅇ히';ㄴ;ㅁ엏;
 			</div>
-    
+			<div  class="detail-img-area">
+				<div class="detail-img">
+				
+				</div>
+				<div class="detail-img">
+				
+				</div>
+				<div class="detail-img">
+				
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="board-comment" align="center">
+			<div class="comentUser-img">
+				<i class="fa-solid fa-user fa-3x"></i>
+			</div>
+			<div>김개똥   벌크업은 말이죠~</div>
+			<button type="button" style="width: 5%;" class="btn btn-outline-primary">답글</button>	
+		</div>   
+		<hr>
+		<div class="board-comment" align="center">
+			<div class="comentUser-img">
+				<i class="fa-solid fa-user fa-3x"></i>
+			</div>
+			<div>김개똥   벌크업은 말이죠~</div>
+			<button type="button" style="width: 5%;" class="btn btn-outline-primary">답글</button>	
+		</div>   
+		<hr>
+		<div class="board-comment" align="center">
+			<div class="comentUser-img">
+				<i class="fa-solid fa-user fa-3x"></i>
+			</div>
+			<div>김개똥   벌크업은 말이죠~</div>
+			<button type="button" style="width: 5%;" class="btn btn-outline-primary">답글</button>	
+		</div>   
+		<hr>
+		<div class="board-comment" align="center">
+			<div class="comentUser-img">
+				<i class="fa-solid fa-user fa-3x"></i>
+			</div>
+			<div>김개똥   벌크업은 말이죠~</div>
+			<button type="button" style="width: 5%;" class="btn btn-outline-primary">답글</button>	
+		</div>   
+		<hr>
+	  
+		
+	<div class="form-floating" style="display: flex;">
+		<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+		<label for="floatingTextarea">댓글 작성</label>
+		<button type="button" style="width: 15%;" class="btn btn-outline-primary">작성</button>
+	</div>
+		
+	
+		<div align="right" style="margin-top: 25px;">
+			<a class="btn btn-sm btn-secondary">목록가기</a>
+			<a class="btn btn-sm btn-secondary">글쓰기</a>
+		</div>	
+	</div>	
 	
 	</body>
 </html>
