@@ -412,8 +412,7 @@
             position: relative;
         }
         .follow-btn{
-            background: white;
-            background-color: rgba( 255, 255, 255, 0.5 );
+            background: none;
             border: none;
         }
     </style>
@@ -451,7 +450,7 @@
     
                     <button class="btn profile-settings-btn" data-bs-toggle="modal" data-bs-target="#myModal-update"
                     style="position: absolute;
-                    right: 0;
+                    right: 10px;
                     padding: 0;
                     margin: 0;
                     border: none;
