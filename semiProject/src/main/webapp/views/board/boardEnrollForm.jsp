@@ -83,7 +83,7 @@
 
             <div class="bottom-btn">
                 <a href="boardListView.jsp" class="btn btn-primary">등록</a>
-                <a type="reset" class="btn btn-primary">취소</a>
+                <a type="reset" class="btn btn-danger">취소</a>
             </div>
         </form>
     </div>
