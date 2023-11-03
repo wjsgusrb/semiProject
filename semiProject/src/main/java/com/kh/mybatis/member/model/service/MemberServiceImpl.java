@@ -1,5 +1,5 @@
 package com.kh.mybatis.member.model.service;
 
-public class MemberServiceImpl {
+public class MemberServiceImpl implements MemberService{
 
 }
