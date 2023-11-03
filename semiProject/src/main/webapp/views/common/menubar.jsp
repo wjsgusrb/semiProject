@@ -95,30 +95,31 @@
                                 class="nav nav-pills nav-fill "
                                 style="background-color: white; color: white;  border-radius: 20px 20px 20px 20px; height: auto;">
                                 <li class="nav-item" style="height:auto">
-                                    <a class="nav-link" aria-current="page" href="#">운동통계표</a>
+                                    <a class="nav-link " aria-current="page" href="exChart.ch">운동통계표</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " href="#">자유게시판</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">오운완</a>
+                                    <a class="nav-link " href="#">오운완</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " aria-disabled="true">근육지도</a>
                                 </li>
                             </ul>
 
-                            <script>
+                            <script>  
                                 const currentPage = document.getElementsByClassName("nav-item");
                                 const currentPagea = document.querySelectorAll(".nav>.nav-item>a");
-                                for (const current of currentPage) {
+                                for (const current of currentPage) { 
                                     current.onclick = function () {
+                                      
                                         for (const a of currentPagea) {
                                             a
                                                 .classList
                                                 .remove("active");
                                         }
-                                        const noticeNo = this.childNodes[1];
+                                         noticeNo = this.childNodes[1];
                                         noticeNo
                                             .classList
                                             .add("active");

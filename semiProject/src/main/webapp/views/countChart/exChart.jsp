@@ -136,7 +136,12 @@
 </head>
 <body>
     <%@ include file="/views/common/menubar.jsp" %>
-
+    <script>
+        window.onload = function(){
+            console.log(noticeNo)
+        }
+    </script>
+    
     <div class="excharPage">
         <div class="exchart-middle">
             <!--메인 차트 보여주는 부분-->
