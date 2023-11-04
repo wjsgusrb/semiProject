@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <!DOCTYPE html>
     <html>
         <head>
@@ -82,11 +83,24 @@
                     </head>
                     <body>
                         <!--상단바를 보여주는 부분-->
+
+                        <!-- 마이페이지에 로그인한 유저만 들어갈 수 있음-->
+                        <c:if test="alertMsg != null" >
+                            <script>
+                                alert("${alertMsg}");
+                            </script>
+                            <c:remove var="alertMsg" scope="session" />
+                        </c:if>
+                        
                         <div class="var-top">
-                            <div class="mainTitle">health community</div>
+                            <div class="mainTitle"><a href="index.jsp" style="color: black;">health community</a></div>
                             <div class="aaaaa" style="display: flex;">
-                                <div><i class="fa-solid fa-house fa-l" style="opacity: 0.7; "></i></div>
-                                <div style="margin-left: 30px; margin-right: 30px;">마이페이지</div>
+                                <div>
+                                    <a href="index.jsp"><i class="fa-solid fa-house fa-l" style="opacity: 0.7; color: black; "></i></a>
+                                </div>
+                                <div >
+                                    <a href="myPage.me" style="margin-left: 30px; margin-right: 30px; color: black;">마이페이지</a>
+                                </div>
                                 <div><i class="fa-solid fa-magnifying-glass fa-l "style="opacity: 0.7;"></i></div>
                             </div>
                         </div>
@@ -125,6 +139,11 @@
                                             .add("active");
                                     }
                                 }
+
+                                moveMainPage(){
+                                    
+                                }
+
                             </script>
                         </div>
 
