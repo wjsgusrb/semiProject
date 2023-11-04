@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="chartMapper">
+	<resultMap id="chartResultSet" type="Chart">
+		<result column="CHART_NO" property="exChartNo"/>
+		<result column="CHART_TIME" property="exChartTime"/>
+		<result column="CHART_TARGET" property="exChartTarget"/>
+		<result column="CHART_DAY" property="exCharDay"/>
+		<result column="USER_NO" property="userNo"/>
+	</resultMap>
+
+	<select id="selectTodayExList" resultMap="chartResultSet">
+		select * from
+		chart where user_no = 1
+	</select>
+</mapper>
