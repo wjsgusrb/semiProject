@@ -105,7 +105,7 @@
        
         </style>
         <body>
-            <%@ include file="/views/common/menubar.jsp" %>
+            <jsp:include page="/views/common/menubar.jsp" />
 
                 <div class="middle-area">
                     <div class="middle-area-top">
