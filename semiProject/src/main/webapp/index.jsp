@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <!DOCTYPE html>
     <html>
         <head>
@@ -104,7 +105,7 @@
        
         </style>
         <body>
-            <%@ include file="/views/common/menubar.jsp" %>
+            <jsp:include page="/views/common/menubar.jsp" />
 
                 <div class="middle-area">
                     <div class="middle-area-top">
@@ -152,44 +153,53 @@
                             </script>
                         </div>
                         <!--로그인을 화면을 보여주는 부분-->
-                        <!--로그인 했을 때의 화면-->
-                        <!--로그인 하기 전 화면-->
-                        <div class="ex-login" align="center">
-                            <div style="margin-bottom: 10px;" class="login-user-img"><i class="fa-solid fa-user fa-10x"></i></div>
-                            <div>이름!</div>
-                            <br>
-                            <div class="login-user-button-area">
-                                <div><button type="button" class="btn btn-outline-primary"  style="margin-right: 20px;">myPage</button></div>
-                                <div><button type="button" class="btn btn-outline-primary">logout</button></div>
-                            </div>
-                            
-                        </div>
+                        
+                        <c:choose>
+                            <c:when test="${ empty loginUser }">
+                                <!--로그인 하기 전 화면-->
+                                <form action="login.me" method="post">
+                                    <div class="ex-login"  align="center">
+                                        <div class="form-floating mb-3" style="width: 70%;">
+                                            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                            <label for="floatingInput">Id</label>
+                                        </div>
+                                        <div class="form-floating" style="width: 70%";>
+                                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                            <label for="floatingPassword">Password</label>
+                                        </div>
+                                        <button class="btn btn-primary" style="width: 70%; margin-top: 5%;" type="submit">loign~</button>
+                                        <div style="margin-top: 2%;">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                            회원가입
+                                            </button>
+                                    
+                                        
+                                    
+                                            <button type="button" class="btn btn-primary"
+                                                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                            아이디 비밀번호 찾기
+                                            </button>
+                                        </div>
+                                        </div> 
+                                    </div>
+                                </form>
+                            </c:when>
+                            <c:otherwise>
+                            <!--로그인 했을 때의 화면-->
+                                <div class="ex-login" align="center">
+                                    <div style="margin-bottom: 10px;" class="login-user-img"><i class="fa-solid fa-user fa-10x"></i></div>
+                                    <div>${ loginUser.userName }</div>
+                                    <br>
+                                    <div class="login-user-button-area">
+                                        <div><button type="button" class="btn btn-outline-primary"  style="margin-right: 20px;">myPage</button></div>
+                                        <div><button type="button" class="btn btn-outline-primary">logout</button></div>
+                                    </div>                  
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
 
-                        <div class="ex-login" style="display: none;" align="center">
-                            <div class="form-floating mb-3" style="width: 70%;">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Id</label>
-                              </div>
-                              <div class="form-floating" style="width: 70%";>
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                <label for="floatingPassword">Password</label>
-                              </div>
-                              <button class="btn btn-primary" style="width: 70%; margin-top: 5%;" type="button">loign~</button>
-                              <div style="margin-top: 2%;">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                 회원가입
-                                </button>
-                          
-                              
-                          
-                                <button type="button" class="btn btn-primary"
-                                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                아이디 비밀번호 찾기
-                                </button>
-                              </div>
-                                
-                        </div>
+                        
                     </div>
                     <div class="middle-area-bottom">
                         <!--친구 요청목록 보여주는 부분 -->

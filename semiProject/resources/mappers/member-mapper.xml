@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="memberMapper">
+ 
+	 <resultMap id="memberResultSet" type="Member">
+ 		<result column="USER_NO" property="userNo"/>
+ 		<result column="USER_ID" property="userId"/>
+ 		<result column="USER_PWD" property="userPwd"/>
+ 		<result column="USER_NAME" property="userName"/>
+ 		<result column="USER_ADDRESS" property="userAddress"/>
+ 		<result column="PROFILE_IMG" property="profileImg"/>
+ 		<result column="ENROLL_DATE" property="enrollDate"/>
+ 		<result column="DELETE_CHECK" property="deleteCheck"/>
+ 		<result column="STATUS_MSG" property="statusMsg"/>
+ 	 </resultMap>
+  	
+  	<select id="loginMember" parameterType="Member" resultMap="memberResultSet">
+ 		SELECT USER_NO,
+				USER_ID,
+				USER_PWD,
+				USER_NAME,
+				USER_ADDRESS,
+				PROFILE_IMG,
+				ENROLL_DATE,
+				DELETE_CHECK,
+				STATUS_MSG
+			FROM MEMBER
+			WHERE USER_ID = #{userId}
+			 AND USER_PWD = #{userPwd}
+			 AND DELETE_CHECK = 'N'
+ 	</select>
+ 	
+</mapper>
