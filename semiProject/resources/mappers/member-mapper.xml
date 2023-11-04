@@ -33,4 +33,4 @@
 			 AND DELETE_CHECK = 'N'
  	</select>
  	
- </mapper>
+</mapper>
