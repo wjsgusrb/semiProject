@@ -1,5 +1,41 @@
 package com.kh.mybatis.member.model.service;
 
-public class MemberServiceImpl implements MemberService{
+import org.apache.ibatis.session.SqlSession;
 
+import com.kh.mybatis.common.template.Template;
+import com.kh.mybatis.member.model.dao.MemberDao;
+import com.kh.mybatis.member.model.vo.Member;
+
+public class MemberServiceImpl implements MemberService{
+	
+	private MemberDao mDao = new MemberDao();
+
+	@Override
+	public int insertMember(Member m) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int updateMember(Member m) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteMember(Member m) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Member loginMember(Member m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		Member loginUser = mDao.loginMember(sqlSession, m);
+		
+		sqlSession.close();
+		return loginUser;
+	}
+	
+	
 }
