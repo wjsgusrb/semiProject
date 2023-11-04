@@ -9,7 +9,6 @@
 <style>
     .outer{
         background: rgb(190, 190, 190);
-      
         height: 100%;
         width: 80%;
         margin: auto;

@@ -9,6 +9,7 @@
  	</settings>
  	<typeAliases>
  		<typeAlias type="com.kh.mybatis.member.model.vo.Member" alias="Member" />
+ 		<typeAlias type="com.kh.mybatis.chart.model.vo.Chart" alias="Chart"/>
  	</typeAliases>
  	
  	<environments default="development">
@@ -27,6 +28,7 @@
  	
  	<mappers>
  		<mapper resource="/mappers/member-mapper.xml" />
+ 		<mapper resource="/mappers/Chart-mapper.xml" />	
  	</mappers>
  	
  </configuration>
