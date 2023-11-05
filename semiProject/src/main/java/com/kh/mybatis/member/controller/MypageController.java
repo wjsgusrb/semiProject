@@ -34,7 +34,7 @@ public class MypageController extends HttpServlet {
 		
 		if (session.getAttribute("loginUser") == null) { // 로그인이 안되어있는 상태
 			
-			session.setAttribute("alertMsg", "로그인 후 이용 가능한 서비스입니다");
+			session.setAttribute("alertMsg", "로그인 먼저 해주세요");
 			response.sendRedirect(request.getContextPath());
 			
 		} else { // 로그인이 되어있는 상태

@@ -71,7 +71,7 @@
 
 	<body>
 		 <!--상단바를 보여주는 부분-->
-		<%@ include file="../common/menubar.jsp" %>
+		 <jsp:include page="/views/common/menubar.jsp" />
 		
 	 <div class="board-Detail">
         <br><br>
