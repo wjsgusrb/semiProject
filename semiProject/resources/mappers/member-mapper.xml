@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- namespace: 해당 mapper파일의 고유한 별칭 -->
+<mapper namespace="memberMapper">
+	<resultMap id="memberResultSet" type="Member">
+		<result column="USER_NO" property="userNo"/>
+		<result column="USER_ID" property="userId"/>
+		<result column="USER_PWD" property="userPwd"/>
+		<result column="user_name" property="userName"/>
+		<result column="user_address" property="userAddress"/>
+		<result column="profileimg" property="profileImg"/>
+		<result column="enrolldate" property="enrollDate"/>
+		<result column="deletecheck" property="deleteCheck"/>
+		<result column="statusmsg" property="statusMsg"/>
+	</resultMap>
+
+	
+	<insert id="insertMember" parameterType="Member">
+		INSERT
+		  INTO MEMBER
+		  (
+		  	USER_NO,
+		  	USER_ID,
+		  	USER_PWD,
+		  	USER_NAME,
+		  	USER_ADDRESS,
+		  	PROFILE_IMG,
+		  	ENROLL_DATE,
+		  	DELETE_CHECK,
+		  	STATUS_MSG
+		  	
+		  )
+		VALUES
+		 (
+		 	SEQ_UNO.NEXTVAL,
+		 	#{userId},
+		 	#{userPwd},
+		 	#{userName},
+		 	#{userAddress},
+		 	#{profileImg},
+		 	#{enrollDate},
+		 	#{deleteCheck},
+		 	#{statusMsg}
+		 )
+	</insert>
+	
+</mapper>
