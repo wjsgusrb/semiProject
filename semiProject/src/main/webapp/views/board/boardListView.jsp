@@ -109,36 +109,17 @@
 </head>
 <body>
     <div class="outer">
-        <!-- 상단바 include 해야함-->
+    <br>
+    
         <jsp:include page="/views/common/menubar.jsp" />
         <!-- 자유게시판으로 들어가면 메뉴바 자유게시판 버튼 계속 눌리게 유지해야함-->
-        <form action="">
-            <div style="text-align: left;">
-                <select name="" id="">
-                    <option value="">전체기간</option>
-                    <option value="">최근 1주</option>
-                    <option value="">최근 1달</option>
-                </select>
-                <select name="" id="">
-                    <option value="">운동정보</option>
-                    <option value="">운동피드백</option>
-                    <option value="">식단정보</option>
-                </select>
-                <select name="" id="">
-                    <option value="">제목 + 내용</option>
-                    <option value="">글제목</option>
-                    <option value="">작성자</option>
-                </select>
-                <button type="submit" id="select-btn" class="btn btn-light">조회</button>
-            </div>
-            <div class="slect-view">
-                <select name="" id="">
+       
+    	<div class="select-view" style= "float: right;">
+                <select name=" " id="">
                     <option value="">최신순</option>
                     <option value="">조회순</option>
                 </select>
-            </div>   
-        </form>
-            
+            </div>         
     
             <table align="center" class="list-area">
                 
@@ -211,21 +192,13 @@
                 </tbody>
             </table>
     
-            <br><br>
-
-            <div class="search">
-                <input type="text" placeholder="검색어 입력">
-                <a href=""><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"></a>
-            </div>
-    
+            
             <div class="bottom-btn">
                 <a href="../board/boardEnrollForm.jsp" class="btn btn-primary">게시글 등록</a>
                 <a href="../board/myArticleView.jsp" class="btn btn-primary">나의게시판</a>
             </div>
-    
-            <br>
-    
-            <div class="paging-area" align="center">
+	        
+	        <div class="paging-area" align="center">
                 
                     <button class="btn btn-light" onclick="location.href=''">&lt;</button>
                     <button class="btn btn-light" onclick="location.href=''">1</button>
@@ -235,6 +208,58 @@
                     <button class="btn btn-light" onclick="location.href=''">5</button>
                     <button class="btn btn-light" onclick="location.href=''">&gt;</button>
             </div>
+	        
+	            
+            <div id="search-area" style="text-align: left;">
+			 <form action="search.bo" method="post">
+           
+           
+                
+            <br>    
+	            
+	            <select name="period" >
+                    <option value="wholePeriod">전체기간</option>
+                    <option value="oneWeek">최근 1주</option>
+                    <option value="oneMonth">최근 1달</option>
+                </select>
+                
+                <select name="category">
+                    <option value="information">운동정보</option>
+                    <option value="feedback">운동피드백</option>
+                    <option value="menu">식단정보</option>
+                </select>
+                
+                <input type="hidden" name="cpage" value="1">
+                <select name="condition" >
+                    <option value="writer">작성자</option>
+                    <option value="title">글제목</option>
+                    <option value="content">내용</option>
+                </select>
+                </input type="text" name="keyword" value="${keyword}">
+                
+                <button type="submit" id="select-btn" class="btn btn-light">조회</button>
+                
+                
+                <div class="search">
+	                <input type="text" placeholder="검색어 입력">
+	                <a href=""><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"></a>
+	            </div>
+	            
+	             <c:if test="${not empty condition }">
+					<script>
+						window.onload = function(){
+						 	const opt = document.querySelector("#search-area option[value=${condition}]");
+						 	opt.setAttribute("selected", true);
+						}
+					</script>
+				</c:if>
+	            
+            </div>
+              
+        </form>
+    
+            <br>
+            
         </div>
     </div>
 </body>

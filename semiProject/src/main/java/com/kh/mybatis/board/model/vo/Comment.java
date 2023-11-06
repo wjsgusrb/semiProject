@@ -2,43 +2,43 @@ package com.kh.mybatis.board.model.vo;
 
 public class Comment {
 
-	 private int exboardCommentNo;
-	 private String exboardCommentText;
-	 private int exboardNo;
+	 private int boardCommentNo;
+	 private String boardCommentContent;
+	 private int boardNo;
 	 private int userNo;
 	
 	 public Comment() {}
 
-	public Comment(int exboardCommentNo, String exboardCommentText, int exboardNo, int userNo) {
+	public Comment(int boardCommentNo, String boardCommentContent, int boardNo, int userNo) {
 		super();
-		this.exboardCommentNo = exboardCommentNo;
-		this.exboardCommentText = exboardCommentText;
-		this.exboardNo = exboardNo;
+		this.boardCommentNo = boardCommentNo;
+		this.boardCommentContent = boardCommentContent;
+		this.boardNo = boardNo;
 		this.userNo = userNo;
 	}
 
-	public int getExboardCommentNo() {
-		return exboardCommentNo;
+	public int getBoardCommentNo() {
+		return boardCommentNo;
 	}
 
-	public void setExboardCommentNo(int exboardCommentNo) {
-		this.exboardCommentNo = exboardCommentNo;
+	public void setBoardCommentNo(int boardCommentNo) {
+		this.boardCommentNo = boardCommentNo;
 	}
 
-	public String getExboardCommentText() {
-		return exboardCommentText;
+	public String getBoardCommentContent() {
+		return boardCommentContent;
 	}
 
-	public void setExboardCommentText(String exboardCommentText) {
-		this.exboardCommentText = exboardCommentText;
+	public void setBoardCommentContent(String boardCommentContent) {
+		this.boardCommentContent = boardCommentContent;
 	}
 
-	public int getExboardNo() {
-		return exboardNo;
+	public int getBoardNo() {
+		return boardNo;
 	}
 
-	public void setExboardNo(int exboardNo) {
-		this.exboardNo = exboardNo;
+	public void setBoardNo(int boardNo) {
+		this.boardNo = boardNo;
 	}
 
 	public int getUserNo() {
@@ -51,9 +51,11 @@ public class Comment {
 
 	@Override
 	public String toString() {
-		return "Comment [exboardCommentNo=" + exboardCommentNo + ", exboardCommentText=" + exboardCommentText
-				+ ", exboardNo=" + exboardNo + ", userNo=" + userNo + "]";
+		return "Comment [boardCommentNo=" + boardCommentNo + ", boardCommentContent=" + boardCommentContent
+				+ ", boardNo=" + boardNo + ", userNo=" + userNo + "]";
 	}
+
+	
 	 
 	 
 }
