@@ -159,15 +159,17 @@
                                 <!--로그인 하기 전 화면-->
                                 <form action="login.me" method="post">
                                     <div class="ex-login"  align="center">
-                                        <div class="form-floating mb-3" style="width: 70%;">
-                                            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                            <label for="floatingInput">Id</label>
-                                        </div>
-                                        <div class="form-floating" style="width: 70%";>
-                                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                            <label for="floatingPassword">Password</label>
-                                        </div>
-                                        <button class="btn btn-primary" style="width: 70%; margin-top: 5%;" type="submit">loign~</button>
+                                 		<!-- form태그에서 키값은 name으로 설정한다! 해당 input에 name태그가 없어서 값을 못찾아온듯 -->
+                                            <div class="form-floating mb-3" style="width: 70%;">
+                                                <input type="text" class="form-control" name="userId" id="floatingInput" placeholder="name@example.com">
+                                                <label for="floatingInput">Id</label>
+                                            </div>
+                                            <div class="form-floating" style="width: 70%";>
+                                                <input type="password" name="userPwd" class="form-control" id="floatingPassword" placeholder="Password">
+                                                <label for="floatingPassword">Password</label>
+                                            </div>
+                                            <button class="btn btn-primary" style="width: 70%; margin-top: 5%;" type="submit">loign~</button>
+                                     
                                         <div style="margin-top: 2%;">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                                                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
@@ -192,8 +194,8 @@
                                     <div>${ loginUser.userName }</div>
                                     <br>
                                     <div class="login-user-button-area">
-                                        <div><button type="button" class="btn btn-outline-primary"  style="margin-right: 20px;">myPage</button></div>
-                                        <div><button type="button" class="btn btn-outline-primary">logout</button></div>
+                                        <div><a href="myPage.me" type="button" class="btn btn-outline-primary" style="margin-right: 20px;">myPage</a></div>
+                                        <div><a href="logout.me" type="button" class="btn btn-outline-primary" style="margin-right: 20px;">logout</a></div>
                                     </div>                  
                                 </div>
                             </c:otherwise>
