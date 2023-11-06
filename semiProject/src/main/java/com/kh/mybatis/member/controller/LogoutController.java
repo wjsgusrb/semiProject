@@ -1,4 +1,4 @@
-package com.kh.mybatis.chart.controller;
+package com.kh.mybatis.member.controller;
 
 import java.io.IOException;
 
@@ -7,21 +7,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.kh.mybatis.chart.model.service.ChartServiceImpl;
-import com.kh.mybatis.chart.model.vo.Chart;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ChartInfoInsertController
+ * Servlet implementation class LogoutController
  */
-@WebServlet("/chartInfo.ct")
-public class ChartInfoInsertController extends HttpServlet {
+@WebServlet("/logout.me")
+public class LogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ChartInfoInsertController() {
+    public LogoutController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,17 +27,12 @@ public class ChartInfoInsertController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		session.invalidate();
 		
-		Chart ex = new Chart();
-		ex.setExChartTarget(String.join(",",req.getParameterValues("exTarget"))); 
-		ex.setExChartTime(Integer.parseInt(req.getParameter("exTime")));
-		ex.setUserId(req.getParameter("userId"));
-		new ChartServiceImpl().insertExInfo(ex);
-		
-		
-		
+		// url재요청방식으로 응답페이지와 응답페이지의 url을 일치시켜준다.
+		response.sendRedirect(request.getContextPath());
 	}
 
 	/**

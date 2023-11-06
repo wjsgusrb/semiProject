@@ -1,27 +1,26 @@
-package com.kh.mybatis.chart.controller;
+package com.kh.mybatis.member.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.kh.mybatis.chart.model.service.ChartServiceImpl;
-import com.kh.mybatis.chart.model.vo.Chart;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ChartInfoInsertController
+ * Servlet implementation class MypageController
  */
-@WebServlet("/chartInfo.ct")
-public class ChartInfoInsertController extends HttpServlet {
+@WebServlet("/myPage.me")
+public class MypageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ChartInfoInsertController() {
+    public MypageController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,17 +28,19 @@ public class ChartInfoInsertController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Chart ex = new Chart();
-		ex.setExChartTarget(String.join(",",req.getParameterValues("exTarget"))); 
-		ex.setExChartTime(Integer.parseInt(req.getParameter("exTime")));
-		ex.setUserId(req.getParameter("userId"));
-		new ChartServiceImpl().insertExInfo(ex);
+		HttpSession session = request.getSession();
 		
-		
-		
+		if (session.getAttribute("loginUser") == null) { // 로그인이 안되어있는 상태
+			
+			session.setAttribute("alertMsg", "로그인 후 이용 가능한 서비스입니다");
+			response.sendRedirect(request.getContextPath());
+			
+		} else { // 로그인이 되어있는 상태
+			
+			request.getRequestDispatcher("views/member/myPage.jsp").forward(request, response);
+		}
 	}
 
 	/**

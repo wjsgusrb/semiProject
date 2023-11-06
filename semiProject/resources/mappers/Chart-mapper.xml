@@ -17,4 +17,26 @@
 		select * from
 		chart where user_no = 1
 	</select>
+	
+	<insert id="insertExInfo">
+			insert 
+  			into chart(
+  				chart_no,
+  				chart_time,
+  				chart_target,
+  				
+  			)
+  			values
+  			(
+  				seq_uno.nextval,
+  				#{userId},
+  				#{userPwd},
+  				#{userName},
+  				#{email},
+  				#{birthday},
+  				#{gender},
+  				#{phone},
+  				#{address}
+  			)
+	</insert>
 </mapper>

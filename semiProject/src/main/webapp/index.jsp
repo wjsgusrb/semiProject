@@ -194,8 +194,8 @@
                                     <div>${ loginUser.userName }</div>
                                     <br>
                                     <div class="login-user-button-area">
-                                        <div><button type="button" class="btn btn-outline-primary"  style="margin-right: 20px;">myPage</button></div>
-                                        <div><button type="button" class="btn btn-outline-primary">logout</button></div>
+                                        <div><a href="myPage.me" type="button" class="btn btn-outline-primary" style="margin-right: 20px;">myPage</a></div>
+                                        <div><a href="logout.me" type="button" class="btn btn-outline-primary" style="margin-right: 20px;">logout</a></div>
                                     </div>                  
                                 </div>
                             </c:otherwise>

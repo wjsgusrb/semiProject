@@ -20,8 +20,9 @@ public class ChartServiceImpl implements ChartService {
 	}
 
 	@Override
-	public int insertExInfo() {
-		// TODO Auto-generated method stub
+	public int insertExInfo(Chart ex) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = new ChartDao().insertExInfo(sqlSession,ex);
 		return 0;
 	}
 

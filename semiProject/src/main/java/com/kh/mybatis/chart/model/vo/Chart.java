@@ -8,7 +8,7 @@ public class Chart {
 	private int exChartTime;
 	private String exChartTarget;
 	private Date exCharDay;
-	private int userNo;
+	private String userId;
 	
 	
 	
@@ -16,13 +16,13 @@ public class Chart {
 		super();
 	}
 
-	public Chart(int exChartNo, int exChartTime, String exChartTarget, Date exCharDay, int userNo) {
+	public Chart(int exChartNo, int exChartTime, String exChartTarget, Date exCharDay, int userId) {
 		super();
 		this.exChartNo = exChartNo;
 		this.exChartTime = exChartTime;
 		this.exChartTarget = exChartTarget;
 		this.exCharDay = exCharDay;
-		this.userNo = userNo;
+		this.userId = userId;
 	}
 
 	public int getExChartNo() {
@@ -57,18 +57,18 @@ public class Chart {
 		this.exCharDay = exCharDay;
 	}
 
-	public int getUserNo() {
-		return userNo;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setUserNo(int userNo) {
-		this.userNo = userNo;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	@Override
 	public String toString() {
 		return "Chart [exChartNo=" + exChartNo + ", exChartTime=" + exChartTime + ", exChartTarget="
-				+exChartTarget+ ", exCharDay=" + exCharDay + ", userNo=" + userNo + "]";
+				+exChartTarget+ ", exCharDay=" + exCharDay + ", userNo=" + userId + "]";
 	}
 	
 }
