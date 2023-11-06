@@ -85,9 +85,10 @@
                         <!--상단바를 보여주는 부분-->
 
                         <!-- 마이페이지에 로그인한 유저만 들어갈 수 있음-->
-                        <c:if test="alertMsg != null" >
+                        <c:if test="${not empty alertMsg}">
                             <script>
                                 alert("${alertMsg}");
+                                localStorage.setItem("originalPage", window.location.href);
                             </script>
                             <c:remove var="alertMsg" scope="session" />
                         </c:if>
@@ -96,10 +97,10 @@
                             <div class="mainTitle"><a href="index.jsp" style="color: black;">health community</a></div>
                             <div class="aaaaa" style="display: flex;">
                                 <div>
-                                    <a href="index.jsp"><i class="fa-solid fa-house fa-l" style="opacity: 0.7; color: black; "></i></a>
+                                    <a href="${pageContext.request.contextPath}/index.jsp"><i class="fa-solid fa-house fa-l" style="opacity: 0.7; color: black; "></i></a>
                                 </div>
                                 <div >
-                                    <a href="myPage.me" style="margin-left: 30px; margin-right: 30px; color: black;">마이페이지</a>
+                                    <a href="${pageContext.request.contextPath}/myPage.me" style="margin-left: 30px; margin-right: 30px; color: black;">마이페이지</a>
                                 </div>
                                 <div><i class="fa-solid fa-magnifying-glass fa-l "style="opacity: 0.7;"></i></div>
                             </div>
@@ -138,10 +139,6 @@
                                             .classList
                                             .add("active");
                                     }
-                                }
-
-                                moveMainPage(){
-                                    
                                 }
 
                             </script>

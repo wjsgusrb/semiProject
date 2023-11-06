@@ -110,7 +110,7 @@
 <body>
     <div class="outer">
         <!-- 상단바 include 해야함-->
-        <%@ include file="../common/menubar.jsp" %>
+        <jsp:include page="/views/common/menubar.jsp" />
         <!-- 자유게시판으로 들어가면 메뉴바 자유게시판 버튼 계속 눌리게 유지해야함-->
         <form action="">
             <div style="text-align: left;">

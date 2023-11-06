@@ -86,7 +86,7 @@ li {
 <script src="https://kit.fontawesome.com/fd91061247.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <%@ include file="../common/menubar.jsp" %>
+    <jsp:include page="/views/common/menubar.jsp" />
 
     <div class="outer">
        
