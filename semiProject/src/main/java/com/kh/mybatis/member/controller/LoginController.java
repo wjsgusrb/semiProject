@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.kh.mybatis.member.model.service.MemberServiceImpl;
 import com.kh.mybatis.member.model.vo.Member;
@@ -32,6 +33,8 @@ public class LoginController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
+		HttpSession session = request.getSession();
+		
 		Member m = new Member();
 		m.setUserId(request.getParameter("userId"));
 		m.setUserPwd(request.getParameter("userPwd"));
@@ -39,7 +42,8 @@ public class LoginController extends HttpServlet {
 		Member loginUser = new MemberServiceImpl().loginMember(m);
 		
 		if(loginUser == null) {
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			session.setAttribute("alertMsg", "로그인 실패. 다시 시도해주세요");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 		} else {
 			request.getSession().setAttribute("loginUser", loginUser);
 			response.sendRedirect(request.getContextPath());
