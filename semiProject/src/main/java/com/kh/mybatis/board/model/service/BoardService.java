@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.kh.mybatis.board.model.vo.Board;
+import com.kh.mybatis.board.model.vo.BoardImg;
 import com.kh.mybatis.board.model.vo.Comment;
 import com.kh.mybatis.common.model.vo.PageInfo;
-import com.kh.mybatis.member.model.vo.Member;
 
 public interface BoardService {
 	
@@ -28,10 +28,9 @@ public interface BoardService {
 	int insertBoard(Board b);
 	
 	//게시글 수정
-	int updateBoard(Board b);
+	int updateBoard(Board b, BoardImg bImg);
 	
 	//게시글 삭제
-	int deleteBoard(Board b);
+	int deleteBoard(int boardNo);
 
-	
 }
