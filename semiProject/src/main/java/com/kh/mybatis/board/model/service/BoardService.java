@@ -33,5 +33,4 @@ public interface BoardService {
 	//게시글 삭제
 	int deleteBoard(Board b);
 
-	
 }
