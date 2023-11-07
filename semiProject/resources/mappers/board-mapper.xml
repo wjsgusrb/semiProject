@@ -5,22 +5,69 @@
   
   <mapper namespace="boardMapper">
   	<resultMap id ="boardResultSet" type="Board">
-  		<result column="EXBOARD_NO" property="exboardNo"/>
+  		<result column="BOARD_NO" property="boardNo"/>
   		<result column="USER_NO" property="userNo"/>
-  		<result column="EXBOARD_TITLE" property="exboardTitle"/>
-  		<result column="EXBOARD_TEXT" property="exboardText"/>
-  		<result column="EXBOARD_CATEGORY" property="exboardCategory"/>
+  		<result column="BOARD_TITLE" property="boardTitle"/>
+  		<result column="BOARD_CONTENT" property="boardContent"/>
+  		<result column="CATEGORY" property="Category"/>
   		<result column="UPDATE_DATE" property="updateDate"/>
   		<result column="DELETE_DATE" property="deleteDate"/>
   		<result column="BOARD_COUNT" property="boardCount"/>
   	</resultMap>
   
-	  <resultMap id="CommentResultSet" type="Reply">
-	      <result column="EXBOARD_COMMENT_NO" property="exboardCommentNo" />
-	      <result column="EXBOARD_COMMENT_TEXT" property="exboardCommentText" />
-	      <result column="EXBOARD_NO" property="exboardNo" />
-	      <result column="USER_NO" property="userNo" />
-	   </resultMap>
+	<resultMap id="boardCommentResultSet" type="BoardContent">
+	    <result column="BOARD_COMMENT_NO" property="boardCommentNo" />
+	    <result column="BOARD_COMMENT_CONTENT" property="boardCommentContent" />
+	    <result column="BOARD_NO" property="boardNo" />
+	    <result column="USER_NO" property="userNo" />
+	</resultMap>
+	<resultMap id="boardImgResultSet" type="BoardImg">
+	    <result column="BOARD_IMG_NO" property="boardImgNo" />
+	    <result column="BOARD_NO" property="boardNo" />
+	    <result column="BOARD_IMG" property="boardImg" />
+	    <result column="ORIGINNAME" property="originName" />
+	    <result column="CHANGENAME" property="changeName" />
+	    <result column="DELETEDATE" property="deleteDate" />
+	</resultMap>
+	
+	<update id="deleteBoard">
+		UPDATE BOARD
+		   SET DELETE_DATE = SYSDATE
+		 WHERE DELETE_DATE = NULL
+		   AND BOARD_NO = #{boardNo}
+	</update>
+	<update id="updateBoard">
+		UPDATE BOARD
+		   SET BOARD_TITLE = #{boardTitle},
+		   	   BOARD_CONTENT = #{boardContent},
+		   	   CATEGORY = #{category}
+		 WHERE BOARD_NO = #{boardNo}
+		   AND DELETE_DATE = NULL;
+	</update>
+	<update id="updateBoardImg">
+		UPDATE BOARD_IMG
+		   SET ORIGIN_NAME = #{originName},
+		   	   CHANGE_NAME = #{changeName},
+		   	   BOARD_IMG = #{boardImg}
+		 WHERE BOARD_IMG_NO = #{boardImgNo}
+		   AND DELETE_IMG = NULL;
+	</update>
+	<insert id="insertBoardImg" parameterType="BoardImg">
+		INSERT
+		  INTO BOARD_IMG
+		  		(BOARD_IMG_NO,
+		  		 BOARD_NO,
+		  		 BOARD_IMG,
+		  		 ORIGIN_NAME,
+		  		 CHANGE_NAME
+		  		)
+		VALUES (SQL_BOARDIMGNO.NEXTVAL,
+				#{boardNo},
+				#{boardImg},
+				#{originName},
+				#{changeName}
+				)
+	</insert>
 	   
 	   
 	
