@@ -7,6 +7,7 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import com.kh.mybatis.board.model.vo.Board;
+import com.kh.mybatis.board.model.vo.BoardImg;
 import com.kh.mybatis.board.model.vo.Comment;
 import com.kh.mybatis.common.model.vo.PageInfo;
 
@@ -51,5 +52,16 @@ public class BoardDao {
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		return (ArrayList)sqlSession.selectList("boardMapper.selectSearchList", map, rowBounds);
 	}
-	
+	public int deleteBoard(SqlSession sqlSession, int boardNo) {
+		return sqlSession.delete("boardMapper.deleteBoard", boardNo);
+	}
+	public int updateBoard(SqlSession sqlSession, Board b) {
+		return sqlSession.update("boardMapper.updateBoard", b);
+	}
+	public int updateBoardImg(SqlSession sqlSession, BoardImg bImg) {
+		return sqlSession.update("boardMapper.updateBoardImg", bImg);
+	}
+	public int insertBoardImg(SqlSession sqlSession, BoardImg bImg) {
+		return sqlSession.insert("boardMapper.insertBoardImg", bImg);
+	}
 }
