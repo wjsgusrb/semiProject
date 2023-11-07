@@ -2,8 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<<<<<<< HEAD
- 
+
 <!-- namespace: 해당 mapper파일의 고유한 별칭 -->
 <mapper namespace="memberMapper">
 	<resultMap id="memberResultSet" type="Member">
@@ -48,23 +47,8 @@
 		 )
 	</insert>
 	
-=======
-  
-<mapper namespace="memberMapper">
- 
-	 <resultMap id="memberResultSet" type="Member">
- 		<result column="USER_NO" property="userNo"/>
- 		<result column="USER_ID" property="userId"/>
- 		<result column="USER_PWD" property="userPwd"/>
- 		<result column="USER_NAME" property="userName"/>
- 		<result column="USER_ADDRESS" property="userAddress"/>
- 		<result column="PROFILE_IMG" property="profileImg"/>
- 		<result column="ENROLL_DATE" property="enrollDate"/>
- 		<result column="DELETE_CHECK" property="deleteCheck"/>
- 		<result column="STATUS_MSG" property="statusMsg"/>
- 	 </resultMap>
-  	
-  	<select id="loginMember" parameterType="Member" resultMap="memberResultSet">
+	
+		<select id="loginMember" parameterType="Member" resultMap="memberResultSet">
  		SELECT USER_NO,
 				USER_ID,
 				USER_PWD,
@@ -79,6 +63,5 @@
 			 AND USER_PWD = #{userPwd}
 			 AND DELETE_CHECK = 'N'
  	</select>
- 	
->>>>>>> b98525e231be9b4be99fa3b10fa0e37a717f0785
+	
 </mapper>

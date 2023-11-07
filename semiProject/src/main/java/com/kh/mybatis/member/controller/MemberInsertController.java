@@ -44,8 +44,7 @@ public class MemberInsertController extends HttpServlet {
 								userId,
 								userPwd,
 								userName,
-								userAddress,
-								profileImg
+								userAddress
 							);
 		
 		

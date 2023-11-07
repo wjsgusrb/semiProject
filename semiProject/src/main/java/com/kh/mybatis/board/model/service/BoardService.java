@@ -1,5 +1,6 @@
 package com.kh.mybatis.board.model.service;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
