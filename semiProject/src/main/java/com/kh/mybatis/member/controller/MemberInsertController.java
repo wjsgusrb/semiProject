@@ -38,7 +38,7 @@ public class MemberInsertController extends HttpServlet {
 		 String userPwd= request.getParameter("userPwd");
 		 String userName= request.getParameter("userName");
 		 String userAddress= request.getParameter("userAddress");
-		 String profileImg= request.getParameter("profileImg");
+		 
 		
 		Member m = new Member(
 								userId,

@@ -18,7 +18,7 @@
 	</resultMap>
 
 	
-	<insert id="insertMember" parameterType="Member">
+	<insert id="insertMember" >
 		INSERT
 		  INTO MEMBER
 		  (
@@ -26,24 +26,18 @@
 		  	USER_ID,
 		  	USER_PWD,
 		  	USER_NAME,
-		  	USER_ADDRESS,
-		  	PROFILE_IMG,
-		  	ENROLL_DATE,
-		  	DELETE_CHECK,
-		  	STATUS_MSG
+		  	USER_ADDRESS
+
 		  	
 		  )
 		VALUES
 		 (
-		 	SEQ_UNO.NEXTVAL,
+		 	SEQ_USERNO.NEXTVAL,
 		 	#{userId},
 		 	#{userPwd},
 		 	#{userName},
-		 	#{userAddress},
-		 	#{profileImg},
-		 	#{enrollDate},
-		 	#{deleteCheck},
-		 	#{statusMsg}
+		 	#{userAddress}
+		 	
 		 )
 	</insert>
 	
