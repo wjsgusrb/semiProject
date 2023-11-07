@@ -424,14 +424,14 @@
                             <h3 >join</h3>
                         </div>
                         <div class="modal-body">
-                            <form action="" >
+                            <form action="insert.me" method="post">
                                 <div class="form-floating join"  ;>
-                                    <input type="text" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <input type="text" class="form-control" id="floatingPassword" placeholder="Password" name="userId">
                                     <label for="floatingPassword">id</label>
                                     <p style="font-size: 8pt;">사용가능한 아이디입니다.</p> <!--유효성 검사 후 사용가능인지 불가능인지 알려줌-->
                                 </div>
                                 <div class="form-floating join" ;>
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="userPwd">
                                     <label for="floatingPassword">Password</label>
                                 </div>
                                 <div class="form-floating join" ;>
@@ -440,23 +440,24 @@
                                     <p style="font-size: 8pt;">비밀번호가 다름니다.</p> 
                                 </div>
                                 <div class="form-floating join" ;>
-                                    <input type="text" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <input type="text" class="form-control" id="floatingPassword" placeholder="Password" name="userName">
                                     <label for="floatingPassword">name</label>
                                 </div>
                                 <div class="form-floating join" ;>
-                                    <input type="text" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <input type="text" class="form-control" id="floatingPassword" placeholder="Password" name="address">
                                     <label for="floatingPassword">address</label>
                                 </div>
+                                 <div class="modal-footer">
+		                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		                        <button type="submit" class="btn btn-primary">가입확인</button>
+                        </div>
                                
                                 
                             </form>
                                 
                                
                             </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">가입확인</button>
-                        </div>
+                       
                     </div>
                     </div>
                 </div>
