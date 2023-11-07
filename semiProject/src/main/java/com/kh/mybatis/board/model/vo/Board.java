@@ -5,38 +5,36 @@ import java.sql.Date;
 public class Board {
 	
 	
-	 private int exboardNo;
+	 private int boardNo;
 	 private int userNo;
-	 private String exboardTitle;
-	 private String exboardText;
-	 private String exboardCategory;
+	 private String boardTitle;
+	 private String boardText;
+	 private String boardCategory;
 	 private Date updateDate;
 	 private Date deleteDate;
 	 private int boardCount;
 	 
 	 public Board() {}
 
-	 
-	public Board(int exboardNo, int userNo, String exboardTitle, String exboardText, String exboardCategory,
-			Date updateDate, Date deleteDate, int boardCount) {
+	public Board(int boardNo, int userNo, String boardTitle, String boardText, String boardCategory, Date updateDate,
+			Date deleteDate, int boardCount) {
 		super();
-		this.exboardNo = exboardNo;
+		this.boardNo = boardNo;
 		this.userNo = userNo;
-		this.exboardTitle = exboardTitle;
-		this.exboardText = exboardText;
-		this.exboardCategory = exboardCategory;
+		this.boardTitle = boardTitle;
+		this.boardText = boardText;
+		this.boardCategory = boardCategory;
 		this.updateDate = updateDate;
 		this.deleteDate = deleteDate;
 		this.boardCount = boardCount;
 	}
 
-
-	public int getExboardNo() {
-		return exboardNo;
+	public int getBoardNo() {
+		return boardNo;
 	}
 
-	public void setExboardNo(int exboardNo) {
-		this.exboardNo = exboardNo;
+	public void setBoardNo(int boardNo) {
+		this.boardNo = boardNo;
 	}
 
 	public int getUserNo() {
@@ -47,28 +45,28 @@ public class Board {
 		this.userNo = userNo;
 	}
 
-	public String getExboardTitle() {
-		return exboardTitle;
+	public String getBoardTitle() {
+		return boardTitle;
 	}
 
-	public void setExboardTitle(String exboardTitle) {
-		this.exboardTitle = exboardTitle;
+	public void setBoardTitle(String boardTitle) {
+		this.boardTitle = boardTitle;
 	}
 
-	public String getExboardText() {
-		return exboardText;
+	public String getBoardText() {
+		return boardText;
 	}
 
-	public void setExboardText(String exboardText) {
-		this.exboardText = exboardText;
+	public void setBoardText(String boardText) {
+		this.boardText = boardText;
 	}
 
-	public String getExboardCategory() {
-		return exboardCategory;
+	public String getBoardCategory() {
+		return boardCategory;
 	}
 
-	public void setExboardCategory(String exboardCategory) {
-		this.exboardCategory = exboardCategory;
+	public void setBoardCategory(String boardCategory) {
+		this.boardCategory = boardCategory;
 	}
 
 	public Date getUpdateDate() {
@@ -95,19 +93,14 @@ public class Board {
 		this.boardCount = boardCount;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Board [exboardNo=" + exboardNo + ", userNo=" + userNo + ", exboardTitle=" + exboardTitle
-				+ ", exboardText=" + exboardText + ", exboardCategory=" + exboardCategory + ", updateDate=" + updateDate
-				+ ", deleteDate=" + deleteDate + ", boardCount=" + boardCount + "]";
+		return "Board [boardNo=" + boardNo + ", userNo=" + userNo + ", boardTitle=" + boardTitle + ", boardText="
+				+ boardText + ", boardCategory=" + boardCategory + ", updateDate=" + updateDate + ", deleteDate="
+				+ deleteDate + ", boardCount=" + boardCount + "]";
 	}
-	 
-	 
-	 
-	 
-	 
-	 
+
+
 	 
 	 
 }
