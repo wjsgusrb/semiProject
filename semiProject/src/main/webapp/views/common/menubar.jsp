@@ -88,7 +88,6 @@
                         <c:if test="${!empty alertMsg}">
                             <script>
                                 alert("${alertMsg}");
-                                localStorage.setItem("originalPage", window.location.href);
                             </script>
                             <c:remove var="alertMsg" scope="session" />
                         </c:if>
