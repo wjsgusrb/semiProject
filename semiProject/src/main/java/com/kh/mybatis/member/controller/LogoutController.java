@@ -1,28 +1,25 @@
-package com.kh.mybatis.chart.controller;
+package com.kh.mybatis.member.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.kh.mybatis.chart.model.service.ChartServiceImpl;
-import com.kh.mybatis.chart.model.vo.Chart;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ChartController
+ * Servlet implementation class LogoutController
  */
-@WebServlet("/exChart.ch")
-public class ChartController extends HttpServlet {
+@WebServlet("/logout.me")
+public class LogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ChartController() {
+    public LogoutController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,14 +27,12 @@ public class ChartController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		String userId = req.getParameter("userId");
-		ArrayList<Chart> exList = new ChartServiceImpl().selectTodayExList(userId);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		session.invalidate();
 		
-		System.out.print(exList);
-		req.getRequestDispatcher("views/countChart/exChart.jsp").forward(req, res);
-		
-		
+		// url재요청방식으로 응답페이지와 응답페이지의 url을 일치시켜준다.
+		response.sendRedirect(request.getContextPath());
 	}
 
 	/**

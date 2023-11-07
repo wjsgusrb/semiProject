@@ -95,7 +95,7 @@
 </head>
 <body>
      <!-- 상단바 include 해야함-->
-     <%@ include file="../common/menubar.jsp" %>
+     <jsp:include page="/views/common/menubar.jsp" />
 
      <div class="outer">
         

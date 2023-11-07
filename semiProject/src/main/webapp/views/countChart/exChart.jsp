@@ -135,7 +135,7 @@
 </style>
 </head>
 <body>
-    <%@ include file="/views/common/menubar.jsp" %>
+    <jsp:include page="/views/common/menubar.jsp" />
     <script>
         window.onload = function(){
             console.log(noticeNo)

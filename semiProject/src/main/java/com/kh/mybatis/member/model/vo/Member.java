@@ -2,8 +2,11 @@ package com.kh.mybatis.member.model.vo;
 
 import java.sql.Date;
 
-public class Member {
 
+
+import oracle.sql.NUMBER;
+
+public class Member {
 	private int userNo;
 	private String userId;
 	private String userPwd;
@@ -14,6 +17,7 @@ public class Member {
 	private String deleteCheck;
 	private String statusMsg;
 	
+
 	public Member() {}
 
 	public Member(int userNo, String userId, String userPwd, String userName, String userAddress, String profileImg,
@@ -29,9 +33,8 @@ public class Member {
 		this.deleteCheck = deleteCheck;
 		this.statusMsg = statusMsg;
 	}
-	
-	
 
+	
 	public Member(String userId, String userPwd, String userName, String userAddress, String profileImg) {
 		super();
 		this.userId = userId;
@@ -127,7 +130,6 @@ public class Member {
 				+ ", userAddress=" + userAddress + ", profileImg=" + profileImg + ", enrollDate=" + enrollDate
 				+ ", deleteCheck=" + deleteCheck + ", statusMsg=" + statusMsg + "]";
 	}
-	
 	
 
 }

@@ -9,7 +9,6 @@
 <style>
     .outer{
         background: rgb(190, 190, 190);
-      
         height: 100%;
         width: 80%;
         margin: auto;
@@ -87,7 +86,7 @@ li {
 <script src="https://kit.fontawesome.com/fd91061247.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <%@ include file="../common/menubar.jsp" %>
+    <jsp:include page="/views/common/menubar.jsp" />
 
     <div class="outer">
        

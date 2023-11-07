@@ -89,7 +89,7 @@ li {
 
 </head>
 <body>
-    <%@ include file="../common/menubar.jsp" %>
+    <jsp:include page="/views/common/menubar.jsp" />
 
     <div class="outer">
        
