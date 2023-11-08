@@ -20,4 +20,10 @@ public class MemberDao {
 		System.out.println(m);
 		return sqlSession.selectOne("memberMapper.loginMember", m);
 	}
+	
+	public int deleteMember(SqlSession sqlSession, String userId, String userPwd) {
+		
+		int result = sqlSession.update("memberMapper.deleteMember");
+		return result;
+	}
 }
