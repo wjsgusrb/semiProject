@@ -18,13 +18,13 @@ import com.kh.mybatis.board.model.vo.Comment;
  * Servlet implementation class boardDetailController
  */
 @WebServlet("/detail.bo")
-public class boardDetailController extends HttpServlet {
+public class BoardDetailController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public boardDetailController() {
+    public BoardDetailController() {
         super();
         // TODO Auto-generated constructor stub
     }

@@ -20,13 +20,13 @@ import com.kh.mybatis.common.template.Pagenation;
  * Servlet implementation class boardSearchController
  */
 @WebServlet("/search.bo")
-public class boardSearchController extends HttpServlet {
+public class BoardSearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public boardSearchController() {
+    public BoardSearchController() {
         super();
         // TODO Auto-generated constructor stub
     }
