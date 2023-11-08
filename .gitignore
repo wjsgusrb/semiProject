@@ -19,7 +19,11 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+<<<<<<< HEAD
 Servers/
+=======
+servers/
+>>>>>>> 4d267294e3df11cfa3157522d820d0e48eddd5f5
 
 # External tool builders
 .externalToolBuilders/
