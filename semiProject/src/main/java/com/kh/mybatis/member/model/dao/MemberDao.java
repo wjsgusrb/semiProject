@@ -10,6 +10,7 @@ public class MemberDao {
 	public int insertmember(SqlSession sqlSession, Member m) {
 
 		int result = sqlSession.insert("memberMapper.insertMember", m);
+		System.out.println(m);
 		return result;
 	}
 	
@@ -18,5 +19,11 @@ public class MemberDao {
 	public Member loginMember(SqlSession sqlSession, Member m) {
 		System.out.println(m);
 		return sqlSession.selectOne("memberMapper.loginMember", m);
+	}
+	
+	public int deleteMember(SqlSession sqlSession, String userId, String userPwd) {
+		
+		int result = sqlSession.update("memberMapper.deleteMember");
+		return result;
 	}
 }
