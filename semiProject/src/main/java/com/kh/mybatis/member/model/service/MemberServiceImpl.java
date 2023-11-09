@@ -29,8 +29,18 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public int updateMember(Member m) {
-		// TODO Auto-generated method stub
-		return 0;
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = mDao.updateMember(sqlSession, m);
+		
+		if(result > 0) {
+			sqlSession.commit();
+			
+		}
+		
+		sqlSession.close();
+		
+		return result;
 	}
 
 	@Override

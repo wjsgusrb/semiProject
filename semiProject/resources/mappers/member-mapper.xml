@@ -57,5 +57,16 @@
 			 AND USER_PWD = #{userPwd}
 			 AND DELETE_CHECK = 'N'
  	</select>
+ 	
+ 	<update id="updateMember">
+  		UPDATE MEMBER
+		SET
+		  
+		  USER_NAME = #{userName},
+		  USER_ADDRESS = #{userAddress},
+		  STATUS_MSG = #{statusMsg}
+		WHERE
+		  USER_ID = #{userId}
+  	</update>
 	
 </mapper>
