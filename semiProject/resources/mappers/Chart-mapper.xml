@@ -19,24 +19,19 @@
 	</select>
 	
 	<insert id="insertExInfo">
-			insert 
-  			into chart(
-  				chart_no,
-  				chart_time,
-  				chart_target,
-  				
-  			)
-  			values
-  			(
-  				seq_uno.nextval,
-  				#{userId},
-  				#{userPwd},
-  				#{userName},
-  				#{email},
-  				#{birthday},
-  				#{gender},
-  				#{phone},
-  				#{address}
-  			)
+		insert 
+		    into chart(
+		        chart_no,
+		        chart_time,
+		        chart_target,
+		        user_No
+		        )
+		        values
+		        (
+		        SEQ_CHARTNO.nextval,
+		        150,
+		        '가슴',
+		        2
+		    )
 	</insert>
 </mapper>

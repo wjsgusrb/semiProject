@@ -31,10 +31,10 @@ public class ChartController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		String userId = req.getParameter("userId");
-		ArrayList<Chart> exList = new ChartServiceImpl().selectTodayExList(userId);
-		
-		System.out.print(exList);
+//		String userId = req.getParameter("userId");
+//		ArrayList<Chart> exList = new ChartServiceImpl().selectTodayExList(userId);
+//		
+//		System.out.print(exList);
 		req.getRequestDispatcher("views/countChart/exChart.jsp").forward(req, res);
 		
 		

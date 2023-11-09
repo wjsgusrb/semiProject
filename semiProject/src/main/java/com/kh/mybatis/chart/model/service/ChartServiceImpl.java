@@ -23,7 +23,12 @@ public class ChartServiceImpl implements ChartService {
 	public int insertExInfo(Chart ex) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = new ChartDao().insertExInfo(sqlSession,ex);
-		return 0;
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		
+		sqlSession.close();
+		return result;
 	}
 
 

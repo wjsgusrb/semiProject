@@ -8,7 +8,8 @@ public class Chart {
 	private int exChartTime;
 	private String exChartTarget;
 	private Date exCharDay;
-	private String userId;
+	private int userNo;
+	private String[] exChartTargetArr;
 	
 	
 	
@@ -16,13 +17,13 @@ public class Chart {
 		super();
 	}
 
-	public Chart(int exChartNo, int exChartTime, String exChartTarget, Date exCharDay, int userId) {
+	public Chart(int exChartNo, int exChartTime, String exChartTarget, Date exCharDay, int userNo) {
 		super();
 		this.exChartNo = exChartNo;
 		this.exChartTime = exChartTime;
 		this.exChartTarget = exChartTarget;
 		this.exCharDay = exCharDay;
-		this.userId = userId;
+		this.userNo = userNo;
 	}
 
 	public int getExChartNo() {
@@ -57,18 +58,28 @@ public class Chart {
 		this.exCharDay = exCharDay;
 	}
 
-	public int getUserId() {
-		return userId;
+	public int getUserNo() {
+		return userNo;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserNo(int userNo) {
+		this.userNo = userNo;
+	}
+	
+	
+
+	public String[] getExChartTargetArr() {
+		return exChartTargetArr;
+	}
+
+	public void setExChartTargetArr(String[] exChartTargetArr) {
+		this.exChartTargetArr = exChartTargetArr;
 	}
 
 	@Override
 	public String toString() {
 		return "Chart [exChartNo=" + exChartNo + ", exChartTime=" + exChartTime + ", exChartTarget="
-				+exChartTarget+ ", exCharDay=" + exCharDay + ", userNo=" + userId + "]";
+				+exChartTarget+ ", exCharDay=" + exCharDay + ", userNo=" + userNo + "]";
 	}
 	
 }

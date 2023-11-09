@@ -35,10 +35,22 @@ public class ChartInfoInsertController extends HttpServlet {
 		Chart ex = new Chart();
 		ex.setExChartTarget(String.join(",",req.getParameterValues("exTarget"))); 
 		ex.setExChartTime(Integer.parseInt(req.getParameter("exTime")));
-		ex.setUserId(req.getParameter("userId"));
-		new ChartServiceImpl().insertExInfo(ex);
+		ex.setUserNo(Integer.parseInt(req.getParameter("userNo")));
 		
+	
+		ex.setExChartTargetArr(req.getParameterValues("exTarget"));
+			
+		int result = new ChartServiceImpl().insertExInfo(ex);
 		
+		req.setAttribute("ex", ex);
+	
+		
+		if(result>0) {
+		
+			req.getRequestDispatcher("views/countChart/exChart.jsp").forward(req, res);
+		}else{
+			System.out.print("실패");
+		}
 		
 	}
 

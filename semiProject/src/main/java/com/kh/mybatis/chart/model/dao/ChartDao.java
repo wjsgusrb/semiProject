@@ -16,6 +16,7 @@ public class ChartDao {
 	}
 	
 	public int insertExInfo(SqlSession sqlSession,Chart ex) {
+		
 		return sqlSession.insert("chartMapper.insertExInfo", ex);
 	}
 	
