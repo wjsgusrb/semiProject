@@ -15,8 +15,10 @@ public class Board {
 	 
 	 public Board() {}
 
-	public Board(int boardNo, String userNo, String boardTitle, String boardText, String boardCategory, Date updateDate,
-			Date deleteDate, int boardCount) {
+
+
+
+	public Board(int boardNo, String userNo, String boardTitle, String boardContent, String category, Date updateDate,Date deleteDate, int boardCount) {
 		super();
 		this.boardNo = boardNo;
 		this.userNo = userNo;
@@ -56,7 +58,8 @@ public class Board {
 		return boardContent;
 	}
 
-	public void setBoardText(String boardContent) {
+
+	public void setBoardContent(String boardContent) {
 		this.boardContent = boardContent;
 	}
 
@@ -94,7 +97,8 @@ public class Board {
 
 	@Override
 	public String toString() {
-		return "Board [boardNo=" + boardNo + ", userNo=" + userNo + ", boardTitle=" + boardTitle + ", boardText="
+
+		return "Board [boardNo=" + boardNo + ", userNo=" + userNo + ", boardTitle=" + boardTitle + ", boardContent="
 				+ boardContent + ", category=" + category + ", updateDate=" + updateDate + ", deleteDate="
 				+ deleteDate + ", boardCount=" + boardCount + "]";
 	}

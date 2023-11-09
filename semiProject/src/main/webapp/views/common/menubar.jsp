@@ -89,10 +89,9 @@
                         <!--상단바를 보여주는 부분-->
 
                         <!-- 마이페이지에 로그인한 유저만 들어갈 수 있음-->
-                        <c:if test="${not empty alertMsg}">
+                        <c:if test="${!empty alertMsg}">
                             <script>
                                 alert("${alertMsg}");
-                                localStorage.setItem("originalPage", window.location.href);
                             </script>
                             <c:remove var="alertMsg" scope="session" />
                         </c:if>

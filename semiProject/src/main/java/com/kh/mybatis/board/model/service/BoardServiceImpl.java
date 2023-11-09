@@ -121,9 +121,15 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public int insertBoard(Board b) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int insertBoard(Board b, BoardImg bImg) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result1 = bDao.insertBoard(sqlSession, b);
+		int result2 = 1;
+		if(bImg != null) {
+			result2 = bDao.insertBoardImg(sqlSession, bImg);
+		}
+		sqlSession.close();
+		return (result1 * result2);
 	}
 	
 }

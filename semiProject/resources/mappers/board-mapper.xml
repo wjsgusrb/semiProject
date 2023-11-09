@@ -97,6 +97,24 @@
 		 WHERE BOARD_IMG_NO = #{boardImgNo}
 		   AND DELETE_IMG = NULL;
 	</update>
+	<insert id="insertBoard">
+		INSERT
+		  INTO BOARD
+		  		(BOARD_NO,
+					USER_NO,
+					BOARD_TITLE,
+					BOARD_CONTENT,
+					CATEGORY,
+					UPDATE_DATE
+		  		)
+		VALUES (SEQ_BOARDNO.NEXTVAL,
+				#{userNo},
+				#{boardTitle},
+				#{boardContent},
+				#{boardCategory},
+				SYSDATE
+				)
+	</insert>
 	<insert id="insertBoardImg" parameterType="BoardImg">
 		INSERT
 		  INTO BOARD_IMG

@@ -56,6 +56,13 @@ public class BoardDao {
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		return (ArrayList)sqlSession.selectList("boardMapper.selectSearchList", map, rowBounds);
 	}
+	public int insertBoard(SqlSession sqlSession, Board b) {
+		return sqlSession.insert("boardMapper.insertBoard", b);
+	}
+	public int insertBoardImg(SqlSession sqlSession, BoardImg bImg) {
+		return sqlSession.insert("boardMapper.insertBoardImg", bImg);
+	}
+	
 	public int deleteBoard(SqlSession sqlSession, int boardNo) {
 		return sqlSession.delete("boardMapper.deleteBoard", boardNo);
 	}
@@ -64,8 +71,5 @@ public class BoardDao {
 	}
 	public int updateBoardImg(SqlSession sqlSession, BoardImg bImg) {
 		return sqlSession.update("boardMapper.updateBoardImg", bImg);
-	}
-	public int insertBoardImg(SqlSession sqlSession, BoardImg bImg) {
-		return sqlSession.insert("boardMapper.insertBoardImg", bImg);
 	}
 }

@@ -3,6 +3,7 @@ package com.kh.mybatis.board.controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,12 +13,17 @@ import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import com.kh.mybatis.board.model.service.BoardServiceImpl;
 import com.kh.mybatis.board.model.vo.Board;
 import com.kh.mybatis.board.model.vo.BoardImg;
+import com.kh.mybatis.common.template.MyFileRenamePolicy;
 import com.oreilly.servlet.MultipartRequest;
 
 /**
  * Servlet implementation class BoardUpdateController
  */
+<<<<<<< HEAD
 
+=======
+@WebServlet("/update.bo")
+>>>>>>> 5aed445e293623f1b2d0eec8607a9f6e8311f2bd
 public class BoardUpdateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -55,7 +61,7 @@ public class BoardUpdateController extends HttpServlet {
 	        b.setBoardNo(boardNo);
 	        b.setBoardTitle(boardTitle);
 	        b.setBoardContent(boardContent);
-	        b.setCategory(category);
+	        b.setBoardCategory(category);
 
 	        BoardImg bImg = null;
 	        
@@ -76,22 +82,13 @@ public class BoardUpdateController extends HttpServlet {
 	         
 	         int result = new BoardServiceImpl().updateBoard(b, bImg);
 	         
-//	         if(result > 0) {
-//	            request.getSession().setAttribute("alertMsg", "성공적으로 게시물을 수정하였습니다.");
-//	            response.sendRedirect(request.getContextPath()+"/detail.bo?bno="+b.getBoardNo());
-//	         }else {            
-//	            request.setAttribute("errorPage", "게시물 수정에 실패하였습니다.");
-
-			
-			
-			
-			
-			
-			
-			
-			
-		}else{
-			
+	         if(result > 0) {
+	        	 request.getSession().setAttribute("alertMsg", "성공적으로 게시물을 수정하였습니다.");
+	        	 response.sendRedirect(request.getContextPath()+"/detail.bo?bno="+b.getBoardNo());
+			 }else {				
+				 request.setAttribute("errorPage", "게시물 수정에 실패하였습니다.");
+				 request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
+			 }
 		}
 	}
 

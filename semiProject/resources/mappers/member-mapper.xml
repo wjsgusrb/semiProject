@@ -18,7 +18,7 @@
 	</resultMap>
 
 	
-	<insert id="insertMember" parameterType="Member">
+	<insert id="insertMember" >
 		INSERT
 		  INTO MEMBER
 		  (
@@ -26,42 +26,43 @@
 		  	USER_ID,
 		  	USER_PWD,
 		  	USER_NAME,
-		  	USER_ADDRESS,
-		  	PROFILE_IMG,
-		  	ENROLL_DATE,
-		  	DELETE_CHECK,
-		  	STATUS_MSG
+		  	USER_ADDRESS
+
 		  	
 		  )
 		VALUES
 		 (
-		 	SEQ_UNO.NEXTVAL,
+		 	SEQ_USERNO.NEXTVAL,
 		 	#{userId},
 		 	#{userPwd},
 		 	#{userName},
-		 	#{userAddress},
-		 	#{profileImg},
-		 	#{enrollDate},
-		 	#{deleteCheck},
-		 	#{statusMsg}
+		 	#{userAddress}
+		 	
 		 )
 	</insert>
 	
+	<update id="deleteMember">
+		UPDATE MEMBER
+	    SET DELETE_CHECK = 'Y'
+	    WHERE USER_ID = #{userId}
+	    AND USER_PWD = #{userPwd}
+	</update>
 	
-		<select id="loginMember" parameterType="Member" resultMap="memberResultSet">
- 		SELECT USER_NO,
-				USER_ID,
-				USER_PWD,
-				USER_NAME,
-				USER_ADDRESS,
-				PROFILE_IMG,
-				ENROLL_DATE,
-				DELETE_CHECK,
-				STATUS_MSG
-			FROM MEMBER
-			WHERE USER_ID = #{userId}
-			 AND USER_PWD = #{userPwd}
-			 AND DELETE_CHECK = 'N'
+	
+	<select id="loginMember" parameterType="Member" resultMap="memberResultSet">
+		SELECT USER_NO,
+			USER_ID,
+			USER_PWD,
+			USER_NAME,
+			USER_ADDRESS,
+			PROFILE_IMG,
+			ENROLL_DATE,
+			DELETE_CHECK,
+			STATUS_MSG
+		FROM MEMBER
+		WHERE USER_ID = #{userId}
+		 AND USER_PWD = #{userPwd}
+		 AND DELETE_CHECK = 'N'
  	</select>
 	
 </mapper>
