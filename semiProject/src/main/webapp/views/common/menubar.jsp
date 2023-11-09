@@ -122,7 +122,7 @@
                                     <a class="nav-link " href="#">오운완</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " aria-disabled="true">근육지도</a>
+                                    <a class="nav-link " href="/views/muscleMap/muscleMap.jsp">근육지도</a>
                                 </li>
                             </ul>
 

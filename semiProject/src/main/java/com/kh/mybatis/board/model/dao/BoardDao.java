@@ -14,7 +14,7 @@ import com.kh.mybatis.common.model.vo.PageInfo;
 public class BoardDao {
 
 	public int selectListCount(SqlSession sqlSession) {
-		System.out.print("sdfashgaslkdf");
+		
 		return sqlSession.selectOne("boardMapper.selectListCount");
 	}
 

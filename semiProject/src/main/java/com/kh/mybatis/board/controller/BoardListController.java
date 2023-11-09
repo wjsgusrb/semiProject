@@ -34,8 +34,12 @@ public class BoardListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.println("컨트롤러999999999999999999999999999999999999999999999999999999999999999999");
+		
 		int listCount = new BoardServiceImpl().selectListCount(); //현재 총 게시글 수
+		System.out.println(listCount);
 		int currentPage = Integer.parseInt(request.getParameter("cpage")); //현재 페이지(즉, 사용자가 요청한 페이지)
+		System.out.println(currentPage);
 		
 		PageInfo pi = Pagenation.getPageInfo(listCount, currentPage, 10, 5);
 		

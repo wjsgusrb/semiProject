@@ -21,7 +21,9 @@ public class BoardServiceImpl implements BoardService{
 	public int selectListCount() {
 		
 		SqlSession sqlSession = Template.getSqlSession();
+		
 		int listCount = bDao.selectListCount(sqlSession);
+		System.out.println(listCount);  //여기서부터 출력 안됨. sql문 틀린것이 없음. boardDao에서 리턴을 안 하고 있음
 		
 		sqlSession.close();
 		return listCount;
