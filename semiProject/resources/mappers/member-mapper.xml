@@ -41,21 +41,28 @@
 		 )
 	</insert>
 	
+	<update id="deleteMember">
+		UPDATE MEMBER
+	    SET DELETE_CHECK = 'Y'
+	    WHERE USER_ID = #{userId}
+	    AND USER_PWD = #{userPwd}
+	</update>
 	
-		<select id="loginMember" parameterType="Member" resultMap="memberResultSet">
- 		SELECT USER_NO,
-				USER_ID,
-				USER_PWD,
-				USER_NAME,
-				USER_ADDRESS,
-				PROFILE_IMG,
-				ENROLL_DATE,
-				DELETE_CHECK,
-				STATUS_MSG
-			FROM MEMBER
-			WHERE USER_ID = #{userId}
-			 AND USER_PWD = #{userPwd}
-			 AND DELETE_CHECK = 'N'
+	
+	<select id="loginMember" parameterType="Member" resultMap="memberResultSet">
+		SELECT USER_NO,
+			USER_ID,
+			USER_PWD,
+			USER_NAME,
+			USER_ADDRESS,
+			PROFILE_IMG,
+			ENROLL_DATE,
+			DELETE_CHECK,
+			STATUS_MSG
+		FROM MEMBER
+		WHERE USER_ID = #{userId}
+		 AND USER_PWD = #{userPwd}
+		 AND DELETE_CHECK = 'N'
  	</select>
  	
  	<update id="updateMember">

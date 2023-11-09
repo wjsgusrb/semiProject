@@ -8,8 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.kh.mybatis.board.model.dao.BoardDao;
 import com.kh.mybatis.board.model.vo.Board;
+import com.kh.mybatis.board.model.vo.BoardComment;
 import com.kh.mybatis.board.model.vo.BoardImg;
-import com.kh.mybatis.board.model.vo.Comment;
 import com.kh.mybatis.common.model.vo.PageInfo;
 import com.kh.mybatis.common.template.Template;
 
@@ -62,10 +62,10 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public ArrayList<Comment> selectCommentList(int boardNo) {
+	public ArrayList<BoardComment> selectCommentList(int boardNo) {
 		
 		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<Comment> list = bDao.selectCommentList(sqlSession, boardNo);
+		ArrayList<BoardComment> list = bDao.selectCommentList(sqlSession, boardNo);
 		
 		sqlSession.close();
 		return list;
@@ -121,9 +121,15 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public int insertBoard(Board b) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int insertBoard(Board b, BoardImg bImg) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result1 = bDao.insertBoard(sqlSession, b);
+		int result2 = 1;
+		if(bImg != null) {
+			result2 = bDao.insertBoardImg(sqlSession, bImg);
+		}
+		sqlSession.close();
+		return (result1 * result2);
 	}
 	
 }

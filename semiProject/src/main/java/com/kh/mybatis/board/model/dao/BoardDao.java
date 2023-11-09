@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.kh.mybatis.board.model.vo.Board;
 import com.kh.mybatis.board.model.vo.BoardImg;
-import com.kh.mybatis.board.model.vo.Comment;
+import com.kh.mybatis.board.model.vo.BoardComment;
 import com.kh.mybatis.common.model.vo.PageInfo;
 
 public class BoardDao {
@@ -37,7 +37,7 @@ public class BoardDao {
 		return sqlSession.selectOne("boardMapper.selectBoard", boardNo);
 	}
 
-	public ArrayList<Comment> selectCommentList(SqlSession sqlSession, int boardNo) {
+	public ArrayList<BoardComment> selectCommentList(SqlSession sqlSession, int boardNo) {
 		return (ArrayList)sqlSession.selectList("boardMapper.selectCommentList", boardNo);
 	}
 
@@ -52,6 +52,13 @@ public class BoardDao {
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		return (ArrayList)sqlSession.selectList("boardMapper.selectSearchList", map, rowBounds);
 	}
+	public int insertBoard(SqlSession sqlSession, Board b) {
+		return sqlSession.insert("boardMapper.insertBoard", b);
+	}
+	public int insertBoardImg(SqlSession sqlSession, BoardImg bImg) {
+		return sqlSession.insert("boardMapper.insertBoardImg", bImg);
+	}
+	
 	public int deleteBoard(SqlSession sqlSession, int boardNo) {
 		return sqlSession.delete("boardMapper.deleteBoard", boardNo);
 	}
@@ -60,8 +67,5 @@ public class BoardDao {
 	}
 	public int updateBoardImg(SqlSession sqlSession, BoardImg bImg) {
 		return sqlSession.update("boardMapper.updateBoardImg", bImg);
-	}
-	public int insertBoardImg(SqlSession sqlSession, BoardImg bImg) {
-		return sqlSession.insert("boardMapper.insertBoardImg", bImg);
 	}
 }

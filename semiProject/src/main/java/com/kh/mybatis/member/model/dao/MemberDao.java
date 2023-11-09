@@ -23,14 +23,19 @@ public class MemberDao {
 		return sqlSession.selectOne("memberMapper.loginMember", m);
 	}
 	
+
 	public int updateMember(SqlSession sqlSession, Member m) {
-		
-		
-		
 		
 		int result = sqlSession.update("memberMapper.updateMember", m);
 		
+		return result;
+	}
 		
+
+	public int deleteMember(SqlSession sqlSession, String userId, String userPwd) {
+		
+		int result = sqlSession.update("memberMapper.deleteMember");
+
 		return result;
 	}
 }

@@ -44,9 +44,16 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public int deleteMember(Member m) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int deleteMember(String userId, String userPwd) {
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = mDao.deleteMember(sqlSession, userId, userPwd);
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		
+		return result;
 	}
 
 	@Override
@@ -57,6 +64,5 @@ public class MemberServiceImpl implements MemberService{
 		sqlSession.close();
 		return loginUser;
 	}
-	
 	
 }
