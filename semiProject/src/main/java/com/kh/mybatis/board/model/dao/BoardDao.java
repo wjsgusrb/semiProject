@@ -7,13 +7,14 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import com.kh.mybatis.board.model.vo.Board;
+import com.kh.mybatis.board.model.vo.BoardComment;
 import com.kh.mybatis.board.model.vo.BoardImg;
-import com.kh.mybatis.board.model.vo.Comment;
 import com.kh.mybatis.common.model.vo.PageInfo;
 
 public class BoardDao {
 
 	public int selectListCount(SqlSession sqlSession) {
+		System.out.print("sdfashgaslkdf");
 		return sqlSession.selectOne("boardMapper.selectListCount");
 	}
 
@@ -21,10 +22,13 @@ public class BoardDao {
 	public ArrayList<Board> selectList(SqlSession sqlSession, PageInfo pi) {
 		int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
 		int limit = pi.getBoardLimit();
-		
+		System.out.println("----------------------");
+		System.out.println(offset);
+		System.out.println(limit);
 		RowBounds rowBounds = new RowBounds(offset, limit);
-		ArrayList<Board> list =  (ArrayList)sqlSession.selectList("boardMapper.selectList", null , rowBounds);
-		
+		ArrayList<Board> list = (ArrayList)sqlSession.selectList("boardMapper.selectList", null , rowBounds);
+		System.out.println(list);
+		System.out.println("----------------------");
 		return list;
 		
 	}
@@ -37,7 +41,7 @@ public class BoardDao {
 		return sqlSession.selectOne("boardMapper.selectBoard", boardNo);
 	}
 
-	public ArrayList<Comment> selectCommentList(SqlSession sqlSession, int boardNo) {
+	public ArrayList<BoardComment> selectCommentList(SqlSession sqlSession, int boardNo) {
 		return (ArrayList)sqlSession.selectList("boardMapper.selectCommentList", boardNo);
 	}
 

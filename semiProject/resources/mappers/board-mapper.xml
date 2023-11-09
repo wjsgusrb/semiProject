@@ -30,6 +30,51 @@
 	    <result column="DELETEDATE" property="deleteDate" />
 	</resultMap>
 	
+	
+	<select id="selectListCount" resultType="_int">
+     SELECT COUNT(*)
+       FROM BOARD
+      WHERE DELETE_DATE IS NULL   
+  	</select>
+	
+	<select id="selectList" resultMap="boardResultSet">
+      SELECT BOARD_NO
+            , CATEGORY
+	        , BOARD_TITLE
+	        , USER_NO
+	        , BOARD_COUNT
+	        , UPDATE_DATE
+       FROM BOARD
+       JOIN MEMBER USING (USER_NO)
+       WHERE DELETE_DATE IS NULL
+       ORDER BY BOARD_NO DESC
+  	</select>
+	
+	<update id="increaseCount" parameterType="_int">
+  		UPDATE BOARD
+  		   SET BOARD_COUNT = BOARD_COUNT + 1
+  		 WHERE BOARD_NO = #{boardNo}
+  		   AND DELETE_DATE IS NULL
+  	</update>
+	
+	<select id="selectBoard" parameterType="_int" resultMap="boardResultSet">
+  		 SELECT BOARD_NO
+             , CATEGORY
+  			  ,BOARD_TITLE
+  			  ,USER_NO
+  			  ,BOARD_COUNT
+  			  ,UPDATE_DATE
+  			  ,BOARD_CONTENT
+            FROM BOARD
+  		 JOIN MEMBER USING (USER_NO)
+  	   WHERE BOARD_NO = #{boardNo}
+  	</select>
+	
+	
+	
+	
+	
+	
 	<update id="deleteBoard">
 		UPDATE BOARD
 		   SET DELETE_DATE = SYSDATE
