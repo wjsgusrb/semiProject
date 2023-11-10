@@ -41,6 +41,7 @@ public class LoginController extends HttpServlet {
 		
 		Member loginUser = new MemberServiceImpl().loginMember(m);
 		
+		
 		if(loginUser == null) {
 			session.setAttribute("alertMsg", "로그인 실패. 다시 시도해주세요");
 			request.getRequestDispatcher("index.jsp").forward(request, response);

@@ -20,6 +20,7 @@ public class MemberDao {
 		
 		
 		
+		
 		return sqlSession.selectOne("memberMapper.loginMember", m);
 	}
 	

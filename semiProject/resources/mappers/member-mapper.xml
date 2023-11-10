@@ -14,7 +14,7 @@
 		<result column="profileimg" property="profileImg"/>
 		<result column="enrolldate" property="enrollDate"/>
 		<result column="deletecheck" property="deleteCheck"/>
-		<result column="statusmsg" property="statusMsg"/>
+		<result column="status_msg" property="statusMsg"/>
 	</resultMap>
 
 	
