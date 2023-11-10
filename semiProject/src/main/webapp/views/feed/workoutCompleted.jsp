@@ -33,6 +33,13 @@
         border: none;
         
     }
+    .outer table{
+        border: 1px solid white;
+        border-collapse: collapse;
+    }
+    .outer > table tr, .outer > table td{
+        border: 1px solid white;
+    }
    
 </style>
 <!-- bootstrap CSS -->
@@ -79,9 +86,48 @@
             <button style="background: none; color: #0d62fd;" class="btn btn-light" onclick="location.href=''">￮</button>
             <button style="background: none; color: #0d62fd;" class="btn btn-light" onclick="location.href=''">￮</button>
 
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px;"></textarea>
-                <label for="floatingTextarea2">Comments</label>
+            <div id="reply-area">
+                <table id="replyArea" class="table" align="center">
+                    <thead>
+                       
+                        <tr>
+                            <th colspan="2">
+                                <textarea class="form-control" readonly cols="55" rows="2" style="resize:none; width:100%;">로그인 후 이용 가능합니다.</textarea>
+                            </th>
+                            <th style="vertical-align:middle"><button class="btn btn-secondary disabled">등록하기</button></th>
+                        </tr>
+                          
+                        
+                         <tr> 
+                            <th colspan="2">
+                                <textarea class="form-control" id="content" cols="55" rows="2" style="resize:none; width:100%;"></textarea>
+                            </th>
+                            <th style="vertical-align:middle"><button class="btn btn-secondary" onclick="addReply();">등록하기</button></th>
+                        </tr>
+                                
+                    
+                        
+                        
+                        <tr>
+                            <td>댓글(<span id="rcount">3</span>)</td>
+                        </tr>
+                        <tr>
+                            <th>admin</th>
+                            <td>댓글남깁니다</td>
+                            <td>2022-05-10</td>
+                        </tr>
+                        <tr>
+                            <th>admin</th>
+                            <td>test샘플</td>
+                            <td>2022-08-10</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                    </tbody>
+                </table>
+    
+                
             </div>
         </div>
     </div>
