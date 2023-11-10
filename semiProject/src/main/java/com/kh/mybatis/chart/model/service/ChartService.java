@@ -6,7 +6,7 @@ import com.kh.mybatis.chart.model.vo.Chart;
 
 public interface ChartService {
 	public ArrayList<Chart> selectTodayExList(String UserId);
-	public int insertExInfo();
+	public int insertExInfo(Chart ex);
 
 	
 	

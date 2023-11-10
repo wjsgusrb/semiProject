@@ -9,6 +9,7 @@ public class Chart {
 	private String exChartTarget;
 	private Date exCharDay;
 	private int userNo;
+	private String[] exChartTargetArr;
 	
 	
 	
@@ -63,6 +64,16 @@ public class Chart {
 
 	public void setUserNo(int userNo) {
 		this.userNo = userNo;
+	}
+	
+	
+
+	public String[] getExChartTargetArr() {
+		return exChartTargetArr;
+	}
+
+	public void setExChartTargetArr(String[] exChartTargetArr) {
+		this.exChartTargetArr = exChartTargetArr;
 	}
 
 	@Override

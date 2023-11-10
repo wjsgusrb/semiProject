@@ -7,6 +7,15 @@ import java.sql.Date;
 import oracle.sql.NUMBER;
 
 public class Member {
+	public Member( String userId, String userName, String userAddress, String statusMsg,int userNo) {
+		super();
+		this.userNo = userNo;
+		this.userId = userId;
+		this.userName = userName;
+		this.userAddress = userAddress;
+		this.statusMsg = statusMsg;
+	}
+
 	private int userNo;
 	private String userId;
 	private String userPwd;
@@ -44,12 +53,21 @@ public class Member {
 		this.profileImg = profileImg;
 	}
 
+
 	public Member(String userId, String userPwd, String userName, String userAddress) {
 		super();
 		this.userId = userId;
 		this.userPwd = userPwd;
 		this.userName = userName;
 		this.userAddress = userAddress;
+	}
+	public Member(String userName, String userAddress, String statusMsg) {
+		super();
+		
+		this.userName = userName;
+		this.userAddress = userAddress;
+		this.statusMsg = statusMsg;
+		
 	}
 
 	public int getUserNo() {

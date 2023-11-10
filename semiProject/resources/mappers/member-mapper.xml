@@ -14,7 +14,7 @@
 		<result column="profileimg" property="profileImg"/>
 		<result column="enrolldate" property="enrollDate"/>
 		<result column="deletecheck" property="deleteCheck"/>
-		<result column="statusmsg" property="statusMsg"/>
+		<result column="status_msg" property="statusMsg"/>
 	</resultMap>
 
 	
@@ -64,6 +64,17 @@
 		 AND USER_PWD = #{userPwd}
 		 AND DELETE_CHECK = 'N'
  	</select>
+ 	
+ 	<update id="updateMember">
+  		UPDATE MEMBER
+		SET
+		  
+		  USER_NAME = #{userName},
+		  USER_ADDRESS = #{userAddress},
+		  STATUS_MSG = #{statusMsg}
+		WHERE
+		  USER_ID = #{userId}
+  	</update>
 	
 	
 </mapper>
