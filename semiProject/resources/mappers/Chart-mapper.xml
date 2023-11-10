@@ -17,4 +17,21 @@
 		select * from
 		chart where user_no = 1
 	</select>
+	
+	<insert id="insertExInfo">
+		insert 
+		    into chart(
+		        chart_no,
+		        chart_time,
+		        chart_target,
+		        user_No
+		        )
+		        values
+		        (
+		        SEQ_CHARTNO.nextval,
+		        150,
+		        '가슴',
+		        2
+		    )
+	</insert>
 </mapper>

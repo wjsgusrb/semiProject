@@ -1,7 +1,6 @@
 package com.kh.mybatis.chart.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,16 +12,16 @@ import com.kh.mybatis.chart.model.service.ChartServiceImpl;
 import com.kh.mybatis.chart.model.vo.Chart;
 
 /**
- * Servlet implementation class ChartController
+ * Servlet implementation class ChartInfoInsertController
  */
-@WebServlet("/exChart.ch")
-public class ChartController extends HttpServlet {
+@WebServlet("/chartInfo.ct")
+public class ChartInfoInsertController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ChartController() {
+    public ChartInfoInsertController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,12 +30,27 @@ public class ChartController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-//		String userId = req.getParameter("userId");
-//		ArrayList<Chart> exList = new ChartServiceImpl().selectTodayExList(userId);
-//		
-//		System.out.print(exList);
-		req.getRequestDispatcher("views/countChart/exChart.jsp").forward(req, res);
+		req.setCharacterEncoding("UTF-8");
 		
+		Chart ex = new Chart();
+		ex.setExChartTarget(String.join(",",req.getParameterValues("exTarget"))); 
+		ex.setExChartTime(Integer.parseInt(req.getParameter("exTime")));
+		ex.setUserNo(Integer.parseInt(req.getParameter("userNo")));
+		
+	
+		ex.setExChartTargetArr(req.getParameterValues("exTarget"));
+			
+		int result = new ChartServiceImpl().insertExInfo(ex);
+		
+		req.setAttribute("ex", ex);
+	
+		
+		if(result>0) {
+		
+			req.getRequestDispatcher("views/countChart/exChart.jsp").forward(req, res);
+		}else{
+			System.out.print("실패");
+		}
 		
 	}
 

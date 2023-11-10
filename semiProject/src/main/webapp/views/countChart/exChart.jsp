@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -191,14 +192,15 @@
             <!--오운완 정보를 입력받는 부분-->
             <div class="exchart-inputInfo">
                 <div class="chart-title" >input today ex</div>
+              
                 <div class="chart-inputInfo-data">
-                    <form action="" align="center">
+                    <form action="chartInfo.ct" method="post" align="center">
                         <div style="display: flex; justify-content: center; margin-top: 30px;">
                             <div class="chart-inputInfo-data-check" style="margin-right: 50px;" >
                                 <div class="checkbox-title">shoulder</div>
                                 <div class="checkbox-wrapper-64">
                                     <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="checkbox" value="shoulder"  name="exTarget">
                                     <span class="slider"></span>
                                     </label>
                                 </div>
@@ -208,7 +210,7 @@
                                 <div class="checkbox-title">chest</div>
                                 <div class="checkbox-wrapper-64">
                                     <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="checkbox" value="check" name="exTarget">
                                     <span class="slider"></span>
                                     </label>
                                 </div>
@@ -220,7 +222,7 @@
                                 <div class="checkbox-title">back</div>
                                 <div class="checkbox-wrapper-64">
                                     <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="checkbox" value="back"  name="exTarget">
                                     <span class="slider"></span>
                                     </label>
                                 </div>
@@ -230,7 +232,7 @@
                                 <div class="checkbox-title">leg</div>
                                 <div class="checkbox-wrapper-64">
                                     <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="checkbox" value="leg" name="exTarget">
                                     <span class="slider"></span>
                                     </label>
                                 </div>
@@ -242,7 +244,7 @@
                                 <div class="checkbox-title">Biceps</div>
                                 <div class="checkbox-wrapper-64">
                                     <label class="switch">
-                                    <input type="checkbox">
+                                    <input id="test1" type="checkbox" value="Biceps" name="exTarget">
                                     <span class="slider"></span>
                                     </label>
                                 </div>
@@ -252,7 +254,7 @@
                                 <div class="checkbox-title">triceps</div>
                                 <div class="checkbox-wrapper-64">
                                     <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="checkbox" value = "triceps" name="exTarget">
                                     <span class="slider"></span>
                                     </label>
                                 </div>
@@ -261,18 +263,35 @@
                         <br>
                         <div class="checkbox-title">exercise time</div>
                         
-                        <input type="range"  class="form-range" value="0" min="0" max="300" step="10" id="customRange3" onchange="checkTime()">
-                        <p style="font-family: 'Roboto', sans-serif";>time : </p> 
+                        <input type="range"  value="${ex.exChartTime}"  name="exTime" class="form-range" value="0" min="0" max="300" step="10" id="customRange3" onchange="checkTime()">
+                        <p style="font-family: 'Roboto', sans-serif";>time : ${ex.exChartTime}분 </p> 
+                      
                         <br>
-              
+                       
+              			<input type ="hidden" value="${loginUser.userNo}" name="userNo">
                         <button type="submit" class="btn btn-outline-primary">제출</button>
                     </form>
+       
+                    
                     <script>
                         checkTime =()=>{
                             document.querySelector("p").innerText = "time : ";
                             const time = document.getElementById("customRange3").value;
                             document.querySelector("p").innerText += time+"분";
                         }
+                        window.onload =  checkedTarget=()=>{
+                            const arr = document.querySelectorAll('input[name="exTarget"]')
+                            const str = "${ex.exChartTarget}"
+                            for(a of arr){        
+                                if(str.includes(a.value)) {
+                        	    document.querySelector('input[value="' + a.value + '"]').checked = true;
+                              // document.querySelector('input[value="${ex.exChartTargetArr}"]').checked = true;
+                            }
+                            }                
+                        }
+                        
+                        
+                        
                     </script>
                 </div>
                 
