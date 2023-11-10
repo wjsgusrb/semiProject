@@ -46,12 +46,12 @@
 
     <div class="outer" align="center">
         <br>
-        <h2 align center style="background-color: #0d6efd; color: white; width: 55%;">게시글 작성하기</h2>
+        <h2 align="center" style="background-color: #0d6efd; color: white; width: 55%;">게시글 작성하기</h2>
         <br>
 
-        <form id="enroll-form" action="" method="" enctype="">
+        <form id="enroll-form" action="${pageContext.request.contextPath}/insert.bo" method="POST" enctype="multipart/form-data">
             <!-- 카테고리, 제목, 내용, 첨부파일 한 개-->
-            <input type="hidden" name="userNo" value="<%=loginUser.getUserNo() %>">
+            <input type="hidden" name="userNo" value="<%=loginUser.getUserNo()%>"
             <table>
                 <tr>
                     
@@ -83,8 +83,8 @@
             <br>
 
             <div class="bottom-btn">
-                <a href="boardListView.jsp" class="btn btn-primary">등록</a>
-                <a type="reset" class="btn btn-danger">취소</a>
+                <button type="submit" class="btn btn-primary">등록</button>
+                <button type="reset" class="btn btn-danger">취소</button>
             </div>
         </form>
     </div>

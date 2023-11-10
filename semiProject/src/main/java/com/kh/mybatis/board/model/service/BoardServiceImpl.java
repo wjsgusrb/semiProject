@@ -17,7 +17,7 @@ public class BoardServiceImpl implements BoardService{
 
 	private BoardDao bDao = new BoardDao();
 	
-
+	@Override
 	public int selectListCount() {
 		
 		SqlSession sqlSession = Template.getSqlSession();

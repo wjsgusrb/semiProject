@@ -14,13 +14,6 @@
   		<result column="DELETE_DATE" property="deleteDate"/>
   		<result column="BOARD_COUNT" property="boardCount"/>
   	</resultMap>
-  
-	<resultMap id="boardCommentResultSet" type="BoardContent">
-	    <result column="BOARD_COMMENT_NO" property="boardCommentNo" />
-	    <result column="BOARD_COMMENT_CONTENT" property="boardCommentContent" />
-	    <result column="BOARD_NO" property="boardNo" />
-	    <result column="USER_NO" property="userNo" />
-	</resultMap>
 	<resultMap id="boardImgResultSet" type="BoardImg">
 	    <result column="BOARD_IMG_NO" property="boardImgNo" />
 	    <result column="BOARD_NO" property="boardNo" />
