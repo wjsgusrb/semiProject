@@ -51,7 +51,7 @@
 
         <form id="enroll-form" action="${pageContext.request.contextPath}/insert.bo" method="POST" enctype="multipart/form-data">
             <!-- 카테고리, 제목, 내용, 첨부파일 한 개-->
-            <input type="hidden" name="userNo" value="<%=loginUser.getUserNo()%>"
+            <input type="hidden" name="userNo" value="<%=loginUser.getUserNo()%>">
             <table>
                 <tr>
                     
