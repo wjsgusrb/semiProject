@@ -34,8 +34,6 @@ public class BoardListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("컨트롤러999999999999999999999999999999999999999999999999999999999999999999");
-		
 		int listCount = new BoardServiceImpl().selectListCount(); //현재 총 게시글 수
 		System.out.println(listCount);
 		int currentPage = Integer.parseInt(request.getParameter("cpage")); //현재 페이지(즉, 사용자가 요청한 페이지)
@@ -43,14 +41,14 @@ public class BoardListController extends HttpServlet {
 		
 		PageInfo pi = Pagenation.getPageInfo(listCount, currentPage, 10, 5);
 		
-		ArrayList<Board> bList = new BoardServiceImpl().selectList(pi);
-		System.out.println(bList);
+		ArrayList<Board> list = new BoardServiceImpl().selectList(pi);
+		System.out.println(list);
 		
 	
 		request.setAttribute("pi", pi);
-		request.setAttribute("bList", bList);
+		request.setAttribute("list", list);
 		
-		request.getRequestDispatcher("WEB-INF/views/board/boardListView.jsp").forward(request, response);
+		request.getRequestDispatcher("views/board/boardListView.jsp").forward(request, response);
 		
 	}
 

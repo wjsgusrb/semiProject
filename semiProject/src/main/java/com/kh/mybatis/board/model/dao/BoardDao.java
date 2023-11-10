@@ -14,21 +14,17 @@ import com.kh.mybatis.common.model.vo.PageInfo;
 public class BoardDao {
 
 	public int selectListCount(SqlSession sqlSession) {
-		
-		return sqlSession.selectOne("boardMapper.selectListCount");
+
+		int count = sqlSession.selectOne("boardMapper.selectListCount");
+		return count;
 	}
 
 
 	public ArrayList<Board> selectList(SqlSession sqlSession, PageInfo pi) {
 		int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
 		int limit = pi.getBoardLimit();
-		System.out.println("----------------------");
-		System.out.println(offset);
-		System.out.println(limit);
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		ArrayList<Board> list = (ArrayList)sqlSession.selectList("boardMapper.selectList", null , rowBounds);
-		System.out.println(list);
-		System.out.println("----------------------");
 		return list;
 		
 	}

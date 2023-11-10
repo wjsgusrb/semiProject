@@ -63,7 +63,7 @@ public class Board {
 		this.boardContent = boardContent;
 	}
 
-	public String BoardCategory() {
+	public String getCategory() {
 		return category;
 	}
 

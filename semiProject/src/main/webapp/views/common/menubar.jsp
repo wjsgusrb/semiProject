@@ -116,7 +116,7 @@
                                     <a class="nav-link " aria-current="page" href="exChart.ch?userId=user01">운동통계표</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="list.bo">자유게시판</a>
+                                    <a class="nav-link " href="list.bo?cpage=1">자유게시판</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " href="#">오운완</a>

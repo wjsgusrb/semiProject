@@ -9,13 +9,13 @@
   		<result column="USER_NO" property="userNo"/>
   		<result column="BOARD_TITLE" property="boardTitle"/>
   		<result column="BOARD_CONTENT" property="boardContent"/>
-  		<result column="CATEGORY" property="Category"/>
+  		<result column="CATEGORY" property="category"/>
   		<result column="UPDATE_DATE" property="updateDate"/>
   		<result column="DELETE_DATE" property="deleteDate"/>
   		<result column="BOARD_COUNT" property="boardCount"/>
   	</resultMap>
   
-	<resultMap id="boardCommentResultSet" type="BoardContent">
+	<resultMap id="boardCommentResultSet" type="BoardComment">
 	    <result column="BOARD_COMMENT_NO" property="boardCommentNo" />
 	    <result column="BOARD_COMMENT_CONTENT" property="boardCommentContent" />
 	    <result column="BOARD_NO" property="boardNo" />
@@ -87,7 +87,7 @@
 		   	   BOARD_CONTENT = #{boardContent},
 		   	   CATEGORY = #{category}
 		 WHERE BOARD_NO = #{boardNo}
-		   AND DELETE_DATE = NULL;
+		   AND DELETE_DATE = NULL
 	</update>
 	<update id="updateBoardImg">
 		UPDATE BOARD_IMG
@@ -95,7 +95,7 @@
 		   	   CHANGE_NAME = #{changeName},
 		   	   BOARD_IMG = #{boardImg}
 		 WHERE BOARD_IMG_NO = #{boardImgNo}
-		   AND DELETE_IMG = NULL;
+		   AND DELETE_IMG = NULL
 	</update>
 	<insert id="insertBoard">
 		INSERT

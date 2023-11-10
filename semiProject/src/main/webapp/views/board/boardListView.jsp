@@ -139,10 +139,10 @@
                 
                 <tbody>
                 
-                <c:forEach var="b" items="${bList}">
+                <c:forEach var="b" items="${list}">
                 	<tr>
                 		<td>"${b.boardNo}"</td>
-                		<td>"${b.boardCategory}"</td>
+                		<td>"${b.category}"</td>
                 		<td><a href="detail.bo?bno=${b.boardNo}">"${b.boardTitle}"</a></td>
                 		<td>"${b.userNo}"</td>
                 		<td>"${b.boardCount}"</td>
