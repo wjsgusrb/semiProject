@@ -109,10 +109,14 @@
                                 class="nav nav-pills nav-fill "
                                 style="background-color: white; color: white;  border-radius: 20px 20px 20px 20px; height: auto;">
                                 <li class="nav-item" style="height:auto">
-                                    <a class="nav-link " aria-current="page" href="exChart.ch?userId=user01">운동통계표</a>
+                                    <a class="nav-link " aria-current="page" href="exChart.ch?userId=${loginUser.userId }">운동통계표</a>
                                 </li>
                                 <li class="nav-item">
+<<<<<<< HEAD
+                                    <a class="nav-link " onclick="location.href='list.bo'">자유게시판</a>
+=======
                                     <a class="nav-link " href="list.bo">자유게시판</a>
+>>>>>>> db8add27acaec5f009cebfce1af0f0abcceffc61
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " href="#">오운완</a>
