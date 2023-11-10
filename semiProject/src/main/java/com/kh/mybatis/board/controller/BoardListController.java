@@ -44,6 +44,9 @@ public class BoardListController extends HttpServlet {
 		request.setAttribute("pi", pi);
 		request.setAttribute("list", list);
 		
+		System.out.println(pi);
+		System.out.println(list);
+		
 		request.getRequestDispatcher("WEB-INF/views/board/boardListView.jsp").forward(request, response);
 		
 	}
