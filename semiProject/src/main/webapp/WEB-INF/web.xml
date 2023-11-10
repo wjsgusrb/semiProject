@@ -9,9 +9,5 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-<<<<<<< HEAD
   
-=======
- 
->>>>>>> db8add27acaec5f009cebfce1af0f0abcceffc61
 </web-app>
