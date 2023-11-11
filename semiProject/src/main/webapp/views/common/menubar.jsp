@@ -119,7 +119,7 @@
                                     <a class="nav-link " href="list.bo?cpage=1">자유게시판</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="#">오운완</a>
+                                    <a class="nav-link " href="list.fe">오운완</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " href="/views/muscleMap/muscleMap.jsp">근육지도</a>
