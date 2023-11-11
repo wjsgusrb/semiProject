@@ -30,7 +30,7 @@
  		</environment>
  	</environments>
  	
- 	<mappers>
+ 	<mappers> 
  		<mapper resource="/mappers/member-mapper.xml" />
  		<mapper resource="/mappers/Chart-mapper.xml" />
  		<mapper resource="/mappers/board-mapper.xml" />		

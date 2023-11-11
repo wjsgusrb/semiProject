@@ -1,30 +1,24 @@
-package com.kh.mybatis.board.controller;
+package com.kh.mybatis.muscleMap.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.kh.mybatis.board.model.service.BoardServiceImpl;
-import com.kh.mybatis.board.model.vo.Board;
-import com.kh.mybatis.common.model.vo.PageInfo;
-import com.kh.mybatis.common.template.Pagenation;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class BoardListController
+ * Servlet implementation class muscleMapController
  */
-@WebServlet("/list.bo")
-public class BoardListController extends HttpServlet {
+@WebServlet("/muscleMap.bo")
+public class muscleMapController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BoardListController() {
+    public muscleMapController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,17 +27,15 @@ public class BoardListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int listCount = new BoardServiceImpl().selectListCount(); //현재 총 게시글 수
-		int currentPage = Integer.parseInt(request.getParameter("cpage")); //현재 페이지(즉, 사용자가 요청한 페이지)
-		PageInfo pi = Pagenation.getPageInfo(listCount, currentPage, 10, 5);
 		
-		ArrayList<Board> list = new BoardServiceImpl().selectList(pi);
+		HttpSession session = request.getSession();
 		
-		request.setAttribute("pi", pi);
-		request.setAttribute("list", list);
+		MuscleMap ms = new MuscleMap();
 		
 
-		request.getRequestDispatcher("views/board/boardListView.jsp").forward(request, response);
+		
+		
+		
 		
 	}
 

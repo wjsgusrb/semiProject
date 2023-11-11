@@ -21,7 +21,9 @@ public class BoardServiceImpl implements BoardService{
 	public int selectListCount() {
 		
 		SqlSession sqlSession = Template.getSqlSession();
+		
 		int listCount = bDao.selectListCount(sqlSession);
+
 		
 		sqlSession.close();
 		return listCount;

@@ -13,16 +13,16 @@ import com.kh.mybatis.member.model.service.MemberServiceImpl;
 import com.kh.mybatis.member.model.vo.Member;
 
 /**
- * Servlet implementation class LoginController
+ * Servlet implementation class MemberUpdateController
  */
-@WebServlet("/login.me")
-public class LoginController extends HttpServlet {
+@WebServlet("/update.me")
+public class MemberUpdateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginController() {
+    public MemberUpdateController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,23 +31,50 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+
+//		request.setCharacterEncoding("UTF-8");
+
 		
-		HttpSession session = request.getSession();
+		 
+		 String userId= request.getParameter("userId");
+		 String userPwd= request.getParameter("userPwd");
+		 String userName= request.getParameter("userName");
+		 String userAddress= request.getParameter("userAddress");
+		 String statusMsg= request.getParameter("statusMsg");
+		
+		 
 		
 		Member m = new Member();
-		m.setUserId(request.getParameter("userId"));
-		m.setUserPwd(request.getParameter("userPwd"));
+		m.setUserId(userId);
+		m.setUserPwd(userPwd);
+		m.setUserName(userName);
+		m.setUserAddress(userAddress);
+		m.setStatusMsg(statusMsg);
 		
-		Member loginUser = new MemberServiceImpl().loginMember(m);
+	
+		int result = new MemberServiceImpl().updateMember(m);
 		
 		
-		if(loginUser == null) {
-			session.setAttribute("alertMsg", "로그인 실패. 다시 시도해주세요");
-			request.getRequestDispatcher("index.jsp").forward(request, response);
-		} else {
+		
+		
+		if (result > 0) {
+			
+			Member r = new Member();
+			r.setUserId(userId);
+			r.setUserPwd(userPwd);
+			System.out.println(r);
+			
+			Member loginUser = new MemberServiceImpl().loginMember(r);
+			System.out.println(loginUser);
+		
+		    	
+			    
 			request.getSession().setAttribute("loginUser", loginUser);
 			response.sendRedirect(request.getContextPath());
+			
+		} else {
+			request.setAttribute("errorMsg", "회원가입 실패");
+			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		}
 	}
 
@@ -55,7 +82,7 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
