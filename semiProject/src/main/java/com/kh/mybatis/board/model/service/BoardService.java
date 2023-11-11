@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.kh.mybatis.board.model.vo.Board;
-import com.kh.mybatis.board.model.vo.BoardImg;
 import com.kh.mybatis.board.model.vo.BoardComment;
+import com.kh.mybatis.board.model.vo.BoardImg;
+
 import com.kh.mybatis.common.model.vo.PageInfo;
 
 public interface BoardService {

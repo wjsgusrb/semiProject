@@ -49,6 +49,7 @@ public class BoardInsertController extends HttpServlet {
 			
 			Board b = new Board();
 			b.setBoardCategory(category);
+			b.setCategory(category);
 			b.setBoardTitle(boardTitle);
 			b.setBoardContent(boardContent);
 			b.setUserNo(userNo);

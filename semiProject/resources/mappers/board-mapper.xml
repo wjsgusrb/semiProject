@@ -9,13 +9,13 @@
   		<result column="USER_NO" property="userNo"/>
   		<result column="BOARD_TITLE" property="boardTitle"/>
   		<result column="BOARD_CONTENT" property="boardContent"/>
-  		<result column="CATEGORY" property="Category"/>
+  		<result column="CATEGORY" property="category"/>
   		<result column="UPDATE_DATE" property="updateDate"/>
   		<result column="DELETE_DATE" property="deleteDate"/>
   		<result column="BOARD_COUNT" property="boardCount"/>
   	</resultMap>
   
-	<resultMap id="boardCommentResultSet" type="BoardContent">
+	<resultMap id="boardCommentResultSet" type="BoardComment">
 	    <result column="BOARD_COMMENT_NO" property="boardCommentNo" />
 	    <result column="BOARD_COMMENT_CONTENT" property="boardCommentContent" />
 	    <result column="BOARD_NO" property="boardNo" />
@@ -35,6 +35,51 @@
 		
 	</select>
 	
+	
+	<select id="selectListCount" resultType="_int">
+     SELECT COUNT(*)
+       FROM BOARD
+      WHERE DELETE_DATE IS NULL   
+  	</select>
+	
+	<select id="selectList" resultMap="boardResultSet">
+      SELECT BOARD_NO
+            , CATEGORY
+	        , BOARD_TITLE
+	        , USER_NO
+	        , BOARD_COUNT
+	        , UPDATE_DATE
+       FROM BOARD
+       JOIN MEMBER USING (USER_NO)
+       WHERE DELETE_DATE IS NULL
+       ORDER BY BOARD_NO DESC
+  	</select>
+	
+	<update id="increaseCount" parameterType="_int">
+  		UPDATE BOARD
+  		   SET BOARD_COUNT = BOARD_COUNT + 1
+  		 WHERE BOARD_NO = #{boardNo}
+  		   AND DELETE_DATE IS NULL
+  	</update>
+	
+	<select id="selectBoard" parameterType="_int" resultMap="boardResultSet">
+  		 SELECT BOARD_NO
+             , CATEGORY
+  			  ,BOARD_TITLE
+  			  ,USER_NO
+  			  ,BOARD_COUNT
+  			  ,UPDATE_DATE
+  			  ,BOARD_CONTENT
+            FROM BOARD
+  		 JOIN MEMBER USING (USER_NO)
+  	   WHERE BOARD_NO = #{boardNo}
+  	</select>
+	
+	
+	
+	
+	
+	
 	<update id="deleteBoard">
 		UPDATE BOARD
 		   SET DELETE_DATE = SYSDATE
@@ -47,7 +92,7 @@
 		   	   BOARD_CONTENT = #{boardContent},
 		   	   CATEGORY = #{category}
 		 WHERE BOARD_NO = #{boardNo}
-		   AND DELETE_DATE = NULL;
+		   AND DELETE_DATE = NULL
 	</update>
 	<update id="updateBoardImg">
 		UPDATE BOARD_IMG
@@ -55,7 +100,7 @@
 		   	   CHANGE_NAME = #{changeName},
 		   	   BOARD_IMG = #{boardImg}
 		 WHERE BOARD_IMG_NO = #{boardImgNo}
-		   AND DELETE_IMG = NULL;
+		   AND DELETE_IMG = NULL
 	</update>
 	<insert id="insertBoard">
 		INSERT
