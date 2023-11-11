@@ -91,7 +91,7 @@
         <a class="list-group-item list-group-item-action active" aria-current="true">
           운동부위
         </a>
-        <a href="#" class="list-group-item list-group-item-action">어깨</a>
+        <a href="muscleMap2.jsp" class="list-group-item list-group-item-action">어깨</a>
         <a href="#" class="list-group-item list-group-item-action">가슴</a>
         <a href="#" class="list-group-item list-group-item-action">복근</a>
         <a href="#" class="list-group-item list-group-item-action">삼두, 이두</a>
@@ -103,7 +103,7 @@
     </div>
 
 
-
+	
 
 
     <script>
