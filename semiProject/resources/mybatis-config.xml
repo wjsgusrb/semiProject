@@ -13,6 +13,8 @@
  		<typeAlias type="com.kh.mybatis.chart.model.vo.Chart" alias="Chart"/>
  		<typeAlias type="com.kh.mybatis.board.model.vo.Board" alias="Board"/>
  		<typeAlias type="com.kh.mybatis.board.model.vo.Board" alias="Feed"/>
+ 		<typeAlias type="com.kh.mybatis.board.model.vo.BoardComment" alias="BoardComment"/>
+        <typeAlias type="com.kh.mybatis.board.model.vo.BoardImg" alias="BoardImg"/>
  	</typeAliases>
  	
  	<environments default="development">
