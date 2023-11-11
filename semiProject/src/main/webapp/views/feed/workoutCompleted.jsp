@@ -28,10 +28,21 @@
         display: flex;
         width: 420px;
     }
+    .user-info3{
+        display: flex;
+        width: 420px;
+        justify-content: left;
+        margin-top: 7px;
+    }
+    .user-info4{
+        display: flex;
+        width: 420px;
+        justify-content: left;
+        margin-top: 12px;
+    }
     .skip-btn{
         background: none;
         border: none;
-        
     }
     .outer table{
         border: 1px solid white;
@@ -39,6 +50,26 @@
     }
     .outer > table tr, .outer > table td{
         border: 1px solid white;
+    }
+    .form-control{
+        display: flex;
+        justify-content: center;
+        resize:none;
+        width:50%;
+    }
+    #heart-btn{
+        width: 30px;
+        height: 30px;
+        justify-items: left;
+        margin-right: 10px;
+    }
+    .reply-outer{
+        margin-left: 20%;
+        margin-right: 20%;
+        font-size: 15px;
+    }
+    .form-control{
+        width: 50%;
     }
    
 </style>
@@ -60,6 +91,9 @@
     <jsp:include page="/views/common/menubar.jsp" />
 
     <div class="outer">
+
+        <div align="right"><a href="${pageContext.request.contextPath}/views/feed/feedEnroll.jsp" class="btn btn-primary">피드등록</a></div>
+        
         <div class="myFeed">
             <div class="user-info" >
                 <div class = "user-info2">
@@ -82,52 +116,52 @@
                 </button>
             </div>
 
+            <!--
             <button style="background: none; color: #0d62fd;" class="btn btn-light" onclick="location.href=''">￮</button>
             <button style="background: none; color: #0d62fd;" class="btn btn-light" onclick="location.href=''">￮</button>
             <button style="background: none; color: #0d62fd;" class="btn btn-light" onclick="location.href=''">￮</button>
+            -->
 
-            <div id="reply-area">
+            <div class="user-info">
+                <div class="user-info3">
+                    <img src="../../resources/board_upfile/KakaoTalk_20231110_162616520_02.png" id="heart-btn">
+                    좋아요 37개
+                </div>
+            </div>
+            <div class="user-info">
+                <div class="user-info4">
+                    <p style="margin-right: 5px;">user01 <br></p>
+                    <p>흥민이형 최근에 개잘함</p>
+                </div>
+            </div>
+
+            <div id="reply-area" class="reply-outer">
                 <table id="replyArea" class="table" align="center">
                     <thead>
-                       
-                        <tr>
+                        <tr> 
                             <th colspan="2">
-                                <textarea class="form-control" readonly cols="55" rows="2" style="resize:none; width:100%;">로그인 후 이용 가능합니다.</textarea>
+                                <textarea class="form-control" id="content" cols="50" rows="2" placeholder="댓글을 입력하세요"></textarea>
                             </th>
-                            <th style="vertical-align:middle"><button class="btn btn-secondary disabled">등록하기</button></th>
-                        </tr>
-                          
-                        
-                         <tr> 
-                            <th colspan="2">
-                                <textarea class="form-control" id="content" cols="55" rows="2" style="resize:none; width:100%;"></textarea>
-                            </th>
-                            <th style="vertical-align:middle"><button class="btn btn-secondary" onclick="addReply();">등록하기</button></th>
-                        </tr>
-                                
-                    
-                        
-                        
-                        <tr>
-                            <td>댓글(<span id="rcount">3</span>)</td>
+                            <th style="vertical-align:middle"><button class="btn btn-primary" onclick="addReply();">댓글등록</button></th>
                         </tr>
                         <tr>
-                            <th>admin</th>
-                            <td>댓글남깁니다</td>
-                            <td>2022-05-10</td>
+                            <td>댓글(<span id="rcount">2</span>)</td>
                         </tr>
                         <tr>
-                            <th>admin</th>
-                            <td>test샘플</td>
-                            <td>2022-08-10</td>
+                            <th>user07</th>
+                            <td>역시 토트넘 레전드</td>
+                            <td>2023-11-10</td>
+                        </tr>
+                        <tr>
+                            <th>user08</th>
+                            <td>닭집 out</td>
+                            <td>2023-11-09</td>
                         </tr>
                     </thead>
                     <tbody>
                       
                     </tbody>
                 </table>
-    
-                
             </div>
         </div>
     </div>
