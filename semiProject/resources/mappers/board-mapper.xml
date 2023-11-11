@@ -28,12 +28,6 @@
 	    <result column="CHANGENAME" property="changeName" />
 	    <result column="DELETEDATE" property="deleteDate" />
 	</resultMap>
-	<select id="selectListCount" resultType="_int">
-		SELECT COUNT(*)
-		  FROM BOARD
-		
-	</select>
-	
 	
 	<select id="selectListCount" resultType="_int">
      SELECT COUNT(*)
@@ -115,7 +109,7 @@
 				#{userNo},
 				#{boardTitle},
 				#{boardContent},
-				#{boardCategory},
+				#{category},
 				SYSDATE
 				)
 	</insert>

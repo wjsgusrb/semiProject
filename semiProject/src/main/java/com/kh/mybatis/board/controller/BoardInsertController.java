@@ -45,10 +45,9 @@ public class BoardInsertController extends HttpServlet {
 			String category = multiRequest.getParameter("category");
 			String boardTitle = multiRequest.getParameter("title");
 			String boardContent = multiRequest.getParameter("content");
-			int userNo = Integer.parseInt(multiRequest.getParameter("userNo"));
+			String userNo = multiRequest.getParameter("userNo");
 			
 			Board b = new Board();
-			b.setBoardCategory(category);
 			b.setCategory(category);
 			b.setBoardTitle(boardTitle);
 			b.setBoardContent(boardContent);

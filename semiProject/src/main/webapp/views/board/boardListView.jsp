@@ -155,9 +155,9 @@
   
             	<!-- 로그인한 회원 보이게 만들어야 함-->
 	            <div class="bottom-btn">
-	                <a href="../board/boardEnrollForm.jsp" class="btn btn-primary">게시글 등록</a>
+	                <a href="/ex/views/board/boardEnrollForm.jsp" class="btn btn-primary">게시글 등록</a>
 	                <a href="../board/myArticleView.jsp" class="btn btn-primary">나의게시판</a>
-	            </v>
+	            </div>
 	        
 	        <div class="paging-area" align="center">
                 
