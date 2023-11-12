@@ -24,7 +24,7 @@
 			height: 100vh;
 			background-color: #d6d7dc;
 		}
-		c              
+		
 		.top-var {
 			width: auto;
 			height: auto;

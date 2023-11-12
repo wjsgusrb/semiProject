@@ -4,26 +4,27 @@ import java.sql.Date;
 
 public class Board {
 	
-	
 	 private int boardNo;
-	 private int userNo;
+	 private String userNo; // userName을 불러옴
 	 private String boardTitle;
 	 private String boardContent;
-	 private String boardCategory;
+	 private String category;
 	 private Date updateDate;
 	 private Date deleteDate;
 	 private int boardCount;
 	 
 	 public Board() {}
 
-	public Board(int boardNo, int userNo, String boardTitle, String boardContent, String boardCategory, Date updateDate,
-			Date deleteDate, int boardCount) {
+
+
+
+	public Board(int boardNo, String userNo, String boardTitle, String boardContent, String category, Date updateDate,Date deleteDate, int boardCount) {
 		super();
 		this.boardNo = boardNo;
 		this.userNo = userNo;
 		this.boardTitle = boardTitle;
 		this.boardContent = boardContent;
-		this.boardCategory = boardCategory;
+		this.category = category;
 		this.updateDate = updateDate;
 		this.deleteDate = deleteDate;
 		this.boardCount = boardCount;
@@ -37,11 +38,11 @@ public class Board {
 		this.boardNo = boardNo;
 	}
 
-	public int getUserNo() {
+	public String getUserNo() {
 		return userNo;
 	}
 
-	public void setUserNo(int userNo) {
+	public void setUserNo(String userNo) {
 		this.userNo = userNo;
 	}
 
@@ -57,16 +58,17 @@ public class Board {
 		return boardContent;
 	}
 
+
 	public void setBoardContent(String boardContent) {
 		this.boardContent = boardContent;
 	}
 
-	public String getBoardCategory() {
-		return boardCategory;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setBoardCategory(String boardCategory) {
-		this.boardCategory = boardCategory;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public Date getUpdateDate() {
@@ -95,8 +97,9 @@ public class Board {
 
 	@Override
 	public String toString() {
+
 		return "Board [boardNo=" + boardNo + ", userNo=" + userNo + ", boardTitle=" + boardTitle + ", boardContent="
-				+ boardContent + ", boardCategory=" + boardCategory + ", updateDate=" + updateDate + ", deleteDate="
+				+ boardContent + ", category=" + category + ", updateDate=" + updateDate + ", deleteDate="
 				+ deleteDate + ", boardCount=" + boardCount + "]";
 	}
 
