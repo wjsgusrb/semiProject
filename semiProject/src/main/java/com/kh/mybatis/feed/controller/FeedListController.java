@@ -26,6 +26,10 @@ public class FeedListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		int feedNo = Integer.parseInt(request.getParameter("feedNo"));
+		
+		
 		request.getRequestDispatcher("/views/feed/workoutCompleted.jsp").forward(request, response);
 	}
 

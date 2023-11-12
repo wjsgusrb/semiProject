@@ -19,11 +19,8 @@ import com.oreilly.servlet.MultipartRequest;
 /**
  * Servlet implementation class BoardUpdateController
  */
-<<<<<<< HEAD
 
-=======
 @WebServlet("/update.bo")
->>>>>>> 5aed445e293623f1b2d0eec8607a9f6e8311f2bd
 public class BoardUpdateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
