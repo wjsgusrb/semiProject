@@ -43,7 +43,7 @@
 	}
 	
 	.outer {
-		background: #cde0f3;
+		background: #e0f0f3;
 		color: rgb(32, 28, 28);
 		width: 1000px;
 		height: auto;
