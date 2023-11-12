@@ -465,7 +465,7 @@
 									.querySelector("#modal-body input[name=userPwdCheck]");
 							if (pwdInput.value !== pwdCheckInput.value) {
 								alert("비밀번호가 일치하지 않습니다.");
-								 console.log("qkqhqkqhqkqhqkqhkqhqkhqkhqkqhkqhqkhqkhqkhqkh");
+								
 								return false;
 							}
 						}
