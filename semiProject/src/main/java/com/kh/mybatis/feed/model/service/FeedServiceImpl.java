@@ -1,5 +1,34 @@
 package com.kh.mybatis.feed.model.service;
 
+import java.util.ArrayList;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.kh.mybatis.common.model.vo.PageInfo;
+import com.kh.mybatis.common.template.Template;
+import com.kh.mybatis.feed.model.dao.FeedDao;
+import com.kh.mybatis.feed.model.vo.Feed;
+
 public class FeedServiceImpl implements FeedService{
+	private FeedDao fDao = new FeedDao();
+
+	@Override
+	public int selectListCount() {
+		SqlSession sqlSession = Template.getSqlSession();
+		int listcount = fDao.selectListCount(sqlSession);
+		
+		sqlSession.close();
+		return listcount;
+	}
+	
+	@Override
+	public ArrayList<Feed> selectList(PageInfo pi) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Feed> list = fDao.selectList(sqlSession, pi);
+		
+		sqlSession.close();
+		
+		return list;
+	}
 
 }
