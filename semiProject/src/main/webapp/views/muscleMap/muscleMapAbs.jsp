@@ -89,29 +89,30 @@
         <h2 style="text-align: center;">머슬지도</h2>
 		<br>
         <div style="text-align: center;">
-            <h3>${m.muscle운동} </h3> 
+            <h3>복근 운동 </h3> 
         </div>
     
     
         <div class="container" >
         
 			<div style="flex: 1;">
-				<iframe width="450" height="450" src="https://youtube.com/embed/3hYOPTgd_WQ?si=2s5IbljLMx8Vfgwn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="450" height="450" src="https://www.youtube.com/embed/0_j8aoQbTrk?si=p6ngsinxCuq1lpfy	" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 			
 			<div style="flex: 1;">
-				<iframe width="450" height="450" src="https://www.youtube.com/embed/twXs4ujJuGI?si=3Lm5XDTtGp_RkHcX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="450" height="450" src="https://www.youtube.com/embed/6cg-dArdqwQ?si=6qawAhhGqbZx09BC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 
 		</div>
         
 		
 		<div style="margin-bottom: 50px; margin-left: 50px; ">
-            <p> 어깨는 상체에서 가장 중요한 관절 중 하나입니다. </p>
-            <p> 어깨를 움직이면 팔을 위로 들어 올리고, 옆으로 벌리고, 뒤로 젖힐 수 있습니다. </p>
-            <p> 어깨가 튼튼하면 팔을 자유롭게 움직일 수 있고, 일상생활에서 많은 동작을 쉽게 할 수 있습니다. </p>
-            <P> 또한 어깨는 움직임이 많은 관절이기 때문에 부상을 입기 쉽습니다. 
-               따라서 어깨 운동을 할 때는 올바른 자세와 강도를 유지하는 것이 중요합니다.</P>
+            <p> 상부 복근은 갈비뼈 아래 쪽에서 시작하여 허리와 척추를 지지하며 몸을 구부릴 때 주요하게 작용하는 복근 근육입니다.  </p>
+            <p> 크런치는 이 근육을 직접적으로 자극하는 효과적인 운동 중 하나이며,  </p>
+            <p>운동 시 엉덩이를 들어 올리지 않도록 주의해야 합니다.  </p>
+            <p> 덤벨 크런치는 덤벨의 무게를 이용하여 복근 근육을 집중적으로 타겟팅하여 </p>
+            <p> 더 강력하고 단단한 복근을 형성하는 데 도움이 됩니다. </p>
+            
      
              <br><br>
          </div>
