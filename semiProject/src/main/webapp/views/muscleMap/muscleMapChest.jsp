@@ -24,7 +24,7 @@
 			height: 100vh;
 			background-color: #d6d7dc;
 		}
-		c              
+		
 		.top-var {
 			width: auto;
 			height: auto;
@@ -42,15 +42,7 @@
 			color: white;
 		}
 		
-		.outer {
-			background: rgb(165, 173, 179);
-			color: rgb(32, 28, 28);
-			width: 1000px;
-			height: auto;
-			margin: auto;
-			margin-top: 50px;
-		}
-		
+				
 		#bodyImg {
 			position: relative;
 			margin: auto;
@@ -58,7 +50,7 @@
 		}
 	
 		.outer{
-	            background: #cde0f3;
+	            background: #e0f0f3;
 	            color: rgb(32, 28, 28);
 	            width: 1000px;
 	            height: auto;
@@ -89,29 +81,28 @@
         <h2 style="text-align: center;">머슬지도</h2>
 		<br>
         <div style="text-align: center;">
-            <h3>${m.muscle운동} </h3> 
+            <h3>가슴운동 </h3> 
         </div>
     
     
         <div class="container" >
         
 			<div style="flex: 1;">
-				<iframe width="450" height="450" src="https://youtube.com/embed/3hYOPTgd_WQ?si=2s5IbljLMx8Vfgwn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="450" height="450" src="https://www.youtube.com/embed/CWBSQzpjhJc?si=bcp4es4CBEaHSvN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 			
 			<div style="flex: 1;">
-				<iframe width="450" height="450" src="https://www.youtube.com/embed/twXs4ujJuGI?si=3Lm5XDTtGp_RkHcX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="450" height="450" src="https://www.youtube.com/embed/xKDNB9KahtA?si=SFyIbpbY5jxow4uX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 
 		</div>
         
 		
 		<div style="margin-bottom: 50px; margin-left: 50px; ">
-            <p> 어깨는 상체에서 가장 중요한 관절 중 하나입니다. </p>
-            <p> 어깨를 움직이면 팔을 위로 들어 올리고, 옆으로 벌리고, 뒤로 젖힐 수 있습니다. </p>
-            <p> 어깨가 튼튼하면 팔을 자유롭게 움직일 수 있고, 일상생활에서 많은 동작을 쉽게 할 수 있습니다. </p>
-            <P> 또한 어깨는 움직임이 많은 관절이기 때문에 부상을 입기 쉽습니다. 
-               따라서 어깨 운동을 할 때는 올바른 자세와 강도를 유지하는 것이 중요합니다.</P>
+            <p> 강렬한 가슴근육은 헬스 및 보디빌딩 커뮤니티에서 많은 사람들이 목표로 하는 중요한 부위 중 하나입니다. </p>
+            <p> 바벨 벤치 프레스는 가슴근육을 집중적으로 타격하여 강화시키는 데 탁월한 도구입니다.  </p>
+            <p> 이 운동은 대량의 중량을 이용하므로 근육 성장에 효과적입니다.</p>
+         
      
              <br><br>
          </div>
