@@ -119,7 +119,14 @@
                                     <a class="nav-link " href="list.bo?cpage=1">자유게시판</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="list.fe">오운완</a>
+                                    <c:choose>
+                                        <c:when test="${! empty loginUser}">
+                                            <a class="nav-link " href="list.fe?userNo=${loginUser.userNo}&cpage=1">오운완</a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a class="nav-link " onclick="alert('로그인 먼저 해주세요')">오운완</a>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " href="views/muscleMap/muscleMap.jsp">근육지도</a>
