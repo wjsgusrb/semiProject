@@ -33,7 +33,7 @@ public class BoardDetailController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-int boardNo = Integer.parseInt(request.getParameter("bno"));
+		int boardNo = Integer.parseInt(request.getParameter("bno"));
 		
 		BoardService bService = new BoardServiceImpl(); 
 		
@@ -46,7 +46,7 @@ int boardNo = Integer.parseInt(request.getParameter("bno"));
 			request.setAttribute("b", b);
 			request.setAttribute("list", list);
 			
-			request.getRequestDispatcher("WEB-INF/views/board/boardDetailView.jsp").forward(request, response);
+			request.getRequestDispatcher("views/board/boardDetailView.jsp").forward(request, response);
 			
 		} else {
 			request.setAttribute("errorMsg", "상세조회 실패");

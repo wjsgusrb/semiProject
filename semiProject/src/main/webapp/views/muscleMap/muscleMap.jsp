@@ -43,7 +43,7 @@
 	}
 	
 	.outer {
-		background: #cde0f3;
+		background: #e0f0f3;
 		color: rgb(32, 28, 28);
 		width: 1000px;
 		height: auto;
@@ -91,9 +91,9 @@
         <a class="list-group-item list-group-item-action active" aria-current="true">
           운동부위
         </a>
-        <a href="muscleMap2.jsp" class="list-group-item list-group-item-action">어깨</a>
-        <a href="#" class="list-group-item list-group-item-action">가슴</a>
-        <a href="#" class="list-group-item list-group-item-action">복근</a>
+        <a href="muscleMapShoulder.jsp" class="list-group-item list-group-item-action">어깨</a>
+        <a href="muscleMapChest.jsp" class="list-group-item list-group-item-action">가슴</a>
+        <a href="muscleMapAbs.jsp" class="list-group-item list-group-item-action">복근</a>
         <a href="#" class="list-group-item list-group-item-action">삼두, 이두</a>
         <a href="#" class="list-group-item list-group-item-action">하체</a>
         <a href="#" class="list-group-item list-group-item-action">코어</a>

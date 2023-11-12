@@ -21,9 +21,7 @@ public class BoardServiceImpl implements BoardService{
 	public int selectListCount() {
 		
 		SqlSession sqlSession = Template.getSqlSession();
-		
 		int listCount = bDao.selectListCount(sqlSession);
-
 		
 		sqlSession.close();
 		return listCount;
@@ -109,7 +107,9 @@ public class BoardServiceImpl implements BoardService{
 				result2 = bDao.insertBoardImg(sqlSession, bImg); 
 			}
 		}
-		
+		if(result1 > 0 && result2 > 0) {
+			sqlSession.commit();
+		}
 		sqlSession.close();
 		return result1 * result2;
 	}
@@ -118,6 +118,10 @@ public class BoardServiceImpl implements BoardService{
 	public int deleteBoard(int boardNo) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = bDao.deleteBoard(sqlSession, boardNo);
+		sqlSession.close();
+		if(result > 0) {
+			sqlSession.commit();
+		}
 		sqlSession.close();
 		return result;
 	}
