@@ -130,6 +130,9 @@ public class BoardServiceImpl implements BoardService{
 		if(bImg != null) {
 			result2 = bDao.insertBoardImg(sqlSession, bImg);
 		}
+		if(result1 > 0 && result2 > 0) {
+			sqlSession.commit();
+		}
 		sqlSession.close();
 		return (result1 * result2);
 	}

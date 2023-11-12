@@ -24,9 +24,9 @@
 	    <result column="BOARD_IMG_NO" property="boardImgNo" />
 	    <result column="BOARD_NO" property="boardNo" />
 	    <result column="BOARD_IMG" property="boardImg" />
-	    <result column="ORIGINNAME" property="originName" />
-	    <result column="CHANGENAME" property="changeName" />
-	    <result column="DELETEDATE" property="deleteDate" />
+	    <result column="ORIGIN_NAME" property="originName" />
+	    <result column="CHANGE_NAME" property="changeName" />
+	    <result column="DELETE_IMG" property="deleteDate" />
 	</resultMap>
 	
 	<select id="selectListCount" resultType="_int">
@@ -122,8 +122,8 @@
 		  		 ORIGIN_NAME,
 		  		 CHANGE_NAME
 		  		)
-		VALUES (SQL_BOARDIMGNO.NEXTVAL,
-				#{boardNo},
+		VALUES (SEQ_boardIMGno.NEXTVAL,
+				SEQ_BOARDNO.CURRVAL,
 				#{boardImg},
 				#{originName},
 				#{changeName}

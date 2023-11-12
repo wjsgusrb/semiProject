@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.kh.mybatis.board.model.vo.Board"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,9 +50,8 @@
         <h2 align="center" style="background-color: #0d6efd; color: white; width: 55%;">게시글 작성하기</h2>
         <br>
 
-        <form id="enroll-form" action="${pageContext.request.contextPath}/insert.bo" method="POST" enctype="multipart/form-data">
+        <form id="enroll-form" action="/ex/insert.bo" method="POST" enctype="multipart/form-data">
             <!-- 카테고리, 제목, 내용, 첨부파일 한 개-->
-            <input type="hidden" name="userNo" value="<%=loginUser.getUserNo()%>">
             <table>
                 <tr>
                     
@@ -75,7 +75,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input class="form-control" type="file" id="formFileDisabled">
+                        <input class="form-control" type="file" id="formFileDisabled" name="upfile">
                     </td>
                 </tr>
             </table>

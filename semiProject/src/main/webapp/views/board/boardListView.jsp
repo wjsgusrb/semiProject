@@ -140,13 +140,13 @@
                 <tbody>
                 
                 <c:forEach var="b" items="${list}">
-                	<tr>
-                		<td>"${b.boardNo}"</td>
-                		<td>"${b.category}"</td>
-                		<td><a href="detail.bo?bno=${b.boardNo}">"${b.boardTitle}"</a></td>
-                		<td>"${b.userNo}"</td>
-                		<td>"${b.boardCount}"</td>
-                		<td>"${b.updateDate}"</td>
+                	<tr onclick="location.href='detail.bo?bno=${b.boardNo}'">
+                		<td>${b.boardNo}</td>
+                		<td>${b.category}</td>
+                		<td>${b.boardTitle}</a></td>
+                		<td>${b.userNo}</td>
+                		<td>${b.boardCount}</td>
+                		<td>${b.updateDate}</td>
                 	</tr>
                 </c:forEach>
                 </tbody>
@@ -154,20 +154,24 @@
 
   
             	<!-- 로그인한 회원 보이게 만들어야 함-->
-	            <div class="bottom-btn">
-	                <a href="/ex/views/board/boardEnrollForm.jsp" class="btn btn-primary">게시글 등록</a>
-	                <a href="../board/myArticleView.jsp" class="btn btn-primary">나의게시판</a>
-	            </div>
+            	<c:if test="${ not empty loginUser }">
+		            <div class="bottom-btn">
+		                <a href="/ex/enrollForm.bo" class="btn btn-primary">게시글 등록</a>
+		                <a href="../board/myArticleView.jsp" class="btn btn-primary">나의게시판</a>
+		            </div>
+		        </c:if>
 	        
 	        <div class="paging-area" align="center">
-                
-                    <button class="btn btn-light" onclick="location.href=''">&lt;</button>
-                    <button class="btn btn-light" onclick="location.href=''">1</button>
-                    <button class="btn btn-light" onclick="location.href=''">2</button>
-                    <button class="btn btn-light" onclick="location.href=''">3</button>
-                    <button class="btn btn-light" onclick="location.href=''">4</button>
-                    <button class="btn btn-light" onclick="location.href=''">5</button>
-                    <button class="btn btn-light" onclick="location.href=''">&gt;</button>
+                <c:if test="${ pi.currentPage ne 1 }">
+                    <button class="btn btn-light" onclick="location.href='list.bo?cpage=${ pi.currentPage - 1 }'">&lt;</button>
+                </c:if>
+
+                <c:forEach var="p" begin="${pi.startPage}" end="${ pi.endPage }" >
+                    <button class="btn btn-light" onclick="location.href='list.bo?cpage=${p}'">${p}</button>
+                </c:forEach>
+                <c:if test="${ pi.currentPage ne pi.maxPage }">
+                    <button class="btn btn-light" onclick="location.href='list.bo?cpage=${ pi.currentPage + 1 }'">&gt;</button>
+                </c:if>
             </div>
 	        
 	            
