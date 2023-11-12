@@ -15,8 +15,7 @@ public class BoardDao {
 
 	public int selectListCount(SqlSession sqlSession) {
 
-		int count = sqlSession.selectOne("boardMapper.selectListCount");
-		return count;
+		return sqlSession.selectOne("boardMapper.selectListCount");
 	}
 
 

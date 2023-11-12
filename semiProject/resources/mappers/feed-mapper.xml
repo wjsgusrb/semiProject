@@ -3,6 +3,33 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  <mapper namespace="feedMapper">
+<mapper namespace="feedMapper">
   
-  </mapper>
+	<resultMap id="feedResultSet" type="Feed">
+		<result column="FEED_NO" property="feedNo" />
+		<result column="USER_ID" property="userNo" />
+		<result column="FEED_TEXT" property="feedText" />
+		<result column="UPDATE_DATE" property="updateDate" />
+		<result column="DELETE_DATE" property="deleteDate" />
+		<result column="ORIGIN_NAME" property="originName" />
+		<result column="CHANGE_NAME" property="changeName" />
+		<result column="FEED_URL" property="feedUrl" />
+	</resultMap>
+	
+	<select id="selectListCount" resultType="_int">
+     SELECT COUNT(*) COUNT
+       FROM FEED
+    </select>
+ 	
+  	<select id="selectList" resultMap="feedResultSet">
+  		SELECT FEED_NO, 
+	  		   USER_ID, 
+	  		   FEED_TEXT, 
+	  		   ORIGIN_NAME, 
+	  		   CHANGE_NAME,
+	  		   FEED_URL
+   		FROM FEED
+    		JOIN MEMBER USING(USER_NO)
+    		JOIN FEED_IMG USING(FEED_NO)
+  	</select>
+</mapper>

@@ -77,15 +77,14 @@
         <br><br>
 		<div class="board-title" align="center">
 			<h5 style="margin-bottom: 15px;">자유게시판 - 운동정보</h5>
-			<h2>벌크업 질문 있어요</h2>
+			<h2>${b.boardTitle}</h2>
 			<br>
-			<div align="right"><p style="margin-right: 5%;">김개똥 조회 10 2023.10.31 22:06 댓글 20</p></div>
+			<div align="right"><p style="margin-right: 5%;">${b.userNo} 조회 ${b.boardCount} ${b.updateDate}</p></div>
 		</div>
         <br>
 		<div class="detail-area" align="center">
 			<div class="detail-area-content">
-				ㄴㅇㄹ히ㅜㅁ니ㅏㅇ러ㅣㅏㄴ멀히ㅏㅓㄴㅁ이;허미;낭휘ㅏㅁ눙라ㅣㅜㅁ니ㅏㅇ루히;ㅏㅁㄴ울히ㅜㅁㄴㅇ이ㅏ훔나ㅣㅇ휘'ㅏㅁㄴㅇㅎ'
-				ㄴㅁㅇ힘ㄴ아잏ㅁ니ㅏㅇ히';ㄴ;ㅁ엏;
+				${b.boardContent}
 			</div>
 			<div  class="detail-img-area">
 				<div class="detail-img">
@@ -104,34 +103,24 @@
 			<div class="comentUser-img">
 				<i class="fa-solid fa-user fa-3x"></i>
 			</div>
-			<div>김개똥   벌크업은 말이죠~</div>
+			<div>${c.commentWriter}</div>
+			<div>${c.commentContent}</div>
 			<button type="button" style="width: 5%;" class="btn btn-outline-primary">답글</button>	
 		</div>   
 		<hr>
 		<div class="board-comment" align="center">
-			<div class="comentUser-img">
-				<i class="fa-solid fa-user fa-3x"></i>
-			</div>
-			<div>김개똥   벌크업은 말이죠~</div>
-			<button type="button" style="width: 5%;" class="btn btn-outline-primary">답글</button>	
+			<c:forEach var="r" items="${list()}">
+				<div class="comentUser-img">
+					<i class="fa-solid fa-user fa-3x"></i>
+				</div>
+					<div>${c.commentWriter}</div>
+					<div>${c.commentContent}</div>
+					<div>${c.updateDate }</div>
+				<button type="button" style="width: 5%;" class="btn btn-outline-primary">답글</button>	
+				<hr>
+				</c:forEach>
 		</div>   
-		<hr>
-		<div class="board-comment" align="center">
-			<div class="comentUser-img">
-				<i class="fa-solid fa-user fa-3x"></i>
-			</div>
-			<div>김개똥   벌크업은 말이죠~</div>
-			<button type="button" style="width: 5%;" class="btn btn-outline-primary">답글</button>	
-		</div>   
-		<hr>
-		<div class="board-comment" align="center">
-			<div class="comentUser-img">
-				<i class="fa-solid fa-user fa-3x"></i>
-			</div>
-			<div>김개똥   벌크업은 말이죠~</div>
-			<button type="button" style="width: 5%;" class="btn btn-outline-primary">답글</button>	
-		</div>   
-		<hr>
+		
 	  
 		
 	<div class="form-floating" style="display: flex;">
