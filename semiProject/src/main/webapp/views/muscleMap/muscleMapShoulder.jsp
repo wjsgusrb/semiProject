@@ -24,7 +24,7 @@
 			height: 100vh;
 			background-color: #d6d7dc;
 		}
-		
+		c              
 		.top-var {
 			width: auto;
 			height: auto;
@@ -89,7 +89,7 @@
         <h2 style="text-align: center;">머슬지도</h2>
 		<br>
         <div style="text-align: center;">
-            <h3>${m.muscle운동} </h3> 
+            <h3>어깨 운동 </h3> 
         </div>
     
     

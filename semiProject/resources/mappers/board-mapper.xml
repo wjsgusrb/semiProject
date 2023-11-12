@@ -29,12 +29,7 @@
 	    <result column="CHANGENAME" property="changeName" />
 	    <result column="DELETEDATE" property="deleteDate" />
 	</resultMap>
-	<select id="selectListCount" resultType="_int">
-		SELECT COUNT(*)
-		  FROM BOARD
-		
-	</select>
-	
+
 	
 	<select id="selectListCount" resultType="_int">
      SELECT COUNT(*)
@@ -120,22 +115,7 @@
 				SYSDATE
 				)
 	</insert>
-	<insert id="insertBoardImg" parameterType="BoardImg">
-		INSERT
-		  INTO BOARD_IMG
-		  		(BOARD_IMG_NO,
-		  		 BOARD_NO,
-		  		 BOARD_IMG,
-		  		 ORIGIN_NAME,
-		  		 CHANGE_NAME
-		  		)
-		VALUES (SQL_BOARDIMGNO.NEXTVAL,
-				#{boardNo},
-				#{boardImg},
-				#{originName},
-				#{changeName}
-				)
-	</insert>
+
 	   
 	   
 	
