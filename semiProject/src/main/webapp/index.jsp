@@ -6,6 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- jquery 3.7.1 -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <style>
 .middle-area>div>div {
@@ -418,12 +421,14 @@
 					<h3>join</h3>
 				</div>
 				<div class="modal-body">
-					<form action="insert.me" method="post">
-						<div class="form-floating join";>
-							<input type="text" class="form-control" id="floatingPassword"
-								placeholder="Password" name="userId"> <label
-								for="floatingPassword">id</label>
-							<p style="font-size: 8pt;">사용가능한 아이디입니다.</p>
+					<form action="insert.me" id="enroll-form" method="post">
+						<div class="form-floating join">
+							<input type="text" class="form-control" id="idCheck" placeholder="Password" name="userId">
+							 <label
+								for="idCheck">id</label>
+							
+							<button type="button" id="idCheckButton" class="btn btn-primary">중복확인</button>
+							
 							<!--유효성 검사 후 사용가능인지 불가능인지 알려줌-->
 						</div>
 						<div class="form-floating join";>
@@ -443,14 +448,14 @@
 						</div>
 						<div class="form-floating join";>
 							<input type="text" class="form-control" id="floatingPassword"
-								placeholder="Password" name="address"> <label
+								placeholder="Password" name="address"> <label+
 								for="floatingPassword">address</label>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-bs-dismiss="modal">Close</button>
 							<button type="submit" class="btn btn-primary"
-								 onclick="return checkPwd();">가입확인</button>
+								disabled  onclick="return checkPwd();">가입확인</button>
 								
 						</div>
 
@@ -458,17 +463,42 @@
 					</form>
 					<script>
 					
-						function checkPwd() {
-							let pwdInput = document
-									.querySelector("#modal-body input[name=userPwd]");
-							let pwdCheckInput = document
-									.querySelector("#modal-body input[name=userPwdCheck]");
-							if (pwdInput.value !== pwdCheckInput.value) {
-								alert("비밀번호가 일치하지 않습니다.");
-								
-								return false;
-							}
-						}
+						
+						document.addEventListener("DOMContentLoaded", function() {
+					        document.querySelector("#idCheckButton").addEventListener("click", checkIdDuplicate);
+					    });
+						   function checkIdDuplicate(){
+				            	
+							   const idInput = document.querySelector("#idCheck");
+							  
+				            	console.log(idInput.value);
+				            	
+				            	$.ajax({
+				            		url: "idCheck.me",
+				            		data: {
+				            			"checkId" : idInput.value
+				            		},
+				            		success: function(result){
+										 if(result === "NNNNY") {
+											 if (confirm("사용가능한 아이디입니다. 사용하시겠습니까?")) {
+												 
+												 let submitBtn = document.querySelector("#enroll-form button[type=submit]");
+												 submitBtn.removeAttribute("disabled");
+												 
+												 idInput.setAttribute("readonly", true);
+											 } else {
+												 idInput.focus();
+											 }
+										 } else {
+											 alert("이미 존재하거나 탈퇴한 회원입니다.");
+											 idInput.focus();
+										 }
+				            		},
+				            		error: function(){
+				            			console.log("아이디 중복체크용 ajax통신실패");
+				            		}
+				            	})
+				            }
 					</script>
 
 				</div>

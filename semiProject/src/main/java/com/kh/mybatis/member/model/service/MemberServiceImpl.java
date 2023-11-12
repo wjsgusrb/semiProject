@@ -64,5 +64,13 @@ public class MemberServiceImpl implements MemberService{
 		sqlSession.close();
 		return loginUser;
 	}
+	public int idCheckMember(String checkId) {
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = mDao.idCheckMember(sqlSession, checkId);
+	
+		System.out.println(result);
+		return result;
+	}
 	
 }
