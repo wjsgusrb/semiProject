@@ -432,12 +432,12 @@
 							<!--유효성 검사 후 사용가능인지 불가능인지 알려줌-->
 						</div>
 						<div class="form-floating join";>
-							<input type="password" class="form-control" id="floatingPassword"
+							<input type="password" class="form-control" id="userPwd"
 								placeholder="Password" name="userPwd"> <label
 								for="floatingPassword">Password</label>
 						</div>
 						<div class="form-floating join";>
-							<input type="password" class="form-control" id="floatingPassword"  name="userPwdCheck"
+							<input type="password" class="form-control" id="userPwdCheck"  name="userPwdCheck"
 								placeholder="Password"> <label for="floatingPassword">checkPassword</label>
 							
 						</div>
@@ -462,6 +462,8 @@
 
 					</form>
 					<script>
+					
+					
 					
 						
 						document.addEventListener("DOMContentLoaded", function() {
@@ -498,6 +500,15 @@
 				            			console.log("아이디 중복체크용 ajax통신실패");
 				            		}
 				            	})
+				            }
+						   
+						   function checkPwd(){
+				                let pwdInput = document.querySelector("#enroll-form input[name=userPwd]");
+				                let pwdCheckInput = document.querySelector("#enroll-form input[name=userPwdCheck]");
+				                if (pwdInput.value !== pwdCheckInput.value) {
+				                    alert("비밀번호가 일치하지 않습니다.");
+				                    return false;
+				                }
 				            }
 					</script>
 
