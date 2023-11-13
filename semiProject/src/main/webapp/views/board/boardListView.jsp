@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.kh.mybatis.common.model.vo.PageInfo, java.util.ArrayList, com.kh.mybatis.board.model.vo.Board" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>      
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,7 +54,11 @@
         text-align: right;
         padding-top: 20px;
     }
-    .slect-view{
+    #paging-area{
+    	text-align: center;
+    	
+    }
+    .select-view{
         padding-bottom: 3px;
         margin: 0 auto;
         text-align: right;
@@ -134,87 +140,56 @@
                         <th width="100">작성일</th>
                     </tr>
                 </thead>
+                
                 <tbody>
-                    <tr>
-                         <!-- onclick되면 게시물 상세보기 페이지로 이동-->
-                        <td>210</td>
-                        <td>운동정보</td>
-                        <td>시험작성하였습니다.</td>
-                        <td>김개똥</td>
-                        <td>50</td>
-                        <td>2023/10/24</td>
-                    </tr>
-                    <tr>
-                         <!-- onclick되면 게시물 상세보기 페이지로 이동-->
-                        <td>209</td>
-                        <td>식단정보</td>
-                        <td>시험작성하였습니다.</td>
-                        <td>김개만</td>
-                        <td>30</td>
-                        <td>2023/09/11</td>
-                    </tr>
-                    <tr>
-                         <!-- onclick되면 게시물 상세보기 페이지로 이동-->
-                        <td>208</td>
-                        <td>운동피드백</td>
-                        <td>시험작성하였습니다.</td>
-                        <td>장성구</td>
-                        <td>22</td>
-                        <td>2023/05/06</td>
-                    </tr>
-                    <tr>
-                        <!-- onclick되면 게시물 상세보기 페이지로 이동-->
-                       <td>207</td>
-                       <td>식단정보</td>
-                       <td>시험작성하였습니다.</td>
-                       <td>한혜령</td>
-                       <td>50</td>
-                       <td>2023/05/03</td>
-                   </tr>
-                   <tr>
-                        <!-- onclick되면 게시물 상세보기 페이지로 이동-->
-                       <td>206</td>
-                       <td>운동정보</td>
-                       <td>시험작성하였습니다.</td>
-                       <td>금남식</td>
-                       <td>33</td>
-                       <td>2023/03/06</td>
-                  </tr>
-                  <tr>
-                        <!-- onclick되면 게시물 상세보기 페이지로 이동-->
-                        <td>205</td>
-                        <td>운동정보</td>
-                        <td>시험작성하였습니다.</td>
-                        <td>김개방</td>
-                        <td>59</td>
-                        <td>2023/03/01</td>
-                 </tr>
+                
+                <c:forEach var="b" items="${list}">
+                	<tr>
+                		<td>"${b.boardNo}"</td>
+                		<td>"${b.category}"</td>
+                		<td><a href="detail.bo?bno=${b.boardNo}">"${b.boardTitle}"</a></td>
+                		<td>"${b.userNo}"</td>
+                		<td>"${b.boardCount}"</td>
+                		<td>"${b.updateDate}"</td>
+                	</tr>
+                </c:forEach>
                 </tbody>
             </table>
-    
-            
-            <div class="bottom-btn">
-                <a href="../board/boardEnrollForm.jsp" class="btn btn-primary">게시글 등록</a>
-                <a href="../board/myArticleView.jsp" class="btn btn-primary">나의게시판</a>
-            </div>
+
+  
+            	<!-- 로그인한 회원 보이게 만들어야 함-->
+	            <div class="bottom-btn">
+	                <a href="../board/boardEnrollForm.jsp" class="btn btn-primary">게시글 등록</a>
+	                <a href="../board/myArticleView.jsp" class="btn btn-primary">나의게시판</a>
+	            </v>
 	        
-	        <div class="paging-area" align="center">
-                
-                    <button class="btn btn-light" onclick="location.href=''">&lt;</button>
-                    <button class="btn btn-light" onclick="location.href=''">1</button>
-                    <button class="btn btn-light" onclick="location.href=''">2</button>
-                    <button class="btn btn-light" onclick="location.href=''">3</button>
-                    <button class="btn btn-light" onclick="location.href=''">4</button>
-                    <button class="btn btn-light" onclick="location.href=''">5</button>
-                    <button class="btn btn-light" onclick="location.href=''">&gt;</button>
-            </div>
+	         <div id="paging-area">
+        <c:if test="${pi.currentPage ne 1}">
+            <a href="list.bo?cpage=${pi.currentPage - 1}">[이전]</a>
+         </c:if>
+           
+           
+         <c:forEach var="i" begin="${pi.startPage}" end="${pi.endPage}">
+         <c:choose>
+         	<c:when test="${empty condition }">
+            	<a href="list.bo?cpage=${ i }">${i}</a>
+         	</c:when>
+            <c:otherwise>
+            	<a href="search.bo?cpage=${ i } & condition = ${condition} & keyword=${keyword }">${i}</a>
+            </c:otherwise>
+           </c:choose> 
+         </c:forEach>   
+            
+         <c:if test="${pi.currentPage ne pi.maxPage}">
+            <a href="list.bo?cpage=${pi.currentPage + 1}">[다음]</a>
+         </c:if> 
+            
+        </div>
 	        
 	            
             <div id="search-area" style="text-align: left;">
 			 <form action="search.bo" method="post">
            
-           
-                
             <br>    
 	            
 	            <select name="period" >

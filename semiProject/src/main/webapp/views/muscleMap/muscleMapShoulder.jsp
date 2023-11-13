@@ -24,7 +24,7 @@
 			height: 100vh;
 			background-color: #d6d7dc;
 		}
-		
+		c              
 		.top-var {
 			width: auto;
 			height: auto;
@@ -42,14 +42,6 @@
 			color: white;
 		}
 		
-		.outer {
-			background: rgb(165, 173, 179);
-			color: rgb(32, 28, 28);
-			width: 1000px;
-			height: auto;
-			margin: auto;
-			margin-top: 50px;
-		}
 		
 		#bodyImg {
 			position: relative;
@@ -58,7 +50,7 @@
 		}
 	
 		.outer{
-	            background: #cde0f3;
+	            background: #e0f0f3;
 	            color: rgb(32, 28, 28);
 	            width: 1000px;
 	            height: auto;
@@ -89,7 +81,7 @@
         <h2 style="text-align: center;">머슬지도</h2>
 		<br>
         <div style="text-align: center;">
-            <h3>어깨운동</h3> 
+            <h3>어깨 운동 </h3> 
         </div>
     
     
@@ -107,7 +99,7 @@
         
 		
 		<div style="margin-bottom: 50px; margin-left: 50px; ">
-            <p>  어깨는 상체에서 가장 중요한 관절 중 하나입니다. </p>
+            <p> 어깨는 상체에서 가장 중요한 관절 중 하나입니다. </p>
             <p> 어깨를 움직이면 팔을 위로 들어 올리고, 옆으로 벌리고, 뒤로 젖힐 수 있습니다. </p>
             <p> 어깨가 튼튼하면 팔을 자유롭게 움직일 수 있고, 일상생활에서 많은 동작을 쉽게 할 수 있습니다. </p>
             <P> 또한 어깨는 움직임이 많은 관절이기 때문에 부상을 입기 쉽습니다. 

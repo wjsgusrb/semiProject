@@ -12,5 +12,6 @@ public interface MemberService  {
 	public abstract int deleteMember(String userId, String userPwd);
 	public abstract Member loginMember(Member m);
 	ArrayList<Member> selectId(String selectId);
+	public abstract int idCheckMember(String checkId) ;
 
 }

@@ -7,13 +7,14 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import com.kh.mybatis.board.model.vo.Board;
-import com.kh.mybatis.board.model.vo.BoardImg;
 import com.kh.mybatis.board.model.vo.BoardComment;
+import com.kh.mybatis.board.model.vo.BoardImg;
 import com.kh.mybatis.common.model.vo.PageInfo;
 
 public class BoardDao {
 
 	public int selectListCount(SqlSession sqlSession) {
+
 		return sqlSession.selectOne("boardMapper.selectListCount");
 	}
 
@@ -21,10 +22,8 @@ public class BoardDao {
 	public ArrayList<Board> selectList(SqlSession sqlSession, PageInfo pi) {
 		int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
 		int limit = pi.getBoardLimit();
-		
 		RowBounds rowBounds = new RowBounds(offset, limit);
-		ArrayList<Board> list =  (ArrayList)sqlSession.selectList("boardMapper.selectList", null , rowBounds);
-		
+		ArrayList<Board> list = (ArrayList)sqlSession.selectList("boardMapper.selectList", null , rowBounds);
 		return list;
 		
 	}

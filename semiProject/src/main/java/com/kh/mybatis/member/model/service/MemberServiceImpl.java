@@ -31,8 +31,18 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public int updateMember(Member m) {
-		// TODO Auto-generated method stub
-		return 0;
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = mDao.updateMember(sqlSession, m);
+		
+		if(result > 0) {
+			sqlSession.commit();
+			
+		}
+		
+		sqlSession.close();
+		
+		return result;
 	}
 
 	@Override
@@ -63,6 +73,15 @@ public class MemberServiceImpl implements MemberService{
 		ArrayList<Member> list = mDao.selectId(sqlSession, selectId);
 		sqlSession.close();
 		return list;
+
+		
+	public int idCheckMember(String checkId) {
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = mDao.idCheckMember(sqlSession, checkId);
+	
+		System.out.println(result);
+		return result;
 	}
 	
 }

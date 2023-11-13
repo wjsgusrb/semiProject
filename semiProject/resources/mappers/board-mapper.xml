@@ -4,31 +4,83 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="boardMapper">
-  	<resultMap id ="boardResultSet" type="Board">
-  		<result column="BOARD_NO" property="boardNo"/>
-  		<result column="USER_NO" property="userNo"/>
-  		<result column="BOARD_TITLE" property="boardTitle"/>
-  		<result column="BOARD_CONTENT" property="boardContent"/>
-  		<result column="CATEGORY" property="Category"/>
-  		<result column="UPDATE_DATE" property="updateDate"/>
-  		<result column="DELETE_DATE" property="deleteDate"/>
-  		<result column="BOARD_COUNT" property="boardCount"/>
-  	</resultMap>
-  
-	<resultMap id="boardCommentResultSet" type="BoardContent">
-	    <result column="BOARD_COMMENT_NO" property="boardCommentNo" />
-	    <result column="BOARD_COMMENT_CONTENT" property="boardCommentContent" />
-	    <result column="BOARD_NO" property="boardNo" />
-	    <result column="USER_NO" property="userNo" />
-	</resultMap>
-	<resultMap id="boardImgResultSet" type="BoardImg">
-	    <result column="BOARD_IMG_NO" property="boardImgNo" />
-	    <result column="BOARD_NO" property="boardNo" />
-	    <result column="BOARD_IMG" property="boardImg" />
-	    <result column="ORIGINNAME" property="originName" />
-	    <result column="CHANGENAME" property="changeName" />
-	    <result column="DELETEDATE" property="deleteDate" />
-	</resultMap>
+     <resultMap id ="boardResultSet" type="Board">
+        <result column="BOARD_NO" property="boardNo"/>
+        <result column="USER_NO" property="userNo"/>
+        <result column="BOARD_TITLE" property="boardTitle"/>
+        <result column="BOARD_CONTENT" property="boardContent"/>
+        <result column="CATEGORY" property="category"/>
+        <result column="UPDATE_DATE" property="updateDate"/>
+        <result column="DELETE_DATE" property="deleteDate"/>
+        <result column="BOARD_COUNT" property="boardCount"/>
+     </resultMap>
+   <resultMap id="boardCommentResultSet" type="BoardComment">
+       <result column="BOARD_COMMENT_NO" property="boardCommentNo" />
+       <result column="BOARD_COMMENT_CONTENT" property="boardCommentContent" />
+       <result column="BOARD_NO" property="boardNo" />
+       <result column="USER_NO" property="userNo" />
+   </resultMap>
+   <resultMap id="boardImgResultSet" type="BoardImg">
+       <result column="BOARD_IMG_NO" property="boardImgNo" />
+       <result column="BOARD_NO" property="boardNo" />
+       <result column="BOARD_IMG" property="boardImg" />
+       <result column="ORIGINNAME" property="originName" />
+       <result column="CHANGENAME" property="changeName" />
+       <result column="DELETEDATE" property="deleteDate" />
+   </resultMap>
+   
+   <select id="selectListCount" resultType="_int">
+     SELECT COUNT(*)
+       FROM BOARD
+      WHERE DELETE_DATE IS NULL   
+     </select>
+   
+   <select id="selectList" resultMap="boardResultSet">
+      SELECT BOARD_NO
+            , CATEGORY
+           , BOARD_TITLE
+           , USER_NO
+           , BOARD_COUNT
+           , UPDATE_DATE
+       FROM BOARD
+       JOIN MEMBER USING (USER_NO)
+       WHERE DELETE_DATE IS NULL
+       ORDER BY BOARD_NO DESC
+     </select>
+   
+   <update id="increaseCount" parameterType="_int">
+        UPDATE BOARD
+           SET BOARD_COUNT = BOARD_COUNT + 1
+         WHERE BOARD_NO = #{boardNo}
+           AND DELETE_DATE IS NULL
+     </update>
+   
+   <select id="selectBoard" parameterType="_int" resultMap="boardResultSet">
+         SELECT BOARD_NO
+             , CATEGORY
+             ,BOARD_TITLE
+             ,USER_NO
+             ,BOARD_COUNT
+             ,UPDATE_DATE
+             ,BOARD_CONTENT
+            FROM BOARD
+  		 JOIN MEMBER USING (USER_NO)
+  	   WHERE BOARD_NO = #{boardNo}
+  	</select>
+	
+	<!-- 댓글 조회 리스트 만들기 -->
+	<select id="selectCommentList" resultMap="boardCommentResultSet">
+  		SELECT BOARD_COMMENT_NO
+  			 , USER_NO
+  			 , BOARD_COMMENT_CONTENT
+  			 , BOARD_NO
+  		FROM BOARD_COMMENT
+  		JOIN MEMBER USING (USER_NO)
+  	   WHERE BOARD_NO = #{boardNo}
+  	ORDER BY BOARD_COMMENT_NO DESC
+  	</select>
+
+	
 	
 	<update id="deleteBoard">
 		UPDATE BOARD
@@ -42,7 +94,7 @@
 		   	   BOARD_CONTENT = #{boardContent},
 		   	   CATEGORY = #{category}
 		 WHERE BOARD_NO = #{boardNo}
-		   AND DELETE_DATE = NULL;
+		   AND DELETE_DATE = NULL
 	</update>
 	<update id="updateBoardImg">
 		UPDATE BOARD_IMG
@@ -50,7 +102,7 @@
 		   	   CHANGE_NAME = #{changeName},
 		   	   BOARD_IMG = #{boardImg}
 		 WHERE BOARD_IMG_NO = #{boardImgNo}
-		   AND DELETE_IMG = NULL;
+		   AND DELETE_IMG = NULL
 	</update>
 	<insert id="insertBoard">
 		INSERT
@@ -70,25 +122,7 @@
 				SYSDATE
 				)
 	</insert>
-	<insert id="insertBoardImg" parameterType="BoardImg">
-		INSERT
-		  INTO BOARD_IMG
-		  		(BOARD_IMG_NO,
-		  		 BOARD_NO,
-		  		 BOARD_IMG,
-		  		 ORIGIN_NAME,
-		  		 CHANGE_NAME
-		  		)
-		VALUES (SQL_BOARDIMGNO.NEXTVAL,
-				#{boardNo},
-				#{boardImg},
-				#{originName},
-				#{changeName}
-				)
-	</insert>
-	   
-	   
-	
+
   
   
   
