@@ -75,6 +75,13 @@
 		WHERE
 		  USER_ID = #{userId}
   	</update>
+  	
+  	<select id="idCheckMember" resultType="_int">
+		SELECT COUNT(*)
+		  FROM MEMBER
+		 WHERE DELETE_CHECK = 'N'
+		 AND USER_ID =  #{userId}
+	</select>
 	
 	
 </mapper>
