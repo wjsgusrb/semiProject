@@ -79,8 +79,7 @@
 			<h5 style="margin-bottom: 15px;">자유게시판 - 운동정보</h5>
 			<h2>${b.boardTitle}</h2>
 			<br>
-			<div align="right"><p style="margin-right: 5%;">${b.userNo} 조회 ${b.boardCount} ${b.updateDate}</p></div>
-			console.log(b.userNo);
+			<div align="right"><p style="margin-right: 5%;">${b.userNo} 조회수 ${b.boardCount}    ${b.updateDate}</p></div>
 		</div>
         <br>
 		<div class="detail-area" align="center">
@@ -100,27 +99,107 @@
 			</div>
 		</div>
 		<hr>
-		<div class="board-comment" align="center">
-			<div class="comentUser-img">
-				<i class="fa-solid fa-user fa-3x"></i>
-			</div>
-			<div>${c.commentWriter}</div>
-			<div>${c.commentContent}</div>
-			<button type="button" style="width: 5%;" class="btn btn-outline-primary">답글</button>	
-		</div>   
+		
+		<table id ="board-comment" class="table" algin="center">
+			<thead>
+				<c:choose>
+						<c:when test="${ empty loginUser }">
+							<tr>
+								<th colspan="2">
+									<textarea class="form-control" readonly cols="55" rows="2" style="resize:none; width:100%;">로그인 후 이용 가능합니다.</textarea>
+								</th>
+								<th style="vertical-align:middle"><button class="btn btn-secondary disabled">등록하기</button></th>
+							</tr>
+						</c:when>
+						<c:otherwise>
+							<tr> 
+								<th colspan="2">
+									<textarea class="form-control" id="content" cols="55" rows="2" style="resize:none; width:100%;"></textarea>
+								</th>
+								<th style="vertical-align:middle"><button class="btn btn-secondary" onclick="addReply();">등록하기</button></th>
+							</tr>
+						</c:otherwise>
+				</c:choose>  
+				<tr>
+					<td colspan="3">댓글(<span id="rcount">3</span>)</td>
+				</tr> 
+			</thead>
+		</table>
+		
+		 <script>
+            $(function(){
+                //댓글 조회하는 함수호출
+                selectCommentList();
+            })
+
+            function selectCommentList(){
+                $.ajax({
+                    url: "clist.bo",
+                    data: {
+                    bno: ${b.boardNo}
+                    },
+                    success: function(list){
+                        let str = "";
+                        for ( comment of list) {
+                            str += ("<tr>" +
+                                        "<th>"+ comment.userNo +"</th>" +
+                                        "<td>"+ comment.boardCommentContent +"</td>" +
+                                        "<td>"+ comment.updateDate +"</td>" +
+                                    "</tr>")
+                        }
+
+                        //$("#replyArea tbody").html(str);
+                        document.querySelector("#board-comment tbody").innerHTML = str;
+                        document.querySelector("#rcount").innerHTML = list.length;         
+
+                    },
+                    error: function(){
+						console.log("rlist.bo ajax통신 실패");
+                    }
+                })
+            }
+            
+            //댓글을 추가해주는 메서드
+            function addComment(){
+            	$.ajax({
+                    url: "cinsert.bo",
+                    data: {
+                        refBno: '${b.boardNo}',
+            			boardWriter: '${loginUser.userId}',
+            			boardContent: $("#content").val()
+                    },
+                    success: function(res){
+                             //성공시 다시 그려주기
+						if (res === "success"){
+							selectCommentList();
+							$("#content").val("");
+						}
+                    },
+                    error: function(){
+						console.log(" ajax통신 실패");
+                    }
+                })
+            }
+
+        </script>
+		
 		<hr>
-		<div class="board-comment" align="center">
-			<c:forEach var="r" items="${list()}">
-				<div class="comentUser-img">
-					<i class="fa-solid fa-user fa-3x"></i>
-				</div>
-					<div>${c.commentWriter}</div>
-					<div>${c.commentContent}</div>
-					<div>${c.updateDate }</div>
-				<button type="button" style="width: 5%;" class="btn btn-outline-primary">답글</button>	
-				<hr>
-				</c:forEach>
-		</div>   
+		
+		<!-- 
+			<div class="board-comment" align="center">
+				<c:forEach var="c" items="${list}">
+					<div class="comentUser-img">
+						<i class="fa-solid fa-user fa-3x"></i>
+					</div>
+						<div>${c.commentWriter}</div>
+						<div>${c.commentContent}</div>
+						<div>${c.updateDate }</div>
+					<button type="button" style="width: 5%;" class="btn btn-outline-primary">답글</button>	
+					<hr>
+					</c:forEach>
+			</div>   
+		
+		 -->
 		
 	  
 		
