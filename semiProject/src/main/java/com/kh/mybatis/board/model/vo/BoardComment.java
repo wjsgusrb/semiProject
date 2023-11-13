@@ -5,11 +5,11 @@ public class BoardComment {
 	 private int boardCommentNo;
 	 private String boardCommentContent;
 	 private int boardNo;
-	 private int userNo;
+	 private String userNo; // userName을 불러옴
 	
 	 public BoardComment() {}
 
-	public BoardComment(int boardCommentNo, String boardCommentContent, int boardNo, int userNo) {
+	public BoardComment(int boardCommentNo, String boardCommentContent, int boardNo, String userNo) {
 		super();
 		this.boardCommentNo = boardCommentNo;
 		this.boardCommentContent = boardCommentContent;
@@ -42,11 +42,11 @@ public class BoardComment {
 		this.boardNo = boardNo;
 	}
 
-	public int getUserNo() {
+	public String getUserNo() {
 		return userNo;
 	}
 
-	public void setUserNo(int userNo) {
+	public void setUserNo(String userNo) {
 		this.userNo = userNo;
 	}
 
