@@ -40,6 +40,7 @@ public class countLikeController extends HttpServlet {
 		
 		res.setContentType("text/html; charset=UTF-8");
 		new Gson().toJson(result,res.getWriter());
+		
 	}
 
 	/**
