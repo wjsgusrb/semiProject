@@ -1,5 +1,7 @@
 package com.kh.mybatis.member.model.service;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSession;
 
 
@@ -53,6 +55,14 @@ public class MemberServiceImpl implements MemberService{
 		
 		sqlSession.close();
 		return loginUser;
+	}
+
+	@Override
+	public ArrayList<Member> selectId(String selectId) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Member> list = mDao.selectId(sqlSession, selectId);
+		sqlSession.close();
+		return list;
 	}
 	
 }

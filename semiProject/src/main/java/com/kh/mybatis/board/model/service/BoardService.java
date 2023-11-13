@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 import com.kh.mybatis.board.model.vo.Board;
 import com.kh.mybatis.board.model.vo.BoardImg;
-import com.kh.mybatis.board.model.vo.Comment;
+import com.kh.mybatis.board.model.vo.BoardComment;
 import com.kh.mybatis.common.model.vo.PageInfo;
 
 public interface BoardService {
@@ -18,14 +18,14 @@ public interface BoardService {
 	//게시글 상세조회
 	int increaseCount(int boardNo);
 	Board selectBoard(int boardNo);
-	ArrayList<Comment> selectCommentList(int boardNo);
+	ArrayList<BoardComment> selectCommentList(int boardNo);
 	
 	//게시글 검색
 	int selectSearchCount(HashMap<String, String> map);
 	public ArrayList<Board> selectSearchList(HashMap<String, String> map, PageInfo pi);
 	
 	//게시글 작성
-	int insertBoard(Board b);
+	int insertBoard(Board b, BoardImg bImg);
 	
 	//게시글 수정
 	int updateBoard(Board b, BoardImg bImg);

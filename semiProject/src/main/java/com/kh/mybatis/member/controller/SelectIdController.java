@@ -1,6 +1,7 @@
-package com.kh.mybatis.chart.controller;
+package com.kh.mybatis.member.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,20 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.mybatis.chart.model.service.ChartServiceImpl;
-import com.kh.mybatis.chart.model.vo.Chart;
+import com.google.gson.Gson;
+import com.kh.mybatis.member.model.service.MemberServiceImpl;
+import com.kh.mybatis.member.model.vo.Member;
 
 /**
- * Servlet implementation class ChartInfoInsertController
+ * Servlet implementation class SelectIdController
  */
-@WebServlet("/chartInfo.ct")
-public class ChartInfoInsertController extends HttpServlet {
+@WebServlet("/selectId.me")
+public class SelectIdController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ChartInfoInsertController() {
+    public SelectIdController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,27 +32,13 @@ public class ChartInfoInsertController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		System.out.println("----------------------");
-		req.setCharacterEncoding("UTF-8");
+		res.setCharacterEncoding("UTF-8");
+		String selectId = req.getParameter("selectId");
+		System.out.println(selectId);
+		ArrayList<Member> list = new MemberServiceImpl().selectId(selectId);
 		
-		Chart ex = new Chart();
-		ex.setExChartTarget(String.join(",",req.getParameterValues("exTarget"))); 
-		ex.setExChartTime(Integer.parseInt(req.getParameter("exTime")));
-		ex.setUserNo(Integer.parseInt(req.getParameter("userNo")));
-		
-	
-		
-			
-		int result = new ChartServiceImpl().insertExInfo(ex);
-		
-		
-	
-		
-		if(result>0) {
-			res.sendRedirect("exChart.ch");
-		}else{
-			System.out.print("실패");
-		}
+		res.setContentType("text/html; charset=UTF-8");
+		new Gson().toJson(list, res.getWriter());
 		
 	}
 

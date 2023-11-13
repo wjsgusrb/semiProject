@@ -9,24 +9,5 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>BoardDeleteController</display-name>
-    <servlet-name>BoardDeleteController</servlet-name>
-    <servlet-class>com.kh.mybatis.board.controller.BoardDeleteController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>BoardDeleteController</servlet-name>
-    <url-pattern>/delete.bo</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>BoardUpdateController</display-name>
-    <servlet-name>BoardUpdateController</servlet-name>
-    <servlet-class>com.kh.mybatis.board.controller.BoardUpdateController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>BoardUpdateController</servlet-name>
-    <url-pattern>/update.bo</url-pattern>
-  </servlet-mapping>
+
 </web-app>

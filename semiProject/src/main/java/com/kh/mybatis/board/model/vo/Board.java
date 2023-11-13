@@ -8,7 +8,7 @@ public class Board {
 	 private int boardNo;
 	 private int userNo;
 	 private String boardTitle;
-	 private String boardText;
+	 private String boardContent;
 	 private String boardCategory;
 	 private Date updateDate;
 	 private Date deleteDate;
@@ -16,13 +16,13 @@ public class Board {
 	 
 	 public Board() {}
 
-	public Board(int boardNo, int userNo, String boardTitle, String boardText, String boardCategory, Date updateDate,
+	public Board(int boardNo, int userNo, String boardTitle, String boardContent, String boardCategory, Date updateDate,
 			Date deleteDate, int boardCount) {
 		super();
 		this.boardNo = boardNo;
 		this.userNo = userNo;
 		this.boardTitle = boardTitle;
-		this.boardText = boardText;
+		this.boardContent = boardContent;
 		this.boardCategory = boardCategory;
 		this.updateDate = updateDate;
 		this.deleteDate = deleteDate;
@@ -53,12 +53,12 @@ public class Board {
 		this.boardTitle = boardTitle;
 	}
 
-	public String getBoardText() {
-		return boardText;
+	public String getBoardContent() {
+		return boardContent;
 	}
 
-	public void setBoardText(String boardText) {
-		this.boardText = boardText;
+	public void setBoardContent(String boardContent) {
+		this.boardContent = boardContent;
 	}
 
 	public String getBoardCategory() {
@@ -95,8 +95,8 @@ public class Board {
 
 	@Override
 	public String toString() {
-		return "Board [boardNo=" + boardNo + ", userNo=" + userNo + ", boardTitle=" + boardTitle + ", boardText="
-				+ boardText + ", boardCategory=" + boardCategory + ", updateDate=" + updateDate + ", deleteDate="
+		return "Board [boardNo=" + boardNo + ", userNo=" + userNo + ", boardTitle=" + boardTitle + ", boardContent="
+				+ boardContent + ", boardCategory=" + boardCategory + ", updateDate=" + updateDate + ", deleteDate="
 				+ deleteDate + ", boardCount=" + boardCount + "]";
 	}
 

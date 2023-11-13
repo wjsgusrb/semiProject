@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.kh.mybatis.board.model.service.BoardService;
 import com.kh.mybatis.board.model.service.BoardServiceImpl;
 import com.kh.mybatis.board.model.vo.Board;
-import com.kh.mybatis.board.model.vo.Comment;
+import com.kh.mybatis.board.model.vo.BoardComment;
 
 /**
  * Servlet implementation class boardDetailController
@@ -41,7 +41,7 @@ int boardNo = Integer.parseInt(request.getParameter("bno"));
 		
 		if(result > 0){
 			Board b = bService.selectBoard(boardNo);
-			ArrayList<Comment> list =  bService.selectCommentList(boardNo);
+			ArrayList<BoardComment> list =  bService.selectCommentList(boardNo);
 			
 			request.setAttribute("b", b);
 			request.setAttribute("list", list);

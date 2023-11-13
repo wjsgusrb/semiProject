@@ -1,5 +1,7 @@
 package com.kh.mybatis.member.model.dao;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSession;
 
 
@@ -25,5 +27,11 @@ public class MemberDao {
 		
 		int result = sqlSession.update("memberMapper.deleteMember");
 		return result;
+	}
+	
+
+	public ArrayList<Member> selectId(SqlSession sqlSession, String selectId ) {
+
+		return (ArrayList)sqlSession.selectList("memberMapper.selectId",selectId);
 	}
 }

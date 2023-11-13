@@ -64,5 +64,17 @@
 		 AND USER_PWD = #{userPwd}
 		 AND DELETE_CHECK = 'N'
  	</select>
+ 	
+ 	
+ 	<select id="selectId" parameterType="String" resultMap="memberResultSet">
+		SELECT USER_NO,
+			USER_ID,
+			USER_NAME,
+			PROFILE_IMG,
+		FROM MEMBER
+		WHERE USER_ID  like '%' ||  #{selectId} || '%'
+		 AND DELETE_CHECK = 'N'
+ 	</select>
+	
 	
 </mapper>

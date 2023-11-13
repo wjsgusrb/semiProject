@@ -51,6 +51,7 @@
 
         <form id="enroll-form" action="" method="" enctype="">
             <!-- 카테고리, 제목, 내용, 첨부파일 한 개-->
+            <input type="hidden" name="userNo" value="<%=loginUser.getUserNo() %>">
             <table>
                 <tr>
                     

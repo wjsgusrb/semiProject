@@ -15,11 +15,14 @@
                         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
                         crossorigin="anonymous"></script>
 
+                        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
                     <script
                         type="text/javascript"
                         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df6089610150bf39081f4bdb1c7356a&libraries=services"></script>
                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                     <script src="https://kit.fontawesome.com/5b03f739e9.js" crossorigin="anonymous"></script>
+                    <script src="resources/js/ajaxController.js"></script>
                     <link rel="preconnect" href="https://fonts.googleapis.com">
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
@@ -101,7 +104,7 @@
                                 <div >
                                     <a href="${pageContext.request.contextPath}/myPage.me" style="margin-left: 30px; margin-right: 30px; color: black;">마이페이지</a>
                                 </div>
-                                <div><i class="fa-solid fa-magnifying-glass fa-l "style="opacity: 0.7;"></i></div>
+                                <div><i data-bs-toggle="modal" data-bs-target="#exampleModal" class="fa-solid fa-magnifying-glass fa-l "style="opacity: 0.7;"></i></div>
                             </div>
                         </div>
                         <div class="top-var" style=" border-radius: 15px 15px 15px 15px; ">
@@ -109,8 +112,10 @@
                                 class="nav nav-pills nav-fill "
                                 style="background-color: white; color: white;  border-radius: 20px 20px 20px 20px; height: auto;">
                                 <li class="nav-item" style="height:auto">
-                                    <a class="nav-link " aria-current="page" href="exChart.ch?userId=${loginUser.userId }">운동통계표</a>
+                                    <a class="nav-link " aria-current="page"  href="exChart.ch">운동통계표</a>
                                 </li>
+
+                               
                                 <li class="nav-item">
                                     <a class="nav-link " href="#">자유게시판</a>
                                 </li>
@@ -122,26 +127,73 @@
                                 </li>
                             </ul>
 
+
                             <script>  
-                                const currentPage = document.getElementsByClassName("nav-item");
-                                const currentPagea = document.querySelectorAll(".nav>.nav-item>a");
-                                for (const current of currentPage) { 
-                                    current.onclick = function () {
+                                 const currentPage = document.getElementsByClassName("nav-item");
+                                 const currentPagea = document.querySelectorAll(".nav>.nav-item>a");
+                                 for (const current of currentPage) { 
+                                     current.onclick = function () {
                                       
-                                        for (const a of currentPagea) {
-                                            a
+                                         for (const a of currentPagea) {
+                                             a
                                                 .classList
-                                                .remove("active");
-                                        }
+                                                 .remove("active");
+                                         }
                                          noticeNo = this.childNodes[1];
-                                        noticeNo
-                                            .classList
-                                            .add("active");
-                                    }
-                                }
+                                         noticeNo
+                                             .classList
+                                           .add("active");
+                                     }
+                                 }
 
                             </script>
-                        </div>
 
+
+                            
+                        </div>
+                         <!-- Modal -->
+                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">친구 검색</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" onkeyup="selectUserId()" id="floatingInput" placeholder="userid">
+                                        <label for="floatingInput">친구아이디 검색</label>
+                                      </div>
+                                </div>
+
+                                <script>
+
+                                    let eventFlag;
+                                  
+                                    selectUserId =()=>{
+                                        const selectId = document.getElementById("floatingInput").value
+                                        clearTimeout(eventFlag);
+                                        eventFlag = setTimeout(()=>{
+    
+                                           
+                                            if(selectId.length >= 3){
+                                                ajaxController.getSelectUser(selectId, (result)=>{
+                                                    console.log(result);
+                                                })
+                                            }
+                                        },2000)
+                                       
+                                   }
+                                    
+
+                                   
+                                </script>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">친구요청</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     </body>
                 </html>
