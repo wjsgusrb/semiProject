@@ -39,4 +39,12 @@ public class MemberDao {
 
 		return result;
 	}
+	
+		public int idCheckMember(SqlSession sqlSession, String checkId) {
+				
+			
+				
+				
+				return sqlSession.selectOne("memberMapper.idCheckMember", checkId);
+			}
 }
