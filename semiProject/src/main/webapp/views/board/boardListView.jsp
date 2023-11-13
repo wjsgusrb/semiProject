@@ -54,7 +54,11 @@
         text-align: right;
         padding-top: 20px;
     }
-    .slect-view{
+    #paging-area{
+    	text-align: center;
+    	
+    }
+    .select-view{
         padding-bottom: 3px;
         margin: 0 auto;
         text-align: right;
@@ -161,6 +165,7 @@
 		            </div>
 		        </c:if>
 	        
+<<<<<<< HEAD
 	        <div class="paging-area" align="center">
                 <c:if test="${ pi.currentPage ne 1 }">
                     <button class="btn btn-light" onclick="location.href='list.bo?cpage=${ pi.currentPage - 1 }'">&lt;</button>
@@ -173,13 +178,35 @@
                     <button class="btn btn-light" onclick="location.href='list.bo?cpage=${ pi.currentPage + 1 }'">&gt;</button>
                 </c:if>
             </div>
+=======
+	         <div id="paging-area">
+        <c:if test="${pi.currentPage ne 1}">
+            <a href="list.bo?cpage=${pi.currentPage - 1}">[이전]</a>
+         </c:if>
+           
+           
+         <c:forEach var="i" begin="${pi.startPage}" end="${pi.endPage}">
+         <c:choose>
+         	<c:when test="${empty condition }">
+            	<a href="list.bo?cpage=${ i }">${i}</a>
+         	</c:when>
+            <c:otherwise>
+            	<a href="search.bo?cpage=${ i } & condition = ${condition} & keyword=${keyword }">${i}</a>
+            </c:otherwise>
+           </c:choose> 
+         </c:forEach>   
+            
+         <c:if test="${pi.currentPage ne pi.maxPage}">
+            <a href="list.bo?cpage=${pi.currentPage + 1}">[다음]</a>
+         </c:if> 
+            
+        </div>
+>>>>>>> 4f695814989aea54e5a6f83d8af8ef5bdc93ec6c
 	        
 	            
             <div id="search-area" style="text-align: left;">
 			 <form action="search.bo" method="post">
            
-           
-                
             <br>    
 	            
 	            <select name="period" >
