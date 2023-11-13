@@ -9,8 +9,8 @@
 <style>
     .outer{
         background: white;
-        height: 100%;
-        width: 80%;
+        height: 90%;
+        width: 60%;
         margin: auto;
         margin-top: 50px;
     }
