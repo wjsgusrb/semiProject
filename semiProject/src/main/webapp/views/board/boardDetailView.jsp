@@ -80,6 +80,7 @@
 			<h2>${b.boardTitle}</h2>
 			<br>
 			<div align="right"><p style="margin-right: 5%;">${b.userNo} 조회 ${b.boardCount} ${b.updateDate}</p></div>
+			console.log(b.userNo);
 		</div>
         <br>
 		<div class="detail-area" align="center">
