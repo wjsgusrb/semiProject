@@ -29,6 +29,7 @@ public interface BoardService {
 	int insertBoard(Board b, BoardImg bImg);
 	
 	//게시글 수정
+	BoardImg selectBoardImg(int boardNo);
 	int updateBoard(Board b, BoardImg bImg);
 	
 	//게시글 삭제
