@@ -15,6 +15,14 @@
 		<result column="CHANGE_NAME" property="changeName" />
 		<result column="FEED_URL" property="feedUrl" />
 	</resultMap>
+	<resultMap id="feedImgResultSet" type="FeedImg">
+		<result column="FEEDIMG_NO" property="feedImgNo" />
+		<result column="FEED_NO" property="feedNo" />
+		<result column="FEED_URL" property="feedUrl" />
+		<result column="ORIGIN_NAME" property="originName" />
+		<result column="CHANGE_NAME" property="changeName" />
+		<result column="DELETE_IMG" property="deleteImg" />
+	</resultMap>
 	
 	<select id="selectListCount" resultType="_int">
      SELECT COUNT(*) COUNT

@@ -45,13 +45,12 @@ public class FeedServiceImpl implements FeedService{
 	public int insertFeed(Feed f, ArrayList<FeedImg> list) {
 		SqlSession sqlSession = Template.getSqlSession();
 		
-		int result1 = new FeedDao().insertFeed(sqlSession, f);
+		int result1 = fDao.insertFeed(sqlSession, f);
 		
 		int result2 = 0;
 		for(FeedImg fe : list) {
-			result2 = new FeedDao().insertFeedImg(sqlSession, fe);
+			result2 = fDao.insertFeedImg(sqlSession, fe);
 		}
-		
 		
 		if(result1 * result2 > 0) {
 			sqlSession.commit();

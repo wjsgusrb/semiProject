@@ -48,6 +48,7 @@ public class FeedInsertController extends HttpServlet {
 			f.setFeedText(multiRequest.getParameter("feedText"));
 			System.out.println(f.getUserNo());
 			int result = 0;
+			
 			for(int i = 1; i <= 3; i++) {
 				String key = "file" + i;
 				if(multiRequest.getOriginalFileName(key) != null) {
@@ -62,11 +63,11 @@ public class FeedInsertController extends HttpServlet {
 			
 			result = new FeedServiceImpl().insertFeed(f,list);
 			
-			if(result > 0) { // 성공 => /jsp/list.th url재요청
-				request.getSession().setAttribute("alertMsg", "썸네일 업데이트 성공");
+			if(result > 0) { 
+				request.getSession().setAttribute("alertMsg", "피드 등록 완료!");
 				response.sendRedirect(request.getContextPath() + "/list.fe?userNo="+ f.getUserNo() + "&cpage=1");
-			} else { // 실패 => 에러페이지
-				request.setAttribute("alertMsg", "사진 게시글 작성 실패");
+			} else { 
+				request.setAttribute("alertMsg", "피드 작성 실패");
 				request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
 				
 			}
