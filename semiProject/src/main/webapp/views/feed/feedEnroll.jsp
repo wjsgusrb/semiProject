@@ -101,7 +101,7 @@
     <div class="outer">
        <div class="insert-feed">
             <br>
-            <h3 align="center" style="color: #0d6efd;">운동피드등록</h3>
+            <h3 align="center" style="color: #0d6efd; font-style: italic;">workout completed</h3>
             <br>
 
             <form action="${pageContext.request.contextPath}/insert.fe" id="enroll-form" method="post" enctype="multipart/form-data">
@@ -145,13 +145,8 @@
     <script>
         function loadImg(inputFile, num){
             console.log(inputFile)
-            //inputfile : 현재 변화가 생긴 input type=file 요소객체
-            // num : 몇번째 input요소인지 확인하기위한 파라미터
 
-            //inputFile.files[0]에 선택된 파일이 담겨있을 것이다.
-            //inputFile.files.length => 1일 것이다.
-
-            if(inputFile.files.length == 1){ // 파일이 선택된 경우 => 미리보기 나타나게
+            if(inputFile.files.length == 1){ // 미리보기
                 //파일을 읽어들일 FileReader객체 생성
                 const reader = new FileReader();
 
