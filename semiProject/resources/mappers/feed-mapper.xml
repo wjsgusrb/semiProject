@@ -32,4 +32,11 @@
     		JOIN MEMBER USING(USER_NO)
     		JOIN FEED_IMG USING(FEED_NO)
   	</select>
+  	
+  	
+  	  	<select id="countLike" resultType="_int">
+  		SELECT count(*)
+   		FROM FEED
+    		where feed_no = ${feedNo}
+  	</select>
 </mapper>
