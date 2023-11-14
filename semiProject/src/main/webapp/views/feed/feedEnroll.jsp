@@ -8,52 +8,31 @@
 <title>Insert title here</title>
 <style>
     .outer{
-        background: rgb(190, 190, 190);
-      
-        height: 100%;
-        width: 80%;
+        background: white;
+        height: 90%;
+        width: 60%;
         margin: auto;
         margin-top: 50px;
     }
-
-    .left-area{
-        width: 50%;
-        float: left;
-        box-sizing: border-box;
-        height: 800px;
-        margin-bottom: 50px;
-        
-        background:  rgb(190, 190, 190);
-       
-    }
-    
-   .right-area{
-        width: 50%;
-        float: right;
-        box-sizing: border-box;
-        height: 800px;
-        
-        background: rgb(190, 190, 190);
+    .insert-feed{
+        width: 100%;
+        text-align: center;
     }
     .comment{
-        border: 1px solid white;
+        border: 1px solid black;
+        border-radius: 20%;
         align : center;
         max-width: 850px;
         height: 500px;
         margin-left: 5%;
         background-color: white;
-        margin-right: 5%;
     }
     .thumbnail{
-        border: 1px solid white;
-        align : center;
-       
-        height: 500px;
-        margin-left: 15%;
-        margin-right: 15%;
-        background-color: white;
-        
-
+        border: 1px solid black;
+        border-radius: 5%;
+        width: 150px;
+        height: 150px;
+        font-size: 12px;
     }
     .Lower-bar{
         margin-top: 210px;
@@ -62,15 +41,43 @@
     .userProfile{
         margin-left: 20%;
     }
-   
-   
 
-li {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    border : 0;
-    float: left;
-}
+    .user-info{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .user-info2{
+        display: flex;
+        justify-content: left;
+        width: 500px;
+        margin-bottom: 5px;
+    }
+   .textareadiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .pic-insert-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+   }
+   
+   .pic-insert{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    li {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        border : 0;
+        float: left;
+    }
    
 </style>
 <!-- bootstrap CSS -->
@@ -92,52 +99,33 @@ li {
     <jsp:include page="/views/common/menubar.jsp" />
 
     <div class="outer">
-       
-        <br>
-        <h5 align="center">운동피드등록</h5>
-        <br>
+       <div class="insert-feed">
+            <br>
+            <h3 align="center" style="color: #0d6efd;">운동피드등록</h3>
+            <br>
 
-
-
-
-
-		<div class="left-area">
-			<div class="thumbnail" align="center" style="height: 500px;  max-width: 500px;">
-				<div class="bi bi-plus-circle fs-1" style="margin-top: 200px;">
-
-
-
-				</div>
-				<div class="btn-group" role="group"
-					aria-label="Basic outlined example" style="margin-top: 190px;">
-					<button type="button" class="btn btn-outline-primary"> 이전</button>
-					
-					<button type="button" class="btn btn-outline-primary">다음</button>
-				</div>
-
-			</div>
-
-		</div>
-
-
-		<div class="right-area">
-            <div class="userProfile" style="height: 60px;" >
-                <i style="float: left; margin-top: 5px;" class="fa-regular fa-user fs-1"></i>
-                <p style="float: left; margin-left: 40px; margin-top: 15px;" >user01</p>
-                <i style="float: right; margin-right: 20%;"  class="bi bi-backspace fs-1"></i>
-                
+            <div class="user-info">
+                <div class = "user-info2">
+                    <div style="margin-right: 10px;"><i  class="fa-regular fa-user fs-1"></i></div>
+                    <div>user01</div>
+                </div>
+            </div>
+            <div class = "textareadiv">
+                <textarea name="" id="" cols="55" rows="15" style="width: 500px; height: 150px;" placeholder="게시글을 입력하세요"></textarea>
             </div>
 
-            
-            <div>
-                <textarea name="" id="" cols="55" rows="15" style="margin-left: 13%; width: 73%; margin-right: 40px; " align="center"></textarea>
-                
-            </div>
-            <div>
-                <button class="btn btn-primary" style="margin-left: 45%; margin-top: 20px;">업로드</button>
-               
+            <br>
+
+            <div class = "pic-insert-div">
+                <div class="pic-insert">
+                    <div class="thumbnail">picture insert</div>
+                    <div class="thumbnail">picture insert</div>
+                    <div class="thumbnail">picture insert</div>
+                </div>
             </div>
 
+            <a href="boardListView.jsp" class="btn btn-primary">등록</a>
+            <a type="reset" class="btn btn-danger">취소</a>
         </div>
     </div>
     
