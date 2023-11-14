@@ -53,7 +53,7 @@
         <h2 align center style="background-color: #0d6efd; color: white; width: 55%; border-radius: 30px;">게시글 작성하기</h2>
         <br>
 
-        <form id="enroll-form" action="update.bo" method="" enctype="">
+        <form id="enroll-form" action="update.bo" method="POST" enctype="multipart/form-data">
             <!-- 카테고리, 제목, 내용, 첨부파일 한 개-->
 			<input type="hidden" name="boardNo" value="<%=b.getBoardNo() %>">            
             <table>
@@ -91,8 +91,8 @@
             <br>
 
             <div class="bottom-btn">
-                <a href="submit" class="btn btn-primary">수정</a>
-                <a href="" class="btn btn-danger">취소</a>
+                <button type="submit" class="btn btn-primary">수정</button>
+                <button type="reset" class="btn btn-danger">취소</button>
             </div>
         </form>
     </div>
