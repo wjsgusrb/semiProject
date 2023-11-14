@@ -147,7 +147,7 @@
                         let str = "";
                         for ( comment of list) {
                             str += ("<tr>" +
-                                        "<th>"+ comment.userNo +"</th>" +
+                                        "<th>"+ comment.userName +"</th>" +
                                         "<td>"+ comment.boardCommentContent +"</td>" +
                                         '<td><button type="button" style="width: 50%;" class="btn btn-outline-primary"> 답글 </button></td>' +
                                     "</tr>")

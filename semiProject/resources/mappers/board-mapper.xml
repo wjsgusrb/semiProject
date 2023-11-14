@@ -19,6 +19,7 @@
        <result column="BOARD_COMMENT_CONTENT" property="boardCommentContent" />
        <result column="BOARD_NO" property="boardNo" />
        <result column="USER_NO" property="userNo" />
+         <result column="USER_NAME" property="userName"/>
    </resultMap>
    <resultMap id="boardImgResultSet" type="BoardImg">
        <result column="BOARD_IMG_NO" property="boardImgNo" />
@@ -39,7 +40,7 @@
       SELECT BOARD_NO
             , CATEGORY
            , BOARD_TITLE
-           , USER_NO
+           , USER_NAME as "USER_NO"
            , BOARD_COUNT
            , UPDATE_DATE
        FROM BOARD
@@ -59,7 +60,7 @@
          SELECT BOARD_NO
              , CATEGORY
              ,BOARD_TITLE
-             ,USER_NO
+             , USER_NAME as "USER_NO"
              ,BOARD_COUNT
              ,UPDATE_DATE
              ,BOARD_CONTENT
@@ -142,6 +143,7 @@
 		<select id="selectCommentList" resultMap="boardCommentResultSet">
 	  		SELECT BOARD_COMMENT_NO
 	  			 , USER_NO
+	  			 , USER_NAME
 	  			 , BOARD_COMMENT_CONTENT
 	  			 , BOARD_NO
 	  		FROM BOARD_COMMENT
