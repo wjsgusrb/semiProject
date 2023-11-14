@@ -36,8 +36,6 @@ public class BoardDao {
 		return sqlSession.selectOne("boardMapper.selectBoard", boardNo);
 	}
 
-	
-
 	public int selectSearchCount(SqlSession sqlSession, HashMap<String, String> map) {
 		return sqlSession.selectOne("boardMapper.selectSearchCount", map);
 	}
@@ -57,7 +55,10 @@ public class BoardDao {
 	}
 	
 	public int deleteBoard(SqlSession sqlSession, int boardNo) {
-		return sqlSession.delete("boardMapper.deleteBoard", boardNo);
+		return sqlSession.update("boardMapper.deleteBoard", boardNo);
+	}
+	public BoardImg selectBoardImg(SqlSession sqlSession, int boardNo) {
+		return sqlSession.selectOne("boardMapper.selectBoardImg", boardNo);
 	}
 	public int updateBoard(SqlSession sqlSession, Board b) {
 		return sqlSession.update("boardMapper.updateBoard", b);

@@ -5,6 +5,7 @@
   
 
  <configuration>
+
     <settings>
        <setting name="jdbcTypeForNull" value="NULL"/>
     </settings>
