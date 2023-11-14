@@ -19,9 +19,17 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+<<<<<<< HEAD
+<<<<<<< HEAD
+Servers/
+=======
+servers/
+>>>>>>> 4d267294e3df11cfa3157522d820d0e48eddd5f5
+=======
 
 Servers/
 
+>>>>>>> f18967dd1fd869c8be5dcb9bc1bb89868f3f25c3
 
 # External tool builders
 .externalToolBuilders/
@@ -299,3 +307,5 @@ fabric.properties
 !.idea/runConfigurations
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all
+
+servers/
