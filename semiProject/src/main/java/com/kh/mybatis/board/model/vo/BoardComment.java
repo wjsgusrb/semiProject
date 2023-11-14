@@ -5,15 +5,18 @@ public class BoardComment {
 	 private int boardCommentNo;
 	 private String boardCommentContent;
 	 private int boardNo;
-	 private String userNo; // userName을 불러옴
+	 private String userName; // userName을 불러옴
+	 private int userNo;
 	
 	 public BoardComment() {}
+	 
 
-	public BoardComment(int boardCommentNo, String boardCommentContent, int boardNo, String userNo) {
+	public BoardComment(int boardCommentNo, String boardCommentContent, int boardNo, String userName, int userNo) {
 		super();
 		this.boardCommentNo = boardCommentNo;
 		this.boardCommentContent = boardCommentContent;
 		this.boardNo = boardNo;
+		this.userName = userName;
 		this.userNo = userNo;
 	}
 
@@ -42,20 +45,21 @@ public class BoardComment {
 		this.boardNo = boardNo;
 	}
 
-	public String getUserNo() {
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public int getUserNo() {
 		return userNo;
 	}
 
-	public void setUserNo(String userNo) {
+	public void setUserNo(int userNo) {
 		this.userNo = userNo;
 	}
 
-	@Override
-	public String toString() {
-		return "BoardComment [boardCommentNo=" + boardCommentNo + ", boardCommentContent=" + boardCommentContent
-				+ ", boardNo=" + boardNo + ", userNo=" + userNo + "]";
-	}
-	
-	 
 	 
 }

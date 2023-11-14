@@ -30,21 +30,37 @@ public class AjaxCommentInsertController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
 		
-		String boardCommentContent = request.getParameter("content");
-		int boardNo = Integer.parseInt(request.getParameter("bno"));
-		int userNo = ((Member)request.getSession().getAttribute("loginUser")).getUserNo();
 		
-		BoardComment c = new BoardComment();
-		c.setBoardCommentContent(boardCommentContent);
-		c.setBoardNo(boardNo);
-		c.setUserNo(String.valueOf(userNo));
+		BoardComment co = new BoardComment();
+		co.setBoardCommentContent(req.getParameter("boardContent"));
+		co.setBoardNo(Integer.parseInt(req.getParameter("boardNo")));
+		co.setUserNo(Integer.parseInt(req.getParameter("userNo")));
+		System.out.println(co);
+		int result = new BoardServiceImpl().insertComment(co);
+	
+		System.out.println(result);
 		
-		int result = new BoardServiceImpl().insertComment(c);
+		res.getWriter().print(result);
 		
-		response.getWriter().print(result);
+		
+		
+		
+//		 (req.getSession().getAttribute("loginUser"))
+		
+	
+		
+//		
+////		BoardComment c = new BoardComment();
+////		c.setBoardCommentContent(boardCommentContent);
+////		c.setBoardNo(boardNo);
+////		c.setUserNo(String.valueOf(userNo));
+////		
+////		
+////		
+		
 		
 	}
 

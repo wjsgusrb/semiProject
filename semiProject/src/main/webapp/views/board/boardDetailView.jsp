@@ -94,7 +94,7 @@
 			</div>
 			<div class="detail-img-area" align="center">
 				<div class="detail-img">
-				
+					 
 				</div>
 			</div>
 		</div>
@@ -133,6 +133,7 @@
 			window.onload =() =>{
 				selectCommentList();
 				
+				
 			}
 
             function selectCommentList(){
@@ -150,15 +151,13 @@
                                         "<td>"+ comment.boardCommentContent +"</td>" +
                                         '<td><button type="button" style="width: 50%;" class="btn btn-outline-primary"> 답글 </button></td>' +
                                     "</tr>")
-
-							
                         }
 							document.querySelector("#board-comment tbody").innerHTML = str;
+							
 							document.querySelector("#rcount").innerHTML = list.length;         
+							
 
                         //$("#replyArea tbody").html(str);
-                      
-
                     },
                     error: function(){
 						console.log("rlist.bo ajax통신 실패");
@@ -172,15 +171,23 @@
                     url: "cinsert.bo",
                     data: {
                     	boardNo: '${b.boardNo}',
-                    	userNo: '${loginUser.userId}',
-            			boardContent: $("#content").val()
+            			boardContent: $("#content").val(),
+						userNo : '${loginUser.userNo}'
                     },
                     success: function(res){
                              //성공시 다시 그려주기
-						if (res === "success"){
-							selectCommentList();
-							$("#content").val("");
-						}
+								console.log(res)
+							 if(res>0 ){
+								 document.getElementById("content").value = "";
+								selectCommentList();
+							 }else{
+								console.log("요청실패")
+							 }
+							 
+						// if (res === "success"){
+						// 	selectCommentList();
+						// 	$("#content").val("");
+						// }
                     },
                     error: function(){
 						console.log(" ajax통신 실패");

@@ -160,7 +160,7 @@
                <!-- 로그인한 회원 보이게 만들어야 함-->
                <c:if test="${ not empty loginUser }">
                   <div class="bottom-btn">
-                      <a href="/ex/enrollForm.bo" class="btn btn-primary">게시글 등록</a>
+                      <a href="enrollForm.bo" class="btn btn-primary">게시글 등록</a>
                       <a href="../board/myArticleView.jsp" class="btn btn-primary">나의게시판</a>
                   </div>
               </c:if>

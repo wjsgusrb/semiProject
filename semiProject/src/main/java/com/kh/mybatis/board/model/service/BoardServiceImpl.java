@@ -138,9 +138,12 @@ public class BoardServiceImpl implements BoardService{
 	public int insertComment(BoardComment c) {
 		
 		SqlSession sqlSession = Template.getSqlSession();
-				
+		int result = bDao.insertComment(sqlSession, c);
+		if(result>0) {
+			sqlSession.commit();
+		}
 		sqlSession.close();
-		return bDao.insertComment(sqlSession, c);
+		return result;
 	}
 	
 }
