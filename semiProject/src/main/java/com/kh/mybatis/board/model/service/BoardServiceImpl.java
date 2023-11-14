@@ -94,6 +94,14 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	@Override
+	public BoardImg selectBoardImg(int boardNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		BoardImg bImg = bDao.selectBoardImg(sqlSession, boardNo);
+		sqlSession.close();
+		return bImg;
+	}
+	
+	@Override
 	public int updateBoard(Board b, BoardImg bImg) {
 		SqlSession sqlSession = Template.getSqlSession();
 		

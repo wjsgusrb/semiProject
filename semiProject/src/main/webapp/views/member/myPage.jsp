@@ -285,8 +285,7 @@ img {
 }
 
 /* Spinner Animation */
-@
-keyframes loader {to { transform:rotate(360deg);
+@keyframes loader {to { transform:rotate(360deg);
 	
 }
 
@@ -299,8 +298,7 @@ keyframes loader {to { transform:rotate(360deg);
         Remove or comment-out the code block below to see how the browser will fall-back to flexbox & floated styling. 
 
         */
-@
-supports (display: grid) { .profile { display:grid;
+@supports (display: grid) { .profile { display:grid;
 	grid-template-columns: 1fr 2fr;
 	grid-template-rows: repeat(3, auto);
 	grid-column-gap: 3rem;
@@ -400,20 +398,17 @@ supports (display: grid) { .profile { display:grid;
 	<jsp:include page="/views/common/menubar.jsp" />
 	<header>
 
-		<div class="container">
+		<div class="container"> 
 
 			<div class="profile">
 
 				<div class="profile-image">
-					<a href=""> <img
-						src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces"
-						alt="">
-					</a>
+					<img src="" />
 				</div>
 
 				<div class="profile-user-settings">
 
-					<h1 class="profile-user-name">userName</h1>
+					<h1 class="profile-user-name">${loginUser.userName}</h1>
 
 					<button class="btn profile-edit-btn, btn btn-info" id="follow-btn">팔로우
 						요청</button>
@@ -445,7 +440,7 @@ supports (display: grid) { .profile { display:grid;
 
 				<div class="profile-bio">
 
-					<p>상태메세지 공간입니다.</p>
+					<p>${loginUser.statusMsg}</p>
 
 				</div>
 

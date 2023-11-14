@@ -56,7 +56,6 @@ public class BoardInsertController extends HttpServlet {
 			b.setBoardTitle(boardTitle);
 			b.setBoardContent(boardContent);
 			b.setUserNo(userNo);
-			
 			BoardImg bImg = null;
 			
 			if(multiRequest.getOriginalFileName("upfile") != null) {

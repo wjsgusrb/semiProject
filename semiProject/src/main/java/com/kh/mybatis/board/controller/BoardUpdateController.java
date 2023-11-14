@@ -68,13 +68,13 @@ public class BoardUpdateController extends HttpServlet {
 	        	bImg.setChangeName(multiRequest.getFilesystemName("upfile"));
 	        	bImg.setBoardImg("resources/board_upfile/");
 	            
-	            // 기존 첨부파일이 있을때 => update attachment(기존첨부파일 번호)
+	            // 기존 첨부파일이 있을때
 	            if(multiRequest.getParameter("boardImgNo") != null){
 	            	bImg.setBoardImgNo(Integer.parseInt(multiRequest.getParameter("boardImgNo")));
-	            }else{// 기존 첨부파일이 없을때 => insert attachment(현재 게시물 번호)
+	            }else{// 기존 첨부파일이 없을때
 	            	bImg.setBoardNo(boardNo);
 	            }
-	         } // 새로 넘어온 첨부파일이 없다면 at는 null
+	         } // 새로 넘어온 첨부파일이 없다면 bImg는 null
 	         
 	         int result = new BoardServiceImpl().updateBoard(b, bImg);
 	         
