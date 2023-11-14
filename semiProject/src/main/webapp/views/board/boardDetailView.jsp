@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +19,9 @@
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df6089610150bf39081f4bdb1c7356a&libraries=services"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 	
 	
 	<style>
@@ -43,21 +47,23 @@
 		
 		.detail-area{
 			padding: 0 20%;
+			
 		}
 	
 		.detail-img-area{
-			display: flex;
+			/* display: flex; */
 			width:auto;
 
 		}
 		.detail-img{
+			
 			margin-top: 10%;
 			width: 300px;
 			height: 300px;
 			background-color: gray;
 			border-radius: 15px;
 			opacity: 0.7;
-			margin-left: 30px;
+			/* margin-left: 30px; */
 		}
 		.board-comment{
 			display: flex;
@@ -86,13 +92,7 @@
 			<div class="detail-area-content">
 				${b.boardContent}
 			</div>
-			<div  class="detail-img-area">
-				<div class="detail-img">
-				
-				</div>
-				<div class="detail-img">
-				
-				</div>
+			<div class="detail-img-area" align="center">
 				<div class="detail-img">
 				
 				</div>
@@ -116,7 +116,7 @@
 								<th colspan="2">
 									<textarea class="form-control" id="content" cols="55" rows="2" style="resize:none; width:100%;"></textarea>
 								</th>
-								<th style="vertical-align:middle"><button class="btn btn-secondary" onclick="addReply();">등록하기</button></th>
+								<th style="vertical-align:middle"><button class="btn btn-secondary" onclick="addComment();">등록하기</button></th>
 							</tr>
 						</c:otherwise>
 				</c:choose>  
@@ -124,33 +124,40 @@
 					<td colspan="3">댓글(<span id="rcount">3</span>)</td>
 				</tr> 
 			</thead>
+			<tbody>
+
+			</tbody>
 		</table>
 		
 		 <script>
-            $(function(){
-                //댓글 조회하는 함수호출
-                selectCommentList();
-            })
+			window.onload =() =>{
+				selectCommentList();
+				
+			}
 
             function selectCommentList(){
                 $.ajax({
                     url: "clist.bo",
                     data: {
-                    bno: ${b.boardNo}
+                    bno: "${b.boardNo}"
                     },
+					
                     success: function(list){
                         let str = "";
                         for ( comment of list) {
                             str += ("<tr>" +
                                         "<th>"+ comment.userNo +"</th>" +
                                         "<td>"+ comment.boardCommentContent +"</td>" +
-                                        "<td>"+ comment.updateDate +"</td>" +
+                                        '<td><button type="button" style="width: 50%;" class="btn btn-outline-primary"> 답글 </button></td>' +
                                     "</tr>")
+
+							
                         }
+							document.querySelector("#board-comment tbody").innerHTML = str;
+							document.querySelector("#rcount").innerHTML = list.length;         
 
                         //$("#replyArea tbody").html(str);
-                        document.querySelector("#board-comment tbody").innerHTML = str;
-                        document.querySelector("#rcount").innerHTML = list.length;         
+                      
 
                     },
                     error: function(){
@@ -164,8 +171,8 @@
             	$.ajax({
                     url: "cinsert.bo",
                     data: {
-                        refBno: '${b.boardNo}',
-            			boardWriter: '${loginUser.userId}',
+                    	boardNo: '${b.boardNo}',
+                    	userNo: '${loginUser.userId}',
             			boardContent: $("#content").val()
                     },
                     success: function(res){
@@ -185,35 +192,26 @@
 		
 		<hr>
 		
-		<!-- 
-			<div class="board-comment" align="center">
-				<c:forEach var="c" items="${list}">
-					<div class="comentUser-img">
-						<i class="fa-solid fa-user fa-3x"></i>
-					</div>
-						<div>${c.commentWriter}</div>
-						<div>${c.commentContent}</div>
-						<div>${c.updateDate }</div>
-					<button type="button" style="width: 5%;" class="btn btn-outline-primary">답글</button>	
-					<hr>
-					</c:forEach>
-			</div>   
 		
+		
+		<!-- 
+			<div class="form-floating" style="display: flex;">
+				<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+				<label for="floatingTextarea">댓글 작성</label>
+				<button type="button" style="width: 15%;" class="btn btn-outline-primary">작성</button>
+			</div>
 		 -->
 		
-	  
-		
-	<div class="form-floating" style="display: flex;">
-		<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-		<label for="floatingTextarea">댓글 작성</label>
-		<button type="button" style="width: 15%;" class="btn btn-outline-primary">작성</button>
-	</div>
+	
 		
 	
 		<div align="right" style="margin-top: 25px;">
 			<a class="btn btn-sm btn-secondary">목록가기</a>
-			<a class="btn btn-sm btn-secondary">글쓰기</a>
+			<a class="btn btn-sm btn-secondary">수정하기</a>
+			<a class="btn btn-sm btn-secondary">삭제하기</a>
 		</div>	
+		
+		
 	</div>	
 	
 	</body>

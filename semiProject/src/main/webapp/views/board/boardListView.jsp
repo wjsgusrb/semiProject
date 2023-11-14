@@ -55,8 +55,8 @@
         padding-top: 20px;
     }
     #paging-area{
-    	text-align: center;
-    	
+       text-align: center;
+       
     }
     .select-view{
         padding-bottom: 3px;
@@ -120,7 +120,7 @@
         <jsp:include page="/views/common/menubar.jsp" />
         <!-- 자유게시판으로 들어가면 메뉴바 자유게시판 버튼 계속 눌리게 유지해야함-->
        
-    	<div class="select-view" style= "float: right;">
+       <div class="select-view" style= "float: right;">
                 <select name=" " id="">
                     <option value="">최신순</option>
                     <option value="">조회순</option>
@@ -144,55 +144,47 @@
                 <tbody>
                 
                 <c:forEach var="b" items="${list}">
-                	<tr>
-                		<td>"${b.boardNo}"</td>
-                		<td>"${b.category}"</td>
-                		<td><a href="detail.bo?bno=${b.boardNo}">"${b.boardTitle}"</a></td>
-                		<td>"${b.userNo}"</td>
-                		<td>"${b.boardCount}"</td>
-                		<td>"${b.updateDate}"</td>
-                	</tr>
+                   <tr onclick="location.href='detail.bo?bno=${b.boardNo}'">
+                      <td>${b.boardNo}</td>
+                      <td>${b.category}</td>
+                      <td>${b.boardTitle}</a></td>
+                      <td>${b.userNo}</td>
+                      <td>${b.boardCount}</td>
+                      <td>${b.updateDate}</td>
+                   </tr>
                 </c:forEach>
                 </tbody>
             </table>
 
   
-            	<!-- 로그인한 회원 보이게 만들어야 함-->
-	            <div class="bottom-btn">
-	                <a href="../board/boardEnrollForm.jsp" class="btn btn-primary">게시글 등록</a>
-	                <a href="../board/myArticleView.jsp" class="btn btn-primary">나의게시판</a>
-	            </v>
-	        
-	         <div id="paging-area">
-        <c:if test="${pi.currentPage ne 1}">
-            <a href="list.bo?cpage=${pi.currentPage - 1}">[이전]</a>
-         </c:if>
+               <!-- 로그인한 회원 보이게 만들어야 함-->
+               <c:if test="${ not empty loginUser }">
+                  <div class="bottom-btn">
+                      <a href="/ex/enrollForm.bo" class="btn btn-primary">게시글 등록</a>
+                      <a href="../board/myArticleView.jsp" class="btn btn-primary">나의게시판</a>
+                  </div>
+              </c:if>
            
+           <div class="paging-area" align="center">
+                <c:if test="${ pi.currentPage ne 1 }">
+                    <button class="btn btn-light" onclick="location.href='list.bo?cpage=${ pi.currentPage - 1 }'">&lt;</button>
+                </c:if>
+
+                <c:forEach var="p" begin="${pi.startPage}" end="${ pi.endPage }" >
+                    <button class="btn btn-light" onclick="location.href='list.bo?cpage=${p}'">${p}</button>
+                </c:forEach>
+                <c:if test="${ pi.currentPage ne pi.maxPage }">
+                    <button class="btn btn-light" onclick="location.href='list.bo?cpage=${ pi.currentPage + 1 }'">&gt;</button>
+                </c:if>
+            </div>
            
-         <c:forEach var="i" begin="${pi.startPage}" end="${pi.endPage}">
-         <c:choose>
-         	<c:when test="${empty condition }">
-            	<a href="list.bo?cpage=${ i }">${i}</a>
-         	</c:when>
-            <c:otherwise>
-            	<a href="search.bo?cpage=${ i } & condition = ${condition} & keyword=${keyword }">${i}</a>
-            </c:otherwise>
-           </c:choose> 
-         </c:forEach>   
-            
-         <c:if test="${pi.currentPage ne pi.maxPage}">
-            <a href="list.bo?cpage=${pi.currentPage + 1}">[다음]</a>
-         </c:if> 
-            
-        </div>
-	        
-	            
+               
             <div id="search-area" style="text-align: left;">
-			 <form action="search.bo" method="post">
+          <form action="search.bo" method="post">
            
             <br>    
-	            
-	            <select name="period" >
+               
+               <select name="period" >
                     <option value="wholePeriod">전체기간</option>
                     <option value="oneWeek">최근 1주</option>
                     <option value="oneMonth">최근 1달</option>
@@ -216,19 +208,19 @@
                 
                 
                 <div class="search">
-	                <input type="text" placeholder="검색어 입력">
-	                <a href=""><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"></a>
-	            </div>
-	            
-	             <c:if test="${not empty condition }">
-					<script>
-						window.onload = function(){
-						 	const opt = document.querySelector("#search-area option[value=${condition}]");
-						 	opt.setAttribute("selected", true);
-						}
-					</script>
-				</c:if>
-	            
+                   <input type="text" placeholder="검색어 입력">
+                   <a href=""><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"></a>
+               </div>
+               
+                <c:if test="${not empty condition }">
+               <script>
+                  window.onload = function(){
+                      const opt = document.querySelector("#search-area option[value=${condition}]");
+                      opt.setAttribute("selected", true);
+                  }
+               </script>
+            </c:if>
+               
             </div>
               
         </form>
