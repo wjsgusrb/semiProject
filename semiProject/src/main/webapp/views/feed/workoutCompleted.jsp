@@ -104,7 +104,7 @@
 
     <div class="outer">
 
-        <div align="right"><a href="${pageContext.request.contextPath}/views/feed/feedEnroll.jsp" class="btn btn-primary">피드등록</a></div>
+        <div align="right"><a href="enrollForm.fe" class="btn btn-primary">피드등록</a></div>
         
         
         <div class="myFeed">
