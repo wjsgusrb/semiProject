@@ -69,7 +69,18 @@ public class MemberServiceImpl implements MemberService{
 		
 		int result = mDao.idCheckMember(sqlSession, checkId);
 	
-		System.out.println(result);
+	
+		return result;
+	}
+	
+	
+
+	@Override
+	public int findaPassword(String checkId) {
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = mDao.findaPassword(sqlSession, checkId );
+		
 		return result;
 	}
 	

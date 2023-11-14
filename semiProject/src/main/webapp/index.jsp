@@ -8,7 +8,8 @@
 <title>Insert title here</title>
 <!-- jquery 3.7.1 -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+	crossorigin="anonymous"></script>
 </head>
 <style>
 .middle-area>div>div {
@@ -174,9 +175,13 @@
 
 
 
+
 								<button type="button" class="btn btn-primary"
+									data-bs-toggle="modal" data-bs-target="#exampleModal"
+									data-bs-whatever="@mdo"
 									style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-									아이디 비밀번호 찾기</button>
+
+									비밀번호찾기</button>
 							</div>
 						</div>
 		</div>
@@ -423,40 +428,41 @@
 				<div class="modal-body">
 					<form action="insert.me" id="enroll-form" method="post">
 						<div class="form-floating join">
-							<input type="text" class="form-control" id="idCheck" placeholder="Password" name="userId">
-							 <label
+							<input type="text" class="form-control" id="idCheck"
+								placeholder="Password" name="userId" required> <label
 								for="idCheck">id</label>
-							
+
 							<button type="button" id="idCheckButton" class="btn btn-primary">중복확인</button>
-							
+
 							<!--유효성 검사 후 사용가능인지 불가능인지 알려줌-->
 						</div>
 						<div class="form-floating join";>
 							<input type="password" class="form-control" id="userPwd"
-								placeholder="Password" name="userPwd"> <label
+								placeholder="Password" name="userPwd" required> <label
 								for="floatingPassword">Password</label>
 						</div>
 						<div class="form-floating join";>
-							<input type="password" class="form-control" id="userPwdCheck"  name="userPwdCheck"
-								placeholder="Password"> <label for="floatingPassword">checkPassword</label>
-							
+							<input type="password" class="form-control" id="userPwdCheck"
+								name="userPwdCheck" placeholder="Password"> <label
+								for="floatingPassword" required>checkPassword</label>
+
 						</div>
 						<div class="form-floating join";>
 							<input type="text" class="form-control" id="floatingPassword"
-								placeholder="Password" name="userName"> <label
+								placeholder="Password" name="userName" required> <label
 								for="floatingPassword">name</label>
 						</div>
 						<div class="form-floating join";>
 							<input type="text" class="form-control" id="floatingPassword"
-								placeholder="Password" name="address"> <label+
-								for="floatingPassword">address</label>
+								placeholder="Password" name="address" required> <label
+								for="floatingPassword">email</label>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-bs-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary"
-								disabled  onclick="return checkPwd();">가입확인</button>
-								
+							<button type="submit" class="btn btn-primary" disabled
+								onclick="return checkPwd();">가입확인</button>
+
 						</div>
 
 
@@ -517,5 +523,75 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- 아이디 비밀번호찾기 모달 -->
+	<form  action="findPwd.me" method="post">
+		<div class="modal fade" id="exampleModal" tabindex="-1"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">아이디와 이메일을 입력하시오</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="mb-3">
+								<label for="recipient-name" class="col-form-label">아이디:</label>
+								<input type="text" class="form-control" id="pwdIdCheck">
+							</div>
+							<div class="mb-3">
+								<label for="message-text" class="col-form-label">이메일주소:</label>
+								<input type="text" class="form-control" id="pwdEmailCheck">
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-bs-dismiss="modal">Close</button>
+						<button type="submit" id="findPwd"  class="btn btn-primary">비밀번호찾기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	
+		<script>
+		document.addEventListener("DOMContentLoaded", function() {
+	        document.querySelector("#findPwd").addEventListener("click", findPwd);
+	    });
+	function findPwd(){
+		 if (document.querySelector("#findId input[name='userName']")) {
+             $.ajax({
+               url: "findPwd.me",
+               type: "post",
+               data : {
+            	   idInput: document.querySelector("#pwdIdCheck").value,
+            	   emailInput: document.querySelector("#pwdEmailCheck").value
+               },
+               success: function(result){
+                  document.querySelector("#findId .modal-body").innerHTML = "<h3>"+result+"</h3>"
+                          console.log(result)
+                 
+               },
+               error: function(){
+                  console.log("댓글 목록 조회 중 ajax통신 실패")
+               }
+         
+              })
+          
+          }else{
+             document.querySelector("#findId .modal-body").innerHTML = '<b>정보를 입력해주세요.</b>'
+             + '<div>&nbsp;&nbsp;&nbsp;이름<input type="text" name="userName"></div>'
+             + '<div>이메일<input type="text" name="userEmail"></div>'
+          }
+		
+	
+          
+           
+            
+       
+	</script>
 </body>
 </html>
