@@ -144,13 +144,13 @@
                 <tbody>
                 
                 <c:forEach var="b" items="${list}">
-                	<tr>
-                		<td>"${b.boardNo}"</td>
-                		<td>"${b.category}"</td>
-                		<td><a href="detail.bo?bno=${b.boardNo}">"${b.boardTitle}"</a></td>
-                		<td>"${b.userNo}"</td>
-                		<td>"${b.boardCount}"</td>
-                		<td>"${b.updateDate}"</td>
+                	<tr onclick="location.href='detail.bo?bno=${b.boardNo}'">
+                		<td>${b.boardNo}</td>
+                		<td>${b.category}</td>
+                		<td>${b.boardTitle}</a></td>
+                		<td>${b.userNo}</td>
+                		<td>${b.boardCount}</td>
+                		<td>${b.updateDate}</td>
                 	</tr>
                 </c:forEach>
                 </tbody>
@@ -158,33 +158,25 @@
 
   
             	<!-- 로그인한 회원 보이게 만들어야 함-->
-	            <div class="bottom-btn">
-	                <a href="../board/boardEnrollForm.jsp" class="btn btn-primary">게시글 등록</a>
-	                <a href="../board/myArticleView.jsp" class="btn btn-primary">나의게시판</a>
-	            </v>
+            	<c:if test="${ not empty loginUser }">
+		            <div class="bottom-btn">
+		                <a href="/ex/enrollForm.bo" class="btn btn-primary">게시글 등록</a>
+		                <a href="../board/myArticleView.jsp" class="btn btn-primary">나의게시판</a>
+		            </div>
+		        </c:if>
 	        
-	         <div id="paging-area">
-        <c:if test="${pi.currentPage ne 1}">
-            <a href="list.bo?cpage=${pi.currentPage - 1}">[이전]</a>
-         </c:if>
-           
-           
-         <c:forEach var="i" begin="${pi.startPage}" end="${pi.endPage}">
-         <c:choose>
-         	<c:when test="${empty condition }">
-            	<a href="list.bo?cpage=${ i }">${i}</a>
-         	</c:when>
-            <c:otherwise>
-            	<a href="search.bo?cpage=${ i } & condition = ${condition} & keyword=${keyword }">${i}</a>
-            </c:otherwise>
-           </c:choose> 
-         </c:forEach>   
-            
-         <c:if test="${pi.currentPage ne pi.maxPage}">
-            <a href="list.bo?cpage=${pi.currentPage + 1}">[다음]</a>
-         </c:if> 
-            
-        </div>
+	        <div class="paging-area" align="center">
+                <c:if test="${ pi.currentPage ne 1 }">
+                    <button class="btn btn-light" onclick="location.href='list.bo?cpage=${ pi.currentPage - 1 }'">&lt;</button>
+                </c:if>
+
+                <c:forEach var="p" begin="${pi.startPage}" end="${ pi.endPage }" >
+                    <button class="btn btn-light" onclick="location.href='list.bo?cpage=${p}'">${p}</button>
+                </c:forEach>
+                <c:if test="${ pi.currentPage ne pi.maxPage }">
+                    <button class="btn btn-light" onclick="location.href='list.bo?cpage=${ pi.currentPage + 1 }'">&gt;</button>
+                </c:if>
+            </div>
 	        
 	            
             <div id="search-area" style="text-align: left;">

@@ -37,6 +37,7 @@ public class BoardDao {
 	}
 
 	public ArrayList<BoardComment> selectCommentList(SqlSession sqlSession, int boardNo) {
+		System.out.println(boardNo);
 		return (ArrayList)sqlSession.selectList("boardMapper.selectCommentList", boardNo);
 	}
 
@@ -59,7 +60,10 @@ public class BoardDao {
 	}
 	
 	public int deleteBoard(SqlSession sqlSession, int boardNo) {
-		return sqlSession.delete("boardMapper.deleteBoard", boardNo);
+		return sqlSession.update("boardMapper.deleteBoard", boardNo);
+	}
+	public BoardImg selectBoardImg(SqlSession sqlSession, int boardNo) {
+		return sqlSession.selectOne("boardMapper.selectBoardImg", boardNo);
 	}
 	public int updateBoard(SqlSession sqlSession, Board b) {
 		return sqlSession.update("boardMapper.updateBoard", b);
