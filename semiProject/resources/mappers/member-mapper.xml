@@ -16,8 +16,14 @@
 		<result column="deletecheck" property="deleteCheck"/>
 		<result column="status_msg" property="statusMsg"/>
 	</resultMap>
-
-	
+	<resultMap id="profileResultSet" type="ProfileImg">
+		<result column="PROFILE_IMG_NO" property="profileImgNo"/>
+		<result column="USER_NO" property="userNo"/>
+		<result column="PROFILE_URL" property="profileUrl"/>
+		<result column="ORIGIN_NAME" property="originName"/>
+		<result column="CHANGE_NAME" property="changeName"/>
+		<result column="DELETE_IMG" property="deleteImg"/>
+	</resultMap>
 	<insert id="insertMember" >
 		INSERT
 		  INTO MEMBER
@@ -83,5 +89,38 @@
 		 AND USER_ID =  #{userId}
 	</select>
 	
-	
+	<!-- 프로필 사진 insert -->
+	<insert id="insertProfileImg">
+		INSERT
+		  INTO PROFILE_IMG
+		  		(PROFILE_IMG_NO,
+					USER_NO,
+					PROFILE_URL,
+					ORIGIN_NAME,
+					CHANGE_NAME
+		  		)
+		VALUES (SEQ_RPOFILE_IMG_NO.NEXTVAL,
+				#{userNo},
+				#{profileUrl},
+				#{originName},
+				#{changeName}
+				)
+	</insert>
+	<!-- 프로필 사진 update -->
+	<update id="updateProfileImg">
+  		UPDATE PROFILE_IMG
+  		   SET ORIGIN_NAME = #{originName},
+		   	   CHANGE_NAME = #{changeName},
+		   	   PROFILE_URL = #{profileUrl}
+		 WHERE PROFILE_IMG_NO = #{profileImgNo}
+		   AND DELETE_IMG IS NULL
+  	</update>
+  	<!-- 프로필 사진 select -->
+  	<select id="selectProfileImg" resultMap="profileResultSet">
+		SELECT PROFILE_URL,
+				CHANGE_NAME
+		  FROM PROFILE_IMG
+		 WHERE USER_NO = #{userNo}
+		   AND DELETE_IMG IS NULL
+	</select>
 </mapper>

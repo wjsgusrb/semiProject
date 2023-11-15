@@ -2,10 +2,10 @@ package com.kh.mybatis.member.model.service;
 
 import org.apache.ibatis.session.SqlSession;
 
-
 import com.kh.mybatis.common.template.Template;
 import com.kh.mybatis.member.model.dao.MemberDao;
 import com.kh.mybatis.member.model.vo.Member;
+import com.kh.mybatis.member.model.vo.ProfileImg;
 
 
 
@@ -73,4 +73,34 @@ public class MemberServiceImpl implements MemberService{
 		return result;
 	}
 	
+	@Override
+	public int insertProfileImg(ProfileImg pImg) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = 0;
+		if(pImg.getProfileImgNo() != 0) {
+			result = mDao.updateProfileImg(sqlSession, pImg);
+		}else {
+			result = mDao.insertProfileImg(sqlSession, pImg);
+		}
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
+	}
+
+	@Override
+	public int deleteProfileImg() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ProfileImg selectProfileImg(int userNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ProfileImg pImg = mDao.selectProfileImg(sqlSession, userNo);
+	
+		sqlSession.close();
+		return pImg;
+	}
 }

@@ -12,4 +12,5 @@ public interface FeedService {
 	public int selectListCount();
 	ArrayList<Feed> selectList(PageInfo pi);
 	int countLike(FeedLike like);
+	ArrayList<Feed> selectMyFeed(int userNo);
 }

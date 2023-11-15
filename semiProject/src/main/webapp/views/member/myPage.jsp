@@ -401,18 +401,11 @@ img {
 		<div class="container"> 
 
 			<div class="profile">
-
-				<div class="profile-image">
-					<img src="" />
-				</div>
-
+				<a class="profile-image" type="button" data-bs-toggle="modal" data-bs-target="#imgModal">
+				</a>
 				<div class="profile-user-settings">
 
 					<h1 class="profile-user-name">${loginUser.userName}</h1>
-
-					<button class="btn profile-edit-btn, btn btn-info" id="follow-btn">팔로우
-						요청</button>
-
 					<button class="btn profile-settings-btn" data-bs-toggle="modal"
 						data-bs-target="#myModal-update"
 						style="position: absolute; right: 10px; padding: 0; margin: 0; border: none; top: -35px; width: 20px; height: 20px;"
@@ -432,8 +425,7 @@ img {
 					<button class="follow-btn" data-bs-toggle="modal"
 						data-bs-target="#myModal-follow">
 						<ul>
-							<li><span class="profile-stat-count">188</span> 팔로워</li>
-							<li><span class="profile-stat-count">206</span> 팔로잉</li>
+							<li><span class="profile-stat-count">팔로우한 친구</span>  </li>
 						</ul>
 					</button>
 				</div>
@@ -455,165 +447,9 @@ img {
 	<main>
 
 		<div class="container">
-
 			<div class="gallery ">
-				<div class="textBox gallery-item">
-					<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
-						fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-                            <path
-							d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                            <path
-							d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                        </svg>
-					<div class="gallery-item-info"></div>
-				</div>
-
-				<div class="gallery-item" tabindex="0">
-
-					<img
-						src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop"
-						class="gallery-image" alt="">
-
-					<div class="gallery-item-info"></div>
-
-				</div>
-
-				<div class="gallery-item" tabindex="0">
-
-					<img
-						src="https://images.unsplash.com/photo-1497445462247-4330a224fdb1?w=500&h=500&fit=crop"
-						class="gallery-image" alt="">
-
-					<div class="gallery-item-info"></div>
-
-				</div>
-
-				<div class="gallery-item" tabindex="0">
-
-					<img
-						src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500&h=500&fit=crop"
-						class="gallery-image" alt="">
-
-					<div class="gallery-item-type">
-
-						<span class="visually-hidden">Gallery</span><i
-							class="fas fa-clone" aria-hidden="true"></i>
-
-					</div>
-
-					<div class="gallery-item-info"></div>
-
-				</div>
-
-				<div class="gallery-item" tabindex="0">
-
-					<img
-						src="https://images.unsplash.com/photo-1502630859934-b3b41d18206c?w=500&h=500&fit=crop"
-						class="gallery-image" alt="">
-
-					<div class="gallery-item-type">
-
-						<span class="visually-hidden">Video</span><i class="fas fa-video"
-							aria-hidden="true"></i>
-
-					</div>
-
-					<div class="gallery-item-info"></div>
-
-				</div>
-
-				<div class="gallery-item" tabindex="0">
-
-					<img
-						src="https://images.unsplash.com/photo-1498471731312-b6d2b8280c61?w=500&h=500&fit=crop"
-						class="gallery-image" alt="">
-
-					<div class="gallery-item-type">
-
-						<span class="visually-hidden">Gallery</span><i
-							class="fas fa-clone" aria-hidden="true"></i>
-
-					</div>
-
-					<div class="gallery-item-info"></div>
-
-				</div>
-
-				<div class="gallery-item" tabindex="0">
-
-					<img
-						src="https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=500&h=500&fit=crop"
-						class="gallery-image" alt="">
-
-					<div class="gallery-item-info"></div>
-
-				</div>
-
-				<div class="gallery-item" tabindex="0">
-
-					<img
-						src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=500&h=500&fit=crop"
-						class="gallery-image" alt="">
-
-					<div class="gallery-item-info"></div>
-
-				</div>
-
-				<div class="gallery-item" tabindex="0">
-
-					<img
-						src="https://images.unsplash.com/photo-1515814472071-4d632dbc5d4a?w=500&h=500&fit=crop"
-						class="gallery-image" alt="">
-
-					<div class="gallery-item-info"></div>
-
-				</div>
-
-				<div class="gallery-item" tabindex="0">
-
-					<img
-						src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?w=500&h=500&fit=crop"
-						class="gallery-image" alt="">
-
-					<div class="gallery-item-info"></div>
-
-				</div>
-
-				<div class="gallery-item" tabindex="0">
-
-					<img
-						src="https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?w=500&h=500&fit=crop"
-						class="gallery-image" alt="">
-
-					<div class="gallery-item-info"></div>
-
-				</div>
-
-				<div class="gallery-item" tabindex="0">
-
-					<img
-						src="https://images.unsplash.com/photo-1505058707965-09a4469a87e4?w=500&h=500&fit=crop"
-						class="gallery-image" alt="">
-
-					<div class="gallery-item-info"></div>
-
-				</div>
-
-				<div class="gallery-item" tabindex="0">
-
-					<img
-						src="https://images.unsplash.com/photo-1423012373122-fff0a5d28cc9?w=500&h=500&fit=crop"
-						class="gallery-image" alt="">
-
-					<div class="gallery-item-info"></div>
-
-				</div>
-
 			</div>
-			<!-- End of gallery -->
-
 		</div>
-		<!-- End of container -->
 
 	</main>
 
@@ -1083,7 +919,7 @@ img {
 							</tbody>
 						</table>
 					</div>
-				</div>
+				</div>.0
 
 				<!-- Modal footer -->
 				<div class="modal-footer">
@@ -1094,5 +930,91 @@ img {
 			</div>
 		</div>
 	</div>
+<!-- 프로필 사진 업로드 모달 -->
+<div class="modal" id="imgModal">
+	<div class="modal-dialog modal-dialog-centered">
+	  <div class="modal-content">
+  
+		<!-- Modal Header -->
+		<div class="modal-header">
+		  <h4 class="modal-title">이미지 변경하기</h4>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+		</div>
+  
+		<!-- Modal body -->
+		<form action="insertImg.me" method="POST" enctype="multipart/form-data">
+			<div class="modal-body">
+				<c:if test="${ !empty loginUser.profileImg}">
+					<img src="${loginUser.profileImg}" />
+				</c:if>
+				<input class="form-control" type="file" id="formFileDisabled" name="upfile">
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary" data-bs-dismiss="modal">변경하기</button>
+				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">뒤로가기</button>
+			</div>
+		</form>
+  
+	  </div>
+	</div>
+  </div>
+  <script>
+	$(function(){
+		loadProfileImg();
+	})
+	function loadProfileImg(){
+		$.ajax({
+				url : "selectImg.me" ,
+				data : {'userNo' : "${loginUser.userNo}"},
+				success: function(profileImg){
+					let str = "";
+					if(profileImg === '"NNN"'){
+						str += ('<img src="/ex/resources/board_upfile/user.png" style="width: 200px; height: 200px;" />')
+					}else{
+						str += ('<img src="/ex/'+ profileImg +'" style="width: 200px; height: 200px;" />')
+					}
+					document.querySelector(".profile-image").innerHTML = str;
+
+				},
+				error: function(){
+					console.log("selectImg ajax 실패");
+				}
+		})
+	}
+	$(function(){
+		loadFeedImg();
+	})
+	function loadFeedImg(){
+		$.ajax({
+			url : "selectFeedImg.fe",
+			data : {'userNo' : "${loginUser.userNo}"},
+			dataType : "JSON",
+			success: function(feedImg){
+				console.log(feedImg)
+				let str ='';
+				for(let i=-1; i<feedImg.length; i++){
+					if(i ===-1){
+						str = '<div class="textBox gallery-item">'+
+							'<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"'+
+							'fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">'+
+                            '<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />'+
+                            '<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />'+
+                        	'</svg><div class="gallery-item-info"></div></div>'
+					}else{
+						str += '<div class="gallery-item" tabindex="0">'+
+						'<img src="'+feedImg[i].feedUrl+feedImg[i].changeName+'"class="gallery-image" alt="" />'
+						+'<div class="gallery-item-info"></div></div>'
+					}
+					
+				
+				}
+				document.querySelector(".gallery").innerHTML = str;
+				},
+				error: function(){
+					console.log("selectFeedImg ajax 실패");
+				}
+		})
+	}
+  </script>
 </body>
 </html>

@@ -40,4 +40,12 @@ public class FeedServiceImpl implements FeedService{
 		return result;
 	}
 
+	@Override
+	public ArrayList<Feed> selectMyFeed(int userNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Feed> fList = fDao.selectMyFeed(sqlSession, userNo);
+		sqlSession.close();
+		return fList;
+	}
+
 }

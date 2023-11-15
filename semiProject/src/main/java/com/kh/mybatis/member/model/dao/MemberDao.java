@@ -2,8 +2,8 @@ package com.kh.mybatis.member.model.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
-
 import com.kh.mybatis.member.model.vo.Member;
+import com.kh.mybatis.member.model.vo.ProfileImg;
 
 public class MemberDao {
 	
@@ -47,4 +47,14 @@ public class MemberDao {
 				
 				return sqlSession.selectOne("memberMapper.idCheckMember", checkId);
 			}
+	public int insertProfileImg(SqlSession sqlSession, ProfileImg pImg) {
+		System.out.println(pImg);
+		return sqlSession.insert("memberMapper.insertProfileImg", pImg);
+	}
+	public int updateProfileImg(SqlSession sqlSession, ProfileImg pImg) {
+		return sqlSession.update("memberMapper.updateProfileImg", pImg);
+	}
+	public ProfileImg selectProfileImg(SqlSession sqlSession, int userNo) {
+		return sqlSession.selectOne("memberMapper.selectProfileImg", userNo);
+	}
 }
