@@ -144,12 +144,6 @@
                         </div>
                     </div>
                 </div>
-            
-            <!--
-            <button style="background: none; color: #0d62fd;" class="btn btn-light" onclick="location.href=''">￮</button>
-            <button style="background: none; color: #0d62fd;" class="btn btn-light" onclick="location.href=''">￮</button>
-            <button style="background: none; color: #0d62fd;" class="btn btn-light" onclick="location.href=''">￮</button>
-            -->
 
             <div class="user-info">
                 <div onclick="countLike()" class="user-info3">

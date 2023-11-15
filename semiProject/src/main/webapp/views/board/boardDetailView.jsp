@@ -215,7 +215,7 @@
 		<div align="right" style="margin-top: 25px;">
 			<a class="btn btn-sm btn-secondary" href="updateForm.bo?bno=${b.boardNo}">수정</a>
 			<a class="btn btn-sm btn-secondary" href="delete.bo?bno=${b.boardNo}">삭제</a>
-			<a class="btn btn-sm btn-secondary">목록가기</a>
+			<a class="btn btn-sm btn-secondary" href="list.bo?cpage=1">목록가기</a>
 
 		</div>	
 		

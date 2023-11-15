@@ -39,6 +39,7 @@
    		FROM FEED
     		JOIN MEMBER USING(USER_NO)
     		JOIN FEED_IMG USING(FEED_NO)
+    	ORDER BY FEED_NO DESC 
   	</select>
   	
   	
