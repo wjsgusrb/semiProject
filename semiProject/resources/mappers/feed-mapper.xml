@@ -15,6 +15,14 @@
 		<result column="CHANGE_NAME" property="changeName" />
 		<result column="FEED_URL" property="feedUrl" />
 	</resultMap>
+	<resultMap id="feedImgResultSet" type="FeedImg">
+		<result column="FEEDIMG_NO" property="feedImgNo" />
+		<result column="FEED_NO" property="feedNo" />
+		<result column="FEED_URL" property="feedUrl" />
+		<result column="ORIGIN_NAME" property="originName" />
+		<result column="CHANGE_NAME" property="changeName" />
+		<result column="DELETE_IMG" property="deleteImg" />
+	</resultMap>
 	
 	<select id="selectListCount" resultType="_int">
      SELECT COUNT(*)
@@ -35,9 +43,43 @@
   	</select>
   	
   	
-  	  	<select id="countLike" resultType="_int">
+  	 <select id="countLike" resultType="_int">
   		SELECT count(*)
    		FROM FEED
     		where feed_no = ${feedNo}
   	</select>
+  	
+  	<insert id="insertFeed">
+		INSERT
+		  INTO FEED
+		  		(FEED_NO,
+				 USER_NO,
+				 FEED_TEXT,
+				 UPDATE_DATE
+		  		)
+		VALUES (SEQ_FEEDNO.NEXTVAL,
+				#{userNo},
+				#{feedText},
+				SYSDATE
+				)
+	</insert>
+	<insert id="insertFeedImg">
+		INSERT 
+			INTO FEED_IMG(
+						  FEEDIMG_NO, 
+						  FEED_NO, 
+						  FEED_URL, 
+						  ORIGIN_NAME, 
+						  CHANGE_NAME, 
+						  DELETE_IMG
+						  )
+            	VALUES(
+            		   SEQ_FEEDIMGNO.NEXTVAL, 
+	            	   SEQ_FEEDNO.CURRVAL,
+	            	   #{feedUrl}, 
+	            	   #{originName}, 
+	            	   #{changeName}, 
+	            	   SYSDATE
+	            	   )
+	</insert>
 </mapper>

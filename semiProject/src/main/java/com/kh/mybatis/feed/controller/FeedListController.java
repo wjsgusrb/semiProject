@@ -42,7 +42,7 @@ public class FeedListController extends HttpServlet {
 		PageInfo pi = Pagenation.getPageInfo(listCount, currentPage, 10, 5);
 		
 		ArrayList<Feed> list = new FeedServiceImpl().selectList(pi);
-	
+
 		request.setAttribute("pi", pi);
 		request.setAttribute("list", list);
 		

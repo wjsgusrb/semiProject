@@ -55,8 +55,8 @@
         padding-top: 20px;
     }
     #paging-area{
-    	text-align: center;
-    	
+       text-align: center;
+       
     }
     .select-view{
         padding-bottom: 3px;
@@ -120,7 +120,7 @@
         <jsp:include page="/views/common/menubar.jsp" />
         <!-- 자유게시판으로 들어가면 메뉴바 자유게시판 버튼 계속 눌리게 유지해야함-->
        
-    	<div class="select-view" style= "float: right;">
+       <div class="select-view" style= "float: right;">
                 <select name=" " id="">
                     <option value="">최신순</option>
                     <option value="">조회순</option>
@@ -144,6 +144,7 @@
                 <tbody>
                 
                 <c:forEach var="b" items="${list}">
+
                 	<tr onclick="location.href='detail.bo?bno=${b.boardNo}'">
                 		<td>${b.boardNo}</td>
                 		<td>${b.category}</td>
@@ -177,14 +178,12 @@
                     <button class="btn btn-light" onclick="location.href='list.bo?cpage=${ pi.currentPage + 1 }'">&gt;</button>
                 </c:if>
             </div>
-	        
-	            
             <div id="search-area" style="text-align: left;">
-			 <form action="search.bo" method="post">
+          <form action="search.bo" method="post">
            
             <br>    
-	            
-	            <select name="period" >
+               
+               <select name="period" >
                     <option value="wholePeriod">전체기간</option>
                     <option value="oneWeek">최근 1주</option>
                     <option value="oneMonth">최근 1달</option>
@@ -208,19 +207,19 @@
                 
                 
                 <div class="search">
-	                <input type="text" placeholder="검색어 입력">
-	                <a href=""><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"></a>
-	            </div>
-	            
-	             <c:if test="${not empty condition }">
-					<script>
-						window.onload = function(){
-						 	const opt = document.querySelector("#search-area option[value=${condition}]");
-						 	opt.setAttribute("selected", true);
-						}
-					</script>
-				</c:if>
-	            
+                   <input type="text" placeholder="검색어 입력">
+                   <a href=""><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"></a>
+               </div>
+               
+                <c:if test="${not empty condition }">
+               <script>
+                  window.onload = function(){
+                      const opt = document.querySelector("#search-area option[value=${condition}]");
+                      opt.setAttribute("selected", true);
+                  }
+               </script>
+            </c:if>
+               
             </div>
               
         </form>

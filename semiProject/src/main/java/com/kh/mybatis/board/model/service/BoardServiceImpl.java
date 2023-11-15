@@ -61,16 +61,6 @@ public class BoardServiceImpl implements BoardService{
 		return b;
 	}
 
-	@Override
-	public ArrayList<BoardComment> selectCommentList(int boardNo) {
-		
-		SqlSession sqlSession = Template.getSqlSession();
-		ArrayList<BoardComment> list = bDao.selectCommentList(sqlSession, boardNo);
-		
-		sqlSession.close();
-		return list;
-		
-	}
 
 
 	@Override
@@ -147,6 +137,30 @@ public class BoardServiceImpl implements BoardService{
 		}
 		sqlSession.close();
 		return (result1 * result2);
+	}
+	
+	@Override
+	public ArrayList<BoardComment> selectCommentList(int boardNo) {
+		
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<BoardComment> list = bDao.selectCommentList(sqlSession, boardNo);
+		
+		sqlSession.close();
+		return list;
+		
+	}
+	
+
+	@Override
+	public int insertComment(BoardComment c) {
+		
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = bDao.insertComment(sqlSession, c);
+		if(result>0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
 	}
 	
 }

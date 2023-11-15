@@ -278,7 +278,7 @@
 		</script>
 		<!--운동게시글 보여주는 부분-->
 		<div class="ex-board" align="center">
-			<div class="ex-board-top">자유게시판</div>
+			<div class="ex-board-top"><a href="list.bo?cpage=1" style="color: black;">자유게시판</a></div>
 			<table class="table  table-hover"
 				style="border-radius: 0 0 15px 15px;">
 				<thead>
@@ -513,7 +513,7 @@
 				                let pwdCheckInput = document.querySelector("#enroll-form input[name=userPwdCheck]");
 				                if (pwdInput.value !== pwdCheckInput.value) {
 				                    alert("비밀번호가 일치하지 않습니다.");
-				                    return false;
+				                    return false; 
 				                }
 				            }
 					</script>
