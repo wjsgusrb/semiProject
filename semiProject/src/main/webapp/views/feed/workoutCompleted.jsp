@@ -104,7 +104,7 @@
 
     <div class="outer">
 
-        <div align="right"><a href="${pageContext.request.contextPath}/views/feed/feedEnroll.jsp" class="btn btn-primary">피드등록</a></div>
+        <div align="right"><a href="enrollForm.fe" class="btn btn-primary">피드등록</a></div>
         
         
         <div class="myFeed">
@@ -125,13 +125,13 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="10000">
-                                <img src="./${f.feedUrl}${f.originName }" class="d-block w-100" alt="...">
+                                <img src="./${f.feedUrl}${f.changeName }" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item" data-bs-interval="2000">
-                                <img src="./${f.feedUrl}${f.originName }" class="d-block w-100" alt="...">
+                                <img src="./${f.feedUrl}${f.changeName }" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="./${f.feedUrl}${f.originName }" class="d-block w-100" alt="...">
+                                <img src="./${f.feedUrl}${f.changeName }" class="d-block w-100" alt="...">
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
