@@ -9,20 +9,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.kh.mybatis.member.model.service.MemberServiceImpl;
 import com.kh.mybatis.member.model.vo.Member;
 
 /**
- * Servlet implementation class LoginController
+ * Servlet implementation class FindaPwdController
  */
-@WebServlet("/login.me")
-public class LoginController extends HttpServlet {
+@WebServlet("/findPwd.me")
+public class FindaPwdController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginController() {
+    public FindaPwdController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,26 +39,26 @@ public class LoginController extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		Member m = new Member();
-		m.setUserId(request.getParameter("userId"));
-		m.setUserPwd(request.getParameter("userPwd"));
+		m.setUserId(request.getParameter("idInput"));
+		m.setUserAddress(request.getParameter("emailInput"));
+		
+		System.out.println(m);
+		
+		Member check = new MemberServiceImpl().findaPassword(m);
+		System.out.println(check);
+		System.out.println(check.getUserPwd());
 
-		Member loginUser = new MemberServiceImpl().loginMember(m);
-		
-		
-		if(loginUser == null) {
-			session.setAttribute("alertMsg", "로그인 실패. 다시 시도해주세요");
-			request.getRequestDispatcher("index.jsp").forward(request, response);
-		} else {
-			request.getSession().setAttribute("loginUser", loginUser);
-			response.sendRedirect(request.getContextPath());
-		}
+		// 응답에 JSON 데이터 보내기
+		response.setContentType("text/html; charset=UTF-8");
+		response.getWriter().write(check.getUserPwd());
+	
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

@@ -24,6 +24,7 @@ public class FeedDao {
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		ArrayList<Feed> list = (ArrayList)sqlSession.selectList("feedMapper.selectList", null , rowBounds);
 		
+
 		return list;
 	}
 	

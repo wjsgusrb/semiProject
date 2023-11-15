@@ -651,7 +651,7 @@ img {
 								<div class="form-floating join";>
 
 									<input type="hidden" class="form-control" id="userId"
-										value="${loginUser.userPwd}" name="userPwd" > <br>
+										value="${loginUser.userPwd}" name="userPwd" >
 
 								</div>
 
@@ -662,12 +662,12 @@ img {
 								<div class="form-floating join";>
 
 									<input type="text" class="form-control" id="userId"
-										value="${loginUser.userName}" name="userName"> <br>
+										value="${loginUser.userName}" name="userName" required> <br>
 
 								</div>
 
 								<div class="form-floating join";>
-									<label for="userId">* 주소 : </label><br>
+									<label for="userId" required>* 이메일 주소 : </label><br>
 									<br>
 								</div>
 								<div class="form-floating join";>
@@ -679,7 +679,7 @@ img {
 								</div>
 
 								<div class="form-floating join";>
-									<label for="userId">* 상태메세지: </label><br>
+									<label for="userId" required>* 상태메세지: </label><br>
 									<br>
 								</div>
 								<div class="form-floating join";>
