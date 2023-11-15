@@ -507,7 +507,7 @@
 				                let pwdCheckInput = document.querySelector("#enroll-form input[name=userPwdCheck]");
 				                if (pwdInput.value !== pwdCheckInput.value) {
 				                    alert("비밀번호가 일치하지 않습니다.");
-				                    return false;
+				                    return false; 
 				                }
 				            }
 					</script>

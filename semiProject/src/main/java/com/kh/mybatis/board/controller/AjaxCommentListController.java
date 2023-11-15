@@ -9,22 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
 import com.kh.mybatis.board.model.service.BoardServiceImpl;
-import com.kh.mybatis.board.model.vo.Board;
-import com.kh.mybatis.common.model.vo.PageInfo;
-import com.kh.mybatis.common.template.Pagenation;
+import com.kh.mybatis.board.model.vo.BoardComment;
 
 /**
- * Servlet implementation class BoardListController
+ * Servlet implementation class CommentListController
  */
-@WebServlet("/list.bo")
-public class BoardListController extends HttpServlet {
+@WebServlet("/clist.bo")
+public class AjaxCommentListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BoardListController() {
+    public AjaxCommentListController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,20 +32,14 @@ public class BoardListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int listCount = new BoardServiceImpl().selectListCount(); //현재 총 게시글 수
-		int currentPage = Integer.parseInt(request.getParameter("cpage")); //현재 페이지(즉, 사용자가 요청한 페이지)
-
 		
-		PageInfo pi = Pagenation.getPageInfo(listCount, currentPage, 10, 5);
+		int boardNo = Integer.parseInt(request.getParameter("bno"));
 		
-		ArrayList<Board> list = new BoardServiceImpl().selectList(pi);
-	
-
-		request.setAttribute("pi", pi);
-		request.setAttribute("list", list);
+		ArrayList<BoardComment> list = new BoardServiceImpl().selectCommentList(boardNo);
 		
-
-		request.getRequestDispatcher("views/board/boardListView.jsp").forward(request, response);
+		response.setContentType("application/json; charset=utf-8");
+		new Gson().toJson(list, response.getWriter());
+		
 		
 	}
 
