@@ -17,8 +17,9 @@
 	</resultMap>
 	
 	<select id="selectListCount" resultType="_int">
-     SELECT COUNT(*) COUNT
+     SELECT COUNT(*)
        FROM FEED
+       WHERE DELETE_DATE IS NULL
     </select>
  	
   	<select id="selectList" resultMap="feedResultSet">

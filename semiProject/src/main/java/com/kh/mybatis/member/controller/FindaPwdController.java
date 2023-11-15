@@ -6,8 +6,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.kh.mybatis.member.model.service.MemberServiceImpl;
+import com.kh.mybatis.member.model.vo.Member;
 
 /**
  * Servlet implementation class FindaPwdController
@@ -28,16 +30,18 @@ public class FindaPwdController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String checkId = request.getParameter("checkId");
-		String checkEmail = request.getParameter("checkEmail");
+		HttpSession session = request.getSession();
 		
-		int count = new MemberServiceImpl().findaPassword(checkId,checkEmail);
 		
-		if (count > 0) { //이미 사용자가 존재한다 => 사용할 수 없음
-			response.getWriter().print("NNNNN");
-		} else { // 아이디사용자가 없다 => 사용가능
-			response.getWriter().print("NNNNY");
-		}	
+		HttpSession session = request.getSession();
+		Member m = new Member();
+		
+		m.setUserId(request.getParameter("pwdIdCheck"));
+		m.setUserAddress(request.getParameter("pwdEmailCheck"));
+		
+		System.out.println(m);
+		
+	
 	}
 
 	/**

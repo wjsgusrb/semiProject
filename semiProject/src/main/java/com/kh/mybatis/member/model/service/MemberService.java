@@ -10,5 +10,5 @@ public interface MemberService  {
 	public abstract int deleteMember(String userId, String userPwd);
 	public abstract Member loginMember(Member m);
 	public abstract int idCheckMember(String checkId) ;
-	public abstract int findaPassword(String checkId) ;
+	public abstract int findaPassword(Member m) ;
 }

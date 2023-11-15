@@ -39,10 +39,10 @@ public class FeedListController extends HttpServlet {
 		int listCount = new FeedServiceImpl().selectListCount(); //현재 총 게시글 수
 		int currentPage = Integer.parseInt(request.getParameter("cpage"));; //현재 페이지(즉, 사용자가 요청한 페이지)
 		
-		PageInfo pi = Pagenation.getPageInfo(listCount, currentPage, 1, listCount);
+		PageInfo pi = Pagenation.getPageInfo(listCount, currentPage, 10, 5);
 		
 		ArrayList<Feed> list = new FeedServiceImpl().selectList(pi);
-		System.out.println(pi);
+	
 		request.setAttribute("pi", pi);
 		request.setAttribute("list", list);
 		
