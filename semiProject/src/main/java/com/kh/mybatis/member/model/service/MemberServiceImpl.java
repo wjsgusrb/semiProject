@@ -2,7 +2,6 @@ package com.kh.mybatis.member.model.service;
 
 import org.apache.ibatis.session.SqlSession;
 
-
 import com.kh.mybatis.common.template.Template;
 import com.kh.mybatis.member.model.dao.MemberDao;
 import com.kh.mybatis.member.model.vo.Member;
@@ -59,6 +58,7 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public Member loginMember(Member m) {
 		SqlSession sqlSession = Template.getSqlSession();
+	
 		Member loginUser = mDao.loginMember(sqlSession, m);
 		
 		sqlSession.close();
@@ -78,13 +78,14 @@ public class MemberServiceImpl implements MemberService{
 	
 
 	@Override
-	public int findaPassword(Member m) {
+	public Member findaPassword(Member m) {
 		SqlSession sqlSession = Template.getSqlSession();
 		
-		Member check = mDao.findaPassword(sqlSession, m );
-
+		Member check = mDao.findaPassword(sqlSession, m);
+		
+		
 		sqlSession.close();
-		return result;
+		return check;
 	}
 	
 }

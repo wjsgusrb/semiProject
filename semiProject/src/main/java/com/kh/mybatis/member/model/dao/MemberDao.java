@@ -49,11 +49,11 @@ public class MemberDao {
 	}
 	
 	
-	public int findaPassword(SqlSession sqlSession, String checkId) {
+	public Member findaPassword(SqlSession sqlSession,Member m) {
 
 
 
 
-		return sqlSession.selectOne("memberMapper.idCheckMember", checkId );
+		return sqlSession.selectOne("memberMapper.findaPassword", m );
 	}
 }

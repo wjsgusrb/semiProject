@@ -525,73 +525,71 @@
 	</div>
 
 	<!-- 아이디 비밀번호찾기 모달 -->
-	<form  action="findPwd.me" method="post">
-		<div class="modal fade" id="exampleModal" tabindex="-1"
-			aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h1 class="modal-title fs-5" id="exampleModalLabel">아이디와 이메일을 입력하시오</h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal"
-							aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<form>
-							<div class="mb-3">
-								<label for="recipient-name" class="col-form-label">아이디:</label>
-								<input type="text" class="form-control" id="pwdIdCheck" name="pwdIdCheck">
-							</div>
-							<div class="mb-3">
-								<label for="message-text" class="col-form-label">이메일주소:</label>
-								<input type="text" class="form-control" id="pwdEmailCheck" name="pwdEmailCheck">
-							</div>
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary"
-							data-bs-dismiss="modal">Close</button>
-						<button type="submit" id="findPwd"  class="btn btn-primary">비밀번호찾기</button>
-					</div>
+	
+	
+	<div class="modal fade" id="exampleModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">아이디와 이메일을 입력하시오</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="mb-3">
+							<label for="recipient-name" class="col-form-label">아이디:</label>
+							<input type="text" class="form-control" id="pwdIdCheck" name="pwdIdCheck">
+						</div>
+						<div class="mb-3">
+							<label for="message-text" class="col-form-label">이메일주소:</label>
+							<input type="text" class="form-control" id="pwdEmailCheck" name="pwdEmailCheck">
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal">Close</button>
+					<button type="button" id="findPwd" onclick="findPwd();"  class="btn btn-primary">비밀번호찾기</button>
 				</div>
 			</div>
 		</div>
-	</form>
+	</div>
+	
+	
 	
 		<script>
-		document.addEventListener("DOMContentLoaded", function() {
-	        document.querySelector("#findPwd").addEventListener("click", findPwd);
-	    });
-	function findPwd(){
-		 if (document.querySelector("#findId input[name='userName']")) {
-             $.ajax({
-               url: "findPwd.me",
-               type: "post",
-               data : {
-            	   idInput: document.querySelector("#pwdIdCheck").value,
-            	   emailInput: document.querySelector("#pwdEmailCheck").value
-               },
-               success: function(result){
-                  document.querySelector("#findId .modal-body").innerHTML = "<h3>"+result+"</h3>"
-                          console.log(result)
-                 
-               },
-               error: function(){
-                  console.log("댓글 목록 조회 중 ajax통신 실패")
-               }
-         
-              })
-          
-          }else{
-             document.querySelector("#findId .modal-body").innerHTML = '<b>정보를 입력해주세요.</b>'
-             + '<div>&nbsp;&nbsp;&nbsp;이름<input type="text" name="userName"></div>'
-             + '<div>이메일<input type="text" name="userEmail"></div>'
-          }
-		
-	
-          
-           
-            
-       
+
+		 function findPwd() {
+			    const idInput = document.querySelector("#pwdIdCheck").value;
+			    const emailInput = document.querySelector("#pwdEmailCheck").value;
+
+			    if (idInput && emailInput) {
+			        $.ajax({
+			            url: "findPwd.me",
+			            type: "post",
+			            data: {
+			                idInput: idInput,
+			                emailInput: emailInput
+			            },
+			            success: function (res) {
+			                // Assuming res is a JSON object with a userPwd property
+			                const userPwd = res;
+
+			                // Display the userPwd value in the modal
+			                 document.querySelector("#exampleModal .modal-header").innerHTML = "<h3>" +"귀하의 패스워드는" + "</h3>";
+			                document.querySelector("#exampleModal .modal-body").innerHTML = "<h3>" + userPwd +"입니다."+ "</h3>";
+			                console.log(res);
+			            },
+			            error: function () {
+			                console.log("비밀번호 찾기 중 ajax 통신 실패");
+			            }
+			        });
+			    } else {
+			        document.querySelector("#findId.modal-body").value = '';
+			    }
+			}
 	</script>
 </body>
 </html>
