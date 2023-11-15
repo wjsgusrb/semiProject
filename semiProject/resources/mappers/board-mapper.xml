@@ -19,6 +19,7 @@
        <result column="BOARD_COMMENT_CONTENT" property="boardCommentContent" />
        <result column="BOARD_NO" property="boardNo" />
        <result column="USER_NO" property="userNo" />
+         <result column="USER_NAME" property="userName"/>
    </resultMap>
    <resultMap id="boardImgResultSet" type="BoardImg">
        <result column="BOARD_IMG_NO" property="boardImgNo" />
@@ -39,7 +40,7 @@
       SELECT BOARD_NO
             , CATEGORY
            , BOARD_TITLE
-           , USER_NO
+           , USER_NAME as "USER_NO"
            , BOARD_COUNT
            , UPDATE_DATE
        FROM BOARD
@@ -59,7 +60,7 @@
          SELECT BOARD_NO
              , CATEGORY
              ,BOARD_TITLE
-             ,USER_NO
+             , USER_NAME as "USER_NO"
              ,BOARD_COUNT
              ,UPDATE_DATE
              ,BOARD_CONTENT
@@ -67,20 +68,6 @@
   		 JOIN MEMBER USING (USER_NO)
   	   WHERE BOARD_NO = #{boardNo}
   	</select>
-	
-	<!-- 댓글 조회 리스트 만들기 -->
-	<select id="selectCommentList" resultMap="boardCommentResultSet">
-  		SELECT BOARD_COMMENT_NO
-  			 , USER_NO
-  			 , BOARD_COMMENT_CONTENT
-  			 , BOARD_NO
-  		FROM BOARD_COMMENT
-  		JOIN MEMBER USING (USER_NO)
-  	   WHERE BOARD_NO = #{boardNo}
-  	ORDER BY BOARD_COMMENT_NO DESC
-  	</select>
-
-	
 	
 	<update id="deleteBoard">
 		UPDATE BOARD
@@ -152,7 +139,35 @@
 				)
 	</insert>
 
+	  <!-- 댓글 조회 리스트 만들기 -->
+		<select id="selectCommentList" resultMap="boardCommentResultSet">
+	  		SELECT BOARD_COMMENT_NO
+	  			 , USER_NO
+	  			 , USER_NAME
+	  			 , BOARD_COMMENT_CONTENT
+	  			 , BOARD_NO
+	  		FROM BOARD_COMMENT
+	  		JOIN MEMBER USING (USER_NO)
+	  	   WHERE BOARD_NO = #{boardNo}
+	  	ORDER BY BOARD_COMMENT_NO DESC
+	  	</select>
   
+	  <!-- 댓글 추가 쿼리문 -->
+	  <insert id="insertComment">
+	  	INSERT 
+	  	INTO BOARD_COMMENT(
+	  		BOARD_COMMENT_NO,
+	  		BOARD_COMMENT_CONTENT,
+	  		BOARD_NO,
+	  		USER_NO
+	  	)
+	  	VALUES(
+		  	SEQ_BOARDCOMENTNO.NEXTVAL,
+		  	#{boardCommentContent},
+		  	#{boardNo},
+		  	#{userNo}
+	  	)
+	  </insert>
   
   
   </mapper>

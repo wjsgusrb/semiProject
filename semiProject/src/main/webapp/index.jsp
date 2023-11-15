@@ -8,7 +8,8 @@
 <title>Insert title here</title>
 <!-- jquery 3.7.1 -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+	crossorigin="anonymous"></script>
 </head>
 <style>
 .middle-area>div>div {
@@ -174,9 +175,13 @@
 
 
 
+
 								<button type="button" class="btn btn-primary"
+									data-bs-toggle="modal" data-bs-target="#exampleModal"
+									data-bs-whatever="@mdo"
 									style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-									아이디 비밀번호 찾기</button>
+
+									비밀번호찾기</button>
 							</div>
 						</div>
 		</div>
@@ -273,7 +278,7 @@
 		</script>
 		<!--운동게시글 보여주는 부분-->
 		<div class="ex-board" align="center">
-			<div class="ex-board-top">자유게시판</div>
+			<div class="ex-board-top"><a href="list.bo?cpage=1" style="color: black;">자유게시판</a></div>
 			<table class="table  table-hover"
 				style="border-radius: 0 0 15px 15px;">
 				<thead>
@@ -423,40 +428,41 @@
 				<div class="modal-body">
 					<form action="insert.me" id="enroll-form" method="post">
 						<div class="form-floating join">
-							<input type="text" class="form-control" id="idCheck" placeholder="Password" name="userId">
-							 <label
+							<input type="text" class="form-control" id="idCheck"
+								placeholder="Password" name="userId" required> <label
 								for="idCheck">id</label>
-							
+
 							<button type="button" id="idCheckButton" class="btn btn-primary">중복확인</button>
-							
+
 							<!--유효성 검사 후 사용가능인지 불가능인지 알려줌-->
 						</div>
 						<div class="form-floating join";>
 							<input type="password" class="form-control" id="userPwd"
-								placeholder="Password" name="userPwd"> <label
+								placeholder="Password" name="userPwd" required> <label
 								for="floatingPassword">Password</label>
 						</div>
 						<div class="form-floating join";>
-							<input type="password" class="form-control" id="userPwdCheck"  name="userPwdCheck"
-								placeholder="Password"> <label for="floatingPassword">checkPassword</label>
-							
+							<input type="password" class="form-control" id="userPwdCheck"
+								name="userPwdCheck" placeholder="Password"> <label
+								for="floatingPassword" required>checkPassword</label>
+
 						</div>
 						<div class="form-floating join";>
 							<input type="text" class="form-control" id="floatingPassword"
-								placeholder="Password" name="userName"> <label
+								placeholder="Password" name="userName" required> <label
 								for="floatingPassword">name</label>
 						</div>
 						<div class="form-floating join";>
 							<input type="text" class="form-control" id="floatingPassword"
-								placeholder="Password" name="address"> <label+
-								for="floatingPassword">address</label>
+								placeholder="Password" name="address" required> <label
+								for="floatingPassword">email</label>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-bs-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary"
-								disabled  onclick="return checkPwd();">가입확인</button>
-								
+							<button type="submit" class="btn btn-primary" disabled
+								onclick="return checkPwd();">가입확인</button>
+
 						</div>
 
 
@@ -507,7 +513,7 @@
 				                let pwdCheckInput = document.querySelector("#enroll-form input[name=userPwdCheck]");
 				                if (pwdInput.value !== pwdCheckInput.value) {
 				                    alert("비밀번호가 일치하지 않습니다.");
-				                    return false;
+				                    return false; 
 				                }
 				            }
 					</script>
@@ -517,5 +523,73 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- 아이디 비밀번호찾기 모달 -->
+	
+	
+	<div class="modal fade" id="exampleModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">아이디와 이메일을 입력하시오</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="mb-3">
+							<label for="recipient-name" class="col-form-label">아이디:</label>
+							<input type="text" class="form-control" id="pwdIdCheck" name="pwdIdCheck">
+						</div>
+						<div class="mb-3">
+							<label for="message-text" class="col-form-label">이메일주소:</label>
+							<input type="text" class="form-control" id="pwdEmailCheck" name="pwdEmailCheck">
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal">Close</button>
+					<button type="button" id="findPwd" onclick="findPwd();"  class="btn btn-primary">비밀번호찾기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+		<script>
+
+		 function findPwd() {
+			    const idInput = document.querySelector("#pwdIdCheck").value;
+			    const emailInput = document.querySelector("#pwdEmailCheck").value;
+
+			    if (idInput && emailInput) {
+			        $.ajax({
+			            url: "findPwd.me",
+			            type: "post",
+			            data: {
+			                idInput: idInput,
+			                emailInput: emailInput
+			            },
+			            success: function (res) {
+			                // Assuming res is a JSON object with a userPwd property
+			                const userPwd = res;
+
+			                // Display the userPwd value in the modal
+			                 document.querySelector("#exampleModal .modal-header").innerHTML = "<h3>" +"귀하의 패스워드는" + "</h3>";
+			                document.querySelector("#exampleModal .modal-body").innerHTML = "<h3>" + userPwd +"입니다."+ "</h3>";
+			                console.log(res);
+			            },
+			            error: function () {
+			                console.log("비밀번호 찾기 중 ajax 통신 실패");
+			            }
+			        });
+			    } else {
+			        document.querySelector("#findId.modal-body").value = '';
+			    }
+			}
+	</script>
 </body>
 </html>

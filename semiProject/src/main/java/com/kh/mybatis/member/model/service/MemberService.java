@@ -14,4 +14,5 @@ public interface MemberService  {
 	public abstract int insertProfileImg(ProfileImg pImg);
 	public abstract int deleteProfileImg();
 	public abstract ProfileImg selectProfileImg(int userNo);
+	public abstract Member findaPassword(Member m) ;
 }

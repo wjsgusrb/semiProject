@@ -123,4 +123,13 @@
 		 WHERE USER_NO = #{userNo}
 		   AND DELETE_IMG IS NULL
 	</select>
+	<select id="findaPassword" resultMap="memberResultSet">
+		SELECT 
+			USER_PWD
+			
+		FROM MEMBER
+		WHERE USER_ID = #{userId}
+		 AND USER_ADDRESS = #{userAddress}
+		 AND DELETE_CHECK = 'N'
+ 	</select>
 </mapper>
