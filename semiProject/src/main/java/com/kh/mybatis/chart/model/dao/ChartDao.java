@@ -30,5 +30,18 @@ public class ChartDao {
 		return sqlSession.insert("chartMapper.insertExInfo", ex);
 	}
 	
+	public int UpdateChartInfo(SqlSession sqlSession,Chart ch) {
+		Calendar calendar = Calendar.getInstance();
+		String nowMonth = calendar.get(Calendar.YEAR) +"-"+ (calendar.get(Calendar.MONTH) + 1) +"-"+
+				calendar.get(Calendar.DATE);
+		System.out.println(nowMonth+"222222222222");
+		HashMap map = new HashMap();
+		map.put("userNo", ch.getUserNo());
+		map.put("nowMonth",nowMonth);
+		map.put("exChartTarget", ch.getExChartTarget());
+		map.put("exChartTime",ch.getExChartTime());
+		return sqlSession.update("chartMapper.UpdateChartInfo", map);
+	}
+	
 	
 }

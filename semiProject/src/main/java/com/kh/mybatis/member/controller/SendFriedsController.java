@@ -1,7 +1,6 @@
-package com.kh.mybatis.chart.controller;
+package com.kh.mybatis.member.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,21 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
-import com.kh.mybatis.chart.model.service.ChartServiceImpl;
-import com.kh.mybatis.chart.model.vo.Chart;
-import com.kh.mybatis.member.model.vo.Member;
+import com.kh.mybatis.member.model.service.MemberServiceImpl;
+import com.kh.mybatis.member.model.vo.Follow;
 
 /**
- * Servlet implementation class GerChartInfoController
+ * Servlet implementation class SendFriedsController
  */
-@WebServlet("/getChartInfo")
-public class GerChartInfoController extends HttpServlet {
+@WebServlet("/sendFrieds.me")
+public class SendFriedsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GerChartInfoController() {
+    public SendFriedsController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,28 +32,17 @@ public class GerChartInfoController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		res.setCharacterEncoding("UTF-8");
-		Member m = (Member)req.getSession().getAttribute("loginUser");
-		
-		if(m != null) {
-			int userNo = m.getUserNo();
-			ArrayList<Chart> exList = new ChartServiceImpl().selectTodayExList(userNo);
-			res.setContentType("text/html; charset=UTF-8");
-			new Gson().toJson(exList, res.getWriter());
-		}else {
-			System.out.println("로그인 유저 없음");
-			res.setContentType("text/html; charset=UTF-8");
-			new Gson().toJson("로그인 유저 없음", res.getWriter());
-		}
-		
-		
-			
-			
+		Follow fo = new Follow();
+		fo.setFollowerUser(Integer.parseInt(req.getParameter("sendUser")));
+		fo.setFollowingUser(Integer.parseInt(req.getParameter("getUser")));
 	
+		int result = new MemberServiceImpl().sendFrieds(fo);
+		System.out.print(result);
+		res.setContentType("text/html; charset=UTF-8");
+		new Gson().toJson(result, res.getWriter());
+		
 	}
-		
-		
-	
-	
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

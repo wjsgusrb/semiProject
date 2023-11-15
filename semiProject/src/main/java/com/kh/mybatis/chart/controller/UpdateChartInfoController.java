@@ -1,7 +1,6 @@
 package com.kh.mybatis.chart.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,16 +14,16 @@ import com.kh.mybatis.chart.model.vo.Chart;
 import com.kh.mybatis.member.model.vo.Member;
 
 /**
- * Servlet implementation class GerChartInfoController
+ * Servlet implementation class UpdateChartInfoController
  */
-@WebServlet("/getChartInfo")
-public class GerChartInfoController extends HttpServlet {
+@WebServlet("/updateChartInfo.bo")
+public class UpdateChartInfoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GerChartInfoController() {
+    public UpdateChartInfoController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,28 +33,20 @@ public class GerChartInfoController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		res.setCharacterEncoding("UTF-8");
-		Member m = (Member)req.getSession().getAttribute("loginUser");
+		Chart ch = new Chart();
+		ch.setExChartTime(Integer.parseInt(req.getParameter("exChartTime")));
+		ch.setExChartTarget(req.getParameter("exChartTarget"));
+		ch.setUserNo(((Member)req.getSession().getAttribute("loginUser")).getUserNo());
 		
-		if(m != null) {
-			int userNo = m.getUserNo();
-			ArrayList<Chart> exList = new ChartServiceImpl().selectTodayExList(userNo);
-			res.setContentType("text/html; charset=UTF-8");
-			new Gson().toJson(exList, res.getWriter());
-		}else {
-			System.out.println("로그인 유저 없음");
-			res.setContentType("text/html; charset=UTF-8");
-			new Gson().toJson("로그인 유저 없음", res.getWriter());
-		}
+
+		int result =  new ChartServiceImpl().UpdateChartInfo(ch);
+		
+		res.setContentType("text/html; charset=UTF-8");
+		new Gson().toJson(result, res.getWriter());
 		
 		
-			
-			
-	
 	}
-		
-		
-	
-	
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

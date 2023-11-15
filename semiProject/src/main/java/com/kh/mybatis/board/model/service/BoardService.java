@@ -33,5 +33,6 @@ public interface BoardService {
 	
 	//게시글 삭제
 	int deleteBoard(int boardNo);
-
+	
+	ArrayList<Board> selecttopFiveList();
 }

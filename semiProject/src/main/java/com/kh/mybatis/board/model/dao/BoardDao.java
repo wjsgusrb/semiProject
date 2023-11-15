@@ -67,4 +67,8 @@ public class BoardDao {
 	public int updateBoardImg(SqlSession sqlSession, BoardImg bImg) {
 		return sqlSession.update("boardMapper.updateBoardImg", bImg);
 	}
+	
+	public ArrayList<Board> selecttopFiveList(SqlSession sqlSession) {
+		return (ArrayList)sqlSession.selectList("boardMapper.selecttopFiveList");
+	}
 }

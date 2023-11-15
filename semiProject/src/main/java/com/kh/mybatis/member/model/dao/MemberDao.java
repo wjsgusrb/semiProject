@@ -1,10 +1,11 @@
 package com.kh.mybatis.member.model.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
 
-
+import com.kh.mybatis.member.model.vo.Follow;
 import com.kh.mybatis.member.model.vo.Member;
 
 public class MemberDao {
@@ -52,5 +53,24 @@ public class MemberDao {
 	public int idCheckMember(SqlSession sqlSession, String checkId) {
 		
 		return sqlSession.selectOne("memberMapper.idCheckMember", checkId);
+	}
+	
+	
+	public int sendFrieds(SqlSession sqlSession, Follow fo) {
+		
+		return sqlSession.insert("memberMapper.sendFrieds", fo);
+	}
+	
+	public ArrayList<Member> checkSeedFrieds(SqlSession sqlSession, int userNo) {
+		return (ArrayList)sqlSession.selectList("memberMapper.checkSeedFrieds", userNo);
+	}
+	
+	
+	public int successFriedsPost(SqlSession sqlSession, Follow fo) {
+		return sqlSession.update("memberMapper.successFriedsPost", fo);
+	}
+	
+	public int deleteFriendsPost(SqlSession sqlSession, Follow fo) {
+		return sqlSession.delete("memberMapper.deleteFriendsPost", fo);
 	}
 }

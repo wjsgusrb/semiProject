@@ -15,6 +15,7 @@
        <typeAlias type="com.kh.mybatis.board.model.vo.BoardComment" alias="BoardComment"/>
        <typeAlias type="com.kh.mybatis.board.model.vo.BoardImg" alias="BoardImg"/>
        <typeAlias type="com.kh.mybatis.feed.model.vo.Feed" alias="Feed"/>
+       <typeAlias type="com.kh.mybatis.member.model.vo.Follow" alias="Follow"/>
     </typeAliases>
     
     <environments default="development">

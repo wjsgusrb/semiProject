@@ -123,6 +123,15 @@
 				)
 	</insert>
 
+
+	<select id="selecttopFiveList" resultMap="boardResultSet">
+		select * from
+		(select BOARD_NO,user_no,BOARD_TITLE,BOARD_CONTENT,UPDATE_DATE,BOARD_COUNT
+		from board 
+		join member using(user_no)
+		order by board_count DESC)
+		where ROWNUM BETWEEN 1 and 4
+  	</select>
   
   
   

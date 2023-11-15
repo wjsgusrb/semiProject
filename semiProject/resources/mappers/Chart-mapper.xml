@@ -36,4 +36,16 @@
 		        #{userNo}
 		    )
 	</insert>
+	
+	
+	<update id="UpdateChartInfo">
+		update
+			chart
+			set
+			chart_time = #{exChartTime},
+			chart_target = #{exChartTarget}
+			where user_no = #{userNo}
+			and TO_CHAR(CHART_DAY,'YYYY-MM-DD') = #{nowMonth}
+				
+	</update>
 </mapper>

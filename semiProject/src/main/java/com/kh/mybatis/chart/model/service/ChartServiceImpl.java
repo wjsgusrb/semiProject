@@ -31,5 +31,15 @@ public class ChartServiceImpl implements ChartService {
 		return result;
 	}
 
+	@Override
+	public int UpdateChartInfo(Chart ch) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = new ChartDao().UpdateChartInfo(sqlSession,ch);
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		return result;
+	}
+
 
 }
