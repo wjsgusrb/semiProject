@@ -74,7 +74,7 @@
 	</style>
 </head>
 
-
+	
 	<body>
 		 <!--상단바를 보여주는 부분-->
 		 <jsp:include page="/views/common/menubar.jsp" />
@@ -89,15 +89,30 @@
 		</div>
         <br>
 		<div class="detail-area" align="center">
-			<div class="detail-area-content">
-				${b.boardContent}
-			</div>
-			<div class="detail-img-area" align="center">
-				<div class="detail-img">
-					 
+	
+				<div class="detail-area-content">
+								${b.boardContent}
 				</div>
-			</div>
-		</div>
+			
+				<c:if test="${ !empty boardImg}">
+					<div class="detail-img-area" align="center" >
+						<div class="detail-img">
+						
+						<img src="/ex/resources/board_upfile/user.png" style="width: 200px; height: 200px;" />
+						
+						
+				
+						
+						
+					
+						</div>
+					</div>
+				
+				</c:if>
+				
+				
+				<br><br><br><br><br>
+				
 		<hr>
 		
 		<table id ="board-comment" class="table" algin="center">
@@ -130,6 +145,8 @@
 		</table>
 		
 		 <script>
+	
+		 
 			window.onload =() =>{
 				selectCommentList();
 				

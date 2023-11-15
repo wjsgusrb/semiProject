@@ -76,7 +76,7 @@
 
     <div class="outer" >
         <br>
-        <h2 style="margin-left: 30px; align="center">머슬지도</h2>
+        <h2 style="margin-left: 30px; align="center">MuscleMap</h2>
         <br>
 
     <div style="margin-right: 100px; float:right"> 부위 클릭시 부위별 운동방법 영상 시청 가능</div>
@@ -91,13 +91,13 @@
         <a class="list-group-item list-group-item-action active" aria-current="true">
           운동부위
         </a>
-        <a href="muscleMapShoulder.jsp" class="list-group-item list-group-item-action">어깨</a>
-        <a href="muscleMapChest.jsp" class="list-group-item list-group-item-action">가슴</a>
-        <a href="muscleMapAbs.jsp" class="list-group-item list-group-item-action">복근</a>
-        <a href="#" class="list-group-item list-group-item-action">삼두, 이두</a>
-        <a href="#" class="list-group-item list-group-item-action">하체</a>
-        <a href="#" class="list-group-item list-group-item-action">코어</a>
-        <a href="#" class="list-group-item list-group-item-action">등</a>
+        <a href="http://localhost:8899/ex/views/muscleMap/muscleMapShoulder.jsp" class="list-group-item list-group-item-action">어깨</a>
+        <a href="http://localhost:8899/ex/views/muscleMap/muscleMapChest.jsp" class="list-group-item list-group-item-action">가슴</a>
+        <a href="http://localhost:8899/ex/views/muscleMap/muscleMapAbs.jsp" class="list-group-item list-group-item-action">복근</a>
+        <a href="http://localhost:8899/ex/views/muscleMap/muscleMapAbs.jsp" class="list-group-item list-group-item-action">삼두, 이두</a>
+        <a href="http://localhost:8899/ex/views/muscleMap/muscleMapAbs.jsp" class="list-group-item list-group-item-action">하체</a>
+        <a href="http://localhost:8899/ex/views/muscleMap/muscleMapAbs.jsp" class="list-group-item list-group-item-action">코어</a>
+        <a href="http://localhost:8899/ex/views/muscleMap/muscleMapAbs.jsp" class="list-group-item list-group-item-action">등</a>
       </div>
       
     </div>
