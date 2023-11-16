@@ -74,7 +74,7 @@
 	</style>
 </head>
 
-
+	
 	<body>
 		 <!--상단바를 보여주는 부분-->
 		 <jsp:include page="/views/common/menubar.jsp" />
@@ -89,15 +89,31 @@
 		</div>
         <br>
 		<div class="detail-area" align="center">
-			<div class="detail-area-content">
-				${b.boardContent}
-			</div>
-			<div class="detail-img-area" align="center">
-				<div class="detail-img">
-					 
+	
+				<div class="detail-area-content">
+								${b.boardContent}
 				</div>
-			</div>
-		</div>
+			
+				<c:if test="${ boardImg} !== 'NNN'">
+						console.log(boardImg)
+					<div class="detail-img-area" align="center" >
+						<div class="detail-img">
+						
+						<img src="/ex/resources/board_upfile/user.png" style="width: 200px; height: 200px;" />
+						
+						
+				
+						
+						
+					
+						</div>
+					</div>
+				
+				</c:if>
+				
+				
+				<br><br><br><br><br>
+				
 		<hr>
 		
 		<table id ="board-comment" class="table" algin="center">
@@ -130,6 +146,33 @@
 		</table>
 		
 		 <script>
+	
+		 
+		 	$(function(){
+		 			loadBoardImg();
+			})
+		 	
+		 	function loadBoardImg(){
+		 		$.ajax({
+					url : "selectImg.bo" ,
+					data : {'boardNo' : "${Board.boardNo}"},
+					success: function(boardImg){
+						let str = "";
+						if(boardImg != '"NNN"'){
+							str += ('<img src="/ex/'+ boardImg +'" style="width: 200px; height: 200px;" />')
+							
+						}else{
+						}
+						document.querySelector(".detail-img").innerHTML = str;
+					},
+					error: function(){
+						console.log("selectImg ajax 실패");
+					}
+				})
+			}
+		 	
+		 
+		 
 			window.onload =() =>{
 				selectCommentList();
 				

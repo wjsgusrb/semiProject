@@ -24,7 +24,7 @@
 			height: 100vh;
 			background-color: #d6d7dc;
 		}
-		c              
+		
 		.top-var {
 			width: auto;
 			height: auto;
@@ -42,7 +42,7 @@
 			color: white;
 		}
 		
-		
+			
 		#bodyImg {
 			position: relative;
 			margin: auto;
@@ -50,7 +50,7 @@
 		}
 	
 		.outer{
-	            background: #e0f0f3;
+	            background:  #e0f0f3;
 	            color: rgb(32, 28, 28);
 	            width: 1000px;
 	            height: auto;
@@ -81,29 +81,33 @@
         <h2 style="text-align: center;">MuscleMap</h2>
 		<br>
         <div style="text-align: center;">
-            <h3>어깨 운동 </h3> 
+            <h3>등 운동 </h3> 
         </div>
     
     
         <div class="container" >
         
 			<div style="flex: 1;">
-				<iframe width="450" height="450" src="https://youtube.com/embed/3hYOPTgd_WQ?si=2s5IbljLMx8Vfgwn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="450" height="450" src="https://www.youtube.com/embed/TUow8Td2ZY4?si=LgwZMkSWDRVVe_Sn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 			
 			<div style="flex: 1;">
-				<iframe width="450" height="450" src="https://www.youtube.com/embed/twXs4ujJuGI?si=3Lm5XDTtGp_RkHcX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="450" height="450" src="https://www.youtube.com/embed/7K7EwlwQ2zE?si=2VpFO7I-Idwo5yfm title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 
 		</div>
         
 		
 		<div style="margin-bottom: 50px; margin-left: 50px; ">
-            <p> 어깨는 상체에서 가장 중요한 관절 중 하나입니다. </p>
-            <p> 어깨를 움직이면 팔을 위로 들어 올리고, 옆으로 벌리고, 뒤로 젖힐 수 있습니다. </p>
-            <p> 어깨가 튼튼하면 팔을 자유롭게 움직일 수 있고, 일상생활에서 많은 동작을 쉽게 할 수 있습니다. </p>
-            <P> 또한 어깨는 움직임이 많은 관절이기 때문에 부상을 입기 쉽습니다. 
-               따라서 어깨 운동을 할 때는 올바른 자세와 강도를 유지하는 것이 중요합니다.</P>
+            <p> 바벨로우는 바벨을 이용하여 등 근육을 단련하는 운동입니다. </p>
+            <p>활성화되는 주요 근육은 광배근, 승모근(중간 및 하부 모두) 및 후방 삼각근입니다.  </p>
+            <p>바벨을 들어 올릴 때는 등의 근육을 사용하여 팔꿈치를 뒤로 보낸다는 느낌으로 바벨을 몸쪽으로 당깁니다. </p>
+            <p>바벨을 당길때는 최대한 몸과 밀착하여 수직으로 당깁니다. </p>
+            
+            <p> 덤벨 로우는 광배근을 집중적으로 발달시키는 운동으로, 더 넓고 인상적인 등을 만들고자 하는 분들을 위한 훌륭한 운동입니다. </p>
+            <p> 광배근은 등을 덮고 있는 큰 근육으로, 등의 넓이를 결정합니다. </p>
+            <p> 덤벨 로우를 통해 광배근을 발달시키면 넓고 웅장한 등 근육을 만들 수 있습니다. </p>
+            
      
              <br><br>
          </div>

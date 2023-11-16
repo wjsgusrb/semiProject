@@ -24,7 +24,7 @@
 			height: 100vh;
 			background-color: #d6d7dc;
 		}
-		c              
+		
 		.top-var {
 			width: auto;
 			height: auto;
@@ -42,7 +42,7 @@
 			color: white;
 		}
 		
-		
+			
 		#bodyImg {
 			position: relative;
 			margin: auto;
@@ -50,7 +50,7 @@
 		}
 	
 		.outer{
-	            background: #e0f0f3;
+	            background:  #e0f0f3;
 	            color: rgb(32, 28, 28);
 	            width: 1000px;
 	            height: auto;
@@ -81,30 +81,31 @@
         <h2 style="text-align: center;">MuscleMap</h2>
 		<br>
         <div style="text-align: center;">
-            <h3>어깨 운동 </h3> 
+            <h3>코어 운동 </h3> 
         </div>
     
     
         <div class="container" >
         
 			<div style="flex: 1;">
-				<iframe width="450" height="450" src="https://youtube.com/embed/3hYOPTgd_WQ?si=2s5IbljLMx8Vfgwn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="450" height="450" src="https://www.youtube.com/embed/3hkphseQGMg?si=5ScRJhmNsn19BvK5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 			
 			<div style="flex: 1;">
-				<iframe width="450" height="450" src="https://www.youtube.com/embed/twXs4ujJuGI?si=3Lm5XDTtGp_RkHcX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="450" height="450" src="https://www.youtube.com/embed/RAmLOWt-_Mo?si=yC3kp2-2drUX2cIt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 
 		</div>
         
 		
 		<div style="margin-bottom: 50px; margin-left: 50px; ">
-            <p> 어깨는 상체에서 가장 중요한 관절 중 하나입니다. </p>
-            <p> 어깨를 움직이면 팔을 위로 들어 올리고, 옆으로 벌리고, 뒤로 젖힐 수 있습니다. </p>
-            <p> 어깨가 튼튼하면 팔을 자유롭게 움직일 수 있고, 일상생활에서 많은 동작을 쉽게 할 수 있습니다. </p>
-            <P> 또한 어깨는 움직임이 많은 관절이기 때문에 부상을 입기 쉽습니다. 
-               따라서 어깨 운동을 할 때는 올바른 자세와 강도를 유지하는 것이 중요합니다.</P>
-     
+            <p> 운동은 건강과 체형 개선에 필수적입니다.</p>
+            <p> 바쁜 일상에서도 5분 전신 운동으로 근력 강화와 체지방 감소 효과를 볼 수 있습니다.   </p>
+            <p> 꾸준한 운동으로 건강한 라이프스타일을 유지하세요. </p>
+            
+            <p>숄더 탭(Shoulder Tap) 운동은 어깨 근육을 강화하는 데 효과적일 뿐만 아니라 코어 근육을 강화하는 데에도 효과적입니다. </p>
+            <p>이 운동은 플랭크 자세를 유지해야 하기 때문에 코어 근육을 활성화시켜줍니다.</p>
+     		<p>숄더탭 운동은 집에서 간편하게 할 수 있는 운동입니다. 10회씩 3세트 반복합니다.</p>
              <br><br>
          </div>
 
