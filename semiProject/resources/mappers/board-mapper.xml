@@ -60,6 +60,7 @@
          SELECT BOARD_NO
              , CATEGORY
              ,BOARD_TITLE
+             ,BOARD_CONTENT
              , USER_NAME as "USER_NO"
              ,BOARD_COUNT
              ,UPDATE_DATE

@@ -13,6 +13,7 @@ public interface FeedService {
 	public int selectListCount();
 	ArrayList<Feed> selectList(PageInfo pi);
 	int countLike(FeedLike like);
+	ArrayList<Feed> selectMyFeed(int userNo);
 	
 	// 피드 등록
 	public int insertFeed(Feed f, ArrayList<FeedImg> list);
