@@ -119,7 +119,6 @@ public class BoardServiceImpl implements BoardService{
 	public int deleteBoard(int boardNo) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = bDao.deleteBoard(sqlSession, boardNo);
-		sqlSession.close();
 		if(result > 0) {
 			sqlSession.commit();
 		}

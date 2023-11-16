@@ -95,13 +95,13 @@
 					<a class="list-group-item list-group-item-action active" aria-current="true">
 					운동부위
 					</a>
-					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapShoulder.jsp" class="list-group-item list-group-item-action">어깨</a>
-					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapChest.jsp" class="list-group-item list-group-item-action">가슴</a>
-					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapAbs.jsp" class="list-group-item list-group-item-action">복근</a>
-					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapArm.jsp" class="list-group-item list-group-item-action">삼두, 이두</a>
-					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapLeg.jsp" class="list-group-item list-group-item-action">하체</a>
-					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapCore.jsp" class="list-group-item list-group-item-action">코어</a>
-					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapBack.jsp" class="list-group-item list-group-item-action">등</a>
+					<a href="${pageContext.request.contextPath}/views/muscleMap/muscleMapShoulder.jsp" class="list-group-item list-group-item-action">어깨</a>
+					<a href="${pageContext.request.contextPath}/views/muscleMap/muscleMapChest.jsp" class="list-group-item list-group-item-action">가슴</a>
+					<a href="${pageContext.request.contextPath}/views/muscleMap/muscleMapAbs.jsp" class="list-group-item list-group-item-action">복근</a>
+					<a href="${pageContext.request.contextPath}/views/muscleMap/muscleMapArm.jsp" class="list-group-item list-group-item-action">삼두, 이두</a>
+					<a href="${pageContext.request.contextPath}/views/muscleMap/muscleMapLeg.jsp" class="list-group-item list-group-item-action">하체</a>
+					<a href="${pageContext.request.contextPath}/views/muscleMap/muscleMapCore.jsp" class="list-group-item list-group-item-action">코어</a>
+					<a href="${pageContext.request.contextPath}/views/muscleMap/muscleMapBack.jsp" class="list-group-item list-group-item-action">등</a>
 				</div>
 		
 			</div>

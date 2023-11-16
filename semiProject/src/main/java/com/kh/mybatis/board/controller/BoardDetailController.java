@@ -47,8 +47,9 @@ public class BoardDetailController extends HttpServlet {
 			BoardImg bimg = bService.selectBoardImg(boardNo);
 			
 			request.setAttribute("b", b);
+			request.setAttribute("bImg", bimg);
 			request.setAttribute("list", list);
-			request.setAttribute("boardImg", bimg);
+			
 			
 			
 			request.getRequestDispatcher("views/board/boardDetailView.jsp").forward(request, response);
