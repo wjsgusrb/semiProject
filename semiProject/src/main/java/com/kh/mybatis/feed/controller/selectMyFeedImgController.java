@@ -1,6 +1,7 @@
-package com.kh.mybatis.board.controller;
+package com.kh.mybatis.feed.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,21 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.mybatis.board.model.service.BoardServiceImpl;
-import com.kh.mybatis.board.model.vo.Board;
-import com.kh.mybatis.board.model.vo.BoardImg;
+import com.google.gson.Gson;
+import com.kh.mybatis.feed.model.service.FeedServiceImpl;
+import com.kh.mybatis.feed.model.vo.Feed;
 
 /**
- * Servlet implementation class BoardUpdateFormController
+ * Servlet implementation class selectMyFeedImgController
  */
-@WebServlet("/updateForm.bo")
-public class BoardUpdateFormController extends HttpServlet {
+@WebServlet("/selectFeedImg.fe")
+public class selectMyFeedImgController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BoardUpdateFormController() {
+    public selectMyFeedImgController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,17 +32,12 @@ public class BoardUpdateFormController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int boardNo = Integer.parseInt(request.getParameter("bno"));
+		ArrayList<Feed> fList = new FeedServiceImpl().selectMyFeed(Integer.parseInt(request.getParameter("userNo")));
 		
-		BoardServiceImpl bService = new BoardServiceImpl();
+		response.setContentType("text/html; charset=UTF-8");
+        new Gson().toJson(fList, response.getWriter());
 		
-		Board b = bService.selectBoard(boardNo);
-		BoardImg bImg = bService.selectBoardImg(boardNo);
-		System.out.println(b);
-		request.setAttribute("b", b);
-		request.setAttribute("bImg", bImg);
 		
-		request.getRequestDispatcher("views/board/boardUpdateForm.jsp").forward(request, response);
 	}
 
 	/**

@@ -76,6 +76,22 @@
   			
   	</insert>
  	
+  	 <select id="countLike" resultType="_int">
+  		SELECT count(*)
+   		FROM FEED
+    		where feed_no = ${feedNo}
+  	</select>
+  	<select id="selectMyFeed" resultMap="feedResultSet">
+		SELECT FEEDIMG_NO,
+		        FEED_NO,
+		        FEED_URL,
+		        ORIGIN_NAME,
+		        CHANGE_NAME
+		FROM FEED
+		JOIN FEED_IMG USING(FEED_NO)
+		WHERE USER_NO = #{userNo}
+		AND DELETE_DATE IS NULL
+  	</select>
   	
   	<insert id="insertFeed">
 		INSERT

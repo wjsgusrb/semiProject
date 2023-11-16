@@ -50,7 +50,7 @@
 
     <div class="outer" align="center">
         <br>
-        <h2 align center style="background-color: #0d6efd; color: white; width: 55%; border-radius: 30px;">게시글 작성하기</h2>
+        <h2 align center style="background-color: #0d6efd; color: white; width: 55%; border-radius: 30px;">게시글 수정하기</h2>
         <br>
 
         <form id="enroll-form" action="update.bo" method="POST" enctype="multipart/form-data">
@@ -62,7 +62,7 @@
                     <td width="500">
                         <select name="category">
                             <!-- category 테이블로부터 조회해오기 -->
-                            <option value="운동정보">카테고리</option>
+                            <option value="카테고리">카테고리</option>
                             <option value="운동정보">운동정보</option>
                             <option value="식단정보">식단정보</option>
                             <option value="운동피드백">운동피드백</option>
@@ -71,11 +71,11 @@
                 </tr>
                 <tr>
                     
-                    <td><input type="text" name="title" required placeholder="제목을 입력하세요"></td>
+                    <td><input type="text" name="title" value="${b.boardTitle}"></td>
                 </tr>
                 <tr>
                    
-                    <td><textarea name="content"rows="10" style="resize: none;" placeholder="내용을 입력하세요" required></textarea></td>
+                    <td><textarea name="content"rows="10" style="resize: none;">${b.boardContent}</textarea></td>
                 </tr>
                 <tr>
                     <td>
