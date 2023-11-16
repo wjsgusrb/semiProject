@@ -31,7 +31,6 @@
 			width: 75%;
 			height: auto;
 			margin: auto;
-			opacity: 0.7;
     	}
 
 		a {
@@ -62,7 +61,6 @@
 			height: 300px;
 			background-color: gray;
 			border-radius: 15px;
-			opacity: 0.7;
 			/* margin-left: 30px; */
 		}
 		.board-comment{
@@ -89,13 +87,13 @@
 		</div>
         <br>
 		<div class="detail-area" align="center">
+			<div class="detail-img-area" align="center">
+				<c:if test="${ !empty bImg.changeName}">
+					<img src="${bImg.boardImg}${bImg.changeName}" style="margin-bottom: 25px; max-width: 500px;">
+				</c:if>	 
+			</div>
 			<div class="detail-area-content">
 				${b.boardContent}
-			</div>
-			<div class="detail-img-area" align="center">
-				<div class="detail-img">
-					 
-				</div>
 			</div>
 		</div>
 		<hr>
@@ -132,8 +130,6 @@
 		 <script>
 			window.onload =() =>{
 				selectCommentList();
-				
-				
 			}
 
             function selectCommentList(){
@@ -194,7 +190,6 @@
                     }
                 })
             }
-
         </script>
 		
 		<hr>
