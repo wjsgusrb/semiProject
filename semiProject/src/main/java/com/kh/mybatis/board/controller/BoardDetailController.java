@@ -13,6 +13,7 @@ import com.kh.mybatis.board.model.service.BoardService;
 import com.kh.mybatis.board.model.service.BoardServiceImpl;
 import com.kh.mybatis.board.model.vo.Board;
 import com.kh.mybatis.board.model.vo.BoardComment;
+import com.kh.mybatis.board.model.vo.BoardImg;
 
 /**
  * Servlet implementation class boardDetailController
@@ -41,10 +42,14 @@ public class BoardDetailController extends HttpServlet {
 		
 		if(result > 0){
 			Board b = bService.selectBoard(boardNo);
+			
 			ArrayList<BoardComment> list =  bService.selectCommentList(boardNo);
+			BoardImg bimg = bService.selectBoardImg(boardNo);
 			
 			request.setAttribute("b", b);
 			request.setAttribute("list", list);
+			request.setAttribute("boardImg", bimg);
+			
 			
 			request.getRequestDispatcher("views/board/boardDetailView.jsp").forward(request, response);
 			

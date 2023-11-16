@@ -91,51 +91,51 @@
     </head>
     <body>
     <!--상단바를 보여주는 부분-->
+                        <!-- 마이페이지에 로그인한 유저만 들어갈 수 있음-->
+                        <c:if test="${!empty alertMsg}">
+                            <script>
+                                alert("${alertMsg}");
+                            </script>
+                            <c:remove var="alertMsg" scope="session" />
+                        </c:if>
+                        
+                        <div class="var-top">
+                            <div class="mainTitle"><a href="index.jsp" style="color: black;">health community</a></div>
+                            <div class="aaaaa" style="display: flex;">
+                                <div>
+                                    <a href="${pageContext.request.contextPath}/index.jsp"><i class="fa-solid fa-house fa-l" style="opacity: 0.7; color: black; "></i></a>
+                                </div>
+                                <div >
+                                    <a href="${pageContext.request.contextPath}/myPage.me" style="margin-left: 30px; margin-right: 30px; color: black;">마이페이지</a>
+                                </div>
+                                <div><i class="fa-solid fa-magnifying-glass fa-l "style="opacity: 0.7;"></i></div>
+                            </div>
+                        </div>
+                        <div class="top-var" style=" border-radius: 15px 15px 15px 15px; ">
+                            <ul
+                                class="nav nav-pills nav-fill "
+                                style="background-color: white; color: white;  border-radius: 20px 20px 20px 20px; height: auto;">
+                                <li class="nav-item" style="height:auto">
+                                    <a class="nav-link " aria-current="page" href="exChart.ch?userId=${loginUser.userId }">운동통계표</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="list.bo?cpage=1">자유게시판</a>
+                                </li>
+                                <li class="nav-item">
+                                    <c:choose>
+                                        <c:when test="${! empty loginUser}">
+                                            <a class="nav-link " href="list.fe?userNo=${loginUser.userNo}&cpage=1">오운완</a>
+                                        </c:when>
+                                        <c:otherwise>	
+                                            <a class="nav-link " onclick="alert('로그인 먼저 해주세요')">오운완</a>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="muscleMap.mc">근육지도</a>
+                                </li>
+                            </ul>
 
-    <!-- 마이페이지에 로그인한 유저만 들어갈 수 있음-->
-    <c:if test="${!empty alertMsg}">
-        <script>
-            alert("${alertMsg}");
-        </script>
-        <c:remove var="alertMsg" scope="session" />
-    </c:if>
-
-    <div class="var-top">
-        <div class="mainTitle"><a href="index.jsp" style="color: black;">health community</a></div>
-        <div class="aaaaa" style="display: flex;">
-            <div>
-                <a href="${pageContext.request.contextPath}/index.jsp"><i class="fa-solid fa-house fa-l" style="opacity: 0.7; color: black; "></i></a>
-            </div>
-            <div >
-                <a href="${pageContext.request.contextPath}/myPage.me" style="margin-left: 30px; margin-right: 30px; color: black;">마이페이지</a>
-            </div>
-            <div><i data-bs-toggle="modal" data-bs-target="#exampleModal" class="fa-solid fa-magnifying-glass fa-l "style="opacity: 0.7;"></i></div>
-        </div>
-    </div>
-    <div class="top-var" style=" border-radius: 15px 15px 15px 15px; ">
-        <ul
-            class="nav nav-pills nav-fill "
-            style="background-color: white; color: white;  border-radius: 20px 20px 20px 20px; height: auto;">
-            <li class="nav-item" style="height:auto">
-                <a class="nav-link " aria-current="page"  href="exChart.ch">운동통계표</a>
-            </li>   
-            <li class="nav-item">
-                <a class="nav-link " href="list.bo?cpage=1">자유게시판</a>
-            </li>
-            <li class="nav-item">
-                <c:choose>
-                    <c:when test="${! empty loginUser}">
-                        <a class="nav-link " href="list.fe?userNo=${loginUser.userNo}&cpage=1">오운완</a>
-                    </c:when>
-                    <c:otherwise>
-                        <a class="nav-link " onclick="alert('로그인 먼저 해주세요')">오운완</a>
-                    </c:otherwise>
-                </c:choose>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="views/muscleMap/muscleMap.jsp">근육지도</a>
-            </li>
-        </ul>
     <script>  
             const currentPage = document.getElementsByClassName("nav-item");
             const currentPagea = document.querySelectorAll(".nav>.nav-item>a");
@@ -168,6 +168,7 @@
                 <label for="floatingInput">친구아이디 검색</label>
                 </div>
                 <div id="sendFrieds">
+
 
                 </div>
         </div>

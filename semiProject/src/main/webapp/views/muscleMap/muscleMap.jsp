@@ -24,7 +24,7 @@
 		height: 100vh;
 		background-color: #d6d7dc;
 	}
-	
+
 	.top-var {
 		width: auto;
 		height: auto;
@@ -49,6 +49,8 @@
 		height: auto;
 		margin: auto;
 		margin-top: 50px;
+		
+	
 	}
 	
 	#bodyImg {
@@ -64,68 +66,69 @@
 	            text-align: center;
 	            margin-top: 40px;
 	            margin-bottom: 50px;
-	        }
+
+				
+	}
 </style>
 
 </head>
 
 
-<body>
+<div>
     <jsp:include page="/views/common/menubar.jsp" />
-
 
     <div class="outer" >
         <br>
-        <h2 style="margin-left: 30px; align="center">머슬지도</h2>
+        <h2 style="margin-left: 30px; text-align: center; margin-top: 50px;">MuscleMap</h2>
         <br>
 
-    <div style="margin-right: 100px; float:right"> 부위 클릭시 부위별 운동방법 영상 시청 가능</div>
-        
-	<div class="container">
-	
-    <div id="bodyImg" style="flex: 1;">
-        <img width="300px" src="/ex/resources/board_upfile/humanbody.png" alt="humanbody">
-    </div>
-    
-    <div class="list-group" style="flex: 1; margin-top: 120px;">
-        <a class="list-group-item list-group-item-action active" aria-current="true">
-          운동부위
-        </a>
-        <a href="muscleMapShoulder.jsp" class="list-group-item list-group-item-action">어깨</a>
-        <a href="muscleMapChest.jsp" class="list-group-item list-group-item-action">가슴</a>
-        <a href="muscleMapAbs.jsp" class="list-group-item list-group-item-action">복근</a>
-        <a href="#" class="list-group-item list-group-item-action">삼두, 이두</a>
-        <a href="#" class="list-group-item list-group-item-action">하체</a>
-        <a href="#" class="list-group-item list-group-item-action">코어</a>
-        <a href="#" class="list-group-item list-group-item-action">등</a>
-      </div>
-      
-    </div>
+		<div class="container">
+		
+			<div id="bodyImg" style="flex: 1;">
+				<img  width="480px" src="/ex/resources/board_upfile/muscle.jpg" alt="humanbody">
+			</div>
+		
+				<div class="list-group" style="  flex: 1; margin-left: 30px; margin-top:10px">
+				
+				<div> 부위 클릭시 부위별 운동방법 영상 시청 가능</div>
+				<br>
+					<a class="list-group-item list-group-item-action active" aria-current="true">
+					운동부위
+					</a>
+					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapShoulder.jsp" class="list-group-item list-group-item-action">어깨</a>
+					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapChest.jsp" class="list-group-item list-group-item-action">가슴</a>
+					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapAbs.jsp" class="list-group-item list-group-item-action">복근</a>
+					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapArm.jsp" class="list-group-item list-group-item-action">삼두, 이두</a>
+					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapLeg.jsp" class="list-group-item list-group-item-action">하체</a>
+					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapCore.jsp" class="list-group-item list-group-item-action">코어</a>
+					<a href="http://localhost:8899/ex/views/muscleMap/muscleMapBack.jsp" class="list-group-item list-group-item-action">등</a>
+				</div>
+		
+			</div>
 
 
-	
+		
 
 
-    <script>
-        const currentPage = document.getElementsByClassName("nav-item");
-        const currentPagea = document.querySelectorAll(".nav>.nav-item>a");
-        for (const current of currentPage) {
-            current.onclick = function () {
-                for (const a of currentPagea) {
-                    a
-                        .classList
-                        .remove("active");
-                }
-                const noticeNo = this.childNodes[1];
-                noticeNo
-                    .classList
-                    .add("active");
-            }
-        }
-    </script>
-
-
-    
-    </div>
+			<script>
+				const currentPage = document.getElementsByClassName("nav-item");
+				const currentPagea = document.querySelectorAll(".nav>.nav-item>a");
+				for (const current of currentPage) {
+					current.onclick = function () {
+						for (const a of currentPagea) {
+							a
+								.classList
+								.remove("active");
+						}
+						const noticeNo = this.childNodes[1];
+						noticeNo
+							.classList
+							.add("active");
+					}
+				}
+			</script>
+		
+    	</div>
+	</div>		
 </body>
 </html>
