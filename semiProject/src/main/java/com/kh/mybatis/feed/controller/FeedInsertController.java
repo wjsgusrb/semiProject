@@ -65,12 +65,10 @@ public class FeedInsertController extends HttpServlet {
 			
 			if(result > 0) { 
 				request.getSession().setAttribute("alertMsg", "피드 등록 완료!");
-				response.sendRedirect(request.getContextPath() + "/list.fe?userNo="+ f.getUserNo() + "&cpage=1");
 			} else { 
 				request.setAttribute("alertMsg", "피드 작성 실패");
-				request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
-				
 			}
+			response.sendRedirect(request.getContextPath() + "/list.fe?userNo="+ f.getUserNo() + "&cpage=1");
 		}
 	}
 

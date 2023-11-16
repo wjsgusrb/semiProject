@@ -125,10 +125,9 @@
 
 	<div class="outer">
 
-<<<<<<< HEAD
+
 		<div align="right">
-			<a
-				href="${pageContext.request.contextPath}/views/feed/feedEnroll.jsp"
+			<a href="enrollForm.fe"
 				class="btn btn-primary">피드등록</a>
 		</div>
 
@@ -156,15 +155,15 @@
 						</div>
 						<div class="carousel-inner">
 							<div class="carousel-item active" data-bs-interval="10000">
-								<img src="./${f.feedUrl}${f.originName }" class="d-block w-100"
+								<img src="./${f.feedUrl}${f.changeName }" class="d-block w-100"
 									alt="...">
 							</div>
 							<div class="carousel-item" data-bs-interval="2000">
-								<img src="./${f.feedUrl}${f.originName }" class="d-block w-100"
+							 	<img src="./${f.feedUrl}${f.changeName }" class="d-block w-100"
 									alt="...">
 							</div>
 							<div class="carousel-item">
-								<img src="./${f.feedUrl}${f.originName }" class="d-block w-100"
+								<img src="./${f.feedUrl}${f.changeName }" class="d-block w-100"
 									alt="...">
 							</div>
 							<button class="carousel-control-prev" type="button"
@@ -186,20 +185,21 @@
 						<input type="image"
 							src="./resources/feed-upfile/KakaoTalk_20231110_162616520_02.png"
 							style="width: 27px; height: 27px; margin-right: 10px;">
-						<p class="like">좋아요 8개</p>
+						<p id="like"></p>
 					</div>
 				</div>
 
 				<script>
+			
                 countLike= () =>{
                     $.ajax({
-                        url: "countLike",
+                        url: "countLike.fe",
                         data:{
-                            userNo : "${loginUser.userNo}",
-                            feedNo : 1
+                            feedNo : "${f.feedNo}"
                         },
                         success:(result)=>{
-                            document.querySelector("#like").innerHTML = result
+							console.log(result)
+                            document.querySelector("#like").innerText = "좋아요 "+result+"개"
                         },
                         error:()=>{
 

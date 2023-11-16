@@ -18,7 +18,6 @@ public interface FeedService {
 	// 피드 등록
 	public int insertFeed(Feed f, ArrayList<FeedImg> list);
 	
-	// 피드 수정
-	
-	// 피드 삭제
+	//좋아요 등록
+	public int insertLike(FeedLike like);
 }
