@@ -137,7 +137,7 @@
 
                     <div align="center">
                         <button type="submit" class="btn btn-primary">등록</button>
-                        <a href="list.fe?userNo=${loginUser.userNo}&cpage=1"><button type="" class="btn btn-danger">취소</button></a></a>
+                        <button type="button" onclick="history.back()" class="btn btn-danger">취소</button>
                     </div>
                     
         

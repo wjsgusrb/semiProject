@@ -23,10 +23,16 @@
 		<result column="CHANGE_NAME" property="changeName" />
 		<result column="DELETE_IMG" property="deleteImg" />
 	</resultMap>
+	<resultMap id="feedLikeResultSet" type="FeedLike">
+		<result column="LIKE_NO" property="likeNo" />
+		<result column="FEED_NO" property="feedNo" />
+		<result column="USER_NO" property="userNo" />
+	</resultMap>
 	
-	<select id="selectListCount" resultType="_int">
-     SELECT COUNT(*) COUNT
-       FROM FEED
+	<select id="selectCount" resultType="_int">
+     SELECT COUNT(*)
+       FROM FEED_LIKE
+      WHERE FEED_NO = #{feenNo}
     </select>
  	
   	<select id="selectList" resultMap="feedResultSet">
@@ -38,16 +44,30 @@
 	  		   FEED_URL
    		FROM FEED
     		JOIN MEMBER USING(USER_NO)
-    		JOIN FEED_IMG USING(FEED_NO)
-    	ORDER BY FEED_NO DESC 
+    		JOIN (SELECT FEED_NO,
+                        MAX(ORIGIN_NAME) ORIGIN_NAME, 
+                        MAX(CHANGE_NAME) CHANGE_NAME,
+                        MAX(FEED_URL) FEED_URL
+                        FROM FEED_IMG
+                        GROUP BY FEED_NO) USING(FEED_NO)
+    	ORDER BY FEED_NO DESC
   	</select>
   	
-  	
-  	 <select id="countLike" resultType="_int">
-  		SELECT count(*)
-   		FROM FEED
-    		where feed_no = ${feedNo}
-  	</select>
+  	<insert id="insertLike">
+  		INSERT 
+  			INTO FEED_LIKE(
+  							LIKE_NO,
+  							FEED_NO,
+  							USER_NO
+  							)
+  					 VALUES(
+  					 		SEQ_FEEDLIKENO.NEXTVALL,
+  					 		#{feedNo},
+  					 		#{userNo}
+  					 		)
+  			
+  	</insert>
+ 
   	
   	<insert id="insertFeed">
 		INSERT
