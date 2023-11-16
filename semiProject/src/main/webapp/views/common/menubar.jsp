@@ -109,7 +109,7 @@
             <div >
                 <a href="${pageContext.request.contextPath}/myPage.me" style="margin-left: 30px; margin-right: 30px; color: black;">마이페이지</a>
             </div>
-            <div><i data-bs-toggle="modal" data-bs-target="#exampleModal" class="fa-solid fa-magnifying-glass fa-l "style="opacity: 0.7;"></i></div>
+            <div><i data-bs-toggle="modal" data-bs-target="#exampleModal1" class="fa-solid fa-magnifying-glass fa-l "style="opacity: 0.7;"></i></div>
         </div>
     </div>
     <div class="top-var" style=" border-radius: 15px 15px 15px 15px; ">
@@ -155,7 +155,7 @@
     </script>                     
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">

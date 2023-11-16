@@ -429,7 +429,7 @@
 							<input type="text" class="form-control" id="pwdIdCheck" name="pwdIdCheck">
 						</div>
 						<div class="mb-3">
-							<label for="message-text" class="col-form-label">이메일주소:</label>
+							<label for="message-text" class="col-form-label">주소:</label>
 							<input type="text" class="form-control" id="pwdEmailCheck" name="pwdEmailCheck">
 						</div>
 					</form>
