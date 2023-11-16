@@ -1,5 +1,7 @@
 package com.kh.mybatis.member.model.dao;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.kh.mybatis.member.model.vo.Member;
@@ -55,5 +57,9 @@ public class MemberDao {
 	}
 	public Member findaPassword(SqlSession sqlSession,Member m) {
 		return sqlSession.selectOne("memberMapper.findaPassword", m );
+	}
+	
+	public  ArrayList<Member> selectFriend(SqlSession sqlSession,int userNo) {
+		return (ArrayList)sqlSession.selectList("memberMapper.selectFriend", userNo);
 	}
 }

@@ -25,12 +25,16 @@ public class Member {
 	private Date enrollDate;
 	private String deleteCheck;
 	private String statusMsg;
+	private String profileUrl;
+	private String changeName;
 	
+
 
 	public Member() {}
 
+
 	public Member(int userNo, String userId, String userPwd, String userName, String userAddress, String profileImg,
-			Date enrollDate, String deleteCheck, String statusMsg) {
+			Date enrollDate, String deleteCheck, String statusMsg, String profileUrl, String changeName) {
 		super();
 		this.userNo = userNo;
 		this.userId = userId;
@@ -41,6 +45,8 @@ public class Member {
 		this.enrollDate = enrollDate;
 		this.deleteCheck = deleteCheck;
 		this.statusMsg = statusMsg;
+		this.profileUrl = profileUrl;
+		this.changeName = changeName;
 	}
 
 	
@@ -141,13 +147,31 @@ public class Member {
 	public void setStatusMsg(String statusMsg) {
 		this.statusMsg = statusMsg;
 	}
+	public String getProfileUrl() {
+		return profileUrl;
+	}
+	
+	public void setProfileUrl(String profileUrl) {
+		this.profileUrl = profileUrl;
+	}
+	
+	public String getChangeName() {
+		return changeName;
+	}
+	
+	public void setChangeName(String changeName) {
+		this.changeName = changeName;
+	}
+
 
 	@Override
 	public String toString() {
 		return "Member [userNo=" + userNo + ", userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName
 				+ ", userAddress=" + userAddress + ", profileImg=" + profileImg + ", enrollDate=" + enrollDate
-				+ ", deleteCheck=" + deleteCheck + ", statusMsg=" + statusMsg + "]";
+				+ ", deleteCheck=" + deleteCheck + ", statusMsg=" + statusMsg + ", profileUrl=" + profileUrl
+				+ ", changeName=" + changeName + "]";
 	}
+
 	
 
 }

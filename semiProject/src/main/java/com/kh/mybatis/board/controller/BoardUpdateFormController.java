@@ -37,7 +37,7 @@ public class BoardUpdateFormController extends HttpServlet {
 		
 		Board b = bService.selectBoard(boardNo);
 		BoardImg bImg = bService.selectBoardImg(boardNo);
-		
+		System.out.println(b);
 		request.setAttribute("b", b);
 		request.setAttribute("bImg", bImg);
 		

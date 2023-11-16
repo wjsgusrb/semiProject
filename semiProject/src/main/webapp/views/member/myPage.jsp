@@ -571,355 +571,19 @@ img {
 							</thead>
 							<tbody>
 								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
+									<td style="text-align: center;"></td>
 									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
 									<td><button type="button" class="btn btn-sm btn-primary">
 											<h4 style="margin-top: 2px;">팔로잉</h4>
 										</button></td>
 								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-								<tr>
-									<td style="text-align: center;"><svg
-											xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-                                    <path
-												d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                    </svg></td>
-									<td><h4 style="margin-top: 5px;">g10000_</h4></td>
-									<td><button type="button" class="btn btn-sm btn-primary">
-											<h4 style="margin-top: 2px;">팔로잉</h4>
-										</button></td>
-								</tr>
-
+											
 							</tbody>
 						</table>
 					</div>
-				</div>.0
+				</div>
+
+				
 
 				<!-- Modal footer -->
 				<div class="modal-footer">
@@ -930,6 +594,7 @@ img {
 			</div>
 		</div>
 	</div>
+
 <!-- 프로필 사진 업로드 모달 -->
 <div class="modal" id="imgModal">
 	<div class="modal-dialog modal-dialog-centered">
@@ -943,6 +608,7 @@ img {
   
 		<!-- Modal body -->
 		<form action="insertImg.me" method="POST" enctype="multipart/form-data">
+			<input type="hidden" name="${profileImg}"></input>
 			<div class="modal-body">
 				<c:if test="${ !empty loginUser.profileImg}">
 					<img src="${loginUser.profileImg}" />
@@ -954,11 +620,46 @@ img {
 				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">뒤로가기</button>
 			</div>
 		</form>
-  
+		<img src="../../resources/board_upfile/user.png" style="width: 25px; height: 25px; border-radius: 50;"/>
 	  </div>
 	</div>
   </div>
   <script>
+
+
+		
+	window.onload =() =>{
+		$.ajax({
+			url : "selectFriend.me",
+			dataType : "JSON",
+			success : (result) =>{
+				let str = "";
+				for(let i=0; i<result.length; i++){
+					if(result[i].userNo != '${loginUser.userNo}'){
+						if(result[i].changeName == null){
+							str += ('<tr><td style="text-align: center;">'+
+										'<img src="resources/board_upfile/user.png" style="width: 35px; height: 35px; border-radius: 50%;"/>'+
+										'</td><td><h4 style="margin-top: 5px;">'+result[i].userName+'</h4></td>'+
+										'<td><button type="button" class="btn btn-sm btn-primary"><h4 style="margin-top: 2px;">팔로잉</h4></button></td></tr>')
+						}else{
+							str += ('<tr><td style="text-align: center;">'+
+										'<img src="'+result[i].profileUrl+result[i].changeName+'" style="width: 35px; height: 35px; border-radius: 50%;"/>'+
+										'</svg></td><td><h4 style="margin-top: 5px;">'+result[i].userName+'</h4></td>'+
+										'<td><button type="button" class="btn btn-sm btn-primary"><h4 style="margin-top: 2px;">팔로잉</h4></button></td></tr>')
+						}
+					}
+						
+				}
+					document.querySelector(".table-hover tbody").innerHTML = str;
+			},
+			error : () =>{
+				console.log("실패")
+			}
+		})
+	}
+
+
+
 	$(function(){
 		loadProfileImg();
 	})
@@ -990,7 +691,6 @@ img {
 			data : {'userNo' : "${loginUser.userNo}"},
 			dataType : "JSON",
 			success: function(feedImg){
-				console.log(feedImg)
 				let str ='';
 				for(let i=-1; i<feedImg.length; i++){
 					if(i ===-1){

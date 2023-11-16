@@ -1,5 +1,7 @@
 package com.kh.mybatis.member.model.service;
 
+import java.util.ArrayList;
+
 import com.kh.mybatis.member.model.vo.Member;
 import com.kh.mybatis.member.model.vo.ProfileImg;
 
@@ -15,4 +17,5 @@ public interface MemberService  {
 	public abstract int deleteProfileImg();
 	public abstract ProfileImg selectProfileImg(int userNo);
 	public abstract Member findaPassword(Member m) ;
+	ArrayList<Member> selectFriend(int userNo);
 }

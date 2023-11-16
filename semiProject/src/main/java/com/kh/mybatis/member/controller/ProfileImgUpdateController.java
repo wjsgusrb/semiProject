@@ -51,6 +51,7 @@ public class ProfileImgUpdateController extends HttpServlet {
 				pImg.setOriginName(multiRequest.getOriginalFileName("upfile"));
 				pImg.setChangeName(multiRequest.getFilesystemName("upfile"));
 				pImg.setProfileUrl("resources/profile_upfile/");
+				System.out.println(multiRequest.getParameter("profileImgNo"));
 				if(multiRequest.getParameter("profileImgNo") != null) {
 					pImg.setProfileImgNo(Integer.parseInt(multiRequest.getParameter("profileImgNo")));
 				}else {

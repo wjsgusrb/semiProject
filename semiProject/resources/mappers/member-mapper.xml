@@ -15,6 +15,8 @@
 		<result column="enrolldate" property="enrollDate"/>
 		<result column="deletecheck" property="deleteCheck"/>
 		<result column="status_msg" property="statusMsg"/>
+		<result column="PROFILE_URL" property="profileUrl"/>
+		<result column="CHANGE_NAME" property="changeName"/>
 	</resultMap>
 	<resultMap id="profileResultSet" type="ProfileImg">
 		<result column="PROFILE_IMG_NO" property="profileImgNo"/>
@@ -131,5 +133,21 @@
 		WHERE USER_ID = #{userId}
 		 AND USER_ADDRESS = #{userAddress}
 		 AND DELETE_CHECK = 'N'
+ 	</select>
+ 	
+ 	
+ 	<select id="selectFriend" resultMap="memberResultSet">
+		select user_no, 
+			user_name,
+			 user_id,
+			 PROFILE_URL,
+			 CHANGE_NAME
+			 from 
+			member 
+			join follow on(user_no = Following_user)
+			left join profile_img using (user_no)
+			where 
+			status = 'Y'
+			AND Following_user =  #{userNo} or follower_user =#{userNo}
  	</select>
 </mapper>
