@@ -219,7 +219,7 @@
 		<div class="ex-board" align="center">
 			<div class="ex-board-top"><a href="list.bo?cpage=1" style="color: black;">자유게시판</a></div>
 			<table class="table  table-hover"
-				style="border-radius: 0 0 15px 15px;">
+				style="border-radius: 0 0 15px 15px;" id="main-exBoard-table">
 				<thead>
 					<tr>
 						<th scope="col">#</th>

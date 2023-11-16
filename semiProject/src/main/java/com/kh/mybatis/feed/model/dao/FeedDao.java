@@ -43,10 +43,6 @@ public class FeedDao {
 		return sqlSession.insert("feedMapper.insertFeedImg", fe);
 	}
 	
-	public int countLike(SqlSession sqlSession, FeedLike like) {
-		return sqlSession.selectOne("feedMapper.selectCount",like);
-	}
-	
 	public int insertLike(SqlSession sqlSession, FeedLike like) {
 		return sqlSession.insert("feedMapper.insertLike",like);
 	}

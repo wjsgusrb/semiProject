@@ -78,7 +78,7 @@
  	
   	 <select id="countLike" resultType="_int">
   		SELECT count(*)
-   		FROM FEED
+   		FROM FEED_LIKE
     		where feed_no = ${feedNo}
   	</select>
   	<select id="selectMyFeed" resultMap="feedResultSet">
