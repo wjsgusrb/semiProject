@@ -24,7 +24,7 @@
 			height: 100vh;
 			background-color: #d6d7dc;
 		}
-		c              
+		
 		.top-var {
 			width: auto;
 			height: auto;
@@ -42,7 +42,7 @@
 			color: white;
 		}
 		
-		
+			
 		#bodyImg {
 			position: relative;
 			margin: auto;
@@ -50,7 +50,7 @@
 		}
 	
 		.outer{
-	            background: #e0f0f3;
+	            background:  #e0f0f3;
 	            color: rgb(32, 28, 28);
 	            width: 1000px;
 	            height: auto;
@@ -81,29 +81,30 @@
         <h2 style="text-align: center;">MuscleMap</h2>
 		<br>
         <div style="text-align: center;">
-            <h3>어깨 운동 </h3> 
+            <h3>하체 운동 </h3> 
         </div>
     
     
         <div class="container" >
         
 			<div style="flex: 1;">
-				<iframe width="450" height="450" src="https://youtube.com/embed/3hYOPTgd_WQ?si=2s5IbljLMx8Vfgwn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="450" height="450" src="https://www.youtube.com/embed/DGRsAmC66Ho?si=2rpKUBhwtXgdKylV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 			
 			<div style="flex: 1;">
-				<iframe width="450" height="450" src="https://www.youtube.com/embed/twXs4ujJuGI?si=3Lm5XDTtGp_RkHcX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="450" height="450" src="https://www.youtube.com/embed/3R8fvdHcjWw?si=DgTqZAK5Q51EOHzq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 
 		</div>
         
 		
 		<div style="margin-bottom: 50px; margin-left: 50px; ">
-            <p> 어깨는 상체에서 가장 중요한 관절 중 하나입니다. </p>
-            <p> 어깨를 움직이면 팔을 위로 들어 올리고, 옆으로 벌리고, 뒤로 젖힐 수 있습니다. </p>
-            <p> 어깨가 튼튼하면 팔을 자유롭게 움직일 수 있고, 일상생활에서 많은 동작을 쉽게 할 수 있습니다. </p>
-            <P> 또한 어깨는 움직임이 많은 관절이기 때문에 부상을 입기 쉽습니다. 
-               따라서 어깨 운동을 할 때는 올바른 자세와 강도를 유지하는 것이 중요합니다.</P>
+            <p> 스모 스쿼트, 또는 와이드 스쿼트로 불리는 이 운동은 하체 근력을 효과적으로 강화하는 방법 중 하나입니다.</p>
+            <p> 이 운동은 주로 대퇴사두근과 대둔근을 주요 타겟으로 삼기 때문에 </p>
+            <p> 엉덩이와 허벅지 근력을 향상시키며 내전근을 강화하는 데에도 도움이 됩니다. </p>
+            <p> 허벅지 안쪽과 엉덩이 옆 라인에도 자극을 주기 때문에 몸매관리에 도움이 되므로 여성분들이 많이 하는 운동이기도 합니다. </p>
+            <p> 꾸준히 스모 스쿼트를 실시하면 하체 근육을 발달시키고, 균형과 안정성을 향상시킬 수 있습니다. </p>
+            
      
              <br><br>
          </div>

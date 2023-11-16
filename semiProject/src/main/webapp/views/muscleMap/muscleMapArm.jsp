@@ -24,7 +24,7 @@
 			height: 100vh;
 			background-color: #d6d7dc;
 		}
-		c              
+		
 		.top-var {
 			width: auto;
 			height: auto;
@@ -42,7 +42,7 @@
 			color: white;
 		}
 		
-		
+			
 		#bodyImg {
 			position: relative;
 			margin: auto;
@@ -50,7 +50,7 @@
 		}
 	
 		.outer{
-	            background: #e0f0f3;
+	            background:  #e0f0f3;
 	            color: rgb(32, 28, 28);
 	            width: 1000px;
 	            height: auto;
@@ -81,29 +81,33 @@
         <h2 style="text-align: center;">MuscleMap</h2>
 		<br>
         <div style="text-align: center;">
-            <h3>어깨 운동 </h3> 
+            <h3>삼두, 이두 운동 </h3> 
         </div>
     
     
         <div class="container" >
         
 			<div style="flex: 1;">
-				<iframe width="450" height="450" src="https://youtube.com/embed/3hYOPTgd_WQ?si=2s5IbljLMx8Vfgwn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="450" height="450" src="https://www.youtube.com/embed/BU_ZhsKegt0?si=Vm2Hcl1CG5NbOsQ9" 	" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 			
 			<div style="flex: 1;">
-				<iframe width="450" height="450" src="https://www.youtube.com/embed/twXs4ujJuGI?si=3Lm5XDTtGp_RkHcX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="450" height="450" src="https://www.youtube.com/embed/MSSaV8EaOe4?si=njFrc7EYf17wOcoI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 
 		</div>
         
 		
 		<div style="margin-bottom: 50px; margin-left: 50px; ">
-            <p> 어깨는 상체에서 가장 중요한 관절 중 하나입니다. </p>
-            <p> 어깨를 움직이면 팔을 위로 들어 올리고, 옆으로 벌리고, 뒤로 젖힐 수 있습니다. </p>
-            <p> 어깨가 튼튼하면 팔을 자유롭게 움직일 수 있고, 일상생활에서 많은 동작을 쉽게 할 수 있습니다. </p>
-            <P> 또한 어깨는 움직임이 많은 관절이기 때문에 부상을 입기 쉽습니다. 
-               따라서 어깨 운동을 할 때는 올바른 자세와 강도를 유지하는 것이 중요합니다.</P>
+            <p> 트라이셉스 딥스 플로어 운동은 트라이셉스(삼두근)을 단련하는 운동으로 </p>
+            <p>삼두근을 중심으로 어깨와 가슴을 포함한 다양한 상체 근육을 발달시키는 데 도움이 됩니다.</p>
+            <p> 트라이셉스 딥스 플로어 운동은 바닥에서 실시하는 운동으로,   </p>
+            <p>무게를 이용하지 않고도 간단한 동작으로 삼두근을 효과적으로 단련할 수 있으며</p> 
+            <p>꾸준히 실시하면 탄탄하고 강한 팔뚝을 만들 수 있습니다. </p>
+            
+            <p> 바벨 리스트 컬은 손목과 전완근을 강화하는 효과적인 운동입니다. </p>
+            <p> 이 운동은 전완근을 타겟으로 하여 손목의 근력과 안정성을 향상시키는 데 도움을 줍니다. </p>
+            
      
              <br><br>
          </div>

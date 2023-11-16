@@ -94,7 +94,8 @@
 								${b.boardContent}
 				</div>
 			
-				<c:if test="${ !empty boardImg}">
+				<c:if test="${ boardImg} !== 'NNN'">
+						console.log(boardImg)
 					<div class="detail-img-area" align="center" >
 						<div class="detail-img">
 						
@@ -146,6 +147,31 @@
 		
 		 <script>
 	
+		 
+		 	$(function(){
+		 			loadBoardImg();
+			})
+		 	
+		 	function loadBoardImg(){
+		 		$.ajax({
+					url : "selectImg.bo" ,
+					data : {'boardNo' : "${Board.boardNo}"},
+					success: function(boardImg){
+						let str = "";
+						if(boardImg != '"NNN"'){
+							str += ('<img src="/ex/'+ boardImg +'" style="width: 200px; height: 200px;" />')
+							
+						}else{
+						}
+						document.querySelector(".detail-img").innerHTML = str;
+					},
+					error: function(){
+						console.log("selectImg ajax 실패");
+					}
+				})
+			}
+		 	
+		 
 		 
 			window.onload =() =>{
 				selectCommentList();
