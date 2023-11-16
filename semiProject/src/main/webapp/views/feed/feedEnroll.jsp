@@ -104,83 +104,87 @@
             <h3 align="center" style="color: #0d6efd; font-style: italic;">workout completed</h3>
             <br>
 
-            <form action="${pageContext.request.contextPath}/insert.fe" id="enroll-form" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="userNo" value="${loginUser.userNo}">
-                
-                <div class = "textareadiv">
-                    <textarea name="feedText" id="" cols="55" rows="15" style="width: 500px; height: 150px;" placeholder="게시글을 입력하세요"></textarea>
-                </div>
+                <form action="${pageContext.request.contextPath}/insert.fe" id="enroll-form" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="userNo" value="${loginUser.userNo}">
+                    
+                    <div class = "textareadiv">
+                        <textarea name="feedText" id="" cols="55" rows="15" style="width: 500px; height: 150px;" placeholder="게시글을 입력하세요"></textarea>
+                    </div>
 
-                <br>
+                    <br>
 
-                <div class = "pic-insert-div">
-                    <div class="pic-insert">
-                        <div class="thumbnail">picture insert
-                            <img id="content-img1" width="140" height="125" onclick="chooseFile(1);">
-                        </div>
-                        <div class="thumbnail">picture insert
-                            <img id="content-img2" width="140" height="125" onclick="chooseFile(2);">
-                        </div>
-                        <div class="thumbnail">picture insert
-                            <img id="content-img3" width="140" height="125" onclick="chooseFile(3);">
+                    <div class = "pic-insert-div">
+                        <div class="pic-insert">
+                            <div class="thumbnail">picture insert
+                                <img id="content-img1" width="140" height="125" onclick="chooseFile(1);">
+                            </div>
+                            <div class="thumbnail">picture insert
+                                <img id="content-img2" width="140" height="125" onclick="chooseFile(2);">
+                            </div>
+                            <div class="thumbnail">picture insert
+                                <img id="content-img3" width="140" height="125" onclick="chooseFile(3);">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div style="display: none;">
-                    <input type="file" name="file1" id="file1" onchange="loadImg(this,1)">
-                    <input type="file" name="file2" id="file2" onchange="loadImg(this,2)">
-                    <input type="file" name="file3" id="file3" onchange="loadImg(this,3)">
-                </div>
+                    <div style="display: none;">
+                        <input type="file" name="file1" id="file1" onchange="loadImg(this,1)">
+                        <input type="file" name="file2" id="file2" onchange="loadImg(this,2)">
+                        <input type="file" name="file3" id="file3" onchange="loadImg(this,3)">
+                    </div>
 
-                <div align="center">
-                    <button type="submit" class="btn btn-primary">등록</button>
-                    <a href="list.fe?userNo=${loginUser.userNo}&cpage=1"><button type="reset" class="btn btn-danger">취소</button></a>
-                </div>
+                    <h5 align="center" style="color: red; font-style: italic; margin-bottom: 10px;">*사진을 꼭 첨부해주세요</h5>
+
+                    <div align="center">
+                        <button type="submit" class="btn btn-primary">등록</button>
+                        <button type="button" onclick="history.back()" class="btn btn-danger">취소</button>
+                    </div>
+                    
+        
+        
+        
+                <script>
+                    function loadImg(inputFile, num){
+                        console.log(inputFile)
+
+                        if(inputFile.files.length == 1){ // 미리보기
+                            //파일을 읽어들일 FileReader객체 생성
+                            const reader = new FileReader();
+
+                            //파일을 읽어들이는 메소드
+                            //해당파일을 읽어들이는 순간 해당 파일만의 고유한 url부여
+                            reader.readAsDataURL(inputFile.files[0]);
+
+                            //파일 읽어들이기 완료했을 때 실행할 함수 정의
+                            reader.onload = function(ev){
+                                //ev.target.result => 읽어들인 파일의 고유한 url
+                                switch(num){
+                                    case 1: $("#content-img1").attr("src", ev.target.result);break;
+                                    case 2: $("#content-img2").attr("src", ev.target.result);break;
+                                    case 3: $("#content-img3").attr("src", ev.target.result);
+                                }
+                            }
+
+
+                        } else { // 선택된 파일이 취소된 경우 => 미리보기 사라지게
+                            switch(num){
+                                    case 1: document.getElementById('content-img1').src = null; break;
+                                    case 2: document.getElementById('content-img2').src = null; break;
+                                    case 3: document.getElementById('content-img3').src = null;
+                                }
+                        }
+
+
+
+                    }
+
+                    function chooseFile(num){
+                        $("#file" + num).click();
+                    }
+
+                </script>
             </form>
         </div>
     </div>
-    
-    
-    <script>
-        function loadImg(inputFile, num){
-            console.log(inputFile)
-
-            if(inputFile.files.length == 1){ // 미리보기
-                //파일을 읽어들일 FileReader객체 생성
-                const reader = new FileReader();
-
-                //파일을 읽어들이는 메소드
-                //해당파일을 읽어들이는 순간 해당 파일만의 고유한 url부여
-                reader.readAsDataURL(inputFile.files[0]);
-
-                //파일 읽어들이기 완료했을 때 실행할 함수 정의
-                reader.onload = function(ev){
-                    //ev.target.result => 읽어들인 파일의 고유한 url
-                    switch(num){
-                        case 1: $("#content-img1").attr("src", ev.target.result);break;
-                        case 2: $("#content-img2").attr("src", ev.target.result);break;
-                        case 3: $("#content-img3").attr("src", ev.target.result);
-                    }
-                }
-
-
-            } else { // 선택된 파일이 취소된 경우 => 미리보기 사라지게
-                switch(num){
-                        case 1: document.getElementById('content-img1').src = null; break;
-                        case 2: document.getElementById('content-img2').src = null; break;
-                        case 3: document.getElementById('content-img3').src = null;
-                    }
-            }
-
-
-
-        }
-
-        function chooseFile(num){
-            $("#file" + num).click();
-        }
-
-    </script>
 </body>
 </html>

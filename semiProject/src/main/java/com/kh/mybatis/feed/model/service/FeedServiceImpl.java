@@ -42,6 +42,12 @@ public class FeedServiceImpl implements FeedService{
 	}
 
 	@Override
+	public ArrayList<Feed> selectMyFeed(int userNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Feed> fList = fDao.selectMyFeed(sqlSession, userNo);
+		sqlSession.close();
+		return fList;
+	}
 	public int insertFeed(Feed f, ArrayList<FeedImg> list) {
 		SqlSession sqlSession = Template.getSqlSession();
 		
@@ -58,7 +64,17 @@ public class FeedServiceImpl implements FeedService{
 		sqlSession.close();
 		
 		return result1*result2;
-				
+	}
+
+
+	@Override
+	public int insertLike(FeedLike like) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = fDao.insertLike(sqlSession, like);
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		return result;
 	}
 
 }

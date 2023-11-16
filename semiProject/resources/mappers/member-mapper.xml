@@ -11,13 +11,21 @@
 		<result column="USER_PWD" property="userPwd"/>
 		<result column="user_name" property="userName"/>
 		<result column="user_address" property="userAddress"/>
-		<result column="profileimg" property="profileImg"/>
-		<result column="enrolldate" property="enrollDate"/>
-		<result column="deletecheck" property="deleteCheck"/>
+		<result column="profile_img" property="profileImg"/>
+		<result column="enroll_date" property="enrollDate"/>
+		<result column="delete_check" property="deleteCheck"/>
 		<result column="status_msg" property="statusMsg"/>
+		<result column="PROFILE_URL" property="profileUrl"/>
+		<result column="CHANGE_NAME" property="changeName"/>
 	</resultMap>
-
-	
+	<resultMap id="profileResultSet" type="ProfileImg">
+		<result column="PROFILE_IMG_NO" property="profileImgNo"/>
+		<result column="USER_NO" property="userNo"/>
+		<result column="PROFILE_URL" property="profileUrl"/>
+		<result column="ORIGIN_NAME" property="originName"/>
+		<result column="CHANGE_NAME" property="changeName"/>
+		<result column="DELETE_IMG" property="deleteImg"/>
+	</resultMap>
 	<insert id="insertMember" >
 		INSERT
 		  INTO MEMBER
@@ -65,6 +73,16 @@
 		 AND DELETE_CHECK = 'N'
  	</select>
  	
+ 	
+ 	<select id="selectId"  resultMap="memberResultSet">
+		SELECT USER_NO,
+			USER_ID,
+			USER_NAME
+		FROM MEMBER
+		WHERE USER_ID  like '%'||#{selectId}||'%'
+		 AND DELETE_CHECK = 'N'
+ 	</select>
+ 	
  	<update id="updateMember">
   		UPDATE MEMBER
 		SET
@@ -83,6 +101,40 @@
 		 AND USER_ID =  #{userId}
 	</select>
 	
+	<!-- 프로필 사진 insert -->
+	<insert id="insertProfileImg">
+		INSERT
+		  INTO PROFILE_IMG
+		  		(PROFILE_IMG_NO,
+					USER_NO,
+					PROFILE_URL,
+					ORIGIN_NAME,
+					CHANGE_NAME
+		  		)
+		VALUES (SEQ_RPOFILE_IMG_NO.NEXTVAL,
+				#{userNo},
+				#{profileUrl},
+				#{originName},
+				#{changeName}
+				)
+	</insert>
+	<!-- 프로필 사진 update -->
+	<update id="updateProfileImg">
+  		UPDATE PROFILE_IMG
+  		   SET ORIGIN_NAME = #{originName},
+		   	   CHANGE_NAME = #{changeName},
+		   	   PROFILE_URL = #{profileUrl}
+		 WHERE PROFILE_IMG_NO = #{profileImgNo}
+		   AND DELETE_IMG IS NULL
+  	</update>
+  	<!-- 프로필 사진 select -->
+  	<select id="selectProfileImg" resultMap="profileResultSet">
+		SELECT PROFILE_URL,
+				CHANGE_NAME
+		  FROM PROFILE_IMG
+		 WHERE USER_NO = #{userNo}
+		   AND DELETE_IMG IS NULL
+	</select>
 	<select id="findaPassword" resultMap="memberResultSet">
 		SELECT 
 			USER_PWD
@@ -92,6 +144,74 @@
 		 AND USER_ADDRESS = #{userAddress}
 		 AND DELETE_CHECK = 'N'
  	</select>
+ 	
+ 	
+ 	<select id="selectFriend" resultMap="memberResultSet">
+		select user_no, 
+			user_name,
+			 user_id,
+			 PROFILE_URL,
+			 CHANGE_NAME
+			 from 
+			member 
+			join follow on(user_no = Following_user)
+			left join profile_img using (user_no)
+			where 
+			status = 'Y'
+			AND Following_user =  #{userNo} or follower_user =#{userNo}
+ 	</select>
 	
+	
+	  <insert id="sendFrieds" >
+		insert into FOLLOW 
+		 (
+			 FOLLOW_NO,
+		  	FOLLOWER_USER,
+			FOLLOWING_USER,
+			STATUS
+		  )
+		VALUES
+		 (
+		 	SEQ_FOLLOWNO.NEXTVAL,
+		 	#{followerUser},
+		 	#{followingUser},
+		 	'N'
+
+		 )
+	</insert>
+	
+	
+	
+	<select id="checkSeedFrieds"  resultMap="memberResultSet">
+		SELECT 
+			USER_NO,
+			USER_ID,
+			USER_NAME,
+			PROFILE_IMG,
+			STATUS_MSG
+		FROM member
+		join follow
+		on USER_NO = Follower_user
+		WHERE
+		following_User = #{userNo}
+		and status = 'N'
+		
+ 	</select>
+ 	
+ 	<update id="successFriedsPost">
+ 		UPDATE follow
+		SET
+		  status = 'Y'
+		WHERE
+		 following_user = #{followingUser} and
+		 follower_user = ${followerUser}
+ 	</update>
+ 	
+ 	<delete  id="deleteFriendsPost">
+ 		delete follow
+ 		where 
+ 		following_user = #{followingUser} and
+		follower_user = ${followerUser}
+ 	</delete>
 	
 </mapper>

@@ -30,6 +30,7 @@ public class ChartInfoInsertController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		System.out.println("----------------------");
 		req.setCharacterEncoding("UTF-8");
 		
 		Chart ex = new Chart();
@@ -38,16 +39,15 @@ public class ChartInfoInsertController extends HttpServlet {
 		ex.setUserNo(Integer.parseInt(req.getParameter("userNo")));
 		
 	
-		ex.setExChartTargetArr(req.getParameterValues("exTarget"));
+		
 			
 		int result = new ChartServiceImpl().insertExInfo(ex);
 		
-		req.setAttribute("ex", ex);
+		
 	
 		
 		if(result>0) {
-		
-			req.getRequestDispatcher("views/countChart/exChart.jsp").forward(req, res);
+			res.sendRedirect("exChart.ch");
 		}else{
 			System.out.print("실패");
 		}

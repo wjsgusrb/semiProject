@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.kh.mybatis.chart.model.service.ChartServiceImpl;
 import com.kh.mybatis.chart.model.vo.Chart;
+import com.kh.mybatis.member.model.vo.Member;
 
 /**
  * Servlet implementation class ChartController
@@ -31,10 +32,10 @@ public class ChartController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-//		String userId = req.getParameter("userId");
-//		ArrayList<Chart> exList = new ChartServiceImpl().selectTodayExList(userId);
+		
+		
+		//ArrayList<Chart> exList = new ChartServiceImpl().selectTodayExList(((Member) req.getSession().getAttribute("loginUser")).getUserNo());
 //		
-//		System.out.print(exList);
 		req.getRequestDispatcher("views/countChart/exChart.jsp").forward(req, res);
 		
 		

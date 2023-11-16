@@ -31,6 +31,9 @@ public class FeedDao {
 	public int countLike(SqlSession sqlSession,FeedLike like) {
 		return sqlSession.selectOne("feedMapper.countLike",like);
 	}
+	public ArrayList<Feed> selectMyFeed(SqlSession sqlSession, int userNo){
+		return (ArrayList)sqlSession.selectList("feedMapper.selectMyFeed", userNo);
+	}
 	
 	public int insertFeed(SqlSession sqlSession, Feed f) {
 		return sqlSession.insert("feedMapper.insertFeed", f);
@@ -38,5 +41,13 @@ public class FeedDao {
 	
 	public int insertFeedImg(SqlSession sqlSession, FeedImg fe) {
 		return sqlSession.insert("feedMapper.insertFeedImg", fe);
+	}
+	
+	public int countLike(SqlSession sqlSession, FeedLike like) {
+		return sqlSession.selectOne("feedMapper.selectCount",like);
+	}
+	
+	public int insertLike(SqlSession sqlSession, FeedLike like) {
+		return sqlSession.insert("feedMapper.insertLike",like);
 	}
 }

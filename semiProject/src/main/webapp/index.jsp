@@ -116,36 +116,20 @@
 	justify-content: center;
 }
 </style>
-<body>
+<body onload="init()">
 	<jsp:include page="/views/common/menubar.jsp" />
-
-	<div class="middle-area">
+	<div  class="middle-area">
 		<div class="middle-area-top">
 			<!--차트 정보를 보여주는 부분-->
 			<div class="ex-chart" align="letf">
 				<div style="width: 100%; height: 100%;">
 					<canvas id="myChart"></canvas>
 				</div>
-				<script>
-					const ctx = document.getElementById('myChart');
-					// const labels = Utils.months({count: 7});
-					const data = {
-						labels : [ "월", "월", "월", "월", "월", "월", "월" ],
-						datasets : [ {
-							label : 'My First Dataset',
-							data : [ 65, 59, 80, 81, 56, 55, 40 ],
-							fill : false,
-							borderColor : 'rgb(75, 192, 192)',
-							tension : 0.1
-						} ]
-					};
-					const config = {
-						type : 'line',
-						data : data
-					};
-					new Chart(ctx, config);
-				</script>
+				
 			</div>
+			<script>
+				
+			</script>
 			<!--로그인을 화면을 보여주는 부분-->
 
 			<c:choose>
@@ -218,64 +202,19 @@
 			<div class="ex-checkFrendsEx-middle">
 				<i class="fa-regular fa-circle-left fa-2xl click"
 					onclick="PreviousFrendsCheck()"></i>
-				<div>
-					<div class="checkFrends active">
-						<i class="fa-regular fa-user fa-10x"></i>
-						<!--만약 사용자 프로필이 있다면 해당 프로필 처리-->
-						<br>
-						<p>차정석</p>
-					</div>
-					<div class="checkFrends">
-						<i class="fa-regular fa-user fa-10x"></i>
-						<!--만약 사용자 프로필이 있다면 해당 프로필 처리-->
-						<br>
-						<p>김기만</p>
-					</div>
-					<div class="checkFrends">
-						<i class="fa-regular fa-user fa-10x"></i>
-						<!--만약 사용자 프로필이 있다면 해당 프로필 처리-->
-						<br>
-						<p>정혜원</p>
-					</div>
-					<div class="checkFrends">
-						<i class="fa-regular fa-user fa-10x"></i>
-						<!--만약 사용자 프로필이 있다면 해당 프로필 처리-->
-						<br>
-						<p>윤승희</p>
-					</div>
-					<div class="checkFrends">
-						<i class="fa-regular fa-user fa-10x"></i>
-						<!--만약 사용자 프로필이 있다면 해당 프로필 처리-->
-						<br>
-						<p>전현규</p>
-					</div>
+				<div id="getFriendMain">
+
 				</div>
 				<i class="fa-regular fa-circle-right fa-2xl click"
 					onclick="nextFrendsCheck()"></i>
 			</div>
 			<div>
-				<button type="button" class="btn btn-outline-primary"
-					style="margin-right: 5%;">친구수락</button>
-				<button type="button" class="btn btn-outline-primary">삭제</button>
+				<button  type="button" class="btn btn-outline-primary"
+					style="margin-right: 5%;" onclick="successFriedsPost()">친구수락</button>
+				<button type="button" onclick="deleteFriendsPost()" class="btn btn-outline-primary">삭제</button>
 			</div>
 		</div>
-		<script>
-			function PreviousFrendsCheck() {
-				const active = document.querySelector(".active");
-				if (active.previousElementSibling !== null) {
-					active.previousElementSibling.classList.add("active");
-					active.classList.remove("active");
-				}
-			}
-
-			function nextFrendsCheck() {
-				const active = document.querySelector(".active");
-				if (active.nextElementSibling !== null) {
-					active.nextElementSibling.classList.add("active");
-					active.classList.remove("active");
-				}
-			}
-		</script>
+	
 		<!--운동게시글 보여주는 부분-->
 		<div class="ex-board" align="center">
 			<div class="ex-board-top"><a href="list.bo?cpage=1" style="color: black;">자유게시판</a></div>
@@ -292,62 +231,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td>차정석</td>
-						<td colspan="2">어깨운동</td>
-						<td></td>
-						<td>15</td>
-						<td>2023-05-06</td>
-					</tr>
-					<tr>
-						<th scope="row">1</th>
-						<td>차정석</td>
-						<td colspan="2">어깨운동</td>
-						<td></td>
-						<td>15</td>
-						<td>2023-05-06</td>
-					</tr>
-					<tr>
-						<th scope="row">1</th>
-						<td>차정석</td>
-						<td colspan="2">어깨운동</td>
-						<td></td>
-						<td>15</td>
-						<td>2023-05-06</td>
-					</tr>
-					<tr>
-						<th scope="row">1</th>
-						<td>차정석</td>
-						<td colspan="2">어깨운동</td>
-						<td></td>
-						<td>15</td>
-						<td>2023-05-06</td>
-					</tr>
-					<tr>
-						<th scope="row">1</th>
-						<td>차정석</td>
-						<td colspan="2">어깨운동</td>
-						<td></td>
-						<td>15</td>
-						<td>2023-05-06</td>
-					</tr>
-					<tr>
-						<th scope="row">1</th>
-						<td>차정석</td>
-						<td colspan="2">어깨운동</td>
-						<td></td>
-						<td>15</td>
-						<td>2023-05-06</td>
-					</tr>
-					<tr>
-						<th scope="row">1</th>
-						<td>차정석</td>
-						<td colspan="2">어깨운동</td>
-						<td></td>
-						<td>15</td>
-						<td>2023-05-06</td>
-					</tr>
+				
 				</tbody>
 			</table>
 		</div>
@@ -355,64 +239,66 @@
 		<div class="gym-map">
 			<div id="map"
 				style="width: 100%; height: 100%; border-radius: 15px 15px 15px 15px;">
-				<script>
-					//마커에 정보등록 표시
-					var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-					var options = {
-						//지도를 생성할 때 필요한 기본 옵션
-						center : new kakao.maps.LatLng(33.450701, 126.570667), //// 사용자에게 입력받은 주소!
-						level : 8, //지도의 레벨(확대, 축소 정도)
-
-					};
-					var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
-
-					var geocoder = new kakao.maps.services.Geocoder();
-					var callback = function(result, status) {
-						if (status === kakao.maps.services.Status.OK) {
-							var currentPos = new window.kakao.maps.LatLng(
-									result[0].y, result[0].x);
-							map.panTo(currentPos)
-
-							console.log(currentPos)
-
-							var ps = new kakao.maps.services.Places();
-
-							var options2 = {
-								location : currentPos,
-								radius : 10000,
-								sort : kakao.maps.services.SortBy.DISTANCE
-							};
-
-							ps.keywordSearch('헬스장', placesSearchCB, options2);
-
-							function placesSearchCB(data, status, pagination) {
-								if (status === kakao.maps.services.Status.OK) {
-									// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해 LatLngBounds 객체에 좌표를 추가합니다
-									for (var i = 0; i < data.length; i++) {
-										displayMarker(data[i]);
-									}
-									// 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-								}
-							}
-
-							function displayMarker(place) {
-								// 마커를 생성하고 지도에 표시합니다
-								var marker = new kakao.maps.Marker({
-									map : map,
-									position : new kakao.maps.LatLng(place.y,
-											place.x)
-								});
-							}
-						}
-					}
-					geocoder.addressSearch('경기도 시흥시 하상동', callback); // 해당 부분의 사용자에게 입력받은 주소
-				</script>
 			</div>
 		</div>
 	</div>
-
+	
 	</div>
+<script>
+	//마커에 정보등록 표시
+				var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+				var options = {
+					//지도를 생성할 때 필요한 기본 옵션
+					center : new kakao.maps.LatLng(33.450701, 126.570667), //// 사용자에게 입력받은 주소!
+					level : 8, //지도의 레벨(확대, 축소 정도)
 
+				};
+				var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+				var geocoder = new kakao.maps.services.Geocoder();
+				var callback = function(result, status) {
+					if (status === kakao.maps.services.Status.OK) {
+						var currentPos = new window.kakao.maps.LatLng(
+								result[0].y, result[0].x);
+						map.panTo(currentPos)
+
+						console.log(currentPos)
+
+						var ps = new kakao.maps.services.Places();
+
+						var options2 = {
+							location : currentPos,
+							radius : 10000,
+							sort : kakao.maps.services.SortBy.DISTANCE
+						};
+
+						ps.keywordSearch('헬스장', placesSearchCB, options2);
+
+						function placesSearchCB(data, status, pagination) {
+							if (status === kakao.maps.services.Status.OK) {
+								// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해 LatLngBounds 객체에 좌표를 추가합니다
+								for (var i = 0; i < data.length; i++) {
+									displayMarker(data[i]);
+								}
+								// 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+							}
+						}
+
+						function displayMarker(place) {
+							// 마커를 생성하고 지도에 표시합니다
+							var marker = new kakao.maps.Marker({
+								map : map,
+								position : new kakao.maps.LatLng(place.y,
+										place.x)
+							});
+						}
+					}
+				}
+				geocoder.addressSearch('경기도 시흥시 하상동', callback); // 해당 부분의 사용자에게 입력받은 주소
+
+
+				
+</script>
 
 
 	<!--회원가입 모달창-->
