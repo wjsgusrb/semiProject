@@ -19,6 +19,7 @@
        <typeAlias type="com.kh.mybatis.feed.model.vo.Feed" alias="Feed"/>
        <typeAlias type="com.kh.mybatis.member.model.vo.Follow" alias="Follow"/>
        <typeAlias type="com.kh.mybatis.feed.model.vo.FeedImg" alias="FeedImg"/>
+       <typeAlias type="com.kh.mybatis.feed.model.vo.FeedLike" alias="FeedLike"/>
     </typeAliases>
     
     <environments default="development">
