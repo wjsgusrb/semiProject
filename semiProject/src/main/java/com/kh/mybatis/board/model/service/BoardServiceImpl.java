@@ -138,6 +138,14 @@ public class BoardServiceImpl implements BoardService{
 		sqlSession.close();
 		return (result1 * result2);
 	}
+
+	@Override
+	public ArrayList<Board> selecttopFiveList() {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Board> list =  bDao.selecttopFiveList(sqlSession);
+		sqlSession.close();
+		return list;
+	}
 	
 	@Override
 	public ArrayList<BoardComment> selectCommentList(int boardNo) {

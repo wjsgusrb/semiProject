@@ -8,20 +8,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
 import com.kh.mybatis.chart.model.service.ChartServiceImpl;
 import com.kh.mybatis.chart.model.vo.Chart;
+import com.kh.mybatis.member.model.vo.Member;
 
 /**
- * Servlet implementation class ChartInfoInsertController
+ * Servlet implementation class UpdateChartInfoController
  */
-@WebServlet("/chartInfo.ct")
-public class ChartInfoInsertController extends HttpServlet {
+@WebServlet("/updateChartInfo.bo")
+public class UpdateChartInfoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ChartInfoInsertController() {
+    public UpdateChartInfoController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,27 +32,18 @@ public class ChartInfoInsertController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		System.out.println("----------------------");
-		req.setCharacterEncoding("UTF-8");
+		res.setCharacterEncoding("UTF-8");
+		Chart ch = new Chart();
+		ch.setExChartTime(Integer.parseInt(req.getParameter("exChartTime")));
+		ch.setExChartTarget(req.getParameter("exChartTarget"));
+		ch.setUserNo(((Member)req.getSession().getAttribute("loginUser")).getUserNo());
 		
-		Chart ex = new Chart();
-		ex.setExChartTarget(String.join(",",req.getParameterValues("exTarget"))); 
-		ex.setExChartTime(Integer.parseInt(req.getParameter("exTime")));
-		ex.setUserNo(Integer.parseInt(req.getParameter("userNo")));
+
+		int result =  new ChartServiceImpl().UpdateChartInfo(ch);
 		
-	
+		res.setContentType("text/html; charset=UTF-8");
+		new Gson().toJson(result, res.getWriter());
 		
-			
-		int result = new ChartServiceImpl().insertExInfo(ex);
-		
-		
-	
-		
-		if(result>0) {
-			res.sendRedirect("exChart.ch");
-		}else{
-			System.out.print("실패");
-		}
 		
 	}
 
