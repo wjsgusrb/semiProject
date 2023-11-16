@@ -29,12 +29,19 @@
 		<result column="USER_NO" property="userNo" />
 	</resultMap>
 	
+	
 	<select id="selectCount" resultType="_int">
      SELECT COUNT(*)
        FROM FEED_LIKE
-      WHERE FEED_NO = #{feenNo}
+      WHERE FEED_NO = #{feedNo}
     </select>
- 	
+    
+ 	<select id="selectListCount" resultType="_int">
+     SELECT COUNT(*)
+       FROM FEED
+       WHERE DELETE_DATE IS NULL
+    </select>
+    
   	<select id="selectList" resultMap="feedResultSet">
   		SELECT FEED_NO, 
 	  		   USER_ID, 
@@ -53,6 +60,7 @@
     	ORDER BY FEED_NO DESC
   	</select>
   	
+  	
   	<insert id="insertLike">
   		INSERT 
   			INTO FEED_LIKE(
@@ -61,13 +69,13 @@
   							USER_NO
   							)
   					 VALUES(
-  					 		SEQ_FEEDLIKENO.NEXTVALL,
+  					 		SEQ_FEEDLIKENO.NEXTVAL,
   					 		#{feedNo},
   					 		#{userNo}
   					 		)
   			
   	</insert>
- 
+ 	
   	
   	<insert id="insertFeed">
 		INSERT

@@ -61,6 +61,7 @@ public class FeedServiceImpl implements FeedService{
 				
 	}
 
+
 	@Override
 	public int insertLike(FeedLike like) {
 		SqlSession sqlSession = Template.getSqlSession();

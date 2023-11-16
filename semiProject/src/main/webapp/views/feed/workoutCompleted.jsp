@@ -185,11 +185,12 @@
 						<input type="image"
 							src="./resources/feed-upfile/KakaoTalk_20231110_162616520_02.png"
 							style="width: 27px; height: 27px; margin-right: 10px;">
-						<p class="like">좋아요 8개</p>
+						<p id="like"></p>
 					</div>
 				</div>
 
 				<script>
+			
                 countLike= () =>{
                     $.ajax({
                         url: "countLike.fe",
@@ -198,7 +199,7 @@
                         },
                         success:(result)=>{
 							console.log(result)
-                            document.querySelector("#like").innerHTML = result
+                            document.querySelector("#like").innerText = "좋아요 "+result+"개"
                         },
                         error:()=>{
 
