@@ -503,7 +503,7 @@ img {
 								</div>
 
 								<div class="form-floating join";>
-									<label for="userId" required>* 이메일 주소 : </label><br>
+									<label for="userId" required>* 주소 : </label><br>
 									<br>
 								</div>
 								<div class="form-floating join";>
