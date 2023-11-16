@@ -19,14 +19,15 @@
        <result column="BOARD_COMMENT_CONTENT" property="boardCommentContent" />
        <result column="BOARD_NO" property="boardNo" />
        <result column="USER_NO" property="userNo" />
+         <result column="USER_NAME" property="userName"/>
    </resultMap>
    <resultMap id="boardImgResultSet" type="BoardImg">
        <result column="BOARD_IMG_NO" property="boardImgNo" />
        <result column="BOARD_NO" property="boardNo" />
        <result column="BOARD_IMG" property="boardImg" />
-       <result column="ORIGINNAME" property="originName" />
-       <result column="CHANGENAME" property="changeName" />
-       <result column="DELETEDATE" property="deleteDate" />
+       <result column="ORIGIN_NAME" property="originName" />
+       <result column="CHANGE_NAME" property="changeName" />
+       <result column="DELETE_DATE" property="deleteDate" />
    </resultMap>
    
    <select id="selectListCount" resultType="_int">
@@ -39,7 +40,7 @@
       SELECT BOARD_NO
             , CATEGORY
            , BOARD_TITLE
-           , USER_NO
+           , USER_NAME as "USER_NO"
            , BOARD_COUNT
            , UPDATE_DATE
        FROM BOARD
@@ -59,7 +60,7 @@
          SELECT BOARD_NO
              , CATEGORY
              ,BOARD_TITLE
-             ,USER_NO
+             , USER_NAME as "USER_NO"
              ,BOARD_COUNT
              ,UPDATE_DATE
              ,BOARD_CONTENT
@@ -68,33 +69,31 @@
   	   WHERE BOARD_NO = #{boardNo}
   	</select>
 	
-	<!-- 댓글 조회 리스트 만들기 -->
-	<select id="selectCommentList" resultMap="boardCommentResultSet">
-  		SELECT BOARD_COMMENT_NO
-  			 , USER_NO
-  			 , BOARD_COMMENT_CONTENT
-  			 , BOARD_NO
-  		FROM BOARD_COMMENT
-  		JOIN MEMBER USING (USER_NO)
-  	   WHERE BOARD_NO = #{boardNo}
-  	ORDER BY BOARD_COMMENT_NO DESC
-  	</select>
-
-	
-	
 	<update id="deleteBoard">
 		UPDATE BOARD
 		   SET DELETE_DATE = SYSDATE
-		 WHERE DELETE_DATE = NULL
+		 WHERE DELETE_DATE IS NULL
 		   AND BOARD_NO = #{boardNo}
 	</update>
+	
+	<select id="selectBoardImg" parameterType="_int" resultMap="boardImgResultSet">
+		SELECT 	BOARD_IMG_NO,
+				BOARD_NO,
+				BOARD_IMG,
+				ORIGIN_NAME,
+				CHANGE_NAME
+		  FROM BOARD_IMG
+		 WHERE BOARD_NO = #{boardNo}
+		   AND DELETE_IMG IS NULL
+	</select>
+	
 	<update id="updateBoard">
 		UPDATE BOARD
 		   SET BOARD_TITLE = #{boardTitle},
 		   	   BOARD_CONTENT = #{boardContent},
 		   	   CATEGORY = #{category}
 		 WHERE BOARD_NO = #{boardNo}
-		   AND DELETE_DATE = NULL
+		   AND DELETE_DATE IS NULL
 	</update>
 	<update id="updateBoardImg">
 		UPDATE BOARD_IMG
@@ -102,8 +101,25 @@
 		   	   CHANGE_NAME = #{changeName},
 		   	   BOARD_IMG = #{boardImg}
 		 WHERE BOARD_IMG_NO = #{boardImgNo}
-		   AND DELETE_IMG = NULL
+		   AND DELETE_IMG IS NULL
 	</update>
+	<insert id="insertBoardImg">
+		INSERT 
+		  INTO BOARD_IMG(
+		  				BOARD_IMG_NO,
+						BOARD_NO,
+						BOARD_IMG,
+						ORIGIN_NAME,
+						CHANGE_NAME
+		  				)
+		VALUES (
+				SEQ_boardIMGno.NEXTVAL,
+				SEQ_BOARDNO.CURRVAL,
+				#{boardImg},
+				#{originName},
+				#{changeName}
+				)
+	</insert>
 	<insert id="insertBoard">
 		INSERT
 		  INTO BOARD
@@ -118,7 +134,7 @@
 				#{userNo},
 				#{boardTitle},
 				#{boardContent},
-				#{boardCategory},
+				#{category},
 				SYSDATE
 				)
 	</insert>
@@ -132,7 +148,35 @@
 		order by board_count DESC)
 		where ROWNUM BETWEEN 1 and 4
   	</select>
+	  <!-- 댓글 조회 리스트 만들기 -->
+		<select id="selectCommentList" resultMap="boardCommentResultSet">
+	  		SELECT BOARD_COMMENT_NO
+	  			 , USER_NO
+	  			 , USER_NAME
+	  			 , BOARD_COMMENT_CONTENT
+	  			 , BOARD_NO
+	  		FROM BOARD_COMMENT
+	  		JOIN MEMBER USING (USER_NO)
+	  	   WHERE BOARD_NO = #{boardNo}
+	  	ORDER BY BOARD_COMMENT_NO DESC
+	  	</select>
   
+	  <!-- 댓글 추가 쿼리문 -->
+	  <insert id="insertComment">
+	  	INSERT 
+	  	INTO BOARD_COMMENT(
+	  		BOARD_COMMENT_NO,
+	  		BOARD_COMMENT_CONTENT,
+	  		BOARD_NO,
+	  		USER_NO
+	  	)
+	  	VALUES(
+		  	SEQ_BOARDCOMENTNO.NEXTVAL,
+		  	#{boardCommentContent},
+		  	#{boardNo},
+		  	#{userNo}
+	  	)
+	  </insert>
   
   
   </mapper>

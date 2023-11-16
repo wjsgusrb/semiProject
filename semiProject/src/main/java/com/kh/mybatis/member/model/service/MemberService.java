@@ -19,5 +19,5 @@ public interface MemberService  {
 	int deleteFriendsPost(Follow fo);
 	ArrayList<Member> checkSeedFrieds(int userNo);
 	public abstract int idCheckMember(String checkId);
-
+	public abstract Member findaPassword(Member m) ;
 }

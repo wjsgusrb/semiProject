@@ -36,10 +36,6 @@ public class BoardDao {
 		return sqlSession.selectOne("boardMapper.selectBoard", boardNo);
 	}
 
-	public ArrayList<BoardComment> selectCommentList(SqlSession sqlSession, int boardNo) {
-		return (ArrayList)sqlSession.selectList("boardMapper.selectCommentList", boardNo);
-	}
-
 	public int selectSearchCount(SqlSession sqlSession, HashMap<String, String> map) {
 		return sqlSession.selectOne("boardMapper.selectSearchCount", map);
 	}
@@ -59,7 +55,10 @@ public class BoardDao {
 	}
 	
 	public int deleteBoard(SqlSession sqlSession, int boardNo) {
-		return sqlSession.delete("boardMapper.deleteBoard", boardNo);
+		return sqlSession.update("boardMapper.deleteBoard", boardNo);
+	}
+	public BoardImg selectBoardImg(SqlSession sqlSession, int boardNo) {
+		return sqlSession.selectOne("boardMapper.selectBoardImg", boardNo);
 	}
 	public int updateBoard(SqlSession sqlSession, Board b) {
 		return sqlSession.update("boardMapper.updateBoard", b);
@@ -71,4 +70,13 @@ public class BoardDao {
 	public ArrayList<Board> selecttopFiveList(SqlSession sqlSession) {
 		return (ArrayList)sqlSession.selectList("boardMapper.selecttopFiveList");
 	}
+	public ArrayList<BoardComment> selectCommentList(SqlSession sqlSession, int boardNo) {
+		return (ArrayList)sqlSession.selectList("boardMapper.selectCommentList", boardNo);
+	}
+	
+	public int insertComment(SqlSession sqlSession, BoardComment c) {
+		return sqlSession.insert("boardMapper.insertComment", c);
+	}
+	
+	
 }

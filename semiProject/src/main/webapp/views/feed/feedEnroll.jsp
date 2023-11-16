@@ -8,52 +8,31 @@
 <title>Insert title here</title>
 <style>
     .outer{
-        background: rgb(190, 190, 190);
-      
-        height: 100%;
-        width: 80%;
+        background: white;
+        height: 90%;
+        width: 60%;
         margin: auto;
         margin-top: 50px;
     }
-
-    .left-area{
-        width: 50%;
-        float: left;
-        box-sizing: border-box;
-        height: 800px;
-        margin-bottom: 50px;
-        
-        background:  rgb(190, 190, 190);
-       
-    }
-    
-   .right-area{
-        width: 50%;
-        float: right;
-        box-sizing: border-box;
-        height: 800px;
-        
-        background: rgb(190, 190, 190);
+    .insert-feed{
+        width: 100%;
+        text-align: center;
     }
     .comment{
-        border: 1px solid white;
+        border: 1px solid black;
+        border-radius: 20%;
         align : center;
         max-width: 850px;
         height: 500px;
         margin-left: 5%;
         background-color: white;
-        margin-right: 5%;
     }
     .thumbnail{
-        border: 1px solid white;
-        align : center;
-       
-        height: 500px;
-        margin-left: 15%;
-        margin-right: 15%;
-        background-color: white;
-        
-
+        border: 1px solid black;
+        border-radius: 5%;
+        width: 150px;
+        height: 150px;
+        font-size: 12px;
     }
     .Lower-bar{
         margin-top: 210px;
@@ -62,15 +41,43 @@
     .userProfile{
         margin-left: 20%;
     }
-   
-   
 
-li {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    border : 0;
-    float: left;
-}
+    .user-info{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .user-info2{
+        display: flex;
+        justify-content: left;
+        width: 500px;
+        margin-bottom: 5px;
+    }
+   .textareadiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .pic-insert-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+   }
+   
+   .pic-insert{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    li {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        border : 0;
+        float: left;
+    }
    
 </style>
 <!-- bootstrap CSS -->
@@ -92,60 +99,88 @@ li {
     <jsp:include page="/views/common/menubar.jsp" />
 
     <div class="outer">
-       
-        <br>
-        <h5 align="center">운동피드등록</h5>
-        <br>
+       <div class="insert-feed">
+            <br>
+            <h3 align="center" style="color: #0d6efd; font-style: italic;">workout completed</h3>
+            <br>
 
-
-
-
-
-		<div class="left-area">
-			<div class="thumbnail" align="center" style="height: 500px;  max-width: 500px;">
-				<div class="bi bi-plus-circle fs-1" style="margin-top: 200px;">
-
-
-
-				</div>
-				<div class="btn-group" role="group"
-					aria-label="Basic outlined example" style="margin-top: 190px;">
-					<button type="button" class="btn btn-outline-primary"> 이전</button>
-					
-					<button type="button" class="btn btn-outline-primary">다음</button>
-				</div>
-
-			</div>
-
-		</div>
-
-
-		<div class="right-area">
-            <div class="userProfile" style="height: 60px;" >
-                <i style="float: left; margin-top: 5px;" class="fa-regular fa-user fs-1"></i>
-                <p style="float: left; margin-left: 40px; margin-top: 15px;" >user01</p>
-                <i style="float: right; margin-right: 20%;"  class="bi bi-backspace fs-1"></i>
+            <form action="${pageContext.request.contextPath}/insert.fe" id="enroll-form" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="userNo" value="${loginUser.userNo}">
                 
-            </div>
+                <div class = "textareadiv">
+                    <textarea name="feedText" id="" cols="55" rows="15" style="width: 500px; height: 150px;" placeholder="게시글을 입력하세요"></textarea>
+                </div>
 
-            
-            <div>
-                <textarea name="" id="" cols="55" rows="15" style="margin-left: 13%; width: 73%; margin-right: 40px; " align="center"></textarea>
-                
-            </div>
-            <div>
-                <button class="btn btn-primary" style="margin-left: 45%; margin-top: 20px;">업로드</button>
-               
-            </div>
+                <br>
 
+                <div class = "pic-insert-div">
+                    <div class="pic-insert">
+                        <div class="thumbnail">picture insert
+                            <img id="content-img1" width="140" height="125" onclick="chooseFile(1);">
+                        </div>
+                        <div class="thumbnail">picture insert
+                            <img id="content-img2" width="140" height="125" onclick="chooseFile(2);">
+                        </div>
+                        <div class="thumbnail">picture insert
+                            <img id="content-img3" width="140" height="125" onclick="chooseFile(3);">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: none;">
+                    <input type="file" name="file1" id="file1" onchange="loadImg(this,1)">
+                    <input type="file" name="file2" id="file2" onchange="loadImg(this,2)">
+                    <input type="file" name="file3" id="file3" onchange="loadImg(this,3)">
+                </div>
+
+                <div align="center">
+                    <button type="submit" class="btn btn-primary">등록</button>
+                    <a href="list.fe?userNo=${loginUser.userNo}&cpage=1"><button type="reset" class="btn btn-danger">취소</button></a>
+                </div>
+            </form>
         </div>
     </div>
     
     
     <script>
-    	$(function(plus){
-    		
-    	})
+        function loadImg(inputFile, num){
+            console.log(inputFile)
+
+            if(inputFile.files.length == 1){ // 미리보기
+                //파일을 읽어들일 FileReader객체 생성
+                const reader = new FileReader();
+
+                //파일을 읽어들이는 메소드
+                //해당파일을 읽어들이는 순간 해당 파일만의 고유한 url부여
+                reader.readAsDataURL(inputFile.files[0]);
+
+                //파일 읽어들이기 완료했을 때 실행할 함수 정의
+                reader.onload = function(ev){
+                    //ev.target.result => 읽어들인 파일의 고유한 url
+                    switch(num){
+                        case 1: $("#content-img1").attr("src", ev.target.result);break;
+                        case 2: $("#content-img2").attr("src", ev.target.result);break;
+                        case 3: $("#content-img3").attr("src", ev.target.result);
+                    }
+                }
+
+
+            } else { // 선택된 파일이 취소된 경우 => 미리보기 사라지게
+                switch(num){
+                        case 1: document.getElementById('content-img1').src = null; break;
+                        case 2: document.getElementById('content-img2').src = null; break;
+                        case 3: document.getElementById('content-img3').src = null;
+                    }
+            }
+
+
+
+        }
+
+        function chooseFile(num){
+            $("#file" + num).click();
+        }
+
     </script>
 </body>
 </html>
