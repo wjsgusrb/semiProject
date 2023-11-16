@@ -341,7 +341,7 @@
 						<div class="form-floating join";>
 							<input type="text" class="form-control" id="floatingPassword"
 								placeholder="Password" name="address" required> <label
-								for="floatingPassword">email</label>
+								for="floatingPassword">address</label>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
@@ -418,7 +418,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="exampleModalLabel">아이디와 이메일을 입력하시오</h1>
+					<h1 class="modal-title fs-5" id="exampleModalLabel">아이디와 주소을 입력하시오</h1>
 					<button type="button" class="btn-close" data-bs-dismiss="modal"
 						aria-label="Close"></button>
 				</div>
@@ -429,7 +429,7 @@
 							<input type="text" class="form-control" id="pwdIdCheck" name="pwdIdCheck">
 						</div>
 						<div class="mb-3">
-							<label for="message-text" class="col-form-label">이메일주소:</label>
+							<label for="message-text" class="col-form-label">주소:</label>
 							<input type="text" class="form-control" id="pwdEmailCheck" name="pwdEmailCheck">
 						</div>
 					</form>

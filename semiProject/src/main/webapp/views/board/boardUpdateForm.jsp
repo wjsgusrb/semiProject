@@ -92,7 +92,7 @@
 
             <div class="bottom-btn">
                 <button type="submit" class="btn btn-primary">수정</button>
-                <button type="reset" class="btn btn-danger">취소</button>
+                <a href="detail.bo?bno=${b.boardNo}" type="reset" class="btn btn-danger" >취소</a>
             </div>
         </form>
     </div>

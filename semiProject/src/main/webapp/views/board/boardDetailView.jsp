@@ -31,7 +31,6 @@
 			width: 75%;
 			height: auto;
 			margin: auto;
-			opacity: 0.7;
     	}
 
 		a {
@@ -62,7 +61,6 @@
 			height: 300px;
 			background-color: gray;
 			border-radius: 15px;
-			opacity: 0.7;
 			/* margin-left: 30px; */
 		}
 		.board-comment{
@@ -89,31 +87,15 @@
 		</div>
         <br>
 		<div class="detail-area" align="center">
-	
-				<div class="detail-area-content">
-								${b.boardContent}
-				</div>
-			
-				<c:if test="${ boardImg} !== 'NNN'">
-						console.log(boardImg)
-					<div class="detail-img-area" align="center" >
-						<div class="detail-img">
-						
-						<img src="/ex/resources/board_upfile/user.png" style="width: 200px; height: 200px;" />
-						
-						
-				
-						
-						
-					
-						</div>
-					</div>
-				
-				</c:if>
-				
-				
-				<br><br><br><br><br>
-				
+			<div class="detail-img-area" align="center">
+				<c:if test="${ !empty bImg.changeName}">
+					<img src="${bImg.boardImg}${bImg.changeName}" style="margin-bottom: 25px; max-width: 500px;">
+				</c:if>	 
+			</div>
+			<div class="detail-area-content">
+				${b.boardContent}
+			</div>
+		</div>
 		<hr>
 		
 		<table id ="board-comment" class="table" algin="center">
@@ -175,8 +157,6 @@
 		 
 			window.onload =() =>{
 				selectCommentList();
-				
-				
 			}
 
             function selectCommentList(){
@@ -237,7 +217,6 @@
                     }
                 })
             }
-
         </script>
 		
 		<hr>
