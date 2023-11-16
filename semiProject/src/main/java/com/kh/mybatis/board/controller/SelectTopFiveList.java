@@ -1,6 +1,7 @@
-package com.kh.mybatis.chart.controller;
+package com.kh.mybatis.board.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,20 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.mybatis.chart.model.service.ChartServiceImpl;
-import com.kh.mybatis.chart.model.vo.Chart;
+import com.google.gson.Gson;
+import com.kh.mybatis.board.model.service.BoardServiceImpl;
+import com.kh.mybatis.board.model.vo.Board;
+import com.kh.mybatis.member.model.vo.Member;
 
 /**
- * Servlet implementation class ChartInfoInsertController
+ * Servlet implementation class SelectTopFiveList
  */
-@WebServlet("/chartInfo.ct")
-public class ChartInfoInsertController extends HttpServlet {
+@WebServlet("/selecttopFiveList.bo")
+public class SelectTopFiveList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ChartInfoInsertController() {
+    public SelectTopFiveList() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,28 +33,14 @@ public class ChartInfoInsertController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		System.out.println("----------------------");
-		req.setCharacterEncoding("UTF-8");
-		
-		Chart ex = new Chart();
-		ex.setExChartTarget(String.join(",",req.getParameterValues("exTarget"))); 
-		ex.setExChartTime(Integer.parseInt(req.getParameter("exTime")));
-		ex.setUserNo(Integer.parseInt(req.getParameter("userNo")));
-		
+		res.setCharacterEncoding("UTF-8");
 	
 		
-			
-		int result = new ChartServiceImpl().insertExInfo(ex);
-		
-		
 	
-		
-		if(result>0) {
-			res.sendRedirect("exChart.ch");
-		}else{
-			System.out.print("실패");
-		}
-		
+			ArrayList<Board> list =  new BoardServiceImpl().selecttopFiveList();
+			res.setContentType("text/html; charset=UTF-8");
+			new Gson().toJson(list, res.getWriter());
+	
 	}
 
 	/**

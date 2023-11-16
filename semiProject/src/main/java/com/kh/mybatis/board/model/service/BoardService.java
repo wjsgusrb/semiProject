@@ -38,6 +38,7 @@ public interface BoardService {
 	//게시글 삭제
 	int deleteBoard(int boardNo);
 	
+	ArrayList<Board> selecttopFiveList();
 	//댓글 리스트 조회
 	ArrayList<BoardComment> selectCommentList(int boardNo);
 	
