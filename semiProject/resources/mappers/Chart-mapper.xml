@@ -15,7 +15,9 @@
 
 	<select id="selectTodayExList" resultMap="chartResultSet">
 		select * from
-		chart where user_no = 1
+		chart where user_no = #{userNo}
+		and TO_CHAR(CHART_DAY,'YYYY-MM') = #{nowMonth}
+		
 	</select>
 	
 	<insert id="insertExInfo">
@@ -29,9 +31,21 @@
 		        values
 		        (
 		        SEQ_CHARTNO.nextval,
-		        150,
-		        '가슴',
-		        2
+		        #{exChartTime},
+		        #{exChartTarget},
+		        #{userNo}
 		    )
 	</insert>
+	
+	
+	<update id="UpdateChartInfo">
+		update
+			chart
+			set
+			chart_time = #{exChartTime},
+			chart_target = #{exChartTarget}
+			where user_no = #{userNo}
+			and TO_CHAR(CHART_DAY,'YYYY-MM-DD') = #{nowMonth}
+				
+	</update>
 </mapper>

@@ -11,9 +11,9 @@
 		<result column="USER_PWD" property="userPwd"/>
 		<result column="user_name" property="userName"/>
 		<result column="user_address" property="userAddress"/>
-		<result column="profileimg" property="profileImg"/>
-		<result column="enrolldate" property="enrollDate"/>
-		<result column="deletecheck" property="deleteCheck"/>
+		<result column="profile_img" property="profileImg"/>
+		<result column="enroll_date" property="enrollDate"/>
+		<result column="delete_check" property="deleteCheck"/>
 		<result column="status_msg" property="statusMsg"/>
 		<result column="PROFILE_URL" property="profileUrl"/>
 		<result column="CHANGE_NAME" property="changeName"/>
@@ -70,6 +70,16 @@
 		FROM MEMBER
 		WHERE USER_ID = #{userId}
 		 AND USER_PWD = #{userPwd}
+		 AND DELETE_CHECK = 'N'
+ 	</select>
+ 	
+ 	
+ 	<select id="selectId"  resultMap="memberResultSet">
+		SELECT USER_NO,
+			USER_ID,
+			USER_NAME
+		FROM MEMBER
+		WHERE USER_ID  like '%'||#{selectId}||'%'
 		 AND DELETE_CHECK = 'N'
  	</select>
  	
@@ -150,4 +160,58 @@
 			status = 'Y'
 			AND Following_user =  #{userNo} or follower_user =#{userNo}
  	</select>
+	
+	
+	  <insert id="sendFrieds" >
+		insert into FOLLOW 
+		 (
+			 FOLLOW_NO,
+		  	FOLLOWER_USER,
+			FOLLOWING_USER,
+			STATUS
+		  )
+		VALUES
+		 (
+		 	SEQ_FOLLOWNO.NEXTVAL,
+		 	#{followerUser},
+		 	#{followingUser},
+		 	'N'
+
+		 )
+	</insert>
+	
+	
+	
+	<select id="checkSeedFrieds"  resultMap="memberResultSet">
+		SELECT 
+			USER_NO,
+			USER_ID,
+			USER_NAME,
+			PROFILE_IMG,
+			STATUS_MSG
+		FROM member
+		join follow
+		on USER_NO = Follower_user
+		WHERE
+		following_User = #{userNo}
+		and status = 'N'
+		
+ 	</select>
+ 	
+ 	<update id="successFriedsPost">
+ 		UPDATE follow
+		SET
+		  status = 'Y'
+		WHERE
+		 following_user = #{followingUser} and
+		 follower_user = ${followerUser}
+ 	</update>
+ 	
+ 	<delete  id="deleteFriendsPost">
+ 		delete follow
+ 		where 
+ 		following_user = #{followingUser} and
+		follower_user = ${followerUser}
+ 	</delete>
+	
 </mapper>
