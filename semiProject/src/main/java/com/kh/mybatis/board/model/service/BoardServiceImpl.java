@@ -87,6 +87,9 @@ public class BoardServiceImpl implements BoardService{
 	public BoardImg selectBoardImg(int boardNo) {
 		SqlSession sqlSession = Template.getSqlSession();
 		BoardImg bImg = bDao.selectBoardImg(sqlSession, boardNo);
+		
+		System.out.println(bImg);
+		
 		sqlSession.close();
 		return bImg;
 	}
@@ -170,5 +173,7 @@ public class BoardServiceImpl implements BoardService{
 		sqlSession.close();
 		return result;
 	}
+	
+	
 	
 }

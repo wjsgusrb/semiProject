@@ -42,12 +42,15 @@ public class BoardDetailController extends HttpServlet {
 		
 		if(result > 0){
 			Board b = bService.selectBoard(boardNo);
-			BoardImg bImg = bService.selectBoardImg(boardNo);
+			
 			ArrayList<BoardComment> list =  bService.selectCommentList(boardNo);
+			BoardImg bimg = bService.selectBoardImg(boardNo);
 			
 			request.setAttribute("b", b);
-			request.setAttribute("bImg", bImg);
+			request.setAttribute("bImg", bimg);
 			request.setAttribute("list", list);
+			
+			
 			
 			request.getRequestDispatcher("views/board/boardDetailView.jsp").forward(request, response);
 			

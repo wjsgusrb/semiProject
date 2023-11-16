@@ -78,7 +78,7 @@
 		
 		<div class="outer" >
         <br>
-        <h2 style="text-align: center;">머슬지도</h2>
+        <h2 style="text-align: center;">MuscleMap</h2>
 		<br>
         <div style="text-align: center;">
             <h3>복근 운동 </h3> 

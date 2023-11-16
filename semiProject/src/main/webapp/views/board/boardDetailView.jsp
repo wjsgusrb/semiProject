@@ -72,7 +72,7 @@
 	</style>
 </head>
 
-
+	
 	<body>
 		 <!--상단바를 보여주는 부분-->
 		 <jsp:include page="/views/common/menubar.jsp" />
@@ -128,6 +128,33 @@
 		</table>
 		
 		 <script>
+	
+		 
+		 	$(function(){
+		 			loadBoardImg();
+			})
+		 	
+		 	function loadBoardImg(){
+		 		$.ajax({
+					url : "selectImg.bo" ,
+					data : {'boardNo' : "${Board.boardNo}"},
+					success: function(boardImg){
+						let str = "";
+						if(boardImg != '"NNN"'){
+							str += ('<img src="/ex/'+ boardImg +'" style="width: 200px; height: 200px;" />')
+							
+						}else{
+						}
+						document.querySelector(".detail-img").innerHTML = str;
+					},
+					error: function(){
+						console.log("selectImg ajax 실패");
+					}
+				})
+			}
+		 	
+		 
+		 
 			window.onload =() =>{
 				selectCommentList();
 			}
