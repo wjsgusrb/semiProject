@@ -620,7 +620,6 @@ img {
 				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">뒤로가기</button>
 			</div>
 		</form>
-		<img src="../../resources/board_upfile/user.png" style="width: 25px; height: 25px; border-radius: 50;"/>
 	  </div>
 	</div>
   </div>
