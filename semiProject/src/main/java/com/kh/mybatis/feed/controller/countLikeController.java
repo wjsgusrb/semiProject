@@ -41,6 +41,7 @@ public class countLikeController extends HttpServlet {
 		System.out.println(insertLike);
 		if(insertLike> 0) {
 			int result = new FeedServiceImpl().countLike(like);
+			System.out.println(result);
 			res.setContentType("text/html; charset=UTF-8");
 			new Gson().toJson(result,res.getWriter());
 		}else {
