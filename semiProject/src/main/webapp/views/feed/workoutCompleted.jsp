@@ -211,7 +211,7 @@
 				<div class="user-info">
 					<div class="user-info4">
 						<p style="margin-right: 5px;">
-							user01 <br>
+							${f.userNo} <br>
 						</p>
 						<p>${f.feedText}</p>
 					</div>
@@ -232,12 +232,12 @@
 							</tr>
 							<tr>
 								<th>user07</th>
-								<td>역시 토트넘 레전드</td>
+								<td>화이팅화이팅!</td>
 								<td>2023-11-10</td>
 							</tr>
 							<tr>
 								<th>user08</th>
-								<td>닭집 out</td>
+								<td>이욜~~~</td>
 								<td>2023-11-09</td>
 							</tr>
 						</thead>

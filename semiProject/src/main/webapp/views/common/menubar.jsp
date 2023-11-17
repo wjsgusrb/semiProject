@@ -133,7 +133,7 @@
                 </c:choose>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="views/muscleMap/muscleMap.jsp">근육지도</a>
+                <a class="nav-link " href="muscleMap.mc">근육지도</a>
             </li>
         </ul>
     <script>  
