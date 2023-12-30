@@ -42,28 +42,7 @@
 
 ## 실행 방법
 
-1. 프로젝트 레포지토리를 클론합니다.
-
-```sh
-$ git clone https://kdt-gitlab.elice.io/ai_track/class05/ai_project/team05/team05.git
-```
-
-2. 프로젝트 실행에 필요한 패키지를 설치합니다.
-
-```sh
-$ cd front
-$ npm i
-
-$ cd back
-$ npm i
-```
-
-3. development server을 실행합니다.
-```sh
-$ npm run dev
-# or
-$ yarn dev
-```
+메이븐 톰켓 스피링등 다운받아 실행하면된다.를 친절하게 작성
 
 ## 주요 기능
 
